@@ -7,11 +7,11 @@ icon: rebel
 author:
   name: Alex
   email: webdev.soultions@gmail.com
-homepage: https://github.com/KingStar-web/grav
+homepage: https://github.com/AkazieIT/grav-theme-akazie-wood
 demo: http://demo.yoursite.com
 keywords: grav, theme, etc
-bugs: https://github.com/KingStar-web/grav/issues
-readme: https://github.com/KingStar-web/grav/blob/develop/README.md
+bugs: https://github.com/AkazieIT/grav-theme-akazie-wood/issues
+readme: https://github.com/AkazieIT/grav-theme-akazie-wood/blob/master/README.md
 license: MIT
 
 dependencies:
