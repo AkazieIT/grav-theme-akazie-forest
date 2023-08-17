@@ -1,0 +1,15 @@
+en:
+  THEME_AKAZIEForest:
+    ADMIN:
+      FIELDS:
+        TITLE:
+          LABEL: "Title"
+        SUBTITLE:
+          LABEL: "Sub Title"
+        BANNER_IMG:
+          LABEL: "Banner image"
+        MEDIA: 
+          LABEL: 'Media'
+            
+de:
+  THEME_AKAZIEForest:          

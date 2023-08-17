@@ -1,0 +1,121 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            header.section.content.left.title:
+              type: text
+              autofocus: true
+              label: "Title"
+              validate:
+                required: true
+            header.section.content.left.text:
+              type: textarea
+              label: "Text"
+              markdown: true
+              rows: 3
+
+            header.section.content.left.anchor:
+              type: text
+              label: "Button title"
+
+            header.section.content.left.link:
+              type: text
+              label: "link"
+
+            header.section.content.left.linkopen.type:
+              type: select
+              label: "Open in same window?"
+              default: 0
+              options:
+                0: Yes
+                1: No               
+
+            header.section.content.right.cards:
+              name: cards
+              type: list
+              label: "card"
+              collapsed: true
+              fields:
+                .image:
+                  type: file
+                  label: "Choose Image"
+                  size: large
+                  destination: 'theme://images'
+                  multiple: false
+                  markdown: true
+                  description: "upload image"
+                  accept:
+                    - image/* 
+                .alt:
+                  type: text
+                  label: "Alt-tag(is also the alt-tag)"
+                .heading:
+                  type: text
+                  label: "Title"
+                .text:
+                  type: textarea
+                  label: "Text"
+                  rows: 3
+                .anchor:
+                  type: text
+                  label: "Button name"
+                .link:
+                  type: text
+                  label: "link"
+
+                .open.type:
+                  type: select
+                  label: "Open in same window?"
+                  default: 0
+                  options:
+                    0: Yes
+                    1: No         
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Title" 
+              description: "(unit: px)"               
+            header.section.settings.txtcolor:
+              type: colorpicker
+              label: "Text color"
+              default: '#555555'
+
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                          
+                      

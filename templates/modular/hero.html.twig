@@ -1,0 +1,93 @@
+{# {% set videoOne = page.find('/videos').media[page.header.section.content.right.video].url | e %} #}
+{% set media = (page.header.section.content.right.media | first).name %}
+{% set mediaFilePath = 'theme://images/hero/' ~ media %}
+{% if page.header.section.content.module.enabled %}
+{% if page.header.section.wrap.container == 1 %}
+</div>  {#  end row #}
+
+{% endif %} 
+<div class="hero-area position-relative d-flex">
+    <div class="container ">
+        {# <div class="{% if page.header.section.settings.txt.column == 1 %}col-12 col-md-12
+                    {% elseif page.header.section.settings.txt.column == 2 %}col-12 col-md-6
+                    {% elseif page.header.section.settings.txt.column == 3 %}col-12 col-md-4
+                    {% elseif page.header.section.settings.txt.column == 4 %}col-12 col-md-8
+                    {% elseif page.header.section.settings.txt.column == 5 %}col-6 col-md-3
+                    {% elseif page.header.section.settings.txt.column == 6 %}col-4 col-md-2
+                    {% else %}col-12 col-md-6{% endif %}">         #}
+            <div class="hero-content">
+            {% if page.header.section.content.title.show %}
+                <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
+                <h1>{{page.header.section.content.left.title}}</h1>
+            {% endif %}  
+                <p>{{page.header.section.content.left.text|markdown|raw}}</p>
+                <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.button.open.type %}target="_blank"{% endif %}>{{page.header.section.content.left.anchor}}<i
+                        class="far fa-angle-right"></i></a>
+                <div>
+                    <a href="{{page.header.section.content.left.linkTwo}}" class="cmn-link type-2 type-3" {% if page.header.section.content.anchor.open.type %}target="_blank"{% endif %}>
+                        {% if page.header.section.content.anchor.icon %}
+                            {% set logo_file = (page.header.section.content.anchor.icon|first).name %}
+                            <img src="{{ url('theme://images/' ~ logo_file)  }}"  class="btn_ico" />                            
+                            {{page.header.section.content.left.anchorTwo}}
+                        {% else %}
+                        <svg class="mr-10" xmlns="http://www.w3.org/2000/svg"
+                            width="36" height="25.5" viewBox="0 0 36 25.5" class="ml-0">
+                            <path id="Icon_material-laptop-chromebook" data-name="Icon material-laptop-chromebook"
+                                d="M33,27V4.5H3V27H0v3H36V27ZM21,27H15V25.5h6Zm9-4.5H6V7.5H30Z"
+                                transform="translate(0 -4.5)" fill="#555" />
+                        </svg>{{page.header.section.content.left.anchorTwo}}
+                        {% endif %}
+                    </a>
+                </div>
+            </div>
+        {# </div> #}
+        {# <div class="{% if page.header.section.settings.img.column == 1 %}col-12 col-md-12
+                    {% elseif page.header.section.settings.img.column == 2 %}col-12 col-md-6
+                    {% elseif page.header.section.settings.img.column == 3 %}col-12 col-md-4
+                    {% elseif page.header.section.settings.img.column == 4 %}col-12 col-md-8
+                    {% elseif page.header.section.settings.img.column == 5 %}col-6 col-md-3
+                    {% elseif page.header.section.settings.img.column == 6 %}col-4 col-md-2
+                    {% else %}col-12 col-md-6{% endif %}  hero-video position-absolute">  #}
+ 
+ {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
+        <div class="hero-video position-absolute">
+            {% if page.header.section.content.right.media %}
+                {% if fileType starts with 'image/' %}
+                    <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+                {% elseif fileType starts with 'video/' %}
+                    <video autoplay muted loop src="{{ url(mediaFilePath)}}"></video>
+                {% endif %}           
+                        {# <video autoplay muted loop src="{{ url('theme://images/video/' ~ videoOne)}}"></video> #}
+            {% endif %}
+        </div>    
+        {# </div> #}
+ 
+   
+
+ 
+ 
+
+    </div>    
+</div>
+{% if page.header.section.wrap.container == 1 %}
+
+<div class="row container">  {# start row #}
+{% endif %} 
+{% endif %}
+<style>
+{% if page.header.section.content.hero.square.bgcolor %}
+.hero-video::after{
+    background-color: {{page.header.section.content.hero.square.bgcolor}}!important;
+}
+{% endif %}
+{% if page.header.section.content.title.fontsize %}
+.hero-content h1{
+    font-size: {{page.header.section.content.title.fontsize}}px
+}
+{% endif %}
+{% if page.header.section.content.subtitle.fontsize %}
+.hero-content h6{
+    font-size: {{page.header.section.content.subtitle.fontsize}}px
+}
+{% endif %}
+</style>

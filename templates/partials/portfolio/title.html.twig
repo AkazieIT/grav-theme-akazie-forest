@@ -1,0 +1,12 @@
+{% set title_level = title_level ?: 'h2' %}
+{% if page.header.link %}
+    {% if page.header.continue_link is not same as(false) %}
+    <a href="{{ page.url }}"><i class="fa fa-angle-double-right u-url cmn-link type-2" {% if card_opentype %}target="_blank"{% endif %}></i></a>
+    {% endif %}
+    <a href="{{ page.header.link }}" class="u-url cmn-link type-2" {% if card_opentype %}target="_blank"{% endif %}>{{ page.header.subtitle }}</a>
+{% else %}
+    <a href="{{ page.url }}" class="u-url cmn-link type-2" {% if card_opentype %}target="_blank"{% endif %}>{{ page.header.subtitle }}</a>
+{% endif %}
+    <{{ title_level }} class="p-name mt-1">
+        {{ page.title }}
+    </{{ title_level }}>    

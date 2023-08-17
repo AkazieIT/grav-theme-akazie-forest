@@ -1,0 +1,146 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            txt_section:
+              type: section
+              title: "Image Section"
+              underline: true
+              fields:                     
+                header.section.title:
+                  type: text
+                  label: "Title"
+                  validate:
+                    required: true
+                header.section.subtitle:
+                  type: text
+                  label: "Sub Title"
+                header.section.alt_tag:
+                  type: text
+                  label: "Alt tag"
+                  validate:
+                    required: true
+                # header.section.image:
+                #   type: file
+                #   label: "Choose Image"
+                #   size: large
+                #   destination: 'theme://images'
+                #   multiple: false
+                #   markdown: true
+                #   description: "upload image"
+                #   accept:
+                #     - image/*      
+                header.section.image:
+                  type: pagemedia
+                  label: "Choose Image"
+                  size: large
+                  destination: '@self'
+                  description: "upload image"
+                  accept:
+                    - image/*      
+                header.section.image_description:
+                  type: text
+                  label: "Image description"
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.module.width:
+              type: select
+              label: "Module width"
+              default: 2              
+              options:
+                1: "full width"
+                2: "1/2 full width"
+                3: "1/3 full width"
+                4: "2/3 full width"
+                5: "1/4 full width"
+                6: "1/6 full width"              
+            header.scale:
+              type: select
+              label: 'Image Format'
+              default: 1
+              size: medium
+              options:
+                1: '4:3'
+                2: '16:9 (Full HD)'
+                3: '2.35:1 (Widescreen)'
+                4: '1:1 (Square)'
+                5: '3:4 (portrait)'
+            header.imagesizing:
+              type: toggle
+              label: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
+              help: 'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool
+            header.cropzoom:
+              type: toggle
+              label: fit picture
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.ENABLED
+                1: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+            header.section.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 0
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Title" 
+              description: "(unit: px)"               
+            header.section.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for Sub Title"  
+              description: "(unit: px)"
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Image module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool     
+            header.section.wrap.container:
+              type: select
+              label: "wrap container?"
+              default: 0
+              options:
+                0: No
+                1: Yes  
+
+                  
+                            
+
+            
+                  
+                      

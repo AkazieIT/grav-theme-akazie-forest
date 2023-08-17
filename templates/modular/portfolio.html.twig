@@ -1,0 +1,144 @@
+{% if page.header.section.settings.module.enabled %}
+
+    {% if page.header.section.card.date.show == 1 %}
+        {% set show_date = true %}
+    {% else %}
+        {% set show_date = false %}
+    {% endif %}
+
+    {% if page.header.section.card.taxonomy.show == 1 %}
+        {% set show_tax = true %}
+    {% else %}
+        {% set show_tax = false %}
+    {% endif %}
+
+    {% if page.header.section.card.content.show == 1 %}
+        {% set show_content = true %}
+    {% else %}
+        {% set show_content = false %}
+    {% endif %}
+
+    {% if page.header.section.card.open.type == 1 %}
+        {% set card_opentype = true %}
+    {% else %}
+        {% set card_opentype = false %}
+    {% endif %}
+    
+    {% set masonry = true %}
+
+{% if page.header.section.wrap.container == 1 %}
+</div>  {#  end row #}
+<div class="row container portfolio-area">
+    {# <div class="row"> #}
+{% endif %}
+    {# <div class="container bricklayer">         #}
+    <ul class="js-masonry-list">
+    {% set featured = page.collection({'items':{'@taxonomy.category': 'portfolio', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {% for row in featured|batch(3) %}
+        {% for child in row %}
+        <li class="js-masonry-elm">
+            <div class="
+                        {# {% if page.header.section.settings.column == 1 %}col-lg-12
+                        {% elseif page.header.section.settings.column == 2 %}col-lg-6
+                        {% elseif page.header.section.settings.column == 3 %}col-lg-4
+                        {% elseif page.header.section.settings.column == 4 %}col-lg-8
+                        {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                        {% elseif page.header.section.settings.column == 6 %}col-lg-2
+                        {% else %}col-lg-6{% endif %}   #}
+                        "
+                 style="{% if page.header.section.settings.bgcolor %}background-color: {{page.header.section.settings.bgcolor}};{% endif %}"            
+            >
+                {% include 'partials/portfolio-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_content':show_content, 'card_opentype':card_opentype, 'masonry':masonry} %}
+            </div>
+        </li>    
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% if page.header.section.wrap.container == 1 %}
+    {# </div> #}
+</div>
+<div class="row container">  {# start row #}
+{% endif %}       
+    <script>
+        //Bricklayer
+        /* var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+        for (var i = 0; i < 20; i++) {
+            bricklayer.append(box())
+        }
+        var anotherBox = box()
+        bricklayer.append(anotherBox) */
+    </script>    
+{% endif %}
+
+  <style>
+{% if page.header.section.settings.column == 1 %}
+    .js-masonry-elm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    {% set _cols = 1 %}
+{% elseif page.header.section.settings.column == 2 %}
+    .js-masonry-list {
+        column-gap: 2%;
+    }
+    .js-masonry-elm {
+        width: 49%;
+        margin-bottom: 2%;
+    }
+    {% set _cols = 2 %}
+{% elseif page.header.section.settings.column == 3 %}
+    .js-masonry-list {
+        column-gap: 1.25%;
+    }
+    .js-masonry-elm {
+        width: 32.5%;
+        margin-bottom: 1.25%;
+    }
+    {% set _cols = 3 %}
+{% elseif page.header.section.settings.column == 4 %}
+    .js-masonry-list {
+        column-gap: 2%;
+    }
+    .js-masonry-elm {
+        width: 23.5%;
+        margin-bottom: 2%;
+    }
+    {% set _cols = 4 %}
+{% elseif page.header.section.settings.column == 5 %}
+    .js-masonry-list { 
+        column-gap: 2.5%; 
+    } 
+    .js-masonry-elm { 
+        width: 18%; 
+        margin-bottom: 2.5%; 
+    } 
+    {% set _cols = 5 %}
+{% else %}
+    .js-masonry-list { 
+        column-gap: 0.5%; 
+    } 
+    .js-masonry-elm { 
+        width: 16%; 
+        margin-bottom: 0.5%; 
+    } 
+    {% set _cols = 6 %}
+{% endif %}  
+
+  </style>
+
+<script>
+    masonry({
+      target: '.js-masonry-list',
+      column: {{_cols}},
+      responsive: [{
+	  breakpoint: 1024,
+        column: 3
+      }, {
+        breakpoint: 600,
+        column: 2
+      }, {
+        breakpoint: 450,
+        column: 1
+      }]
+    });
+</script>

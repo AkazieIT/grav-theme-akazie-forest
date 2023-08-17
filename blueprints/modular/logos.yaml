@@ -1,0 +1,91 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            header.sec_two.title:
+              type: text
+              autofocus: true
+              label: "Title"
+              validate:
+                required: true
+            header.sec_two.subtitle:
+              type: text
+              label: "Sub Title"
+
+            header.sec_two.logos:
+              name: logos
+              type: list
+              label: "Logos"
+              collapsed: true
+              fields:
+                .name:
+                  type: text
+                  label: "Logo Name(is also the alt-tag)"
+                .link:
+                  type: text
+                  label: "URL"
+                .src:
+                  type: file
+                  label: "Choose Logo/Image"
+                  size: large
+                  destination: 'theme://images'
+                  multiple: false
+                  markdown: true
+                  description: "upload logo image"
+                  accept:
+                    - image/* 
+                .open.type:
+                  type: select
+                  label: "Open in same window?"
+                  default: 0
+                  options:
+                    0: Yes
+                    1: No                        
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.sec_two.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.sec_two.settings.title.fontsize:
+              type: text
+              label: "Font size for Title" 
+              description: "(unit: px)"               
+            header.sec_two.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for Sub Title"  
+              description: "(unit: px)"
+            header.sec_two.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#fff'
+            header.sec_two.settings.module.enabled:
+              type: toggle
+              label: "Show Logo module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                       
+            
+                  
+                      

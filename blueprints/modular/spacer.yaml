@@ -1,0 +1,53 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            header.section.space.height:
+              type: text
+              autofocus: true
+              label: "Height(px)"
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+            header.section.background.image:
+              type: file
+              label: "Choose Background Image"
+              size: large
+              destination: 'theme://images'
+              multiple: false
+              markdown: true
+              description: "upload image"
+              accept:
+                - image/*      
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                                                     
+
+                  
+                      

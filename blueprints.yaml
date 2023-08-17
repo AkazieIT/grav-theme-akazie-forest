@@ -1,0 +1,637 @@
+name: Akazie Forest
+slug: akazie-forest
+type: theme
+version: 0.1.0
+description: A Forest Theme
+icon: rebel
+author:
+  name: Alex
+  email: webdev.soultions@gmail.com
+homepage: https://github.com/KingStar-web/grav
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/KingStar-web/grav/issues
+readme: https://github.com/KingStar-web/grav/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    layout_section:
+      type: section
+      title: "Site layout"
+      underline: true
+      fields:
+        theme_info:
+          type: display
+          label: "<strong>Please note:</strong><br /> this section will only display correctly when the theme is activated."
+
+
+        site:
+          type: fieldset
+          title: "Site"
+          collapsed: false
+          collapsible: true
+          fields:
+            site.favicon:
+              type: file
+              label: "Favicon"
+              size: large
+              destination: 'theme://images/favicon'
+              multiple: false
+              markdown: true
+              description: "Used instead of theme: // images / favicon.png"
+              accept:
+                - image/*
+            site.maxwidth:
+              type: text
+              label: "max content width (1000-2000 / default 1280)"
+              default: 1280
+        header:
+          type: fieldset
+          title: "Header"
+          collapsed: false
+          collapsible: true
+          fields:
+            header.logo.desktop:
+              type: file
+              label: "Desktop logo"
+              size: large
+              destination: 'theme://images/logo'
+              multiple: false
+              markdown: true
+              description: "Used instead of theme://images/logo.png"
+              accept:
+                - image/*
+            header.logo.mobile:
+              type: file
+              label: "Mobile logo"
+              size: large
+              destination: 'theme://images/logo'
+              multiple: false
+              markdown: true
+              description: "Used instead of theme://images/logo.png"
+              accept:
+                - image/*
+            header.displaylogo:
+              type: toggle
+              label: "Display logo?"
+              highlight: 1
+              default: 1
+              options:
+                1: "Show"
+                0: "Hidden"
+              validate:
+                type: bool
+            header.javascript:
+              type: textarea
+              label: "Add (Javascript) tracking code to header"
+              rows: 2
+              size: large
+
+        nav:
+          type: fieldset
+          title: "Navigation"
+          collapsed: false
+          collapsible: true
+          fields:
+            dropdown.enabled:
+              type: toggle
+              label: "Dropdown in Menu"
+              help: "Allows to have another navigation level"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                
+            header.fixed.option:
+              type: toggle
+              label: "Fixed Header"
+              help: "If activated, the header will always be at the top of the browser window."
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool    
+            header.nav.length:
+              type: text
+              label: "Number Max. Navigation points"
+              default: 3
+              size: small
+              validate:
+                type: int
+                required: true
+
+            nav.desktop:
+              type: fieldset
+              title:  "Desktop Navigation"
+              collapsed: false
+              collapsible: true
+              fields:
+                nav.fittocontent:
+                  type: select
+                  label: "Fit navigation width to content"
+                  default: 0
+                  options:
+                    0: No
+                    1: Yes
+                nav.navheight:
+                  type: text
+                  label: "Navigation height (65-205)"
+                  default: 85
+                
+            nav.mobile:
+              type: fieldset
+              title:  "Mobile Navigation"
+              collapsed: false
+              collapsible: true
+              fields:
+                nav.mobileheightenabled:
+                  type: toggle
+                  label: "Mobile Navigation custom height"
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                nav.mobilenavheight:
+                  type: text
+                  label: "Mobile Navigation height (60-300)"
+                  default: 85
+
+            nav.secondary:
+              type: fieldset
+              title: 'Secondary nav (experimental)'
+              collapsed: true
+              collapsible: true
+              fields:
+                nav.seconadryrepeater:
+                  name: secondaryrepeater
+                  type: list
+                  label: "Nav items"
+                  collapsed: false
+                  fields:
+                    .name:
+                      type: text
+                      label: "Label"
+                      validate:
+                        required: true
+                    .link:
+                      type: text
+                      label: "URL"
+            nav.button:
+              type: fieldset
+              title: "Custom Nav button"
+              collapsed: false
+              collapsible: true
+              fields:
+                nav.button.enabled:
+                  type: toggle
+                  label: "Custom nav button enabled?"
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                  validate:
+                    type: bool
+                nav.button.text:
+                  type: text
+                  label: "Custom nav button text"
+                  default: ''
+                nav.button.link:
+                    type: pages
+                    size: medium
+                    label: "Button link"
+                    show_all: false
+                    show_modular: false
+                    show_root: true                  
+              
+        footer:
+          type: fieldset
+          title: "Footer"
+          collapsed: false
+          collapsible: true
+          fields:
+            footer.compact:
+              type: fieldset
+              title: "Compact footer"
+              collapsed: false
+              collapsible: true
+              fields:
+                footer.nav.length:
+                  type: text
+                  label: "Number Max. Navigation points"
+                  default: 5
+                  size: small
+                  validate:
+                    type: int
+                    required: true                  
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        footer.top.bgcolor:
+                          type: colorpicker
+                          label: "Background color"
+                          default: '#bdd896'
+                        footer.mail:
+                          type: text
+                          label: "Mail in footer"
+                          size: large
+                    column2:
+                      type: column
+                      fields:
+                        footer.top.color:
+                          type: colorpicker
+                          label: "text color"
+                          default: '#555555'
+                        footer.phone:
+                          type: text
+                          label: "Phone in footer"
+                          size: large
+                top.footer.socials:
+                  name: socials
+                  type: list
+                  label: "Social icons"
+                  collapsed: true
+                  fields:
+                    .icon:
+                      type: text
+                      label: "icon"
+                    .link:
+                      type: text
+                      label: "link"
+                top.footer.columns:
+                  name: columns
+                  type: list
+                  label: "Top footer columns"
+                  collapsed: true
+                  fields:
+                    .heading:
+                      type: textarea
+                      label: "Column Heading"
+                      rows: 2
+                      size: large       
+                    .text:
+                      type: textarea
+                      label: "content"
+                      rows: 5
+                      size: large                      
+                    .navigation.enabled:
+                      type: toggle
+                      label: "Show Navigation"
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool
+                    .social.enabled:
+                      type: toggle
+                      label: "Show Social icons"
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool
+                    .contact.enabled:
+                      type: toggle
+                      label: "Show contact information"
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool
+
+            footer.bottom:
+              type: fieldset
+              title: "Footer bottom"
+              collapsed: false
+              collapsible: true
+              fields:
+                footer.bottom.enabled:
+                  type: toggle
+                  label: "Show footer bottom"
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                  validate:
+                    type: bool
+
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        footer.bottom.bgcolor:
+                          type: colorpicker
+                          label: "Background color"
+                          default: '#5a784d'
+                        footer.copyright.enabled:
+                          type: toggle
+                          label: "Show Copyright"
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
+                        footer.impressum.enabled:
+                          type: toggle
+                          label: "Show imprint"
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
+                        footer.datenschutz.enabled:
+                          type: toggle
+                          label: "Show data policy"
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
+                        footer.agb.enabled:
+                          type: toggle
+                          label: "Show AGB"
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
+                        footer.sitemap.enabled:
+                          type: toggle
+                          label: "Show Sitemap"
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
+                    column2:
+                      type: column
+                      fields:
+                        footer.bottom.color:
+                          type: colorpicker
+                          label: "text color"
+                          default: '#ffffff'
+                        footer.copyright.text:
+                          type: text
+                          label: "Copyright text"
+                          size: large
+                        footer.impressum.link:
+                          type: pages
+                          size: medium
+                          label: "Link to the imprint"
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                        footer.datenschutz.link:
+                          type: pages
+                          size: medium
+                          label: "Link to the policy"
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                        footer.agb.link:
+                          type: pages
+                          size: medium
+                          label: "Link to the AGB"
+                          show_all: false
+                          show_modular: false
+                          show_root: false
+                        footer.sitemap.link:
+                          type: pages
+                          size: medium
+                          label: "Link to the Sitemap"
+                          show_all: false
+                          show_modular: false
+                          show_root: false                  
+            footer.javascript:
+              type: fieldset
+              title: "Various footer stuff"
+              collapsed: false
+              collapsible: true
+              fields:
+                footer.javascript.code:
+                  type: textarea
+                  label: "Add Javascript to footer"
+                  rows: 2
+                  size: large
+
+    style_section:
+      type: section
+      title: "Custom style (only for admins)"
+      underline: true
+      fields:
+        style.color:
+          type: fieldset
+          title: "Color"
+          collapsed: false
+          collapsible: true
+          fields:
+            style.color.background:
+              type: fieldset
+              title: "Background color"
+              collapsed: false
+              collapsible: true
+              fields:
+                style.color.background.main:
+                  type: colorpicker
+                  label: "Main"
+                  default: '#ffffff'
+                  validate:
+                    required: true
+                style.color.background.primary:
+                  type: colorpicker
+                  label: "Primary"
+                  default: '#7b9b50'
+                  validate:
+                    required: true
+                style.color.background.secondary:
+                  type: colorpicker
+                  label: "Secondary"
+                  default: '#B6D191'
+                  validate:
+                    required: true
+                style.color.background.third:
+                  type: colorpicker
+                  label: "Third"
+                  default: '#5A784D'
+                  validate:
+                    required: true
+                style.color.background.tertiary:
+                  type: colorpicker
+                  label: "Even sections' background color"
+                  default: '#5A784D'
+                  validate:
+                    required: true
+
+            style.color.text:
+              type: fieldset
+              title: "Text color"
+              collapsed: false
+              collapsible: true
+              fields:
+                style.color.text.main:
+                  type: colorpicker
+                  label: "Main"
+                  default: '#707070'
+                  validate:
+                    required: true
+                style.color.text.primary:
+                  type: colorpicker
+                  label: "Primary"
+                  default: '#1D1D1D'
+                  validate:
+                    required: true
+                style.color.text.secondary:
+                  type: colorpicker
+                  label: "Secondary"
+                  default: '#555555'
+                  validate:
+                    required: true
+
+        style.font:
+          type: fieldset
+          title: "Fonts"
+          collapsed: false
+          collapsible: true
+          fields:
+            style.fonts.import:
+              type: text
+              label: "Font import"
+              default: 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap'
+            style.fonts.google:
+              type: toggle
+              label: "Faster loading for google fonts"
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+            style.fonts.main:
+              type: text
+              label: "Main"
+              default: "'Open Sans', sans-serif"
+              validate:
+                required: true
+            style.fonts.footer:
+              type: text
+              label: "Footer"
+              default: "'Raleway', sans-serif"
+              validate:
+                required: true
+            style.fonts.h:
+              type: text
+              label: "Title"
+              default: "'Raleway', sans-serif"
+              validate:
+                required: true
+            style.fonts.nav:
+              type: text
+              label: "Navigation"
+              default: "'Montserrat', sans-serif"
+              validate:
+                required: true
+            style.fonts.customhtml:
+              type: textarea
+              label: "Custom HTML in head"
+              rows: 2
+              size: large              
+
+        map:
+          type: fieldset
+          title: "Google map"
+          collapsed: false
+          collapsible: true
+          fields:
+            map.type:
+              type: select
+              label: "Map"
+              default: google
+              size: large
+              options:
+                google: "Google Map"
+                osm: "Open Street Map"
+            map.apikey:
+              type: text
+              label: "API-key (onle with GoogleMaps)"
+              size: large              
+        blog:
+          type: fieldset
+          title: "Blog Defaults"
+          collapsed: false
+          collapsible: true
+          fields:
+            blog-page:
+              type: text
+              label: Blog Page
+              help: The route to the blog page when working with blog sidebar
+              size: medium
+              default: '/blog'                          
+        portfolio:
+          type: fieldset
+          title: "Portfolio Defaults"
+          collapsed: false
+          collapsible: true
+          fields:
+            portfolio-page:
+              type: text
+              label: Portfolio Page
+              help: The route to the portfolio page when working with portfolio sidebar
+              size: medium
+              default: '/portfolio'                          
+        other:
+          type: fieldset
+          title: "Other"
+          collapsed: false
+          collapsible: true
+          fields:              
+            style.css:
+              type: toggle
+              label: "Use custom CSS file (please create file in theme directory akazie-forest/css/custom.css)"
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool
+            style.js:
+              type: toggle
+              label: "Use custom JS file (please create file in theme directory akazie-forest/js/custom.js)"
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool

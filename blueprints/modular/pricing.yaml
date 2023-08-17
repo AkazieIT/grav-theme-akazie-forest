@@ -1,0 +1,101 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            header.section.title.heading:
+              type: text
+              autofocus: true
+              label: "Title"
+              validate:
+                required: true
+            header.section.title.subHeading:
+              type: text
+              label: "Sub Title"
+            header.section.title.text:
+              type: textarea
+              label: "Text"
+              rows: 3
+
+            header.section.content.cards:
+              name: cards
+              type: list
+              label: "card"
+              collapsed: true
+              fields:
+                .price:
+                  type: text
+                  label: "Price"
+                .priceText:
+                  type: text
+                  label: "card Title"
+                .text:
+                  type: textarea
+                  label: "card Text"
+                .anchor:
+                  type: text
+                  label: "Button name"
+                .link:
+                  type: text
+                  label: "link"
+                .open.type:
+                  type: select
+                  label: "Open in same window?"
+                  default: 0
+                  options:
+                    0: Yes
+                    1: No      
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Title" 
+              description: "(unit: px)"               
+            header.section.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for Sub Title"  
+              description: "(unit: px)"
+            header.section.settings.pricecolor:
+              type: colorpicker
+              label: "Price color"
+              default: '#B6D191'
+
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                                                     
+
+                  
+                      

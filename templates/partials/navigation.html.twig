@@ -1,0 +1,53 @@
+{% macro loop(page) %}
+{% for p in page.children.visible %}
+{% set current_page = (p.active or p.activeChild) ? 'selected' : '' %}
+{% if p.children.visible.count > 0 %}
+<li class="has-children {{ current_page|e }}">
+    <a href="{{ p.url|e }}">
+        {{ p.menu|e }}
+        {% if p.header.icons %}<i class="fal fa-{{ p.header.icons.angle_down|e }}"></i>{% endif %}
+    </a>
+    <ul class="submenu">
+        {# {{ _self.loop(p) }} #}
+        {% for item in p.header.submenu %}
+        <li>
+            <a href="{{ item.url }}">
+                {{item.icon|raw}} {{ item.text }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</li>
+{% else %}
+<li class="{{ current_page|e }}">
+    <a href="{{ p.url|e }}">
+        {{ p.menu|e }}
+    </a>
+</li>
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+<ul class="main-menu d-none d-lg-flex align-items-center flex-wrap">
+    {% if config.theme.dropdown.enabled %}
+    {{ _self.loop(pages) }}
+    {% else %}
+    {% for page in pages.children.visible %}
+    {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+    <li class="{{ current_page|e }}">
+        <a href="{{ page.url|e }}">
+            {% if page.header.icons %}<i class="fal fa-{{ page.header.icons.arrow_down|e }}"></i>{% endif %}
+            {{ page.menu|e }}
+        </a>
+    </li>
+    {% endfor %}
+    {% endif %}
+    {% for mitem in site.menu %}
+    <li>
+        <a href="{{ mitem.url|e }}">
+            {% if mitem.icon %}<i class="fal fa-{{ mitem.icon|e }}"></i>{% endif %}
+            {{ mitem.text|e }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>

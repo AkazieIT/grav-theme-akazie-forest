@@ -1,0 +1,40 @@
+{% extends 'partials/base.html.twig' %}
+{% set portfolio = page.find(header_var('portfolio_url')|defined(theme_var('portfolio-page'))) %}
+{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
+{% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
+{% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
+{% set hero_image_name = page.header.hero_image %}
+
+{% block hero %}
+    {% if hero_image_name %}
+        {% set hero_image = page.media[hero_image_name] %}
+        {% set content %}
+            <h1>{{ page.title }}</h1>
+            <h2>{{ page.header.subtitle }}</h2>
+            {% include 'partials/portfolio/date.html.twig' %}
+            {% include 'partials/portfolio/taxonomy.html.twig' %}
+        {% endset %}
+        {% include 'partials/hero.html.twig' with {id: 'portfolio-hero'} %}
+
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<section id="body-wrapper" class="section portfolio-listing">
+    <section class="container {{ grid_size }}">
+        {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+            {% include 'partials/breadcrumbs.html.twig' %}
+        {% endif %} #}
+
+        {% embed 'partials/layout.html.twig' %}
+            {% block item %}
+                {% include 'partials/portfolio-item.html.twig' %}
+            {% endblock %}
+            {# {% block sidebar %}
+                {% include 'partials/sidebar.html.twig' %}
+            {% endblock %} #}
+        {% endembed %}
+
+    </section>
+</section>
+{% endblock %}

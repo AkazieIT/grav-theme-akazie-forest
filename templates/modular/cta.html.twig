@@ -1,0 +1,57 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="cta-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="cmn-content st-content">
+                    {% if page.header.section.settings.title.show %}                
+                    <h3>{{page.header.section.content.left.title}}</h3>
+                    {% endif %}
+                    <p>{{page.header.section.content.left.text|markdown|raw}}</p>
+                    <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.link.open.type %}target="_blank"{% endif %}>
+                        {{page.header.section.content.left.anchor}}<i class="far fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="offer-g-wrapper">
+                    {% for card in page.header.section.content.right.cards %}
+                    {# {% set icon = page.find('/images').media[card.icon].url | e %} #}
+                    {% set img = (card.image | first).name %}
+                    <div class="single-offer">
+                        <div class="offer-icon">
+                            {# <img src="{{icon}}" alt="Icon" class="img-fluid"> #}
+                            <img src="{{ url('theme://images/' ~ img)  }}" alt="{{card.alt}}" class="img-fluid">
+                        </div>
+                        <h5>{{card.heading}}</h5>
+                        <p>{{card.text}}</p>
+                        <a href="{{card.link}}" class="cmn-link" {% if card.open.type %}target="_blank"{% endif %}>
+                            {{card.anchor}}<i class="far fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+{% if page.header.section.settings.bgcolor %}
+.cta-area{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.cmn-content h3{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+
+{% if page.header.section.settings.txtcolor %}
+.cmn-content p, .single-offer p{
+    color: {{page.header.section.settings.txtcolor}};
+}
+{% endif %}
+</style>

@@ -1,0 +1,48 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="price-area">
+    <div class="container">
+        <div class="primary-title">
+            {% if page.header.section.settings.title.show %}
+            <h6 class="text-uppercase">{{page.header.section.title.subHeading}}</h6>
+            <h3>{{page.header.section.title.heading}}</h3>
+            {% endif %}
+            <p>{{page.header.section.title.text}}</p>
+        </div>
+
+        <div class="price-card-g-wrapper">
+            {% for card in page.header.section.content.cards %}
+            <div class="price-card">
+                <h5 class="price">{{card.price}}.– <span class="d-block">{{card.priceText}}</span></h5>
+                <p>{{card.text}}</p>
+                <a href="{{card.link}}" class="box-btn" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+{% if page.header.section.settings.bgcolor %}
+.price-area{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.primary-title h3{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.section.settings.subtitle.fontsize %}
+.primary-title h6{
+    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+
+{% if page.header.section.settings.pricecolor %}
+.price-card .price{
+    color: {{page.header.section.settings.pricecolor}};
+}
+{% endif %}
+
+</style>

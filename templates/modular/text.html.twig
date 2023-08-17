@@ -1,0 +1,73 @@
+{% if page.header.section.settings.module.enabled %}
+    {# {% if page.header.section.background.image %} {% set img = (page.header.section.background.image | first).name %} {% endif %} #}
+{% if page.header.section.wrap.container == 1 %}
+</div>  {#  end row #}
+<div class="row container"  style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}">
+{% endif %} 
+<div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
+            {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
+            {% elseif page.header.section.settings.module.width == 3 %}col-12 col-md-4
+            {% elseif page.header.section.settings.module.width == 4 %}col-12 col-md-8
+            {% elseif page.header.section.settings.module.width == 5 %}col-6 col-md-3
+            {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
+            {% else %}col-12 col-md-6{% endif %} 
+            txt_module section_wrap"             
+     style="
+            {# {% if page.header.section.background.image %} background-image: url("{{ url('theme://images/' ~ img)  }}");
+                background-position: center;
+                background-repeat: no-repeat; 
+                background-size: cover;
+            {% endif %} #}
+            {% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}
+            {% if page.header.section.settings.txt.align == 1 %}
+                text-align: left;
+            {% elseif page.header.section.settings.txt.align == 2 %}    
+                text-align: center;
+            {% else %}
+                text-align: right;
+            {% endif %}"        
+>   
+    {% if page.header.section.settings.title.show %}
+    <div class="title_wrap cmn-content">
+        {% if page.header.section.subtitle %}
+        <h6 class="text-uppercase" style="{% if page.header.section.settings.subtitle.fontsize %}font-size: {{page.header.section.settings.subtitle.fontsize}}px;{% endif %}">{{page.header.section.subtitle}}</h6>
+        {% endif %}
+        {% if page.header.section.title %}
+        <h3  style="{% if page.header.section.settings.title.fontsize %}font-size: {{page.header.section.settings.title.fontsize}}px;{% endif %}">{{page.header.section.title}}</h3>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% if page.header.section.text %}
+    <div class="content_wrap cmn-content">
+        {{page.header.section.text|markdown }}
+    </div>
+    {% endif %}
+    {% if page.header.section.background.media %}
+        {% set media = (page.header.section.background.media | first).name %}
+        {% set mediaFilePath = 'theme://images/' ~ media %}    
+        {% set fileType = page.header.section.background.media[page.header.section.background.media|keys|first].type %}
+        <div class="media-wrap">
+            {% if page.header.section.background.media %}
+                {% if fileType starts with 'image/' %}
+                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}" download>download image</a>
+                {% elseif fileType starts with 'application/' %}
+                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}" download>download pdf</a>
+                {% endif %}           
+            {% endif %}
+        </div>    
+    {% endif %}    
+    {% if page.header.section.button.title %}
+    <div class="button_wrap cmn-content">
+        <a href="{{page.header.section.button.link}}" class="box-btn" {% if page.header.section.button.open.type %}target="_blank"{% endif %}>
+            {{page.header.section.button.title}}<i class="fal fa-angle-right"></i>
+        </a>    
+    </div>
+    {% endif %}    
+</div>
+{% if page.header.section.wrap.container == 1 %}
+</div>
+<div class="row container">  {# start row #}
+{% endif %} 
+{% endif %}
+
+

@@ -1,0 +1,20 @@
+{% if page.header.section.settings.module.enabled %}
+    {% if page.header.section.background.image %} 
+        {% set img = (page.header.section.background.image | first).name %} 
+        {% set imgPath = 'theme://images/hero/' ~ img %}
+    {% endif %}
+ 
+<div class="spacer_module"             
+     style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}
+            {% if page.header.section.background.image %} background-image: url('{{ url(imgPath)  }}');
+                background-position: center;
+                background-repeat: no-repeat; 
+                background-size: cover;
+            {% endif %}
+            {% if page.header.section.space.height %} height: {{header.section.space.height}}px;{% endif %}
+            "
+>   
+</div>
+{% endif %}
+
+

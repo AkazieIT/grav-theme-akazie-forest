@@ -1,0 +1,29 @@
+{% if page.header.section.settings.module.enabled %}
+        {# <div class="accordion bg-transparent faq-area" id="faq"> #}
+            {% for faqItem in page.header.content.faqs %}
+            <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
+                        {% elseif page.header.section.settings.column == 2 %}col-lg-6
+                        {% elseif page.header.section.settings.column == 3 %}col-lg-4
+                        {% elseif page.header.section.settings.column == 4 %}col-lg-8
+                        {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                        {% elseif page.header.section.settings.column == 6 %}col-lg-2
+                        {% else %}col-lg-6{% endif %}  faq-area accordion-item border-0 bg-transparent">            
+                <button class="ac-btn w-100 text-start" data-bs-toggle="collapse"
+                    data-bs-target="#collapse{{loop.index}}" aria-expanded="false"
+                    aria-controls="collapse{{loop.index}}">
+                    {{faqItem.heading}}
+                </button>
+                <div id="collapse{{loop.index}}" class="accordion-collapse collapse row"
+                    aria-labelledby="heading{{loop.index}}" data-bs-parent="#faq">
+                    <div class="accordion-body p-0 col-md-8">
+                        <p class="text_lg ff_fira_sans text_secondaryLight">{{faqItem.text}}</p>
+                        <a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        {# </div> #}
+{% endif %}
+

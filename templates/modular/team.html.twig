@@ -1,0 +1,91 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="team-area">
+    <div class="container">
+        {% if page.header.section.settings.title.show %}
+        <div class="secondary-title">
+            <h6 class="text-uppercase">{{page.header.section.title.subHeading}}</h6>
+            <h3>{{page.header.section.title.heading}}</h3>
+        </div>
+        {% endif %}    
+        <div class="row">
+            {% for member in page.header.section.content.members %}
+            {# {% set memberImg = page.find('/images').media[member.img].url | e%} #}
+            {% set img = (member.img | first).name %}
+            <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
+                        {% elseif page.header.section.settings.column == 2 %}col-lg-6
+                        {% elseif page.header.section.settings.column == 3 %}col-lg-4
+                        {% elseif page.header.section.settings.column == 4 %}col-lg-8
+                        {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                        {% elseif page.header.section.settings.column == 6 %}col-lg-2
+                        {% else %}col-lg-6{% endif %}  mb-30">
+{{ dump(member) }}
+                <div class="team-member">
+                    <div class="member-img">
+                        {# <img src="{{ url('theme://images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
+                        {% set resize = 4 / 3 %}
+                        {% set cropzoom = 0 %}
+                        {% set image = page.media[(member.img|keys|first)] %}
+
+                        {% if page.header.section.settings.img.column == 1  %}
+                            <picture>
+                                <source media="(min-width:992px)" srcset="{% if cropzoom %}{{ image.resize(1250,1250 * resize).url }}{% else %}{{ image.cropZoom(1250,1250 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(2500,2500 * resize).url }}{% else %}{{ image.cropZoom(2500,2500 * resize).url }}{% endif %} 2x">
+                                <source media="(min-width:870px)" srcset="{% if cropzoom %}{{ image.resize(840,840 * resize).url }}{% else %}{{ image.cropZoom(840,840 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(1680,1680 * resize).url }}{% else %}{{ image.cropZoom(1680,1680 * resize).url }}{% endif %} 2x">
+                                <source media="(min-width:500px)" srcset="{% if cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(1020,1020 * resize).url }}{% else %}{{ image.cropZoom(1020,1020 * resize).url }}{% endif %} 2x">
+                                <source media="(max-width:499px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+                                <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                            </picture>
+                        {% else %}
+                            <picture>
+                                <source media="(min-width:1220px)" srcset="{% if cropzoom %}{{ image.resize(610,610 * resize).url }}{% else %}{{ image.cropZoom(610,610 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+                                <source media="(min-width:992px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(800,800 * resize).url }}{% else %}{{ image.cropZoom(800,800 * resize).url }}{% endif %} 2x">
+                                <source media="(min-width:500px)" srcset="{% if cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+                                <source media="(max-width:499px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+                                <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                            </picture>
+                        {% endif %}                        
+                    </div>
+                    <div class="secondary-title member-content mb-0">
+                        <h6 class="text-uppercase">{{member.designation}}</h6>
+                        <h3>{{member.name}}</h3>
+                        <ul class="ct-list">
+                            {% if member.linkedin.linkedinProfile %}
+                            <li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>
+                            <li><i class="fab fa-linkedin"></i><a href="{{member.linkedin.linkedinProfile}}" target="_blank"
+                                    class="d-inline-block text-decoration-underline">{{member.linkedin.linkedin_user}}</a>
+                            </li>
+                            {% endif %}
+                            {% if member.phone %}
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{member.phone}}">{{member.phone}}</a></li>
+                            {% endif %}
+                        </ul>
+                        {% if member.additional_txt %}
+                        <p>{{member.additional_txt}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>    
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+{% if page.header.section.settings.bgcolor %}
+.team-area{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.secondary-title h3{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.section.settings.subtitle.fontsize %}
+.secondary-title h6{
+    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+
+
+</style>

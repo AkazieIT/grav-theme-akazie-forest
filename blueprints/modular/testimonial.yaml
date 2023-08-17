@@ -1,0 +1,74 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+
+            header.section.slides:
+              name: slides
+              type: list
+              label: "Testimonial"
+              collapsed: true
+              fields:
+                .icon:
+                  type: file
+                  label: "Choose icon/Image"
+                  size: large
+                  destination: 'theme://images'
+                  multiple: false
+                  markdown: true
+                  description: "upload icon/image"
+                  accept:
+                    - image/* 
+                .position:
+                  type: text
+                  label: "position"
+                .author:
+                  type: text
+                  label: "author"
+                .text:
+                  type: text
+                  label: "content"
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Author" 
+              description: "(unit: px)"               
+            header.section.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for position"  
+              description: "(unit: px)"
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                           
+
+
+                  
+                      

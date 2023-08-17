@@ -1,0 +1,122 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        # content:
+        #   type: tab
+        #   title: "Content"
+
+        #   fields:
+        #     header.section.title.heading:
+        #       type: text
+        #       autofocus: true
+        #       label: "Title"
+        #       validate:
+        #         required: true
+        #     header.section.title.subHeading:
+        #       type: text
+        #       label: "Sub Title"
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            # header.section.settings.title.show:
+            #   type: select
+            #   label: "Show Title"
+            #   default: 1
+            #   options:
+            #     0: No
+            #     1: Yes
+            header.section.settings.img.show:
+              type: select
+              label: "Show Image"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            # header.section.settings.title.fontsize:
+            #   type: text
+            #   label: "Font size for Title" 
+            #   description: "(unit: px)"               
+            # header.section.settings.subtitle.fontsize:
+            #   type: text
+            #   label: "Font size for Sub Title"  
+            #   description: "(unit: px)"
+            header.section.settings.text.alignment:
+              type: select
+              label: "Text alignment"  
+              default: 1
+              options:
+                0: Left
+                1: Center
+                2: Right
+            header.section.settings.txtcolor:
+              type: colorpicker
+              label: "Text color"
+              default: '#555555'
+
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool   
+            header.section.settings.column:
+              type: select
+              label: "content width"
+              default: 3              
+              options:
+                1: "One column"
+                2: "two columns"
+                3: "1/3 full width"
+                4: "2/3 full width"
+                5: "1/4 full width"
+                6: "1/6 full width"
+            header.section.card.date.show:
+              type: select
+              label: "Show Date"
+              default: 0
+              options:
+                0: No
+                1: Yes
+            header.section.card.taxonomy.show:
+              type: select
+              label: "Show Taxonomy"
+              default: 0
+              options:
+                0: No
+                1: Yes
+            header.section.card.open.type:
+              type: select
+              label: "Open in same window?"
+              default: 0
+              options:
+                0: Yes
+                1: No         
+            header.section.wrap.container:
+              type: select
+              label: "wrap container?"
+              default: 0
+              options:
+                0: No
+                1: Yes      
+
+                  
+                      

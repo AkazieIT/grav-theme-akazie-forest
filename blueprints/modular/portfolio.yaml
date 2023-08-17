@@ -1,0 +1,151 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        # content:
+        #   type: tab
+        #   title: "Content"
+
+        #   fields:
+        #     header.section.title.heading:
+        #       type: text
+        #       autofocus: true
+        #       label: "Title"
+        #       validate:
+        #         required: true
+        #     header.section.title.text:
+        #       type: textarea
+        #       label: "Text"
+        #       rows: 3
+
+
+            # header.section.content.portfolios:
+            #   name: portfolios
+            #   type: list
+            #   label: "portfolio"
+            #   collapsed: true
+            #   fields:
+            #     .img:
+            #       type: file
+            #       label: "Choose Image"
+            #       size: large
+            #       destination: 'theme://images'
+            #       multiple: false
+            #       markdown: true
+            #       description: "upload image"
+            #       accept:
+            #         - image/* 
+            #     .alt:
+            #       type: text
+            #       label: "Alt-tag(is also the alt-tag)"
+            #     .title:
+            #       type: text
+            #       label: "Item title"
+            #     .link.linkText:
+            #       type: text
+            #       label: "Website"
+            #     .link.url:
+            #       type: text
+            #       label: "link"
+            #     .open.type:
+            #       type: select
+            #       label: "Open in same window?"
+            #       default: 0
+            #       options:
+            #         0: Yes
+            #         1: No         
+            #     .link.icon:
+            #       type: file
+            #       label: "Choose icon"
+            #       size: large
+            #       destination: 'theme://images'
+            #       multiple: false
+            #       markdown: true
+            #       description: "upload icon"
+            #       accept:
+            #         - image/* 
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            # header.section.settings.title.show:
+            #   type: select
+            #   label: "Show Title"
+            #   default: 1
+            #   options:
+            #     0: No
+            #     1: Yes
+            # header.section.settings.title.fontsize:
+            #   type: text
+            #   label: "Font size for Title" 
+            #   description: "(unit: px)"               
+
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool                       
+            header.section.settings.column:
+              type: select
+              label: "content width"
+              default: 3              
+              options:
+                1: "One column"
+                2: "2 columns"
+                3: "3 columns"
+                4: "4 columns"
+                5: "5 columns"
+                6: "6 columns"   
+            header.section.card.date.show:
+              type: select
+              label: "Show Date"
+              default: 0
+              options:
+                0: No
+                1: Yes
+            header.section.card.taxonomy.show:
+              type: select
+              label: "Show Taxonomy"
+              default: 0
+              options:
+                0: No
+                1: Yes
+            header.section.card.content.show:
+              type: select
+              label: "Show Content"
+              default: 0
+              options:
+                0: No
+                1: Yes                
+            header.section.card.open.type:
+              type: select
+              label: "Open in same window?"
+              default: 0
+              options:
+                0: Yes
+                1: No         
+            header.section.wrap.container:
+              type: select
+              label: "wrap container?"
+              default: 0
+              options:
+                0: No
+                1: Yes                        

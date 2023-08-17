@@ -1,0 +1,85 @@
+{% extends 'partials/base.html.twig' %}
+{% set portfolio_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
+{% set collection = page.collection() %}
+{% set portfolio = page.find(header_var('portfolio_url')|defined(theme_var('portfolio-page'))) %}
+{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
+{% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
+{% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
+
+
+
+{% block hero %}
+    {% include 'partials/hero.html.twig' with {id: 'portfolio-hero', content: page.content, hero_image: portfolio_image} %}
+{% endblock %}
+
+{% block content %}
+    <section id="body-wrapper" class="section portfolio-listing">
+        <section class="container {{ grid_size }}">
+
+        {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+            {% include 'partials/breadcrumbs.html.twig' %}
+        {% endif %} #}
+
+        {% embed 'partials/layout.html.twig' with {portfolio: page} %}
+            {% block item %}
+
+                {% if page.header.section.card.date.show == 1 %}
+                    {% set show_date = true %}
+                {% else %}
+                    {% set show_date = false %}
+                {% endif %}
+
+                {% if page.header.section.card.taxonomy.show == 1 %}
+                    {% set show_tax = true %}
+                {% else %}
+                    {% set show_tax = false %}
+                {% endif %}
+
+                {% if page.header.section.card.content.show == 1 %}
+                    {% set show_content = true %}
+                {% else %}
+                    {% set show_content = false %}
+                {% endif %}
+
+                {% if page.header.section.card.open.type == 1 %}
+                    {% set card_opentype = true %}
+                {% else %}
+                    {% set card_opentype = false %}
+                {% endif %}
+
+                {% set masonry = false %}
+
+
+                <div class="bricklayer row">
+                    {% for child in collection %}
+                    <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
+                                {% elseif page.header.section.settings.column == 2 %}col-lg-6
+                                {% elseif page.header.section.settings.column == 3 %}col-lg-4
+                                {% elseif page.header.section.settings.column == 4 %}col-lg-8
+                                {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                                {% elseif page.header.section.settings.column == 6 %}col-lg-2
+                                {% else %}col-lg-6{% endif %}">                
+                        {% include 'partials/portfolio-list-item.html.twig' with {portfolio: page, page: child, 'show_date':show_date, 'show_tax':show_tax, 'show_content':show_content, 'card_opentype':card_opentype, 'masonry':masonry} %}
+                    </div>    
+                    {% endfor %}
+                </div>
+
+                {# {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+                    <div id="listing-footer">
+                        {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
+                    </div>
+                {% endif %} #}
+
+            {% endblock %}
+
+            {# {% block sidebar %}
+                {% include 'partials/sidebar.html.twig' %}
+            {% endblock %} #}
+        {% endembed %}
+        </section>
+    </section>
+
+{% endblock %}
+
+
+

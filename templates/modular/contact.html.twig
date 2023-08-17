@@ -1,0 +1,93 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="contact-area">
+    <div class="container">
+        <div class="primary-title">
+            {% if page.header.section.settings.title.show %}
+            <h3>{{page.header.section.title.heading}}</h3>
+            {% endif %}
+            <p class="text_lg ff_fira_sans text_secondary">{{page.header.section.title.text}}
+            </p>
+        </div>
+        <div class="address-wrapper">
+            <div class="secondary-title address-blk border_radius_sm mb-0">
+                <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
+                <h3>{{page.header.section.content.left.title}}</h3>
+
+                <div class="address">
+                    <h6 class="text-uppercase">{{page.header.section.content.left.addressTitle}}</h6>
+                    <p>{{page.header.section.content.left.addressText | nl2br | raw }}
+                    </p>
+                </div>
+                <div class="address mb-0">
+                    <h6 class="text-uppercase">{{page.header.section.content.left.contactTitle}}</h6>
+                    <p>{{page.header.section.content.left.contactNumber}} <br>
+                        {{page.header.section.content.left.contactEmail}}
+                    </p>
+                </div>
+            </div>
+            {% if page.header.section.settings.map.show %}
+            <div class="map-blk box_shadow_black036_16 section-map modular section-map">
+                {% if page.header.scale == 1 %}
+                    {% set scale = 3 / 4 %}
+                {% elseif page.header.scale == 2 %}
+                    {% set scale = 9 / 16 %}
+                {% elseif page.header.scale == 3 %}
+                    {% set scale = 1 / 2.35 %}
+                {% elseif page.header.scale == 4 %}
+                    {% set scale = 1 / 1 %}
+                {% elseif page.header.scale == 5 %}
+                    {% set scale = 4 / 3 %}
+                {% endif %}            
+                {% if theme_var('map.type') == 'google' %}
+                    <div class="media-container">
+                        <div class="js-map media" data-scale="{{ scale }}"
+                            map-style='{{ page.header.map.style }}'
+                            map-controls='{{ page.header.map.controls }}'
+                            map-lat='{{ page.header.map.latitude }}'
+                            map-markertitle='{{ page.header.map.markertitle }}'
+                            map-infowindow='<div class="poi-info-window gm-style"><div class="title">{{ page.header.map.markertitle }}</div><div class="address">{{ page.header.map.infowindow|nl2br }}</div></div>'
+                            map-lon='{{ page.header.map.longitude }}'
+                            map-zoom='{{ page.header.map.zoom }}' style="height:416px"></div>
+                    </div>
+                {% elseif theme_var('map.type') == 'osm' %}
+                    <div class="media-container">
+                        <div class="js-map media" data-scale="{{ scale }}" id="js-map"
+                            map-lat='{{ page.header.map.latitude }}'
+                            map-lon='{{ page.header.map.longitude }}'
+                            map-zoom='{{ page.header.map.zoom }}'
+                            map-markertitle='{{ page.header.map.markertitle }}'
+                            map-infowindow='{{ page.header.map.infowindow | nl2br}}'
+                            map-controls='{{ page.header.map.controls }}' style="height:416px"><div class="js-map-popup" id="popup"></div></div>
+                    </div>
+                {% endif %}
+
+                {# <iframe class="d-block w-100 border_radius_sm"
+                    src="{{page.header.section.content.right.map.script}}"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe> #}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+{% if page.header.section.settings.bgcolor %}
+.contact-area{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.secondary-title h3{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.section.settings.subtitle.fontsize %}
+.secondary-title h6{
+    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+
+
+</style>

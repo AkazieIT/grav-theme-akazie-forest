@@ -1,0 +1,119 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+
+            header.section.title.heading:
+              type: text
+              autofocus: true
+              label: "Title"
+              validate:
+                required: true
+            header.section.title.subHeading:
+              type: text
+              label: "Sub Title"
+
+            header.section.content.members:
+              name: cards
+              type: list
+              label: "member"
+              collapsed: true
+              fields:
+                .img:
+                  type: file
+                  label: "Choose Image"
+                  size: large
+                  destination: 'theme://images'
+                  multiple: false
+                  markdown: true
+                  description: "upload image"
+                  accept:
+                    - image/* 
+                .alt:
+                  type: text
+                  label: "Alt-tag(is also the alt-tag)"
+                .designation:
+                  type: text
+                  label: "position"
+                .name:
+                  type: text
+                  label: "name"
+                .mail:
+                  type: text
+                  label: "email"
+                .linkedin.linkedin_user:
+                  type: text
+                  label: "Linkedin Username"
+                .linkedin.linkedinProfile:
+                  type: text
+                  label: "Linkedin Profile"
+                .phone:
+                  type: text
+                  label: "phone number"
+                .additional_txt:
+                  type: textarea
+                  label: "Additional Text"
+                  rows: 2
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Title" 
+              description: "(unit: px)"               
+            header.section.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for Sub Title"  
+              description: "(unit: px)"
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool          
+            header.section.settings.column:
+              type: select
+              label: "content width"
+              default: 3              
+              options:
+                1: "One column"
+                2: "two columns"
+                3: "1/3 full width"
+                4: "2/3 full width"
+                5: "1/4 full width"
+                6: "1/6 full width"                                 
+
+
+
+                  
+                      

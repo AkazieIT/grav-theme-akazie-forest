@@ -1,0 +1,39 @@
+<div class="{{card_col}} ">
+    <div class="_card">
+        {% if show_img %}
+            {% set image = page.media.images|first %}
+            {% if image %}
+            <div class="card_image">
+                <a href="{{ page.url }}">{{ image.cropZoom(800,500).html|raw }}</a>
+            </div>
+            {% endif %}
+        {% endif %}    
+        <div class="card_header">
+            {% if show_date %}
+            <div class="card-subtitle text-gray">
+                {% include 'partials/blog/date.html.twig' %}
+            </div>
+            {% endif %}
+            <div class="card_title">
+            {% include 'partials/blog/title.html.twig' with {title_level: 'h5'} %}
+            </div>
+        </div>
+        <div class="card_body">
+            {% if page.summary != page.content %}
+                {{ page.summary|truncate(150, true)|raw }}
+            {% else %}
+                {{ page.content|truncate(150, true)|raw }}
+            {% endif %}
+        </div>
+        <div class="card_link">
+            <a href="{{ page.url }}" class="cmn-link" {% if card_opentype %}target="_blank"{% endif %}>
+                Zum Angebot<i class="far fa-long-arrow-right"></i>
+            </a>    
+        </div>
+        {% if show_tax %}
+        <div class="card-footer">
+            {% include 'partials/blog/taxonomy.html.twig' %}
+        </div>
+        {% endif %}
+    </div>
+</div>

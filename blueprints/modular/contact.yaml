@@ -1,0 +1,185 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+            header.section.title.heading:
+              type: text
+              autofocus: true
+              label: "Title"
+            header.section.title.text:
+              type: textarea
+              label: "Text"
+            header.section.content.left.subtitle:
+              type: textarea
+              label: "Sub Title(map)"
+            header.section.content.left.title:
+              type: text
+              label: "Title(map)"
+            header.section.content.left.addressTitle:
+              type: text
+              label: "Address label"
+            header.section.content.left.addressText:
+              type: text
+              label: "Address"
+            header.section.content.left.contactTitle:
+              type: text
+              label: "Contact label"
+            header.section.content.left.contactNumber:
+              type: text
+              label: "phone number"
+            header.section.content.left.contactEmail:
+              type: text
+              label: "email"
+        
+            columns:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  fields:
+                    mapsettings:
+                      type: section
+                      title: "Map settings"
+                      underline: true
+                      fields:
+                        header.map.latitude:
+                          type: text
+                          label: "Latitude"
+                          size: small
+                          validate:
+                            required
+                        header.map.longitude:
+                          type: text
+                          label: "Longitude"
+                          size: small
+                          validate:
+                            required
+                        header.map.zoom:
+                          type: select
+                          label: "Zoom"
+                          default: 15
+                          size: small
+                          options:
+                            1: 1 (World)
+                            2: 2
+                            3: 3
+                            4: 4
+                            5: 5 (Landmass/continent)
+                            6: 6
+                            7: 7
+                            8: 8
+                            9: 9
+                            10: 10 (City)
+                            11: 11
+                            12: 12
+                            13: 13
+                            14: 14
+                            15: 15 (Streets)
+                            16: 16
+                            17: 17
+                            18: 18
+                            19: 19
+                            20: 20 (Buildings)
+                        header.map.controls:
+                          type: toggle
+                          label: "Controls"
+                          highlight: 1
+                          default: 1
+                          options:
+                            0: Aus
+                            1: An
+                          validate:
+                            type: bool
+                        header.scale:
+                          type: select
+                          label: "Format"
+                          default: 1
+                          size: medium
+                          options:
+                            1: "4:3"
+                            2: "16:9(Full HD)"
+                            3: "2.35:1(Widescreen)"
+                            4: "1:1(Square)"
+                            5: "3:4(Portrait)"
+                        header.map.style:
+                          type: textarea
+                          style: vertical
+                          label: "Map style (only with Google Maps)"
+                          rows: 8
+                column2:
+                  type: column
+                  fields:
+                    mapinfo:
+                      type: section
+                      title: "Map info"
+                      underline: true
+                      fields:
+                        header.map.description:
+                          type: text
+                          style: vertical
+                          label: "Map description"
+                        header.map.markertitle:
+                          type: text
+                          style: vertical
+                          label: "Marker title"
+                        header.map.infowindow:
+                          type: textarea
+                          rows: 4
+                          style: vertical
+                          label: "Info window"
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.map.show:
+              type: select
+              label: "Show map"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.show:
+              type: select
+              label: "Show Title"
+              default: 1
+              options:
+                0: No
+                1: Yes
+            header.section.settings.title.fontsize:
+              type: text
+              label: "Font size for Author" 
+              description: "(unit: px)"               
+            header.section.settings.subtitle.fontsize:
+              type: text
+              label: "Font size for position"  
+              description: "(unit: px)"
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show Post module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool               
+
+             

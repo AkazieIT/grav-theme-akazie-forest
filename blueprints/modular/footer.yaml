@@ -1,0 +1,61 @@
+title: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        inhalt:
+          type: tab
+          title: "Content"
+          fields:
+            header.section.content.left.heading:
+              type: text
+              label: "heading"
+            header.section.content.left.followText:
+              type: text
+              label: "follow title"    
+            header.section.content.left.socials:
+              name: social
+              type: list
+              label: "social link"
+              collapsed: true
+              fields:
+                .icon:
+                  type: pagemediaselect
+                  label: "icon"
+                .link:
+                  type: text
+                  label: "link"
+
+            header.section.content.left.mail:
+              type: text
+              label: "email"
+            header.section.content.left.phone:
+              type: text
+              label: "phone number"              
+            header.section.content.right.navigation.title:
+              type: text
+              label: "Navigation block"
+            header.section.content.right.navigation.nav1:
+              type: text
+              label: "first item menu"              
+            header.section.content.right.navigation.nav2:
+              type: text
+              label: "second item menu"
+            header.section.content.right.navigation.nav3:
+              type: text
+              label: "third item menu"
+            header.section.content.right.address.title:
+              type: text
+              label: "Address block"
+            header.section.content.right.address.addressText:
+              type: text
+              label: "address"
+            header.section.content.right.openningHour.title:
+              type: text
+              label: "Open Hour block"
+            header.section.content.right.openningHour.openningHourText:
+              type: text
+              label: "open hour"                                          

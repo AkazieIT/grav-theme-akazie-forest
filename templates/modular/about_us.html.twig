@@ -1,0 +1,105 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="about-us-area home_page seciont_wrap">
+    <div class="row container">
+        {% if page.header.section.settings.title.show %}
+        <div class="{% if page.header.section.settings.ttl.column == 1 %}col-12 col-md-12
+                    {% elseif page.header.section.settings.ttl.column == 2 %}col-12 col-md-6
+                    {% elseif page.header.section.settings.ttl.column == 3 %}col-12 col-md-4
+                    {% elseif page.header.section.settings.ttl.column == 4 %}col-12 col-md-8
+                    {% elseif page.header.section.settings.ttl.column == 5 %}col-6 col-md-3
+                    {% elseif page.header.section.settings.ttl.column == 6 %}col-4 col-md-2
+                    {% else %}col-12 col-md-6{% endif %}">         
+            <div class="primary-title">
+                <h2>{{page.header.section.heading.title}}</h2>
+                <p class="text_lg ff_fira_sans text_secondary">{{page.header.section.text}}
+                </p>
+            </div>
+        </div>    
+        {% endif %}
+        {# <div class="about-g-wrapper"> #}
+            {# <div class="sec-img"> #}
+            <div class="{% if page.header.section.settings.img.column == 1 %}col-12 col-md-12
+                    {% elseif page.header.section.settings.img.column == 2 %}col-12 col-md-6
+                    {% elseif page.header.section.settings.img.column == 3 %}col-12 col-md-4
+                    {% elseif page.header.section.settings.img.column == 4 %}col-12 col-md-8
+                    {% elseif page.header.section.settings.img.column == 5 %}col-6 col-md-3
+                    {% elseif page.header.section.settings.img.column == 6 %}col-4 col-md-2
+                    {% else %}col-12 col-md-6{% endif %}  sec-img">         
+
+                {# {% if page.header.scale == 1 %}
+                    {% set resize = 3 / 4 %}
+                {% elseif page.header.scale == 2 %}
+                    {% set resize = 9 / 16 %}
+                {% elseif page.header.scale == 3 %}
+                    {% set resize = 1 / 2.35 %}
+                {% elseif page.header.scale == 4 %}
+                    {% set resize = 1 %}
+                {% elseif page.header.scale == 5 %}
+                    {% set resize = 4 / 3 %}
+                {% endif %} #}
+
+                {% set img = (page.header.section.content.left.image | first).name %}
+                {# {% set image = "{{ url('theme://images/' ~ img)  }}" %} #}
+                <img  src="{{ url('theme://images/' ~ img)  }}" alt="" class="img-fluid">
+{# 
+{% if page.header.imagesizing == 1 %}
+    {% if page.header.section.settings.img.column == 1  %}
+            <picture>
+          <source media="(min-width:992px)" srcset="{% if page.header.cropzoom %}{{ image.resize(1250,1250 * resize).url }}{% else %}{{ image.cropZoom(1250,1250 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(2500,2500 * resize).url }}{% else %}{{ image.cropZoom(2500,2500 * resize).url }}{% endif %} 2x">
+          <source media="(min-width:870px)" srcset="{% if page.header.cropzoom %}{{ image.resize(840,840 * resize).url }}{% else %}{{ image.cropZoom(840,840 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(1680,1680 * resize).url }}{% else %}{{ image.cropZoom(1680,1680 * resize).url }}{% endif %} 2x">
+          <source media="(min-width:500px)" srcset="{% if page.header.cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(1020,1020 * resize).url }}{% else %}{{ image.cropZoom(1020,1020 * resize).url }}{% endif %} 2x">
+          <source media="(max-width:499px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+              <img class="media" style="width:100%;" title="{{ page.header.title }}" alt="{{ page.header.alt }}" src="{% if page.header.cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+            </picture>
+    {% else %}
+            <picture>
+          <source media="(min-width:1220px)" srcset="{% if page.header.cropzoom %}{{ image.resize(610,610 * resize).url }}{% else %}{{ image.cropZoom(610,610 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+        <source media="(min-width:992px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(800,800 * resize).url }}{% else %}{{ image.cropZoom(800,800 * resize).url }}{% endif %} 2x">
+      <source media="(min-width:500px)" srcset="{% if page.header.cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+    <source media="(max-width:499px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
+              <img class="media" style="width:100%;" title="{{ page.header.title }}" alt="{{ page.header.alt }}" src="{% if page.header.cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+            </picture>
+    {% endif %}
+{% else %}
+    <img class="media title="" alt="" src="{% if page.header.cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+
+{% endif %}
+ #}
+            </div>
+            {# <div class="cmn-content about-content"> #}
+            <div class="{% if page.header.section.settings.txt.column == 1 %}col-12 col-md-12
+                    {% elseif page.header.section.settings.txt.column == 2 %}col-12 col-md-6
+                    {% elseif page.header.section.settings.txt.column == 3 %}col-12 col-md-4
+                    {% elseif page.header.section.settings.txt.column == 4 %}col-12 col-md-8
+                    {% elseif page.header.section.settings.txt.column == 5 %}col-6 col-md-3
+                    {% elseif page.header.section.settings.txt.column == 6 %}col-4 col-md-2
+                    {% else %}col-12 col-md-6{% endif %}  cmn-content about-content">         
+
+                <h6 class="text-uppercase">{{page.header.section.content.right.subtitle}}</h6>
+                <h3>{{page.header.section.content.right.title}}</h3>
+                <p>{{page.header.section.content.right.text}}</p>
+                <a href="{{page.header.section.content.right.link}}" class="box-btn" {% if header.section.content.link.open.type %}target="_blank"{% endif %}>
+                    {{page.header.section.content.right.anchor}}<i class="fal fa-angle-right"></i>
+                </a>
+            </div>
+        {# </div> #}
+    </div>
+</div>
+{% endif %}
+<style>
+{% if page.header.section.settings.bgcolor %}
+.about-us-area.home_page{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.cmn-content h3{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.section.settings.subtitle.fontsize %}
+.cmn-content h6{
+    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+</style>

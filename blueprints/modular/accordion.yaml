@@ -1,0 +1,76 @@
+
+form:
+  validation: loose
+
+  fields:
+
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: "Content"
+
+          fields:
+
+            header.content.faqs:
+              name: faqs
+              type: list
+              label: "faq"
+              collapsed: true
+              fields:
+                .heading:
+                  type: text
+                  label: "Question"
+                .text:
+                  type: text
+                  label: "Answer"
+                .anchor:
+                  type: text
+                  label: "anchor"
+                .anchor_link:
+                  type: text
+                  label: "anchor link"
+                .open.type:
+                  type: select
+                  label: "Open in same window?"
+                  default: 0
+                  options:
+                    0: Yes
+                    1: No         
+
+        settings:
+          type: tab
+          title: "Settings"
+          fields:
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: "Background color"
+              default: '#ffffff'
+            header.section.settings.column:
+              type: select
+              label: "content width"
+              default: 3              
+              options:
+                1: "One column"
+                2: "two columns"
+                3: "1/3 full width"
+                4: "2/3 full width"
+                5: "1/4 full width"
+                6: "1/6 full width"
+            header.section.settings.module.enabled:
+              type: toggle
+              label: "Show FAQ module"
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool               
+
+
+                  
+                      

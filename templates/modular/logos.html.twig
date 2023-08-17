@@ -1,0 +1,41 @@
+{% if page.header.sec_two.settings.module.enabled %}
+<div class="brand-area">
+    <div class="container">
+        <div class="secondary-title text-center">
+            {% if page.header.sec_two.settings.title.show %}
+                <h6 class="text-uppercase">{{page.header.sec_two.subtitle}}</h6>
+                <h3>{{page.header.sec_two.title}}</h3>
+            {% endif %} 
+        </div>
+        <div class="brand-flex-wrapper d-flex flex-wrap justify-content-center">
+            {% for brandLogo in page.header.sec_two.logos %}
+            <div class="brand-item d-inline-flex align-items-center justify-content-center">
+                <a href="{{brandLogo.link}}" {% if brandLogo.open.type %}target="_blank"{% endif %}>  
+                {% if brandLogo.src %}
+                    {% set logo_file = (brandLogo.src|first).name %}
+                    <img id="headerlogo" src="{{ url('theme://images/' ~ logo_file)  }}" alt="{{ brandLogo.name }}" class="img-fluid" />
+                {% endif %}                          
+                </a>    
+            </div>
+            {% endfor %}
+        </div>        
+    </div>
+</div>
+{% endif %}
+<style>
+{% if page.header.sec_two.settings.bgcolor %}
+.brand-area{
+    background-color: {{page.header.sec_two.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.sec_two.settings.title.fontsize %}
+.secondary-title h3{
+    font-size: {{page.header.sec_two.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.sec_two.settings.subtitle.fontsize %}
+.secondary-title h6{
+    font-size: {{page.header.sec_two.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+</style>

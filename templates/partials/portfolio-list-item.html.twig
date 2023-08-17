@@ -1,0 +1,47 @@
+<div class="portfolio_wrap">
+    <div class="product-item">
+        {% set image = page.media.images|first %}
+        {% if image %}
+        <div class="product-img">
+            {% if masonry %}
+                <a href="{{ page.url }}">{{ image.html|raw }}</a>
+            {% else %}
+                <a href="{{ page.url }}">{{ image.cropZoom(600,800).html|raw }}</a>            
+            {% endif %}    
+        </div>
+        {% endif %}
+        {# <div class="product-header">
+            {% if show_date %}
+            <div class="product-subtitle text-gray">
+                {% include 'partials/portfolio/date.html.twig' %}
+            </div>
+            {% endif %}
+            <div class="product_title">
+            {% include 'partials/portfolio/title.html.twig' with {title_level: 'h5'} %}
+            </div>
+        </div> #}
+        <div class="product-content">
+            {% if show_date %}
+            <div class="product-subtitle text-gray">
+                {% include 'partials/portfolio/date.html.twig' %}
+            </div>
+            {% endif %}
+            <div class="product_title">
+            {% include 'partials/portfolio/title.html.twig' with {title_level: 'h4', 'card_opentype': card_opentype} %}
+            </div>
+            {% if show_content %}
+                {% if page.summary != page.content %}
+                    {{ page.summary|truncate(150, true)|raw }}
+                {% else %}
+                    {{ page.content|truncate(150, true)|raw }}
+                {% endif %}
+            {% endif %}    
+        </div>
+
+        {% if show_tax %}
+        <div class="card-footer">
+            {% include 'partials/portfolio/taxonomy.html.twig' %}
+        </div>
+        {% endif %}
+    </div>
+</div>

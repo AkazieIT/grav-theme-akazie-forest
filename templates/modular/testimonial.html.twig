@@ -1,0 +1,68 @@
+{% if page.header.section.settings.module.enabled %}
+<div class="quote-area">
+    <div class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for slide in page.header.section.slides %}
+                {% set icon = (slide.icon | first).name %}
+                {% if loop.first %}
+                <div class="carousel-item active">
+                    <div class="quote-item">
+                        <span class="quote-inverted d-inline-block">
+                            <img src="{{ url('theme://images/' ~ icon)  }}" alt="Inverted Icon">
+                        </span>
+                        <p>{{slide.text}}</p>
+                        <div class="quote-author">
+                            <span class="designation">{{slide.position}}</span>
+                            <h6>{{slide.author}}</h6>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="carousel-item">
+                    <div class="quote-item">
+                        <span class="quote-inverted d-inline-block">
+                            <img src="{{ url('theme://images/' ~ icon)  }}" alt="Inverted Icon">
+                        </span>
+                        <p>{{slide.text}}</p>
+                        <div class="quote-author">
+                            <span class="designation text-capitalize">{{slide.position}}</span>
+                            <h6>{{slide.author}}</h6>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <i class="fal fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <i class="fal fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<style>
+{% if page.header.section.settings.bgcolor %}
+.quote-area{
+    background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.title.fontsize %}
+.quote-author h6{
+    font-size: {{page.header.section.settings.title.fontsize}}px;
+}
+{% endif %}
+{% if page.header.section.settings.subtitle.fontsize %}
+.designation{
+    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
+}
+{% endif %}
+
+
+</style>

@@ -1,0 +1,83 @@
+
+{% set logo_desktop = theme_var('header.logo.desktop') %}
+{% set logo_mobile = theme_var('header.logo.mobile') %}
+
+<div class="mobile_menu" id="mobile_menu">
+    <div class="close-div">
+        schliessen
+        <button id="close_menu"><svg xmlns="http://www.w3.org/2000/svg" width="22.825" height="22.825"
+                viewBox="0 0 22.825 22.825">
+                <path id="xmark-regular"
+                    d="M22.273,98.877a1.709,1.709,0,0,0-2.417-2.417l-8.486,8.486L2.877,96.453A1.709,1.709,0,0,0,.46,98.87l8.486,8.486L.453,115.848a1.709,1.709,0,1,0,2.417,2.417l8.486-8.486,8.493,8.493a1.709,1.709,0,1,0,2.417-2.417L13.78,107.37Z"
+                    transform="translate(0.05 -95.95)" fill="#1d1d1d" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="mobile_menu-inner">
+        {% include 'partials/navigation_mobile.html.twig' %}
+        <div class="m_menu_footer">
+            <div class="ft-widget">
+                <h3>Öffnungszeiten</h3>
+                <p>Montag bis Freitag <br>
+                    8.30-12.00 Uhr und <br>
+                    13.30-16.30 Uhr</p>
+            </div>
+            <div class="ft-widget">
+                <h3>Adresse</h3>
+                <ul class="ft-nv">
+                    <p>Musterfirma <br> Musterstrasse 66 <br> Bern 3004 template.ch</p>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="header-area  {{ theme_var('header.fixed.option') ? 'fixed' : '' }} {% if theme_var('nav.fittocontent') == '1' %}fittowidth{% endif %}">
+    <div class="container-fluid cs-padding header-inner">
+        <div class="row align-items-center">
+            <div class="col-7">
+                <div class="header-left d-flex align-items-center">
+                    <a href="#" class="logo d-inline-block">
+                        {% if theme_var('header.displaylogo') == 1 %}
+                            {% if logo_desktop %}
+                                {% set logo_file = (logo_desktop|first).name %}
+                                <img id="headerlogo" src="{{ url('theme://images/logo/' ~ logo_file)  }}"  class="img-fluid d-none d-lg-block" alt="{{ site.name }}" />
+                            {% endif %}                        
+                            {% if logo_mobile %}
+                                {% set logo_file = (logo_mobile|first).name %}
+                                <img id="headerlogo" src="{{ url('theme://images/logo/' ~ logo_file)  }}"  class="img-fluid d-lg-none d-xl-none" alt="{{ site.name }}" />
+                            {% endif %}                        
+                        {% endif %}
+                    </a>
+                    {% include 'partials/navigation.html.twig' %}
+
+                </div>
+            </div>
+
+            <div class="col-5">
+                <div class="header-right d-flex align-items-center justify-content-end">
+                    <a href="{{url('contact')}}" class="cmn-link type-2"><i class="fas fa-phone"></i>
+                        Kontakt</a>
+                    {% if theme_var('nav.button.enabled') %}    
+                    <a href="{{ base_url }}{{ theme_var('nav.button.link') }}" class="custom-btn">{{ theme_var('nav.button.text') }}<i class="far fa-angle-right"></i>
+                    {% endif %}
+                    </a>
+                    <button id="mobile_bar" class="mobile-menu d-lg-none d-xl-none  bg-transparent border-0 p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21">
+                            <g id="Group_1" data-name="Group 1" transform="translate(0 0.718)">
+                                <line id="Line_1" data-name="Line 1" x2="30" transform="translate(0 0.282)" fill="none"
+                                    stroke="#7b9b50" stroke-width="2" />
+                                <line id="Line_2" data-name="Line 2" x2="30" transform="translate(0 9.282)" fill="none"
+                                    stroke="#7b9b50" stroke-width="2" />
+                                <line id="Line_3" data-name="Line 3" x2="22.657" transform="translate(0 19.282)"
+                                    fill="none" stroke="#7b9b50" stroke-width="2" />
+                            </g>
+                        </svg>
+
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="graybar"></div>
