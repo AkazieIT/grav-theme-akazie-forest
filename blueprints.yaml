@@ -5,8 +5,8 @@ version: 0.1.0
 description: A Forest Theme
 icon: rebel
 author:
-  name: Alex
-  email: webdev.soultions@gmail.com
+  name: Tamara
+  email: support@akazie.com
 homepage: https://github.com/AkazieIT/grav-theme-akazie-forest
 demo: http://demo.yoursite.com
 keywords: grav, theme, etc
@@ -108,7 +108,7 @@ form:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                
+                type: bool
             header.fixed.option:
               type: toggle
               label: "Fixed Header"
@@ -119,7 +119,7 @@ form:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool    
+                type: bool
             header.nav.length:
               type: text
               label: "Number Max. Navigation points"
@@ -146,7 +146,7 @@ form:
                   type: text
                   label: "Navigation height (65-205)"
                   default: 85
-                
+
             nav.mobile:
               type: fieldset
               title:  "Mobile Navigation"
@@ -212,8 +212,8 @@ form:
                     label: "Button link"
                     show_all: false
                     show_modular: false
-                    show_root: true                  
-              
+                    show_root: true
+
         footer:
           type: fieldset
           title: "Footer"
@@ -233,7 +233,7 @@ form:
                   size: small
                   validate:
                     type: int
-                    required: true                  
+                    required: true
                 columns:
                   type: columns
                   fields:
@@ -281,12 +281,12 @@ form:
                       type: textarea
                       label: "Column Heading"
                       rows: 2
-                      size: large       
+                      size: large
                     .text:
                       type: textarea
                       label: "content"
                       rows: 5
-                      size: large                      
+                      size: large
                     .navigation.enabled:
                       type: toggle
                       label: "Show Navigation"
@@ -433,7 +433,7 @@ form:
                           label: "Link to the Sitemap"
                           show_all: false
                           show_modular: false
-                          show_root: false                  
+                          show_root: false
             footer.javascript:
               type: fieldset
               title: "Various footer stuff"
@@ -565,7 +565,7 @@ form:
               type: textarea
               label: "Custom HTML in head"
               rows: 2
-              size: large              
+              size: large
 
         map:
           type: fieldset
@@ -584,7 +584,7 @@ form:
             map.apikey:
               type: text
               label: "API-key (onle with GoogleMaps)"
-              size: large              
+              size: large
         blog:
           type: fieldset
           title: "Blog Defaults"
@@ -596,7 +596,7 @@ form:
               label: Blog Page
               help: The route to the blog page when working with blog sidebar
               size: medium
-              default: '/blog'                          
+              default: '/blog'
         portfolio:
           type: fieldset
           title: "Portfolio Defaults"
@@ -608,13 +608,13 @@ form:
               label: Portfolio Page
               help: The route to the portfolio page when working with portfolio sidebar
               size: medium
-              default: '/portfolio'                          
+              default: '/portfolio'
         other:
           type: fieldset
           title: "Other"
           collapsed: false
           collapsible: true
-          fields:              
+          fields:
             style.css:
               type: toggle
               label: "Use custom CSS file (please create file in theme directory akazie-forest/css/custom.css)"
