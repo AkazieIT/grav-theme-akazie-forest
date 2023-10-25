@@ -1,15 +1,128 @@
 en:
   THEME_AKAZIEForest:
     ADMIN:
+      TAB:
+        CONTENT: "Content"
+        SETTINGS: "Settings"
+      SECTION:
+        CONTENT: "Text Section"
+        MEDIA: "Media Section"
+        BUTTON: "Button Section"
       FIELDS:
         TITLE:
           LABEL: "Title"
         SUBTITLE:
-          LABEL: "Sub Title"
+          LABEL: "Subtitle"
         BANNER_IMG:
           LABEL: "Banner image"
-        MEDIA: 
+        MEDIA:
           LABEL: 'Media'
-            
+        SHOWTITLE:
+          LABEL: "Show title?"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        TITLESIZE:
+          LABEL: "Size title"
+          DESCRIPTION: "Unit is pixel"
+        SUBTITLESIZE:
+          LABEL: "Size subtitle"
+          DESCRIPTION: "Unit is pixel"
+        BG_COLOR:
+          LABEL: "Background color"
+        CONTENT:
+          LABEL: "Content"
+        CONTENT_TITLE:
+          TITLE: "Media Section"
+        ENABLED:
+          LABEL: "Show module?"
+        CONTAINER:
+          LABEL: "Show image or movie until the edge?"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        BUTTONS:
+          ANCHOR:
+            LABEL: "Button text"
+          ANCHORTWO:
+            LABEL: "Link text"
+          LINK:
+            LABEL: "Button link"
+          LINKTWO:
+            LABEL: "Link"
+          WINDOW:
+            LABEL: "Open button link in new tab?"
+            OPTIONS:
+              0: "Yes"
+              1: "No"
+          WINDOWTWO:
+            LABEL: "Open link in new tab?"
+            OPTIONS:
+              0: "Yes"
+              1: "No"
+        ICON:
+          LABEL: "Upload icon"
+
 de:
-  THEME_AKAZIEForest:          
+  THEME_AKAZIEForest:
+    THEME:
+    ADMIN:
+      TAB:
+        CONTENT: "Inhalt"
+        SETTINGS: "Einstellungen"
+      SECTION:
+        CONTENT: "Abschnitt mit Text"
+        MEDIA: "Abschnitt mit Multimedia"
+        BUTTON: "Abschnitt mit Links"
+      FIELDS:
+        TITLE:
+          LABEL: "Titel"
+        SUBTITLE:
+          LABEL: "Untertitel"
+        SHOWTITLE:
+          LABEL: "Titel anzeigen?"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        TITLESIZE:
+          LABEL: "Grösse Titel"
+          DESCRIPTION: "Angabe in Pixel"
+        SUBTITLESIZE:
+          LABEL: "Grösse Untertitel"
+          DESCRIPTION: "Angabe in Pixel"
+        BG_COLOR:
+          LABEL: "Hintergrundfarbe"
+        CONTENT:
+          LABEL: "Inhalt"
+        CONTENT_TITLE:
+          TITLE: "Abschnitt mit Bild"
+        MEDIA:
+          LABEL: "Video oder Bild Upload"
+        ENABLED:
+          LABEL: "Modul anzeigen?"
+        CONTAINER:
+          LABEL: "Video oder Bild bis ganz zum Rand anzeigen?"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        BUTTONS:
+          ANCHOR:
+            LABEL: "Text im Button"
+          ANCHORTWO:
+            LABEL: "Linktext"
+          LINK:
+            LABEL: "Link des Buttons"
+          LINKTWO:
+            LABEL: "Link"
+          WINDOW:
+            LABEL: "Link des Buttons in neuem Fenster öffnen?"
+            OPTIONS:
+              0: "Ja"
+              1: "Nein"
+          WINDOWTWO:
+            LABEL: "Link in neuem Fenster öffnen?"
+            OPTIONS:
+              0: "Ja"
+              1: "Nein"
+        ICON:
+          LABEL: "Icon hochladen"
