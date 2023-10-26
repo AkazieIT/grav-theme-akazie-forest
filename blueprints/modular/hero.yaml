@@ -40,30 +40,30 @@ form:
               fields:
                 header.section.content.left.anchor:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.ANCHOR.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
                 header.section.content.left.link:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.LINK.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
                 header.section.content.button.open.type:
                   type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOW.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOW.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOW.OPTIONS.1
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
                 header.section.content.left.anchorTwo:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.ANCHORTWO.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ANCHOR.LABEL
                 header.section.content.left.linkTwo:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.LINKTWO.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINKTWO.LABEL
                 header.section.content.anchor.open.type:
                   type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOWTWO.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOWTWO.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONS.WINDOWTWO.OPTIONS.1
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
 
                 header.section.content.anchor.icon:
                   type: file
@@ -134,7 +134,7 @@ form:
             header.section.content.hero.square.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: '#B6D191'
+              default: '#fbfbfb'
             # header.section.settings.txt.column:
             #   type: select
             #   label: "Text content width"

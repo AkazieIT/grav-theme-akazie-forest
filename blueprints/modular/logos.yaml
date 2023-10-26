@@ -11,81 +11,78 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
             header.sec_two.title:
               type: text
               autofocus: true
-              label: "Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
               validate:
                 required: true
             header.sec_two.subtitle:
               type: text
-              label: "Sub Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
 
             header.sec_two.logos:
               name: logos
               type: list
-              label: "Logos"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
                 .name:
                   type: text
-                  label: "Logo Name(is also the alt-tag)"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.NAME.LABEL
                 .link:
                   type: text
-                  label: "URL"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
                 .src:
                   type: file
-                  label: "Choose Logo/Image"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                   size: large
                   destination: 'theme://images'
                   multiple: false
                   markdown: true
-                  description: "upload logo image"
+                  description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.DESCRIPTION
                   accept:
-                    - image/* 
+                    - image/*
                 .open.type:
                   type: select
-                  label: "Open in same window?"
-                  default: 0
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
+                  default: 1
                   options:
-                    0: Yes
-                    1: No                        
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.LOGOS.WINDOW.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.LOGOS.WINDOW.OPTIONS.1
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
             header.sec_two.settings.title.show:
               type: select
-              label: "Show Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
               default: 1
               options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
             header.sec_two.settings.title.fontsize:
               type: text
-              label: "Font size for Title" 
-              description: "(unit: px)"               
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
             header.sec_two.settings.subtitle.fontsize:
               type: text
-              label: "Font size for Sub Title"  
-              description: "(unit: px)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
             header.sec_two.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#fff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
             header.sec_two.settings.module.enabled:
               type: toggle
-              label: "Show Logo module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                       
-            
-                  
-                      
+                type: bool
