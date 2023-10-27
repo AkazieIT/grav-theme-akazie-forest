@@ -58,7 +58,7 @@ form:
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
                 .open.type:
                   type: select
-                  label: "THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
                   default: 0
                   options:
                     0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0

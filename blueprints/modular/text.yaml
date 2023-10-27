@@ -94,7 +94,7 @@ form:
               default: 1
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
             header.section.settings.title.fontsize:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL

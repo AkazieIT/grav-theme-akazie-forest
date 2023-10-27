@@ -17,7 +17,7 @@
         {% set show_img = false %}
     {% endif %}
 
-    {% if page.header.section.card.open.type == 1 %}
+    {% if page.header.section.card.open.type == 0 %}
         {% set card_opentype = true %}
     {% else %}
         {% set card_opentype = false %}
@@ -43,7 +43,7 @@
     {% if page.header.section.wrap.container == 1 %}
     </div>
     <div class="row container">  {# start row #}
-    {% endif %}    
+    {% endif %}
 {% endif %}
 
 <style>
@@ -57,13 +57,13 @@
 {% if page.header.section.settings.txtcolor %}
     color: {{page.header.section.settings.txtcolor}};
 {% endif %}
-{% if page.header.section.settings.text.alignment == 0 %}
+{% if page.header.section.settings.text.alignment == 1 %}
     text-align: left;
-{% elseif page.header.section.settings.text.alignment == 1 %}
-    text-align: center;
 {% elseif page.header.section.settings.text.alignment == 2 %}
+    text-align: center;
+{% elseif page.header.section.settings.text.alignment == 3 %}
     text-align: right;
-{% endif %} 
+{% endif %}
 }
 
 </style>
