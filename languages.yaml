@@ -9,6 +9,8 @@ en:
         MEDIA: "Media Section"
         BUTTON: "Button Section"
         CARDS: "Entry Section"
+        MAP: "Insert map"
+        MAP_INFO: "Map info"
       FIELDS:
         TITLE:
           LABEL: "Title"
@@ -85,6 +87,20 @@ en:
             OPTIONS:
               0: "No"
               1: "Yes"
+          PRICE:
+            LABEL: "Price"
+          POS:
+            LABEL: "Position"
+          TEAM_NAME:
+            LABEL: "Name"
+          EMAIL:
+            LABEL: "Email"
+          PHONE:
+            LABEL: "Phone number"
+          QUOTE:
+            LABEL: "Quote"
+          URL_TXT:
+            LABEL: "Link text"
         ALT:
           LABEL: "Alt-tag"
         IMAGE:
@@ -145,6 +161,44 @@ en:
             1: "Yes"
         DATE:
           LABEL: "Show date?"
+        SHOWCONT:
+          LABEL: "Show preview text?"
+        HEIGHT:
+          LABEL: "Height of the Spacer"
+          DESCRIPTION: "Unit is pixel"
+        BG_IMG:
+          LABEL: "Background image"
+        TEAM:
+          LABEL: "Add team members"
+        TEAM_WIDTH:
+          LABEL: "Amount of team members in one row"
+        LATITUDE:
+          LABEL: "Latitude"
+        LONGITUDE:
+          LABEL: "Longitude"
+        ZOOM:
+          LABEL: "Zoom"
+          OPTIONS:
+            1: "World"
+            5: "Country/Continent"
+            10: "City"
+            15: "Streets"
+            20: "Buildings"
+        CONTROLS:
+          LABEL: "Show Controls"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        MARKER:
+          LABEL: "Titel info field"
+          DESCRIPTION: "Shows up, if someone klicks on the marker in the map"
+        MARKER_TXT:
+          LABEL: "Text info field"
+        SHOW_MAP:
+          LABEL: "Show map"
+        FAQWIDTH:
+          LABEL: "Amount of questions on one row"
+
 
 
 de:
@@ -159,6 +213,8 @@ de:
         MEDIA: "Abschnitt mit Multimedia"
         BUTTON: "Abschnitt mit Buttons"
         CARDS: "Abschnitt mit Einträgen"
+        MAP: "Karte einfügen"
+        MAP_INFO: "Infos zur Karte"
       FIELDS:
         TITLE:
           LABEL: "Titel"
@@ -226,6 +282,8 @@ de:
             LABEL: "Name des Eintrags (Alt-Tag)"
           URL:
             LABEL: "Link-URL"
+          URL_TXT:
+            LABEL: "Linktext"
           UPLOAD:
             LABEL: "Datei hochladen"
             DESCRIPTION: "Bild oder Logo hochladen"
@@ -234,6 +292,18 @@ de:
             OPTIONS:
               0: "Nein"
               1: "Ja"
+          PRICE:
+            LABEL: "Preisangabe"
+          POS:
+            LABEL: "Position"
+          TEAM_NAME:
+            LABEL: "Name"
+          EMAIL:
+            LABEL: "E-mail"
+          PHONE:
+            LABEL: "Telefonnummer"
+          QUOTE:
+            LABEL: "Zitat"
         ALT:
           LABEL: "Alt-Tag"
         IMAGE:
@@ -294,3 +364,40 @@ de:
             1: "Ja"
         DATE:
           LABEL: "Datum anzeigen?"
+        SHOWCONT:
+          LABEL: "Vorschautext anzeigen?"
+        HEIGHT:
+          LABEL: "Höhe des Abstandes"
+          DESCRIPTION: "Angabe in Pixel"
+        BG_IMG:
+          LABEL: "Hintergrundbild"
+        TEAM:
+          LABEL: "Teammitglieder hinzufügen"
+        TEAM_WIDTH:
+          LABEL: "Anzahl Teammitglieder auf einer Zeile"
+        LATITUDE:
+          LABEL: "Breitengrad angeben"
+        LONGITUDE:
+          LABEL: "Längengrad angeben"
+        ZOOM:
+          LABEL: "Zoom"
+          OPTIONS:
+            1: "Weltkarte"
+            5: "Land/Kontinent"
+            10: "Stadt"
+            15: "Strasse"
+            20: "Gebäude"
+        CONTROLS:
+          LABEL: "Steuerelemente anzeigen"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        MARKER:
+          LABEL: "Titel Info-Feld"
+          DESCRIPTION: "Erscheint, wenn man auf den Marker in der Karte klickt"
+        MARKER_TXT:
+          LABEL: "Text Info-Feld"
+        SHOW_MAP:
+          LABEL: "Karte anzeigen?"
+        FAQWIDTH:
+          LABEL: "Anzahl Fragen auf einer Zeile"

@@ -44,7 +44,6 @@ form:
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
-                5: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.5
                 6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.settings.img.show:
               type: select
@@ -102,7 +101,7 @@ form:
               default: 0
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.1
             header.section.card.open.type:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL

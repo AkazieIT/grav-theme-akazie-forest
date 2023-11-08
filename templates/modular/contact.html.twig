@@ -1,29 +1,15 @@
 {% if page.header.section.settings.module.enabled %}
 <div class="contact-area">
     <div class="container">
-        <div class="primary-title">
-            {% if page.header.section.settings.title.show %}
-            <h3>{{page.header.section.title.heading}}</h3>
-            {% endif %}
-            <p class="text_lg ff_fira_sans text_secondary">{{page.header.section.title.text}}
-            </p>
-        </div>
         <div class="address-wrapper">
             <div class="secondary-title address-blk border_radius_sm mb-0">
                 <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
                 <h3>{{page.header.section.content.left.title}}</h3>
 
-                <div class="address">
-                    <h6 class="text-uppercase">{{page.header.section.content.left.addressTitle}}</h6>
-                    <p>{{page.header.section.content.left.addressText | nl2br | raw }}
-                    </p>
+                <div class="content_wrap cmn-content">
+                    {{page.header.section.text|markdown }}
                 </div>
-                <div class="address mb-0">
-                    <h6 class="text-uppercase">{{page.header.section.content.left.contactTitle}}</h6>
-                    <p>{{page.header.section.content.left.contactNumber}} <br>
-                        {{page.header.section.content.left.contactEmail}}
-                    </p>
-                </div>
+
             </div>
             {% if page.header.section.settings.map.show %}
             <div class="map-blk box_shadow_black036_16 section-map modular section-map">
@@ -37,7 +23,7 @@
                     {% set scale = 1 / 1 %}
                 {% elseif page.header.scale == 5 %}
                     {% set scale = 4 / 3 %}
-                {% endif %}            
+                {% endif %}
                 {% if theme_var('map.type') == 'google' %}
                     <div class="media-container">
                         <div class="js-map media" data-scale="{{ scale }}"

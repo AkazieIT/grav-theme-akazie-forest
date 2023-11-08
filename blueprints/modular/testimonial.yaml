@@ -11,64 +11,52 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
 
             header.section.slides:
               name: slides
               type: list
-              label: "Testimonial"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
                 .icon:
                   type: file
-                  label: "Choose icon/Image"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                   size: large
                   destination: 'theme://images'
                   multiple: false
                   markdown: true
-                  description: "upload icon/image"
+                  description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
                   accept:
-                    - image/* 
-                .position:
-                  type: text
-                  label: "position"
-                .author:
-                  type: text
-                  label: "author"
+                    - image/*
                 .text:
                   type: text
-                  label: "content"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.QUOTE.LABEL
+                .author:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEAM_NAME.LABEL
+                .position:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.POS.LABEL
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
-            header.section.settings.title.fontsize:
-              type: text
-              label: "Font size for Author" 
-              description: "(unit: px)"               
-            header.section.settings.subtitle.fontsize:
-              type: text
-              label: "Font size for position"  
-              description: "(unit: px)"
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Post module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                           
-
-
-                  
-                      
+                type: bool

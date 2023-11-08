@@ -41,7 +41,7 @@ form:
             #       markdown: true
             #       description: "upload image"
             #       accept:
-            #         - image/* 
+            #         - image/*
             #     .alt:
             #       type: text
             #       label: "Alt-tag(is also the alt-tag)"
@@ -60,7 +60,7 @@ form:
             #       default: 0
             #       options:
             #         0: Yes
-            #         1: No         
+            #         1: No
             #     .link.icon:
             #       type: file
             #       label: "Choose icon"
@@ -70,11 +70,11 @@ form:
             #       markdown: true
             #       description: "upload icon"
             #       accept:
-            #         - image/* 
+            #         - image/*
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
             # header.section.settings.title.show:
             #   type: select
@@ -85,67 +85,58 @@ form:
             #     1: Yes
             # header.section.settings.title.fontsize:
             #   type: text
-            #   label: "Font size for Title" 
-            #   description: "(unit: px)"               
-
+            #   label: "Font size for Title"
+            #   description: "(unit: px)"
+            header.section.settings.column:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
+              default: 3
+              options:
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Post module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                       
-            header.section.settings.column:
-              type: select
-              label: "content width"
-              default: 3              
-              options:
-                1: "One column"
-                2: "2 columns"
-                3: "3 columns"
-                4: "4 columns"
-                5: "5 columns"
-                6: "6 columns"   
+                type: bool
             header.section.card.date.show:
               type: select
-              label: "Show Date"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.DATE.LABEL
               default: 0
               options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.1
             header.section.card.taxonomy.show:
               type: select
-              label: "Show Taxonomy"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.LABEL
               default: 0
               options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.1
             header.section.card.content.show:
               type: select
-              label: "Show Content"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWCONT.LABEL
               default: 0
               options:
-                0: No
-                1: Yes                
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.1
             header.section.card.open.type:
               type: select
-              label: "Open in same window?"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
               default: 0
               options:
-                0: Yes
-                1: No         
-            header.section.wrap.container:
-              type: select
-              label: "wrap container?"
-              default: 0
-              options:
-                0: No
-                1: Yes                        
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1

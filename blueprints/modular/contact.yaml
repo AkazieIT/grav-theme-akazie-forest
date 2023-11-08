@@ -11,38 +11,24 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
-            header.section.title.heading:
-              type: text
-              autofocus: true
-              label: "Title"
-            header.section.title.text:
-              type: textarea
-              label: "Text"
-            header.section.content.left.subtitle:
-              type: textarea
-              label: "Sub Title(map)"
-            header.section.content.left.title:
-              type: text
-              label: "Title(map)"
-            header.section.content.left.addressTitle:
-              type: text
-              label: "Address label"
-            header.section.content.left.addressText:
-              type: text
-              label: "Address"
-            header.section.content.left.contactTitle:
-              type: text
-              label: "Contact label"
-            header.section.content.left.contactNumber:
-              type: text
-              label: "phone number"
-            header.section.content.left.contactEmail:
-              type: text
-              label: "email"
-        
+            txt_section:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
+              underline: true
+              fields:
+                header.section.content.left.title:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+                header.section.content.left.subtitle:
+                  type: textarea
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+                header.section.text:
+                  type: markdown
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
+
             columns:
               type: columns
               fields:
@@ -51,135 +37,112 @@ form:
                   fields:
                     mapsettings:
                       type: section
-                      title: "Map settings"
+                      title: THEME_AKAZIEForest.ADMIN.SECTION.MAP
                       underline: true
                       fields:
                         header.map.latitude:
                           type: text
-                          label: "Latitude"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LATITUDE.LABEL
                           size: small
                           validate:
                             required
                         header.map.longitude:
                           type: text
-                          label: "Longitude"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LONGITUDE.LABEL
                           size: small
                           validate:
                             required
                         header.map.zoom:
                           type: select
-                          label: "Zoom"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.LABEL
                           default: 15
                           size: small
                           options:
-                            1: 1 (World)
-                            2: 2
-                            3: 3
-                            4: 4
-                            5: 5 (Landmass/continent)
-                            6: 6
-                            7: 7
-                            8: 8
-                            9: 9
-                            10: 10 (City)
-                            11: 11
-                            12: 12
-                            13: 13
-                            14: 14
-                            15: 15 (Streets)
-                            16: 16
-                            17: 17
-                            18: 18
-                            19: 19
-                            20: 20 (Buildings)
+                            1: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.OPTIONS.1
+                            5: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.OPTIONS.5
+                            10: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.OPTIONS.10
+                            15: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.OPTIONS.15
+                            20: THEME_AKAZIEForest.ADMIN.FIELDS.ZOOM.OPTIONS.20
                         header.map.controls:
                           type: toggle
-                          label: "Controls"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.LABEL
                           highlight: 1
                           default: 1
                           options:
-                            0: Aus
-                            1: An
+                            0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.0
+                            1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.1
                           validate:
                             type: bool
                         header.scale:
                           type: select
-                          label: "Format"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.LABEL
                           default: 1
                           size: medium
                           options:
-                            1: "4:3"
-                            2: "16:9(Full HD)"
-                            3: "2.35:1(Widescreen)"
-                            4: "1:1(Square)"
-                            5: "3:4(Portrait)"
-                        header.map.style:
-                          type: textarea
-                          style: vertical
-                          label: "Map style (only with Google Maps)"
-                          rows: 8
+                            1: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.1
+                            2: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.2
+                            3: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.3
+                            4: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.4
+                            5: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.5
+                        # header.map.style:
+                          # type: textarea
+                          # style: vertical
+                          # label: "Map style (only with Google Maps)"
+                          # rows: 8
                 column2:
                   type: column
                   fields:
                     mapinfo:
                       type: section
-                      title: "Map info"
+                      title: THEME_AKAZIEForest.ADMIN.SECTION.MAP_INFO
                       underline: true
                       fields:
-                        header.map.description:
-                          type: text
-                          style: vertical
-                          label: "Map description"
+                        # header.map.description:
+                          # type: text
+                          # style: vertical
+                          # label: THEME_AKAZIEForest.ADMIN.FIELDS.MAP_DES.LABEL
                         header.map.markertitle:
                           type: text
                           style: vertical
-                          label: "Marker title"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.MARKER.LABEL
+                          description: THEME_AKAZIEForest.ADMIN.FIELDS.MARKER.DESCRIPTION
                         header.map.infowindow:
                           type: textarea
                           rows: 4
                           style: vertical
-                          label: "Info window"
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.MARKER_TXT.LABEL
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
             header.section.settings.map.show:
               type: select
-              label: "Show map"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_MAP.LABEL
               default: 1
               options:
-                0: No
-                1: Yes
-            header.section.settings.title.show:
-              type: select
-              label: "Show Title"
-              default: 1
-              options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.1
             header.section.settings.title.fontsize:
               type: text
-              label: "Font size for Author" 
-              description: "(unit: px)"               
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
             header.section.settings.subtitle.fontsize:
               type: text
-              label: "Font size for position"  
-              description: "(unit: px)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Post module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool               
-
-             
+                type: bool

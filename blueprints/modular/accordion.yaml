@@ -11,66 +11,61 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
 
             header.content.faqs:
               name: faqs
               type: list
-              label: "faq"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
                 .heading:
                   type: text
-                  label: "Question"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
                 .text:
                   type: text
-                  label: "Answer"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
                 .anchor:
                   type: text
-                  label: "anchor"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL_TXT.LABEL
                 .anchor_link:
                   type: text
-                  label: "anchor link"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
                 .open.type:
                   type: select
-                  label: "Open in same window?"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
                   default: 0
                   options:
-                    0: Yes
-                    1: No         
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
-            header.section.settings.bgcolor:
-              type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
             header.section.settings.column:
               type: select
-              label: "content width"
-              default: 3              
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.FAQWIDTH.LABEL
+              default: 3
               options:
-                1: "One column"
-                2: "two columns"
-                3: "1/3 full width"
-                4: "2/3 full width"
-                5: "1/4 full width"
-                6: "1/6 full width"
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
+            header.section.settings.bgcolor:
+              type: colorpicker
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show FAQ module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool               
-
-
-                  
-                      
+                type: bool
