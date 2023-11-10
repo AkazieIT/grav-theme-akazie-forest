@@ -17,37 +17,42 @@ form:
             header.section.space.height:
               type: text
               autofocus: true
-              label: "Height(px)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HEIGHT.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.HEIGHT.DESCRIPTION
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
             header.section.background.image:
               type: file
-              label: "Choose Background Image"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_IMG.LABEL
               size: large
               destination: 'theme://images'
               multiple: false
               markdown: true
-              description: "upload image"
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL
               accept:
-                - image/*      
+                - image/*
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Post module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                                                     
-
-                  
-                      
+                type: bool
+            header.section.wrap.container:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.LABEL
+              default: 0
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1

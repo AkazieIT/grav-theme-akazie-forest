@@ -17,7 +17,7 @@
         {% set show_img = false %}
     {% endif %}
 
-    {% if page.header.section.card.open.type == 1 %}
+    {% if page.header.section.card.open.type == 0 %}
         {% set card_opentype = true %}
     {% else %}
         {% set card_opentype = false %}
@@ -32,8 +32,7 @@
             <div class="col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
-                        {% elseif page.header.section.settings.column == 4 %}col-lg-8
-                        {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                        {% elseif page.header.section.settings.column == 4 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %} ">
                 {% include 'partials/blog-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_img':show_img, 'card_opentype':card_opentype} %}
@@ -43,7 +42,7 @@
     {% if page.header.section.wrap.container == 1 %}
     </div>
     <div class="row container">  {# start row #}
-    {% endif %}    
+    {% endif %}
 {% endif %}
 
 <style>
@@ -57,13 +56,13 @@
 {% if page.header.section.settings.txtcolor %}
     color: {{page.header.section.settings.txtcolor}};
 {% endif %}
-{% if page.header.section.settings.text.alignment == 0 %}
+{% if page.header.section.settings.text.alignment == 1 %}
     text-align: left;
-{% elseif page.header.section.settings.text.alignment == 1 %}
-    text-align: center;
 {% elseif page.header.section.settings.text.alignment == 2 %}
+    text-align: center;
+{% elseif page.header.section.settings.text.alignment == 3 %}
     text-align: right;
-{% endif %} 
+{% endif %}
 }
 
 </style>

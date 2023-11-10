@@ -6,7 +6,7 @@
             <h6 class="text-uppercase">{{page.header.section.title.subHeading}}</h6>
             <h3>{{page.header.section.title.heading}}</h3>
         </div>
-        {% endif %}    
+        {% endif %}
         <div class="row">
             {% for member in page.header.section.content.members %}
             {# {% set memberImg = page.find('/images').media[member.img].url | e%} #}
@@ -14,8 +14,7 @@
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
-                        {% elseif page.header.section.settings.column == 4 %}col-lg-8
-                        {% elseif page.header.section.settings.column == 5 %}col-lg-3
+                        {% elseif page.header.section.settings.column == 4 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
 {{ dump(member) }}
@@ -42,7 +41,7 @@
                                 <source media="(max-width:499px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
                                 <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
                             </picture>
-                        {% endif %}                        
+                        {% endif %}
                     </div>
                     <div class="secondary-title member-content mb-0">
                         <h6 class="text-uppercase">{{member.designation}}</h6>
@@ -63,7 +62,7 @@
                         {% endif %}
                     </div>
                 </div>
-            </div>    
+            </div>
             {% endfor %}
         </div>
     </div>

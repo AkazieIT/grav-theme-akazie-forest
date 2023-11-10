@@ -8,6 +8,10 @@ en:
         CONTENT: "Text Section"
         MEDIA: "Media Section"
         BUTTON: "Button Section"
+        CARDS: "Entry Section"
+        MAP: "Insert map"
+        MAP_INFO: "Map info"
+        LAYOUT: "Site layout"
       FIELDS:
         TITLE:
           LABEL: "Title"
@@ -30,6 +34,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        TXT_COLOR:
+          LABEL: "Text Color"
         CONTENT:
           LABEL: "Content"
         CONTENT_TITLE:
@@ -62,6 +68,184 @@ en:
               1: "No"
         ICON:
           LABEL: "Upload icon"
+        ENTRY:
+          LABEL: "Entries"
+          TITLE:
+            LABEL: "Titel"
+          TEXT:
+            LABEL: "Text"
+          BUTTON:
+            LABEL: "Button text"
+          NAME:
+            LABEL: "Name (alt-tag)"
+          URL:
+            LABEL: "Link-URL"
+          UPLOAD:
+            LABEL: "Upload file"
+            DESCRIPTION: "Upload image or logo"
+          WINDOW:
+            LABEL: "Open link in new tab?"
+            OPTIONS:
+              0: "No"
+              1: "Yes"
+          PRICE:
+            LABEL: "Price"
+          POS:
+            LABEL: "Position"
+          TEAM_NAME:
+            LABEL: "Name"
+          EMAIL:
+            LABEL: "Email"
+          PHONE:
+            LABEL: "Phone number"
+          QUOTE:
+            LABEL: "Quote"
+          URL_TXT:
+            LABEL: "Link text"
+        ALT:
+          LABEL: "Alt-tag"
+        IMAGE:
+          LABEL: "Upload image"
+        IMAGEDES:
+          LABEL: "Image description"
+        WRAP:
+          LABEL: "Wrap container?"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        MODULEWIDTH:
+          LABEL: "Module width"
+          OPTIONS:
+            1: "Full width"
+            2: "Half width"
+            3: "1/3 width"
+            4: "2/3 width"
+            5: "1/4 width"
+            6: "1/6 width"
+        FORMAT:
+          LABEL: "Image format"
+          OPTIONS:
+            1: "Landscape 4:3"
+            2: "Landscape 16:9"
+            3: "Landscape 2.35:1"
+            4: "Square"
+            5: "Portrait"
+        IMGSIZING:
+          LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
+          HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
+        IMGFIT:
+          LABEL: "Fit image"
+        TEXTALIGN:
+          LABEL: "Text alignment"
+          OPTIONS:
+            1: "Left"
+            2: "Center"
+            3: "Right"
+        SHOWIMG:
+          LABEL: "Show image?"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        POSTWIDTH:
+          LABEL: "How many posts should fit in one row?"
+          OPTIONS:
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
+            5: "5"
+            6: "6"
+        TAX:
+          LABEL: "Show tags?"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        DATE:
+          LABEL: "Show date?"
+        SHOWCONT:
+          LABEL: "Show preview text?"
+        HEIGHT:
+          LABEL: "Height of the Spacer"
+          DESCRIPTION: "Unit is pixel"
+        BG_IMG:
+          LABEL: "Background image"
+        TEAM:
+          LABEL: "Add team members"
+        TEAM_WIDTH:
+          LABEL: "Amount of team members in one row"
+        LATITUDE:
+          LABEL: "Latitude"
+        LONGITUDE:
+          LABEL: "Longitude"
+        ZOOM:
+          LABEL: "Zoom"
+          OPTIONS:
+            1: "World"
+            5: "Country/Continent"
+            10: "City"
+            15: "Streets"
+            20: "Buildings"
+        CONTROLS:
+          LABEL: "Show Controls"
+          OPTIONS:
+            0: "No"
+            1: "Yes"
+        MARKER:
+          LABEL: "Titel info field"
+          DESCRIPTION: "Shows up, if someone klicks on the marker in the map"
+        MARKER_TXT:
+          LABEL: "Text info field"
+        SHOW_MAP:
+          LABEL: "Show map"
+        FAQWIDTH:
+          LABEL: "Amount of questions on one row"
+        DISPLAY:
+          LABEL: "<strong>Please note:</strong><br /> this section will only display correctly when the theme is activated."
+        SITE:
+          TITLE: "Site"
+        HEADER:
+          TITLE: "Header"
+        FAV:
+          LABEL: "Favicon"
+          DESCRIPTION: "Used instead of theme: // images / favicon.png"
+        MAXW:
+          LABEL: "Maximum content width (1000-2000 / default 1280)"
+        LOGO:
+          LABEL: "Logo"
+          DESCRIPTION: "Used instead of theme://images/logo.png"
+        MLOGO:
+          LABEL: "Mobile logo"
+        DLOGO:
+          LABEL: "Display Logo?"
+          OPTIONS:
+            1: "Show"
+            0: "Hidden"
+        JS:
+          LABEL: "Add (Javascript) tracking code to header"
+        NAV:
+          TITLE: "Navigation"
+        SUBNAV:
+          LABEL: "Dropdown in Menu"
+          HELP: "Allows to have another navigation level"
+        FIXHEAD:
+          LABEL: "Fixed Header"
+          HELP: "If activated, the header will always be at the top of the browser window."
+        DNAV:
+          TITLE: "Desktop navigation"
+        MNAV:
+          TITLE: "Mobile navigation"
+        FITNAV:
+          LABEL: "Fit navigation width to content"
+        HNAV:
+          LABEL: "Navigation height (65-205)"
+        CHNAV:
+          LABEL: "Mobile Navigation custom height"
+        CHMNAV:
+          LABEL: "Mobile Navigation height (60-300)"
+        NAV_BUTTON:
+          TITLE: "Custom Navigation Button"
+          LABEL: "Custom nav button enabled?"
+
 
 de:
   THEME_AKAZIEForest:
@@ -73,7 +257,11 @@ de:
       SECTION:
         CONTENT: "Abschnitt mit Text"
         MEDIA: "Abschnitt mit Multimedia"
-        BUTTON: "Abschnitt mit Links"
+        BUTTON: "Abschnitt mit Buttons"
+        CARDS: "Abschnitt mit Einträgen"
+        MAP: "Karte einfügen"
+        MAP_INFO: "Infos zur Karte"
+        LAYOUT: "Seitenaufbau"
       FIELDS:
         TITLE:
           LABEL: "Titel"
@@ -92,6 +280,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        TXT_COLOR:
+          LABEL: "Farbe des Textes"
         CONTENT:
           LABEL: "Inhalt"
         CONTENT_TITLE:
@@ -105,24 +295,202 @@ de:
           OPTIONS:
             0: "Nein"
             1: "Ja"
-        BUTTONS:
-          ANCHOR:
-            LABEL: "Text im Button"
-          ANCHORTWO:
-            LABEL: "Linktext"
-          LINK:
-            LABEL: "Link des Buttons"
-          LINKTWO:
-            LABEL: "Link"
-          WINDOW:
-            LABEL: "Link des Buttons in neuem Fenster öffnen?"
-            OPTIONS:
-              0: "Ja"
-              1: "Nein"
-          WINDOWTWO:
-            LABEL: "Link in neuem Fenster öffnen?"
-            OPTIONS:
-              0: "Ja"
-              1: "Nein"
+        BUTTON:
+          LABEL: "Text im Button"
+        ANCHOR:
+          LABEL: "Linktext"
+        LINK:
+          LABEL: "Link des Buttons"
+        LINKTWO:
+          LABEL: "Link"
+        WINDOW:
+          LABEL: "Link des Buttons in neuem Fenster öffnen?"
+          OPTIONS:
+            0: "Ja"
+            1: "Nein"
+        WINDOWTWO:
+          LABEL: "Link in neuem Fenster öffnen?"
+          OPTIONS:
+            0: "Ja"
+            1: "Nein"
         ICON:
           LABEL: "Icon hochladen"
+        ENTRY:
+          LABEL: "Einträge"
+          TITLE:
+            LABEL: "Titel"
+          TEXT:
+            LABEL: "Text"
+          BUTTON:
+            LABEL: "Button text"
+          ICON:
+            DESCRIPTION: "Icon oder Bild hochladen"
+          NAME:
+            LABEL: "Name des Eintrags (Alt-Tag)"
+          URL:
+            LABEL: "Link-URL"
+          URL_TXT:
+            LABEL: "Linktext"
+          UPLOAD:
+            LABEL: "Datei hochladen"
+            DESCRIPTION: "Bild oder Logo hochladen"
+          WINDOW:
+            LABEL: "Link in neuem Tab öffnen?"
+            OPTIONS:
+              0: "Nein"
+              1: "Ja"
+          PRICE:
+            LABEL: "Preisangabe"
+          POS:
+            LABEL: "Position"
+          TEAM_NAME:
+            LABEL: "Name"
+          EMAIL:
+            LABEL: "E-mail"
+          PHONE:
+            LABEL: "Telefonnummer"
+          QUOTE:
+            LABEL: "Zitat"
+        ALT:
+          LABEL: "Alt-Tag"
+        IMAGE:
+          LABEL: "Foto hochladen"
+        IMAGEDES:
+          LABEL: "Bildbeschreibung"
+        WRAP:
+          LABEL: "Container ganz füllen?"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        MODULEWIDTH:
+          LABEL: "Modulbreite"
+          OPTIONS:
+            1: "Ganze Breite"
+            2: "Halbe Breite"
+            3: "1/3 der Breite"
+            4: "2/3 der Breite"
+            5: "1/4 der Breite"
+            6: "1/6 der Breite"
+        FORMAT:
+          LABEL: "Bildformat"
+          OPTIONS:
+            1: "Querformat 4:3"
+            2: "Querformat 16:9"
+            3: "Querformat 2.35:1"
+            4: "Quadrat"
+            5: "Hochformat"
+        IMGSIZING:
+          LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
+          HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
+        IMGFIT:
+          LABEL: "Bild ganz anzeigen"
+        TEXTALIGN:
+          LABEL: "Text ausrichten"
+          OPTIONS:
+            1: "Links"
+            2: "Zentriert"
+            3: "Rechts"
+        SHOWIMG:
+          LABEL: "Bild anzeigen?"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        POSTWIDTH:
+          LABEL: "Wie viele Posts sollen auf eine Zeile passen?"
+          OPTIONS:
+            1: "1"
+            2: "2"
+            3: "3"
+            4: "4"
+            5: "5"
+            6: "6"
+        TAX:
+          LABEL: "Schlagworte anzeigen?"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        DATE:
+          LABEL: "Datum anzeigen?"
+        SHOWCONT:
+          LABEL: "Vorschautext anzeigen?"
+        HEIGHT:
+          LABEL: "Höhe des Abstandes"
+          DESCRIPTION: "Angabe in Pixel"
+        BG_IMG:
+          LABEL: "Hintergrundbild"
+        TEAM:
+          LABEL: "Teammitglieder hinzufügen"
+        TEAM_WIDTH:
+          LABEL: "Anzahl Teammitglieder auf einer Zeile"
+        LATITUDE:
+          LABEL: "Breitengrad angeben"
+        LONGITUDE:
+          LABEL: "Längengrad angeben"
+        ZOOM:
+          LABEL: "Zoom"
+          OPTIONS:
+            1: "Weltkarte"
+            5: "Land/Kontinent"
+            10: "Stadt"
+            15: "Strasse"
+            20: "Gebäude"
+        CONTROLS:
+          LABEL: "Steuerelemente anzeigen"
+          OPTIONS:
+            0: "Nein"
+            1: "Ja"
+        MARKER:
+          LABEL: "Titel Info-Feld"
+          DESCRIPTION: "Erscheint, wenn man auf den Marker in der Karte klickt"
+        MARKER_TXT:
+          LABEL: "Text Info-Feld"
+        SHOW_MAP:
+          LABEL: "Karte anzeigen?"
+        FAQWIDTH:
+          LABEL: "Anzahl Fragen auf einer Zeile"
+        DISPLAY:
+          LABEL: "<strong>Bitte beachten:</strong><br /> Diese Angaben werden nur korrekt angezeigt, wenn das Theme aktiviert ist."
+        SITE:
+          TITLE: "Seite"
+        HEADER:
+          TITLE: "Header"
+        FAV:
+          LABEL: "Favicon"
+          DESCRIPTION: "Anstelle von theme: // images / favicon.png verwenden"
+        MAXW:
+          LABEL: "Maximale Breite des Inhalts (1000-2000 / default 1280)"
+        LOGO:
+          LABEL: "Logo"
+          DESCRIPTION: "Anstelle von theme://images/logo.png verwenden"
+        MLOGO:
+          LABEL: "Mobiles Logo"
+        DLOGO:
+          LABEL: "Logo anzeigen?"
+          OPTIONS:
+            1: "Anzeigen"
+            0: "Verstecken"
+        JS:
+          LABEL: "Tracking code (Javascript) zum Header hinzufügen"
+        NAV:
+          TITLE: "Navigation"
+        SUBNAV:
+          LABEL: "Dropdown im Menu"
+          HELP: "Erlaubt ein zweites Level im Menu"
+        FIXHEAD:
+          LABEL: "Fixierte Navigation"
+          HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
+        DNAV:
+          TITLE: "Desktop Navigation"
+        MNAV:
+          TITLE: "Mobile Navigation"
+        FITNAV:
+          LABEL: "Navigationsbreite dem Inhalt anpassen"
+        HNAV:
+          LABEL: "Höhe der Navigation (65-205)"
+        CHNAV:
+          LABEL: "Höhe der mobilen Navigation manuell einstellen?"
+        CHMNAV:
+          LABEL: "Höhe der mobilen Navigation (60-300)"
+        NAV_BUTTON:
+          TITLE: "Button in der Navigation"
+          LABEL: "Soll der Button in der Navigation angezeigt werden?"

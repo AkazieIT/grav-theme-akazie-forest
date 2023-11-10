@@ -11,111 +11,122 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
-            header.section.content.left.title:
-              type: text
-              autofocus: true
-              label: "Title"
-              validate:
-                required: true
-            header.section.content.left.text:
-              type: textarea
-              label: "Text"
-              markdown: true
-              rows: 3
-
-            header.section.content.left.anchor:
-              type: text
-              label: "Button title"
-
-            header.section.content.left.link:
-              type: text
-              label: "link"
-
-            header.section.content.left.linkopen.type:
-              type: select
-              label: "Open in same window?"
-              default: 0
-              options:
-                0: Yes
-                1: No               
-
-            header.section.content.right.cards:
-              name: cards
-              type: list
-              label: "card"
-              collapsed: true
+            txt_section:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
+              underline: true
               fields:
-                .image:
-                  type: file
-                  label: "Choose Image"
-                  size: large
-                  destination: 'theme://images'
-                  multiple: false
+                header.section.content.left.title:
+                  type: text
+                  autofocus: true
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+                  validate:
+                    required: true
+                header.section.content.left.text:
+                  type: markdown
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
                   markdown: true
-                  description: "upload image"
-                  accept:
-                    - image/* 
-                .alt:
+            buttons:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
+              underline: true
+              fields:
+                header.section.content.left.anchor:
                   type: text
-                  label: "Alt-tag(is also the alt-tag)"
-                .heading:
-                  type: text
-                  label: "Title"
-                .text:
-                  type: textarea
-                  label: "Text"
-                  rows: 3
-                .anchor:
-                  type: text
-                  label: "Button name"
-                .link:
-                  type: text
-                  label: "link"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
 
-                .open.type:
+                header.section.content.left.link:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
+
+                header.section.content.left.linkopen.type:
                   type: select
-                  label: "Open in same window?"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
                   default: 0
                   options:
-                    0: Yes
-                    1: No         
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+            cards:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.CARDS
+              underline: true
+              fields:
+                header.section.content.right.cards:
+                  name: cards
+                  type: list
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
+                  collapsed: true
+                  fields:
+                    .image:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
+                      size: large
+                      destination: 'theme://images'
+                      multiple: false
+                      markdown: true
+                      description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
+                      accept:
+                        - image/*
+                    .alt:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
+                    .heading:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
+                    .text:
+                      type: textarea
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                      rows: 3
+                    .anchor:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ANCHOR.LABEL
+                    .link:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
+
+                    .open.type:
+                      type: select
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
 
         settings:
-          type: tab
-          title: "Settings"
-          fields:
-            header.section.settings.title.show:
-              type: select
-              label: "Show Title"
-              default: 1
-              options:
-                0: No
-                1: Yes
-            header.section.settings.title.fontsize:
-              type: text
-              label: "Font size for Title" 
-              description: "(unit: px)"               
-            header.section.settings.txtcolor:
-              type: colorpicker
-              label: "Text color"
-              default: '#555555'
+            type: tab
+            title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
+            fields:
+              header.section.settings.title.show:
+                type: select
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
+                default: 1
+                options:
+                  0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                  1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
+              header.section.settings.title.fontsize:
+                type: text
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
+                description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
+              header.section.settings.txtcolor:
+                type: colorpicker
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+                default: '#555555'
 
-            header.section.settings.bgcolor:
-              type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              header.section.settings.bgcolor:
+                type: colorpicker
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+                default: '#fbfbfb'
 
-            header.section.settings.module.enabled:
-              type: toggle
-              label: "Show Post module"
-              highlight: 1
-              default: 1
-              options:
-                1: PLUGIN_ADMIN.ENABLED
-                0: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool                          
-                      
+              header.section.settings.module.enabled:
+                type: toggle
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
+                highlight: 1
+                default: 1
+                options:
+                  1: PLUGIN_ADMIN.ENABLED
+                  0: PLUGIN_ADMIN.DISABLED
+                validate:
+                  type: bool

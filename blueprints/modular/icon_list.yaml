@@ -11,115 +11,114 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
             header.section.title.heading:
               type: text
               autofocus: true
-              label: "Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
               validate:
                 required: true
             header.section.title.subHeading:
               type: text
-              label: "Sub Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
 
             header.section.content.cards:
               name: cards
               type: list
-              label: "card"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
                 .icon:
                   type: file
-                  label: "Choose icon/Image"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                   size: large
                   destination: 'theme://images'
                   multiple: false
                   markdown: true
-                  description: "upload icon/image"
+                  description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
                   accept:
-                    - image/* 
-                .heading:
-                  type: text
-                  label: "Title"
-                .text:
-                  type: textarea
-                  label: "Text"
-                  rows: 3
+                    - image/*
                 .alt:
                   type: text
-                  label: "Alt-tag(is also the alt-tag)"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
+                .heading:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
+                .text:
+                  type: textarea
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                  rows: 3
                 .b_name:
                   type: text
-                  label: "Button Name"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.BUTTON.LABEL
                 .link:
                   type: text
-                  label: "URL"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
                 .open.type:
                   type: select
-                  label: "Open in same window?"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
                   default: 0
                   options:
-                    0: Yes
-                    1: No                 
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
+            header.section.settings.column:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.LABEL
+              default: 3
+              options:
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.5
+                6: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.6
             header.section.settings.title.show:
               type: select
-              label: "Show Heading"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
               default: 1
               options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
             header.section.settings.title.fontsize:
               type: text
-              label: "Font size for Title" 
-              description: "(unit: px)"               
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
             header.section.settings.subtitle.fontsize:
               type: text
-              label: "Font size for Sub Title"  
-              description: "(unit: px)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
             header.section.settings.text.alignment:
               type: select
-              label: "Text alignment"  
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
               default: 1
               options:
-                0: Left
-                1: Center
-                2: Right
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
             header.section.settings.txtcolor:
               type: colorpicker
-              label: "Text color"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
               default: '#555555'
 
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Icon list module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool     
-            header.section.settings.column:
-              type: select
-              label: "content width"
-              default: 3              
-              options:
-                1: "One column"
-                2: "two columns"
-                3: "1/3 full width"
-                4: "2/3 full width"
-                5: "1/4 full width"
-                6: "1/6 full width"                                      
-                      
+                type: bool

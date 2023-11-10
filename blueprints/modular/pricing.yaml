@@ -11,91 +11,91 @@ form:
       fields:
         content:
           type: tab
-          title: "Content"
+          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
-            header.section.title.heading:
-              type: text
-              autofocus: true
-              label: "Title"
-              validate:
-                required: true
-            header.section.title.subHeading:
-              type: text
-              label: "Sub Title"
-            header.section.title.text:
-              type: textarea
-              label: "Text"
-              rows: 3
+            txt_section:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
+              underline: true
+              header.section.title.heading:
+                type: text
+                autofocus: true
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+                validate:
+                  required: true
+              header.section.title.subHeading:
+                type: text
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+              header.section.title.text:
+                type: markdown
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
 
-            header.section.content.cards:
-              name: cards
-              type: list
-              label: "card"
-              collapsed: true
-              fields:
-                .price:
-                  type: text
-                  label: "Price"
-                .priceText:
-                  type: text
-                  label: "card Title"
-                .text:
-                  type: textarea
-                  label: "card Text"
-                .anchor:
-                  type: text
-                  label: "Button name"
-                .link:
-                  type: text
-                  label: "link"
-                .open.type:
-                  type: select
-                  label: "Open in same window?"
-                  default: 0
-                  options:
-                    0: Yes
-                    1: No      
+              header.section.content.cards:
+                name: cards
+                type: list
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
+                collapsed: true
+                fields:
+                  .price:
+                    type: text
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PRICE.LABEL
+                  .priceText:
+                    type: text
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
+                  .text:
+                    type: textarea
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                  .anchor:
+                    type: text
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL_TXT.LABEL
+                  .link:
+                    type: text
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
+                  .open.type:
+                    type: select
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
+                    default: 0
+                    options:
+                      0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
+                      1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
 
         settings:
           type: tab
-          title: "Settings"
+          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
             header.section.settings.title.show:
               type: select
-              label: "Show Title"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
               default: 1
               options:
-                0: No
-                1: Yes
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
             header.section.settings.title.fontsize:
               type: text
-              label: "Font size for Title" 
-              description: "(unit: px)"               
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
             header.section.settings.subtitle.fontsize:
               type: text
-              label: "Font size for Sub Title"  
-              description: "(unit: px)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
             header.section.settings.pricecolor:
               type: colorpicker
-              label: "Price color"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
               default: '#B6D191'
 
             header.section.settings.bgcolor:
               type: colorpicker
-              label: "Background color"
-              default: '#ffffff'
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: '#fbfbfb'
 
             header.section.settings.module.enabled:
               type: toggle
-              label: "Show Post module"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool                                                     
-
-                  
-                      
+                type: bool
