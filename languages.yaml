@@ -11,6 +11,7 @@ en:
         CARDS: "Entry Section"
         MAP: "Insert map"
         MAP_INFO: "Map info"
+        LAYOUT: "Site layout"
       FIELDS:
         TITLE:
           LABEL: "Title"
@@ -198,7 +199,52 @@ en:
           LABEL: "Show map"
         FAQWIDTH:
           LABEL: "Amount of questions on one row"
-
+        DISPLAY:
+          LABEL: "<strong>Please note:</strong><br /> this section will only display correctly when the theme is activated."
+        SITE:
+          TITLE: "Site"
+        HEADER:
+          TITLE: "Header"
+        FAV:
+          LABEL: "Favicon"
+          DESCRIPTION: "Used instead of theme: // images / favicon.png"
+        MAXW:
+          LABEL: "Maximum content width (1000-2000 / default 1280)"
+        LOGO:
+          LABEL: "Logo"
+          DESCRIPTION: "Used instead of theme://images/logo.png"
+        MLOGO:
+          LABEL: "Mobile logo"
+        DLOGO:
+          LABEL: "Display Logo?"
+          OPTIONS:
+            1: "Show"
+            0: "Hidden"
+        JS:
+          LABEL: "Add (Javascript) tracking code to header"
+        NAV:
+          TITLE: "Navigation"
+        SUBNAV:
+          LABEL: "Dropdown in Menu"
+          HELP: "Allows to have another navigation level"
+        FIXHEAD:
+          LABEL: "Fixed Header"
+          HELP: "If activated, the header will always be at the top of the browser window."
+        DNAV:
+          TITLE: "Desktop navigation"
+        MNAV:
+          TITLE: "Mobile navigation"
+        FITNAV:
+          LABEL: "Fit navigation width to content"
+        HNAV:
+          LABEL: "Navigation height (65-205)"
+        CHNAV:
+          LABEL: "Mobile Navigation custom height"
+        CHMNAV:
+          LABEL: "Mobile Navigation height (60-300)"
+        NAV_BUTTON:
+          TITLE: "Custom Navigation Button"
+          LABEL: "Custom nav button enabled?"
 
 
 de:
@@ -215,6 +261,7 @@ de:
         CARDS: "Abschnitt mit Einträgen"
         MAP: "Karte einfügen"
         MAP_INFO: "Infos zur Karte"
+        LAYOUT: "Seitenaufbau"
       FIELDS:
         TITLE:
           LABEL: "Titel"
@@ -401,3 +448,49 @@ de:
           LABEL: "Karte anzeigen?"
         FAQWIDTH:
           LABEL: "Anzahl Fragen auf einer Zeile"
+        DISPLAY:
+          LABEL: "<strong>Bitte beachten:</strong><br /> Diese Angaben werden nur korrekt angezeigt, wenn das Theme aktiviert ist."
+        SITE:
+          TITLE: "Seite"
+        HEADER:
+          TITLE: "Header"
+        FAV:
+          LABEL: "Favicon"
+          DESCRIPTION: "Anstelle von theme: // images / favicon.png verwenden"
+        MAXW:
+          LABEL: "Maximale Breite des Inhalts (1000-2000 / default 1280)"
+        LOGO:
+          LABEL: "Logo"
+          DESCRIPTION: "Anstelle von theme://images/logo.png verwenden"
+        MLOGO:
+          LABEL: "Mobiles Logo"
+        DLOGO:
+          LABEL: "Logo anzeigen?"
+          OPTIONS:
+            1: "Anzeigen"
+            0: "Verstecken"
+        JS:
+          LABEL: "Tracking code (Javascript) zum Header hinzufügen"
+        NAV:
+          TITLE: "Navigation"
+        SUBNAV:
+          LABEL: "Dropdown im Menu"
+          HELP: "Erlaubt ein zweites Level im Menu"
+        FIXHEAD:
+          LABEL: "Fixierte Navigation"
+          HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
+        DNAV:
+          TITLE: "Desktop Navigation"
+        MNAV:
+          TITLE: "Mobile Navigation"
+        FITNAV:
+          LABEL: "Navigationsbreite dem Inhalt anpassen"
+        HNAV:
+          LABEL: "Höhe der Navigation (65-205)"
+        CHNAV:
+          LABEL: "Höhe der mobilen Navigation manuell einstellen?"
+        CHMNAV:
+          LABEL: "Höhe der mobilen Navigation (60-300)"
+        NAV_BUTTON:
+          TITLE: "Button in der Navigation"
+          LABEL: "Soll der Button in der Navigation angezeigt werden?"

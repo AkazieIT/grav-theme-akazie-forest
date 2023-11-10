@@ -22,86 +22,86 @@ form:
   fields:
     layout_section:
       type: section
-      title: "Site layout"
+      title: THEME_AKAZIEForest.ADMIN.SECTION.LAYOUT
       underline: true
       fields:
         theme_info:
           type: display
-          label: "<strong>Please note:</strong><br /> this section will only display correctly when the theme is activated."
+          label: THEME_AKAZIEForest.ADMIN.FIELDS.DISPLAY.LABEL
 
 
         site:
           type: fieldset
-          title: "Site"
-          collapsed: false
+          title: THEME_AKAZIEForest.ADMIN.FIELDS.SITE.TITLE
+          collapsed: true
           collapsible: true
           fields:
             site.favicon:
               type: file
-              label: "Favicon"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.LABEL
               size: large
               destination: 'theme://images/favicon'
               multiple: false
               markdown: true
-              description: "Used instead of theme: // images / favicon.png"
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.DESCRIPTION
               accept:
                 - image/*
             site.maxwidth:
               type: text
-              label: "max content width (1000-2000 / default 1280)"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.MAXW.LABEL
               default: 1280
         header:
           type: fieldset
-          title: "Header"
-          collapsed: false
+          title: THEME_AKAZIEForest.ADMIN.FIELDS.HEADER.TITLE
+          collapsed: true
           collapsible: true
           fields:
+            header.displaylogo:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.LABEL
+              highlight: 1
+              default: 1
+              options:
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.OPTIONS.1
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.OPTIONS.0
             header.logo.desktop:
               type: file
-              label: "Desktop logo"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.LABEL
               size: large
               destination: 'theme://images/logo'
               multiple: false
               markdown: true
-              description: "Used instead of theme://images/logo.png"
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
               accept:
                 - image/*
             header.logo.mobile:
               type: file
-              label: "Mobile logo"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.MLOGO.LABEL
               size: large
               destination: 'theme://images/logo'
               multiple: false
               markdown: true
-              description: "Used instead of theme://images/logo.png"
+              description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
               accept:
                 - image/*
-            header.displaylogo:
-              type: toggle
-              label: "Display logo?"
-              highlight: 1
-              default: 1
-              options:
-                1: "Show"
-                0: "Hidden"
               validate:
                 type: bool
             header.javascript:
               type: textarea
-              label: "Add (Javascript) tracking code to header"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.JS.LABEL
               rows: 2
               size: large
 
         nav:
           type: fieldset
-          title: "Navigation"
-          collapsed: false
+          title: THEME_AKAZIEForest.ADMIN.FIELDS.NAV.TITLE
+          collapsed: true
           collapsible: true
           fields:
             dropdown.enabled:
               type: toggle
-              label: "Dropdown in Menu"
-              help: "Allows to have another navigation level"
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBNAV.LABEL
+              help: THEME_AKAZIEForest.ADMIN.FIELDS.SUBNAV.HELP
               highlight: 1
               default: 1
               options:
@@ -111,8 +111,8 @@ form:
                 type: bool
             header.fixed.option:
               type: toggle
-              label: "Fixed Header"
-              help: "If activated, the header will always be at the top of the browser window."
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.FIXHEAD.LABEL
+              help: THEME_AKAZIEForest.ADMIN.FIELDS.FIXHEAD.HELP
               highlight: 1
               default: 1
               options:
@@ -120,42 +120,34 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-            header.nav.length:
-              type: text
-              label: "Number Max. Navigation points"
-              default: 3
-              size: small
-              validate:
-                type: int
-                required: true
 
             nav.desktop:
               type: fieldset
-              title:  "Desktop Navigation"
+              title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.fittocontent:
                   type: select
-                  label: "Fit navigation width to content"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.FITNAV.LABEL
                   default: 0
                   options:
-                    0: No
-                    1: Yes
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
                 nav.navheight:
                   type: text
-                  label: "Navigation height (65-205)"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HNAV.LABEL
                   default: 85
 
             nav.mobile:
               type: fieldset
-              title:  "Mobile Navigation"
+              title:  THEME_AKAZIEForest.ADMIN.FIELDS.MNAV.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.mobileheightenabled:
                   type: toggle
-                  label: "Mobile Navigation custom height"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CHNAV.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -163,38 +155,19 @@ form:
                     1: PLUGIN_ADMIN.ENABLED
                 nav.mobilenavheight:
                   type: text
-                  label: "Mobile Navigation height (60-300)"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
                   default: 85
 
-            nav.secondary:
-              type: fieldset
-              title: 'Secondary nav (experimental)'
-              collapsed: true
-              collapsible: true
-              fields:
-                nav.seconadryrepeater:
-                  name: secondaryrepeater
-                  type: list
-                  label: "Nav items"
-                  collapsed: false
-                  fields:
-                    .name:
-                      type: text
-                      label: "Label"
-                      validate:
-                        required: true
-                    .link:
-                      type: text
-                      label: "URL"
+
             nav.button:
               type: fieldset
-              title: "Custom Nav button"
+              title: THEME_AKAZIEForest.ADMIN.FIELDS.NAV_BUTTON.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.button.enabled:
                   type: toggle
-                  label: "Custom nav button enabled?"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAV_BUTTON.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -204,12 +177,12 @@ form:
                     type: bool
                 nav.button.text:
                   type: text
-                  label: "Custom nav button text"
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
                   default: ''
                 nav.button.link:
                     type: pages
                     size: medium
-                    label: "Button link"
+                    label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
                     show_all: false
                     show_modular: false
                     show_root: true
@@ -217,7 +190,7 @@ form:
         footer:
           type: fieldset
           title: "Footer"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             footer.compact:
@@ -278,10 +251,9 @@ form:
                   collapsed: true
                   fields:
                     .heading:
-                      type: textarea
+                      type: text
                       label: "Column Heading"
-                      rows: 2
-                      size: large
+                      rows: 1
                     .text:
                       type: textarea
                       label: "content"
@@ -454,7 +426,7 @@ form:
         style.color:
           type: fieldset
           title: "Color"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             style.color.background:
@@ -522,7 +494,7 @@ form:
         style.font:
           type: fieldset
           title: "Fonts"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             style.fonts.import:
@@ -570,7 +542,7 @@ form:
         map:
           type: fieldset
           title: "Google map"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             map.type:
@@ -588,7 +560,7 @@ form:
         blog:
           type: fieldset
           title: "Blog Defaults"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             blog-page:
@@ -600,7 +572,7 @@ form:
         portfolio:
           type: fieldset
           title: "Portfolio Defaults"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             portfolio-page:
@@ -612,7 +584,7 @@ form:
         other:
           type: fieldset
           title: "Other"
-          collapsed: false
+          collapsed: true
           collapsible: true
           fields:
             style.css:
