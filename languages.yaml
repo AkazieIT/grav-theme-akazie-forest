@@ -12,6 +12,7 @@ en:
         MAP: "Insert map"
         MAP_INFO: "Map info"
         LAYOUT: "Site layout"
+        CUSTOM: "Custom style "
       FIELDS:
         TITLE:
           LABEL: "Title"
@@ -245,6 +246,101 @@ en:
         NAV_BUTTON:
           TITLE: "Custom Navigation Button"
           LABEL: "Custom nav button enabled?"
+        FOOTER:
+          TITLE: "Footer"
+        FOOTER_MAIN:
+          TITLE: "Footer main area"
+        FOOTER_BTM:
+          TITLE: "Footer bottom area"
+        MAIL:
+          LABEL: "Mail in footer"
+        PHONE:
+          LABEL: "Phone in footer"
+        SM:
+          LABEL: "Icons with links"
+          ICON:
+            LABEL: "Insert icon code"
+          LINK:
+            LABEL: "Insert link"
+        FOOTER_CLMNS:
+          LABEL: "Footer columns"
+        FOOTER_HEAD:
+          LABEL: "Column heading"
+        SHOW_NAV:
+          LABEL: "Show navigation"
+        SHOW_ICON:
+          LABEL: "Show icon links"
+        SHOW_CONTACT:
+          LABEL: "Show contact information"
+        SHOW_FBOTTOM:
+          LABEL: "Show footer bottom area"
+        SHOW_IMP:
+          LABEL: "Show imprint"
+        SHOW_DP:
+          LABEL: "Show data policy"
+        SHOW_AGB:
+          LABEL: "Show AGB"
+        SHOW_SITE:
+          LABEL: "Show sitemap"
+        LINK_IMP:
+          LABEL: "Link imprint"
+        LINK_DP:
+          LABEL: "Link data policy"
+        LINK_AGB:
+          LABEL: "Link AGB"
+        LINK_SITE:
+          LABEL: "Link sitemap"
+        FOOTER_JS:
+          TITLE: "Footer Javascript"
+        JS_CONTENT:
+          LABEL: "Add footer javascript snippet"
+        COLOR:
+          TITLE: "Color"
+        PRIMARY:
+          LABEL: "Primary color"
+        SECONDARY:
+          LABEL: "Secondary color"
+        THIRD:
+          LABEL: "Third color"
+        HEAD_COL:
+          LABEL: "Head color"
+        TITLE_CLR:
+          LABEL: "Title color"
+        FONT:
+          TITLE: "Fonts"
+        IMPORT:
+          LABEL: "Font import"
+        LOAD:
+          LABEL: "Faster loading for Google Fonts"
+        MAIN_FONT:
+          LABEL: "Main font"
+        TITLE_FONT:
+          LABEL: "Title font"
+        NAV_FONT:
+          LABEL: "Navigation font"
+        FTR_FONT:
+          LABEL: "Footer font"
+        HTML:
+          LABEL: "Custom HTML in head"
+        BLOG:
+          TITLE: "Blog"
+        BLOG_ROUTE:
+          LABEL: "Blog page"
+          HELP: "The route to the blog page when working with blog sidebar"
+        PRTFL_ROUTE:
+          LABEL: "Portfolio page"
+          HELP: "The route to the portfolio page when working with portfolio sidebar"
+        OTHER:
+          TITLE: "Other"
+        CUSTOM_CSS:
+          LABEL: "Use custom CSS file"
+          HELP: "Please create file in theme directory akazie-forest/css/custom.css"
+        CUSTOM_JS:
+          LABEL: "Use custom JS file"
+          HELP: "Please create file in theme directory akazie-forest/js/custom.js"
+
+
+
 
 
 de:
@@ -262,6 +358,7 @@ de:
         MAP: "Karte einfügen"
         MAP_INFO: "Infos zur Karte"
         LAYOUT: "Seitenaufbau"
+        CUSTOM: "Design Einstellungen"
       FIELDS:
         TITLE:
           LABEL: "Titel"
@@ -494,3 +591,97 @@ de:
         NAV_BUTTON:
           TITLE: "Button in der Navigation"
           LABEL: "Soll der Button in der Navigation angezeigt werden?"
+        FOOTER:
+          TITLE: "Footer"
+        FOOTER_MAIN:
+          TITLE: "Hauptbereich"
+        FOOTER_BTM:
+          TITLE: "Unterer Bereich"
+        MAIL:
+          LABEL: "Mailadresse"
+        PHONE:
+          LABEL: "Telefonnummer"
+        SM:
+          LABEL: "Icons mit Links"
+          ICON:
+            LABEL: "Icon Code einfügen"
+          LINK:
+            LABEL: "Link einfügen"
+        FOOTER_CLMNS:
+          LABEL: "Footer Inhaltsblöcke"
+        FOOTER_HEAD:
+          LABEL: "Titel des Blocks"
+        SHOW_NAV:
+          LABEL: "Navigation anzeigen"
+        SHOW_ICON:
+          LABEL: "Icon Links anzeigen"
+        SHOW_CONTACT:
+          LABEL: "Kontakt anzeigen"
+        SHOW_FBOTTOM:
+          LABEL: "Bereich anzeigen?"
+        SHOW_IMP:
+          LABEL: "Impressum anzeigen?"
+        SHOW_DP:
+          LABEL: "Datenschutz anzeigen?"
+        SHOW_AGB:
+          LABEL: "AGB anzeigen?"
+        SHOW_SITE:
+          LABEL: "Sitemap anzeigen?"
+        LINK_IMP:
+          LABEL: "Link Impressum"
+        LINK_DP:
+          LABEL: "Link Datenschuzt"
+        LINK_AGB:
+          LABEL: "Link AGB"
+        LINK_SITE:
+          LABEL: "Link Sitemap"
+        FOOTER_JS:
+          TITLE: "Footer Javascript"
+        JS_CONTENT:
+          LABEL: "Javascript im Footer einfügen"
+        COLOR:
+          TITLE: "Farben"
+        PRIMARY:
+          LABEL: "Hauptfarbe"
+        SECONDARY:
+          LABEL: "Zweite Farbe"
+        THIRD:
+          LABEL: "Dritte Farbe"
+        HEAD_COL:
+          LABEL: "Hintergrund Navigation"
+        TITLE_CLR:
+          LABEL: "Titelfarbe"
+        FONT:
+          TITLE: "Schriften"
+        IMPORT:
+          LABEL: "Schriften importieren"
+        LOAD:
+          LABEL: "Google Fonts schneller laden?"
+        MAIN_FONT:
+          LABEL: "Fliesstext"
+        TITLE_FONT:
+          LABEL: "Titelschrift"
+        NAV_FONT:
+          LABEL: "Schrift Navigation"
+        FTR_FONT:
+          LABEL: "Schrift Footer"
+        HTML:
+          LABEL: "Custom HTML im Header"
+        BLOG:
+          TITLE: "Blog"
+        BLOG_ROUTE:
+          LABEL: "Blog Pfad"
+          HELP: "Pfad zur Blog-Seite wenn mit der Blog Sidebar gearbeitet wird"
+        PRTFL_ROUTE:
+          LABEL: "Portfolio Pfad"
+          HELP: "Pfad zur Portfolio-Seite wenn mit der Blog Sidebar gearbeitet wird"
+        PORTFOLIO:
+          TITLE: "Portfolio"
+        OTHER:
+          TITLE: "Anderes"
+        CUSTOM_CSS:
+          LABEL: "Custom CSS Datei nutzen"
+          HELP: "Bitte erstelle eine Datei im Theme-Ordner akazie-forest/css/custom.css"
+        CUSTOM_JS:
+          LABEL: "Custom Javascript Datei nutzen"
+          HELP: "Bitte erstelle eine Datei im Theme-Ordner akazie-forest/js/custom.js"
