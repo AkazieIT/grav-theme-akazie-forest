@@ -4,6 +4,10 @@ en:
       TAB:
         CONTENT: "Content"
         SETTINGS: "Settings"
+        BLOG: "Blog item"
+        PORTFOLIO: "Portfolio item"
+        PORT_CONFIG: "Portfolio config"
+        BLOG_CONFIG: "Blog config"
       SECTION:
         CONTENT: "Text Section"
         MEDIA: "Media Section"
@@ -13,6 +17,8 @@ en:
         MAP_INFO: "Map info"
         LAYOUT: "Site layout"
         CUSTOM: "Custom style "
+        CONFIG: "Configuration"
+        HERO: "Hero section"
       FIELDS:
         TITLE:
           LABEL: "Title"
@@ -163,6 +169,8 @@ en:
             1: "Yes"
         DATE:
           LABEL: "Show date?"
+        SHOW_CONT:
+          LABEL: "Show content"
         SHOWCONT:
           LABEL: "Show preview text?"
         HEIGHT:
@@ -338,8 +346,34 @@ en:
         CUSTOM_JS:
           LABEL: "Use custom JS file"
           HELP: "Please create file in theme directory akazie-forest/js/custom.js"
-
-
+        HERO:
+          LABEL: "Hero classes"
+          DESCRIPTION: "There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+        HERO_IMG:
+          LABEL: "Image hero section"
+          DESCRIPTION: "If not specified, this defaults to the first image found in the page''s folder"
+        SIDEBAR:
+          LABEL: "Show sidebar"
+        BREADCRUMBS:
+          LABEL: "Show breadcrumbs"
+        PAGINATION:
+          LABEL: "Show pagination"
+        CONT_DEF:
+          TITLE: "Content definiton"
+        ORDER:
+          LABEL: "Order by..."
+          OPTIONS:
+            FOLDER: "Folder"
+            TITLE: "Title"
+            DATE: "Date"
+            DEFAULT: "Default"
+        MAX:
+          LABEL: "Maximum items count"
+        SEQUENCE:
+          LABEL: "Order"
+          OPTIONS:
+            ASC: "Ascending"
+            DESC: "Descending"
 
 
 
@@ -350,6 +384,10 @@ de:
       TAB:
         CONTENT: "Inhalt"
         SETTINGS: "Einstellungen"
+        BLOG: "Blogartikel"
+        PORTFOLIO: "Portfolio Eintrag"
+        PORT_CONFIG: "Portfolio Konfiguration"
+        BLOG_CONFIG: "Blog Konfiguration"
       SECTION:
         CONTENT: "Abschnitt mit Text"
         MEDIA: "Abschnitt mit Multimedia"
@@ -359,6 +397,8 @@ de:
         MAP_INFO: "Infos zur Karte"
         LAYOUT: "Seitenaufbau"
         CUSTOM: "Design Einstellungen"
+        CONFIG: "Konfiguration"
+        HERO: "Abschnitt Hero"
       FIELDS:
         TITLE:
           LABEL: "Titel"
@@ -685,3 +725,29 @@ de:
         CUSTOM_JS:
           LABEL: "Custom Javascript Datei nutzen"
           HELP: "Bitte erstelle eine Datei im Theme-Ordner akazie-forest/js/custom.js"
+        HERO:
+          LABEL: "Klassen Hero Abschnitt"
+          DESCRIPTION: "Es gibt mehrere Möglichkeiten, im Hero Abschnitt Klassen zu vergeben (Trennung durch Abstand):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+        HERO_IMG:
+          LABEL: "Bild Hero Abschnitt"
+          DESCRIPTION: "Wenn das Bild hier nicht spezifiziert ist, dann wird das erste gefundene Bild im Seitenordner gewählt."
+        SIDEBAR:
+          LABEL: "Sidebar anzeigen"
+        BREADCRUMBS:
+          LABEL: "Breadcrumbs anzeigen"
+        PAGINATION:
+          LABEL: "Nummerierung anzeigen"
+        ORDER:
+          LABEL: "Ordnen nach..."
+          OPTIONS:
+            FOLDER: "Ordner"
+            TITLE: "Titel"
+            DATE: "Datum"
+            DEFAULT: "Standard"
+        MAX:
+          LABEL: "Anzahl Einträge (maximal)"
+        SEQUENCE:
+          LABEL: "Auf- oder Absteigend"
+          OPTIONS:
+            ASC: "Aufsteigend"
+            DESC: "Absteigend"

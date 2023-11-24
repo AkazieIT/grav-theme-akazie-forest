@@ -3,29 +3,28 @@ form:
 
     hero_title:
       type: spacer
-      title: Hero Section
+      title: THEME_AKAZIEForest.ADMIN.SECTION.HERO
 
     header.hero_classes:
       type: text
-      label: Hero Classes
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.LABEL
       markdown: true
-      description: 'There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />'
-
+      description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.DESCRIPTION
     header.hero_image:
       type: filepicker
-      label: Hero Image
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.LABEL
       preview_images: true
-      description: 'If not specified, this defaults to the first image found in the page''s folder'
+      description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
 
     toggles_title:
       type: spacer
-      title: Configuration
+      title: THEME_AKAZIEForest.ADMIN.SECTION.CONFIG
 
     header.portfolio_url:
       type: text
       toggleable: true
-      label: Blog Route
-      help: The route to the main portfolio page that contains the "Show ..." configuration
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.PRTFL_ROUTE.LABEL
+      help: THEME_AKAZIEForest.ADMIN.FIELDS.PRTFL_ROUTE.HELP
       default: '/portfolio'
       placeholder: '/portfolio'
       size: medium
@@ -33,7 +32,7 @@ form:
     header.show_sidebar:
       type: toggle
       toggleable: true
-      label: Show Sidebar
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.SIDEBAR.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED
@@ -44,7 +43,7 @@ form:
     header.show_breadcrumbs:
       type: toggle
       toggleable: true
-      label: Show Breadcrumbs
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.BREADCRUMBS.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED
@@ -55,7 +54,7 @@ form:
     header.show_pagination:
       type: toggle
       toggleable: true
-      label: Show Pagination
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.PAGINATION.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED
