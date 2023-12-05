@@ -105,6 +105,11 @@ a {
 .section_wrap{
     padding: 20px 10px;
 }
+
+.title_wrap {
+  margin-top: 30px;
+}
+
 .primary-title {
     margin-bottom: 50px;
 }
@@ -124,6 +129,7 @@ a {
 	margin-bottom: 3px;
 	font-size: 24px;
 	line-height: 32px;
+  letter-spacing: 1px;
 }
 
 .secondary-title h3 {
@@ -156,7 +162,7 @@ header.header-area.fixed {
 
 .main-menu li a {
     color: var(--secondaryDark);
-    font-size: 20px;
+    font-size: 18px;
     /* display: inline-flex; */
     transition: .3s;
     padding: 10px 0;
@@ -265,7 +271,7 @@ header.header-area.fixed {
     justify-content: center;
     border-radius: 5px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     position: relative;
     z-index: 1;
 }
@@ -338,13 +344,13 @@ header.header-area.fixed {
     background: transparent;
     color: #B6D191;
     padding: 0px 35px 0 20px;
-    height: 50px;
+    height: 45px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
     position: relative;
     z-index: 1;
 }
@@ -411,7 +417,7 @@ header.header-area.fixed {
 }
 
 .cmn-link.type-2 {
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--fira_sans);
     color: var(--secondaryDark);
     display: inline-flex;
@@ -493,14 +499,15 @@ header.header-area.fixed {
     display: block;
 }
 .hero-content h6 {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .hero-content h1 {
-    font-size: 45px;
+    font-size: 44px;
     font-weight: 700;
     margin-bottom: 17px;
 }
@@ -517,7 +524,7 @@ header.header-area.fixed {
 .box-btn.type-2 {
     background: linear-gradient(to right, var(--primary), #B6D191);
     border-radius: 5px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+    /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);*/
     color: #fff;
     border: 0;
 }
@@ -540,7 +547,7 @@ header.header-area.fixed {
 
 .brand-item {
     background-color: white;
-    box-shadow: 0 6px 30px #bababa;
+    box-shadow: 0 6px 30px #f1f1f1;
     border-radius: 5px;
     padding: 20px 15px;
     margin: 9px;
@@ -549,7 +556,7 @@ header.header-area.fixed {
   }
 
   .brand-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
 .brand-item img {
@@ -583,10 +590,11 @@ header.header-area.fixed {
 }
 
 .cmn-content h6 {
-    font-size: 28px;
+    font-size: 24px;
     color: var(--primary);
     font-weight: 600;
     margin-bottom: 6px;
+    letter-spacing: 1px;
 }
 
 .about-us-area.home_page {
@@ -598,8 +606,8 @@ header.header-area.fixed {
 
 /* icon-list-area css start */
 .icon-list-area {
-    padding-top: 100px;
-    padding-bottom: 70px;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 .icon-list-area .secondary-title {
@@ -659,9 +667,15 @@ header.header-area.fixed {
 ._card{
     padding: 15px 0px;
 }
+
+._card:last-child {
+  margin-bottom: 10rem;
+}
+
 .card_image img {
     width: 100%;
     border-radius: 5px;
+    margin-bottom: 0.5rem;
 }
 
 .card_image {
@@ -678,7 +692,7 @@ header.header-area.fixed {
 
 .cta-area {
     background-color: var(--tertiary);
-    padding: 94px 0;
+    padding: 5rem 0;
 }
 
 .offer-g-wrapper {
@@ -741,7 +755,7 @@ header.header-area.fixed {
 
 .cmn-content h3 {
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 1.5rem;
 }
 
 .cmn-content p {
@@ -749,9 +763,13 @@ header.header-area.fixed {
     font-family: var(--fira_sans);
     color: var(--secondary);
     line-height: 24px;
-    /* margin-bottom: 30px; */
-}
+    margin-bottom: 2rem;
+  }
 
+  .txt_module .cmn-content p{
+    padding: 0px 100px 0px 0px;
+    margin-bottom: 2rem !important;
+  }
 
 .cmn-content.st-content {
     max-width: 565px;
@@ -765,9 +783,13 @@ header.header-area.fixed {
     background-color: var(--primaryLight);
 }
 
+.ft-widget-first h3 {
+  width: 20rem;
+}
+
 .ft-g-wrapper {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     padding: 100px 0;
 }
 
@@ -782,7 +804,7 @@ header.header-area.fixed {
 
 .ft-nv li a {
     color: var(--secondaryLight);
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--fira_sans);
     transition: .3s;
     display: inline-block;
@@ -794,12 +816,12 @@ header.header-area.fixed {
 
 .ft-nv li {
     font-family: var(--fira_sans);
-    font-size: 18px;
+    font-size: 16px;
     color: var(--secondaryLight);
 }
 
 .ft-widget p {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--secondaryLight);
     font-family: var(--fira_sans);
     line-height: 1.7;
@@ -808,18 +830,18 @@ header.header-area.fixed {
 
 .footer-bottom {
     background-color: var(--primaryDark);
-    padding: 31px 0;
+    padding: 1rem 0;
 }
 
 .footer-bottom p {
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
 }
 
 .ft-links li a {
     display: inline-block;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     transition: .3s;
 }
 
@@ -834,12 +856,12 @@ header.header-area.fixed {
 
 .ft-links li:not(:last-child):before {
     content: "";
-    height: 22px;
+    height: 16px;
     width: 2px;
     background-color: #fff;
     position: absolute;
     right: -18px;
-    top: 58%;
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -847,11 +869,11 @@ header.header-area.fixed {
     font-size: 28px;
     color: var(--secondaryLight);
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
 .social-wrap h5 {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--secondaryLight);
     margin: 0;
 }
@@ -861,7 +883,7 @@ header.header-area.fixed {
 }
 
 .ft-widget-first p {
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--fira_sans);
     color: var(--secondaryLight);
     margin-bottom: 0;
@@ -1335,12 +1357,12 @@ header.header-area.fixed {
         width: 670px;
     }
     .hero-content h1 {
-        font-size: 40px;
+        font-size: 44px;
     }
 
     .brand-area {
-        padding: 105px 0;
-    }
+    padding: 12rem 0;
+  }
 
     .about-g-wrapper {
         grid-gap: 30px;
@@ -1396,7 +1418,7 @@ header.header-area.fixed {
     .hero-video img {
         width: 100%;
         margin-top: -60px;
-    }    
+    }
 
     .hero-area {
         display: block !important;
@@ -1570,7 +1592,7 @@ header.header-area.fixed {
     }
     .hero-video img{
         margin-top: -25px;
-    }    
+    }
     .brand-area {
         padding-top: 35px;
         padding-bottom: 70px;
