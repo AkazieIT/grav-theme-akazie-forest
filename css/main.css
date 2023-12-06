@@ -145,7 +145,7 @@ a {
 /* Header Css Start */
 .header-area {
     background-color: var(--tertiary);
-    padding: 24px 0px;
+    padding: 24px 0px !important;
     position: relative;
     z-index: 55;
 }
@@ -265,7 +265,7 @@ header.header-area.fixed {
     background: transparent;
     color: #B6D191;
     padding: 0px 35px 0 20px;
-    height: 58px;
+    height: 45px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -488,7 +488,8 @@ header.header-area.fixed {
     position: relative;
     z-index: 1;
     display: block;
-    max-height: 500px;
+    max-height: 600px;
+    object-fit: cover;
 }
 
 .hero-video img{
@@ -756,6 +757,7 @@ header.header-area.fixed {
 .cmn-content h3 {
     font-size: 40px;
     margin-bottom: 1.5rem;
+    width: 63.33%;
 }
 
 .cmn-content p {
@@ -921,21 +923,23 @@ header.header-area.fixed {
     max-width: 100%;
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);*/
 }
 
 .product-item{
     transition: .3s;
 }
 .product-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .product-item .cmn-link.type-2 {
     color: var(--primary);
     text-decoration: none !important;
-    font-weight: 700;
+    font-weight: 600;
     font-family: var(--barlow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .product-item .cmn-link.type-2 svg {
@@ -985,13 +989,21 @@ header.header-area.fixed {
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
-    padding: 30px;
+    padding: 60px;
     box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);
 }
 .price-area {
 	padding: 100px 0;
 	background-color: var(--tertiary);
 	padding-bottom: 130px;
+}
+
+.price-area .primary-title {
+  width: 63.33%;
+}
+
+.price-area p {
+    margin-bottom: 6rem;
 }
 
 .range-area {
@@ -1016,7 +1028,7 @@ header.header-area.fixed {
     line-height: 1;
     font-family: var(--fira_sans);
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 3rem;
   }
   .price-card .price span {
     font-size: 20px;
@@ -1027,11 +1039,17 @@ header.header-area.fixed {
     font-size: 25px;
     font-weight: 700;
     font-family: var(--fira_sans);
-    margin-bottom: 24px;
+    margin-bottom: 2.5rem;
   }
-  .price-card-g-wrapper .price-card:nth-child(2) {
+
+  /*.price-card-g-wrapper .price-card:nth-child(2) {
 	transform: scaleY(1.2) scaleX(1.05);
-}
+}*/
+
+.price-card-g-wrapper .price-card:nth-child(2) h5 {
+  color: var(--primary);
+  }
+
 /* product page css end */
 
 /* about-us-area css start */
