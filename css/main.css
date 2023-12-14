@@ -67,7 +67,7 @@ a {
 }
 
 .mb-30 {
-    margin-bottom: 30px;
+    margin-bottom: 5rem;
 }
 
 .text_lg {
@@ -88,12 +88,12 @@ a {
 }
 
 .box_shadow_black036_16 {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);*/
 }
 
 .border_radius_sm {
-    border-radius: 5px;
-}
+    border-radius: 5px 0px 0px 5px;
+  }
 
 .mr-10 {
     margin-right: 10px;
@@ -134,7 +134,7 @@ a {
 
 .secondary-title h3 {
     font-size: 36px;
-    margin-bottom: 15px;
+    margin-bottom: 1.8rem;
     line-height: 40px;
 }
 
@@ -438,6 +438,7 @@ header.header-area.fixed {
     width: 100%;
     height: 80px;
     background-color: var(--tertiary);
+    margin-bottom: 2rem;
 }
 
 .cmn-link.type-2.type-3 {
@@ -480,6 +481,7 @@ header.header-area.fixed {
     left: -50px;
     bottom: -50px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
 }
 
 .hero-video video {
@@ -490,6 +492,7 @@ header.header-area.fixed {
     display: block;
     max-height: 600px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .hero-video img{
@@ -498,7 +501,9 @@ header.header-area.fixed {
     position: relative;
     z-index: 1;
     display: block;
+    border-radius: 5px;
 }
+
 .hero-content h6 {
     font-size: 24px;
     font-weight: 600;
@@ -693,7 +698,7 @@ header.header-area.fixed {
 
 .cta-area {
     background-color: var(--tertiary);
-    padding: 5rem 0;
+    padding: 8rem 0rem 4rem 0rem;
 }
 
 .offer-g-wrapper {
@@ -757,7 +762,7 @@ header.header-area.fixed {
 .cmn-content h3 {
     font-size: 40px;
     margin-bottom: 1.5rem;
-    width: 63.33%;
+    width: 80%;
 }
 
 .cmn-content p {
@@ -1062,7 +1067,7 @@ header.header-area.fixed {
 
 /* team-area css start */
 .team-area {
-    padding: 60px 0;
+    padding: 8rem 0;
     background-color: var(--tertiary);
 }
 
@@ -1082,14 +1087,18 @@ header.header-area.fixed {
 }
 
 .ct-list li:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 
 /* team-area css end */
 
 /* contact-area css start */
 .contact-area {
-    padding: 100px 0;
+  padding: 2rem 0rem 6rem 0rem;
+}
+
+.contact-area .container {
+  padding-left: 8px;
 }
 
 .contact-area .primary-title {
@@ -1100,6 +1109,14 @@ header.header-area.fixed {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 0px;
+}
+
+.address-wrapper a {
+  font-weight: 600;
+}
+
+.ol-viewport canvas {
+  border-radius: 0px 5px 5px 0px !important;
 }
 
 .map-blk iframe {
@@ -1153,7 +1170,7 @@ header.header-area.fixed {
 }
 
 .quote-area {
-    padding: 60px 0;
+    padding: 8rem 0;
 }
 
 .quote-item {
@@ -1165,7 +1182,7 @@ header.header-area.fixed {
 
 .quote-item p {
     font-style: italic;
-    font-size: 30px;
+    font-size: 28px;
     color: var(--secondaryLight);
     font-weight: 700;
     line-height: 40px;
@@ -1177,16 +1194,19 @@ header.header-area.fixed {
 }
 
 .designation {
-    font-size: 24px;
+    font-size: 20px;
     color: var(--primary);
     font-weight: 600;
     line-height: 36px;
+    letter-spacing: 1px;
 }
 
 .quote-author h6 {
     color: var(--secondaryLight);
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .quote-author {
@@ -1214,7 +1234,7 @@ header.header-area.fixed {
     font-family: var(--barlow);
     color: var(--primary);
     position: relative;
-    padding: 15px 15px;
+    padding: 20px 34px;
     padding-left: 34px;
 }
 
@@ -1236,7 +1256,7 @@ header.header-area.fixed {
 
 .accordion-item {
     border-radius: 0 !important;
-    margin-bottom: 5px;
+    margin-bottom: 2rem;
 }
 
 /* faq-area css end */
@@ -1357,6 +1377,7 @@ header.header-area.fixed {
     object-fit: cover;
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 
