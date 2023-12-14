@@ -18,47 +18,48 @@ form:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
               underline: true
-              header.section.title.heading:
-                type: text
-                autofocus: true
-                label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
-                validate:
-                  required: true
-              header.section.title.subHeading:
-                type: text
-                label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
-              header.section.title.text:
-                type: markdown
-                label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
+              fields:
+                header.section.title.heading:
+                  type: text
+                  autofocus: true
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+                  validate:
+                    required: true
+                header.section.title.subHeading:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+                header.section.title.text:
+                  type: markdown
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
 
-              header.section.content.cards:
-                name: cards
-                type: list
-                label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
-                collapsed: true
-                fields:
-                  .price:
-                    type: text
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PRICE.LABEL
-                  .priceText:
-                    type: text
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
-                  .text:
-                    type: textarea
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
-                  .anchor:
-                    type: text
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL_TXT.LABEL
-                  .link:
-                    type: text
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
-                  .open.type:
-                    type: select
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
-                    default: 0
-                    options:
-                      0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
-                      1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
+                header.section.content.cards:
+                  name: cards
+                  type: list
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
+                  collapsed: true
+                  fields:
+                    .price:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PRICE.LABEL
+                    .priceText:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
+                    .text:
+                      type: textarea
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                    .anchor:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL_TXT.LABEL
+                    .link:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
+                    .open.type:
+                      type: select
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.LABEL
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
 
         settings:
           type: tab

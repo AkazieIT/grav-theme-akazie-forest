@@ -14,30 +14,30 @@
     margin-bottom: 2%;
   }
 @media only screen and (min-width: 1025px) {
-  .js-masonry-list { 
-     column-gap: 2.5%; 
-   } 
-   .js-masonry-elm { 
-     width: 18%; 
-     margin-bottom: 2.5%; 
+  .js-masonry-list {
+     column-gap: 2.5%;
+   }
+   .js-masonry-elm {
+     width: 18%;
+     margin-bottom: 2.5%;
    }
 }
 */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .js-masonry-list {
-    column-gap: 1.25%;
+    column-gap: 3%;
   }
   .js-masonry-elm {
-    width: 32.5%;
+    width: 30%;
     margin-bottom: 1.25%;
   }
 }
 @media only screen and (min-width: 451px) and (max-width: 600px) {
   .js-masonry-list {
-    column-gap: 2%;
+    column-gap: 5%;
   }
   .js-masonry-elm {
-    width: 49%;
+    width: 45%;
     margin-bottom: 2%;
   }
 }
