@@ -14,7 +14,7 @@
             <div class="price-card">
                 <h5 class="price">{{card.price}}.– <span class="d-block">{{card.priceText}}</span></h5>
                 <p>{{card.text}}</p>
-                <a href="{{card.link}}" class="box-btn" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
+                <a href="{{card.link}}" class="box-btn type-2" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
             </div>
             {% endfor %}
         </div>
