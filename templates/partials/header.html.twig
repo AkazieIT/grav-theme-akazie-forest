@@ -17,18 +17,7 @@
     <div class="mobile_menu-inner">
         {% include 'partials/navigation_mobile.html.twig' %}
         <div class="m_menu_footer">
-            <div class="ft-widget">
-                <h3>Öffnungszeiten</h3>
-                <p>Montag bis Freitag <br>
-                    8.30-12.00 Uhr und <br>
-                    13.30-16.30 Uhr</p>
-            </div>
-            <div class="ft-widget">
-                <h3>Adresse</h3>
-                <ul class="ft-nv">
-                    <p>Musterfirma <br> Musterstrasse 66 <br> Bern 3004 template.ch</p>
-                </ul>
-            </div>
+                {% include 'partials/footercolumns.html.twig' with {'mobilefooter': true} %}
         </div>
     </div>
 </div>

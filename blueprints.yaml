@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.0
+version: 0.1.1
 description: A Forest Theme
 icon: rebel
 author:
@@ -118,7 +118,6 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-
             nav.desktop:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE
@@ -136,7 +135,26 @@ form:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.HNAV.LABEL
                   default: 85
-
+                nav.hamburger:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.HELP
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                nav.linksbeforehamburger:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.HELP
+                  default: 0
+                  validate:
+                      type: number
+                      min: 0
+                      max: 10
             nav.mobile:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.MNAV.TITLE
@@ -279,7 +297,16 @@ form:
                         1: PLUGIN_ADMIN.ENABLED
                       validate:
                         type: bool
-
+                    .mobilenav.enabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILENAV.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool                        
             footer.bottom:
               type: fieldset
               title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_BTM.TITLE

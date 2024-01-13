@@ -239,6 +239,12 @@ en:
         FIXHEAD:
           LABEL: "Fixed Header"
           HELP: "If activated, the header will always be at the top of the browser window."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "How many navigation links before hamburger menu?"
+          HELP: "If activated, set number of navigation links will be shown before the hamburger menu."
+        HAMBURGER:
+          LABEL: "Hamburger menu"
+          HELP: "If activated, the hamburger menu will be shown."
         DNAV:
           TITLE: "Desktop navigation"
         MNAV:
@@ -280,6 +286,8 @@ en:
           LABEL: "Show icon links"
         SHOW_CONTACT:
           LABEL: "Show contact information"
+        MOBILENAV:
+          LABEL: "Show in mobile navigation"
         SHOW_FBOTTOM:
           LABEL: "Show footer bottom area"
         SHOW_IMP:
@@ -616,6 +624,12 @@ de:
         FIXHEAD:
           LABEL: "Fixierte Navigation"
           HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "Wie viele Links sollen vor dem Hamburger Menu angezeigt werden?"
+          HELP: "Wenn diese Option aktiviert ist, wird die Anzahl der Links angezeigt, die vor dem Hamburger Menu angezeigt werden sollen."
+        HAMBURGER:
+          LABEL: "Hamburger Menu"
+          HELP: "Wenn diese Option aktiviert ist, wird das Hamburger Menu angezeigt."
         DNAV:
           TITLE: "Desktop Navigation"
         MNAV:
@@ -657,6 +671,8 @@ de:
           LABEL: "Icon Links anzeigen"
         SHOW_CONTACT:
           LABEL: "Kontakt anzeigen"
+        MOBILENAV:
+          LABEL: "In mobiler Navigation unten anzeigen"
         SHOW_FBOTTOM:
           LABEL: "Bereich anzeigen?"
         SHOW_IMP:
