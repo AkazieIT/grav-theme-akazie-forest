@@ -65,11 +65,19 @@ a {
 }
 
 .container {
-    max-width: 1468px;
+    /* reset max width of container */
+    max-width: none;
+    /* originally: 1468px */
     /*padding-left: 24px;
     padding-right: 24px;*/
     margin: auto;
 }
+
+.container-inner {
+    max-width: 1468px;
+    margin:auto;
+}
+
 
 .mb-30 {
     margin-bottom: 5rem;
@@ -703,25 +711,23 @@ header.header-area.fixed {
 .cta-area {
     background-color: var(--tertiary);
     padding: 8rem 0rem 4rem 0rem;
+    
 }
-/*
-.cta-area::before {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+
+.cta-area .container-inner {
+    
+        
+    padding-right:22px;
+    padding-left:22px;
 }
-*/
 
 .cta-area {
-    width:100vw;
+    width:100%;
 }
 
 .cta-area .container {
 
-    max-width: 1400px;
+   /* max-width: 1400px; */
     margin:auto;
 }
 .offer-g-wrapper {
@@ -1022,10 +1028,19 @@ header.header-area.fixed {
     padding: 60px;
     box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);
 }
+.price-card.highlight {
+    box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);
+    transform: scale(1.15);
+
+}
 .price-area {
 	padding: 100px 0;
 	background-color: var(--tertiary);
 	padding-bottom: 130px;
+}
+.price-area .container-inner {
+    padding-right:22px;
+    padding-left:22px;
 }
 
 .price-area .primary-title {
@@ -1094,7 +1109,14 @@ header.header-area.fixed {
 .team-area {
     padding: 8rem 0;
     background-color: var(--tertiary);
+
 }
+.team-area .container-inner {
+    
+    padding-right:22px;
+    padding-left:22px;
+}
+
 
 .member-img {
     margin-bottom: 24px;
@@ -1197,6 +1219,10 @@ header.header-area.fixed {
 .quote-area {
     padding: 8rem 0;
 }
+.quote-area .container-inner {
+    padding-right:22px;
+    padding-left:22px;
+}
 
 .quote-item {
     max-width: 700px;
@@ -1283,7 +1309,10 @@ header.header-area.fixed {
     border-radius: 0 !important;
     margin-bottom: 2rem;
 }
-
+.container-inner:has(.accordion){
+    padding-left:22px;
+    padding-right:22px;
+}
 /* faq-area css end */
 
 
@@ -1524,7 +1553,9 @@ header.header-area.fixed {
     .price-area {
         padding: 100px 0;
         padding-bottom: 100px;
+    
     }
+
     .price-card-g-wrapper {
         grid-template-columns: 1fr;
     }
@@ -1573,7 +1604,7 @@ header.header-area.fixed {
     .cta-area {
         padding: 70px 0;
     }
-
+    
     .ft-g-wrapper {
         padding: 70px 0;
         grid-template-columns: 1fr 1fr;

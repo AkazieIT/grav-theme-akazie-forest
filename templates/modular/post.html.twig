@@ -23,8 +23,8 @@
         {% set card_opentype = false %}
     {% endif %}
     {% if page.header.section.wrap.container == 1 %}
-    </div>  {#  end row #}
-    <div class="row container  case-post-area">
+    </div></div>  {#  end row #}
+    <div class="row container"><div class="row container-inner">
     {% endif %}
     {% set featured = page.collection({'items':{'@taxonomy.category': 'blog', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
     {% for row in featured|batch(3) %}
@@ -38,16 +38,17 @@
                 {% include 'partials/blog-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_img':show_img, 'card_opentype':card_opentype} %}
             </div>
         {% endfor %}
+        <div class="is-post-area"></div>
     {% endfor %}
     {% if page.header.section.wrap.container == 1 %}
-    </div>
-    <div class="row container">  {# start row #}
+    </div></div>  {#  end row #}
+    <div class="row container"><div class="row container-inner">  {# start row #}
     {% endif %}
 {% endif %}
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.case-post-area{
+.container:has(.container-inner > .is-post-area){
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}

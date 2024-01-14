@@ -107,5 +107,5 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
               default: 1
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0

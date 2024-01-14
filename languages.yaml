@@ -41,6 +41,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        BG_ADDBLK:
+          LABEL: "Background color Address Block"
         TXT_COLOR:
           LABEL: "Text Color"
         CONTENT:
@@ -83,6 +85,8 @@ en:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Highlight?"
           NAME:
             LABEL: "Name (alt-tag)"
           URL:
@@ -425,6 +429,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        BG_ADDBLK:
+          LABEL: "Hintergrundfarbe Adress Block"
         TXT_COLOR:
           LABEL: "Farbe des Textes"
         CONTENT:
@@ -468,6 +474,8 @@ de:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Hervorheben?"
           ICON:
             DESCRIPTION: "Icon oder Bild hochladen"
           NAME:

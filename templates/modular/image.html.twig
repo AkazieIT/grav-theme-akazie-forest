@@ -1,7 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
-<div class="row container img_module">
+</div></div>  {#  end row #}
+<div class="row container img_module"><div class="row container-inner">
 {% endif %}  
 <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
             {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
@@ -11,8 +11,7 @@
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
             {% else %}col-12 col-md-6{% endif %} 
              section_wrap"
-    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}"         
->   
+    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}" >   
     <div class="container">
     {% if page.header.section.settings.title.show %}
     <div class="title_wrap cmn-content">
@@ -85,8 +84,8 @@
     </div>
 </div>
 {% if page.header.section.wrap.container == 1 %}
-</div>
-<div class="row container">  {# start row #}
+</div></div>
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %} 
 {% endif %}
 

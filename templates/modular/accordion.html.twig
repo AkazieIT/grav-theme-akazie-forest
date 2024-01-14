@@ -24,6 +24,17 @@
             </div>
 
             {% endfor %}
+            <div class="accordion">
+            </div>
         {# </div> #}
+
+
+    {% if page.header.section.settings.bgcolor %}
+    <style>
+    .container:has(.container-inner > .accordion){
+        background-color: {{page.header.section.settings.bgcolor}};
+    }
+    </style>
+    {% endif %}
 {% endif %}
 

@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
+</div></div>
 <div class="contact-area">
-    <div class="container">
+    <div class="container"><div class="container-inner">
         <div class="address-wrapper">
             <div class="secondary-title address-blk border_radius_sm mb-0">
                 <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
@@ -54,7 +55,9 @@
             </div>
             {% endif %}
         </div>
-    </div>
+    </div></div>
+    
+ <div class="container"><div class="container-inner">
 </div>
 {% endif %}
 
@@ -62,6 +65,11 @@
 {% if page.header.section.settings.bgcolor %}
 .contact-area{
     background-color: {{page.header.section.settings.bgcolor}};
+}
+{% endif %}
+{% if page.header.section.settings.bgaddblk %}
+.address-blk{
+    background-color: {{page.header.section.settings.bgaddblk}};
 }
 {% endif %}
 {% if page.header.section.settings.title.fontsize %}

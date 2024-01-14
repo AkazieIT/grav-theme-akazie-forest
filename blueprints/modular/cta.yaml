@@ -47,8 +47,8 @@ form:
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
             cards:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.CARDS
@@ -92,8 +92,8 @@ form:
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
                       default: 0
                       options:
-                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
-                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
 
         settings:
             type: tab

@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
+</div></div>
 <div class="price-area">
-    <div class="container">
+    <div class="container"><div class="container-inner">
         <div class="primary-title">
             {% if page.header.section.settings.title.show %}
             <h6 class="text-uppercase">{{page.header.section.title.subHeading}}</h6>
@@ -11,15 +12,16 @@
 
         <div class="price-card-g-wrapper">
             {% for card in page.header.section.content.cards %}
-            <div class="price-card">
+            <div class="price-card {{ card.highlight ? 'highlight' }}">
                 <h5 class="price">{{card.price}}.– <span class="d-block">{{card.priceText}}</span></h5>
                 <p>{{card.text}}</p>
-                <a href="{{card.link}}" class="box-btn type-2" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
+                <a href="{{card.link}}" class="box-btn {{ card.highlight ? 'type-2' : 'type-1' }}" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div></div>
 </div>
+<div class="container"><div class="container-inner">
 {% endif %}
 
 <style>

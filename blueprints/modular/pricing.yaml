@@ -60,6 +60,14 @@ form:
                       options:
                         0: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.0
                         1: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.WINDOW.OPTIONS.1
+                    .highlight:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.HIGHLIGHT.LABEL
+                      highlight: 1
+                      default: 0
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
 
         settings:
           type: tab

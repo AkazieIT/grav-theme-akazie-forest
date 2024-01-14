@@ -135,6 +135,11 @@ form:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
               default: '#fbfbfb'
+            header.section.settings.bgaddblk:
+              type: colorpicker
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_ADDBLK.LABEL
+              default: '#fbfbfb'
+              
 
             header.section.settings.module.enabled:
               type: toggle

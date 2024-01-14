@@ -3,11 +3,11 @@
 {% set mediaFilePath = 'theme://images/hero/' ~ media %}
 {% if page.header.section.content.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
+</div></div>  {#  end row #}
 
 {% endif %} 
 <div class="hero-area position-relative d-flex">
-    <div class="container ">
+    <div class="container "><div class="container-inner">
         {# <div class="{% if page.header.section.settings.txt.column == 1 %}col-12 col-md-12
                     {% elseif page.header.section.settings.txt.column == 2 %}col-12 col-md-6
                     {% elseif page.header.section.settings.txt.column == 3 %}col-12 col-md-4
@@ -67,11 +67,11 @@
  
  
 
-    </div>    
+    </div></div>    
 </div>
 {% if page.header.section.wrap.container == 1 %}
 
-<div class="row container">  {# start row #}
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %} 
 {% endif %}
 <style>
