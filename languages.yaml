@@ -424,6 +424,15 @@ de:
         TITLESIZE:
           LABEL: "Grösse Titel"
           DESCRIPTION: "Angabe in Pixel"
+        HSIZE:
+          LABEL: "Grösse Titel"
+          OPTIONS:
+            0: "h1"
+            1: "h2"
+            2: "h3"
+            3: "h4"
+            4: "h5"
+            5: "h6"
         SUBTITLESIZE:
           LABEL: "Grösse Untertitel"
           DESCRIPTION: "Angabe in Pixel"

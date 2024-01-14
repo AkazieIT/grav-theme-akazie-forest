@@ -5,8 +5,24 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="cmn-content st-content">
-                    {% if page.header.section.settings.title.show %}                
-                    <h3>{{page.header.section.content.left.title}}</h3>
+                    {% if page.header.section.settings.title.show %}   
+                    
+                        {% if page.header.section.settings.title.hsize == '1' %}<h2>
+                        {% elseif page.header.section.settings.title.hsize == '2' %}<h3>
+                        {% elseif page.header.section.settings.title.hsize == '3' %}<h4>
+                        {% elseif page.header.section.settings.title.hsize == '4' %}<h5>
+                        {% elseif page.header.section.settings.title.hsize == '5' %}<h6>
+                        {% else %}<h1>
+                        {% endif %}        
+                        {{page.header.section.content.left.title}}
+                        {% if page.header.section.settings.title.hsize == '1' %}</h2>
+                        {% elseif page.header.section.settings.title.hsize == '2' %}</h3>
+                        {% elseif page.header.section.settings.title.hsize == '3' %}</h4>
+                        {% elseif page.header.section.settings.title.hsize == '4' %}</h5>
+                        {% elseif page.header.section.settings.title.hsize == '5' %}</h6>
+                        {% else %}</h1>
+                        {% endif %}
+
                     {% endif %}
                     <p>{{page.header.section.content.left.text|markdown|raw}}</p>
                     <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.link.open.type %}target="_blank"{% endif %}>
@@ -43,11 +59,6 @@
 {% if page.header.section.settings.bgcolor %}
 .cta-area{
     background-color: {{page.header.section.settings.bgcolor}};
-}
-{% endif %}
-{% if page.header.section.settings.title.fontsize %}
-.cmn-content h3{
-    font-size: {{page.header.section.settings.title.fontsize}}px;
 }
 {% endif %}
 
