@@ -704,7 +704,26 @@ header.header-area.fixed {
     background-color: var(--tertiary);
     padding: 8rem 0rem 4rem 0rem;
 }
+/*
+.cta-area::before {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+*/
 
+.cta-area {
+    width:100vw;
+}
+
+.cta-area .container {
+
+    max-width: 1400px;
+    margin:auto;
+}
 .offer-g-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;

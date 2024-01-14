@@ -78,6 +78,16 @@
         {% do assets.addCss('theme://css/custom.css', 98) %}
     {% endif %}    
 
+
+    {% if theme_var('nav.hamburger') %}
+        <style>
+            #mobile_bar {
+                display: inline-block !important;
+            }
+        </style>
+    {% endif %}
+
+
 </head>
 
 <body id="top" class="{{ page.header.body_classes|e }}">
