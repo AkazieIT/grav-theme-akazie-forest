@@ -1,7 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
-<div class="row container img_module">
+</div></div>  {#  end row #}
+<div class="row container img_module"><div class="row container-inner">
 {% endif %}  
 <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
             {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
@@ -11,16 +11,37 @@
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
             {% else %}col-12 col-md-6{% endif %} 
              section_wrap"
-    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}"         
->   
+    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}" >   
     <div class="container">
     {% if page.header.section.settings.title.show %}
     <div class="title_wrap cmn-content">
         {% if page.header.section.subtitle %}
-        <h6 class="text-uppercase">{{page.header.section.subtitle}}</h6>
+
+
+                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.subtitle}}</h1>
+                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.subtitle}}</h2>
+                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.subtitle}}</h3>
+                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.subtitle}}</h4>
+                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.subtitle}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.subtitle}}</h6>
+                {% endif %}                  
+               
+
+
         {% endif %}
         {% if page.header.section.title %}
-        <h3>{{page.header.section.title}}</h3>
+
+         
+                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.section.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.section.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.section.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.section.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.section.title}}</h6>
+                {% else %}<h1>{{page.header.section.title}}</h1>
+                {% endif %}  
+
+
+
         {% endif %}
     </div>
     {% endif %}
@@ -85,8 +106,8 @@
     </div>
 </div>
 {% if page.header.section.wrap.container == 1 %}
-</div>
-<div class="row container">  {# start row #}
+</div></div>
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %} 
 {% endif %}
 
@@ -97,14 +118,4 @@
 }
 {% endif %}
   
-{% if page.header.section.settings.title.fontsize %}
-.title_wrap h3{
-    font-size: {{page.header.section.settings.title.fontsize}}px;
-}
-{% endif %}
-{% if page.header.section.settings.subtitle.fontsize %}
-.title_wrap h6{
-    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
-}
-{% endif %}
 </style>

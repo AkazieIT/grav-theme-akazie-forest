@@ -36,11 +36,16 @@ en:
         TITLESIZE:
           LABEL: "Size title"
           DESCRIPTION: "Unit is pixel"
+        HSIZE:
+          LABEL: "Size title"
+          SUBLABEL: "Size subtitle"
         SUBTITLESIZE:
           LABEL: "Size subtitle"
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        BG_ADDBLK:
+          LABEL: "Background color Address Block"
         TXT_COLOR:
           LABEL: "Text Color"
         CONTENT:
@@ -83,6 +88,8 @@ en:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Highlight?"
           NAME:
             LABEL: "Name (alt-tag)"
           URL:
@@ -239,6 +246,12 @@ en:
         FIXHEAD:
           LABEL: "Fixed Header"
           HELP: "If activated, the header will always be at the top of the browser window."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "How many navigation links before hamburger menu?"
+          HELP: "If activated, set number of navigation links will be shown before the hamburger menu."
+        HAMBURGER:
+          LABEL: "Hamburger menu"
+          HELP: "If activated, the hamburger menu will be shown."
         DNAV:
           TITLE: "Desktop navigation"
         MNAV:
@@ -280,6 +293,8 @@ en:
           LABEL: "Show icon links"
         SHOW_CONTACT:
           LABEL: "Show contact information"
+        MOBILENAV:
+          LABEL: "Show in mobile navigation"
         SHOW_FBOTTOM:
           LABEL: "Show footer bottom area"
         SHOW_IMP:
@@ -320,14 +335,33 @@ en:
           LABEL: "Font import"
         LOAD:
           LABEL: "Faster loading for Google Fonts"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          FILE: "Upload file"
+          NAME: "Font name"
+          TYPE: "Font type"
+          WEIGHT: "Font weight"
+          OPTIONS: 
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Upload fonts locally. Accepted files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Upload fonts"
+          LABEL: "Use remote fonts or upload locally?"  
+          HELP: "Use upload field below to use local fonts."
+          OPTIONS:
+            0: "Use remote"
+            1: "Upload local"
         MAIN_FONT:
-          LABEL: "Main font"
+          LABEL: "Main font + Buttons"
         TITLE_FONT:
           LABEL: "Title font"
         NAV_FONT:
-          LABEL: "Navigation font"
+          LABEL: "Subtitle font"
         FTR_FONT:
-          LABEL: "Footer font"
+          LABEL: "Nav + Footer font"
         HTML:
           LABEL: "Custom HTML in head"
         BLOG:
@@ -412,11 +446,23 @@ de:
         TITLESIZE:
           LABEL: "Grösse Titel"
           DESCRIPTION: "Angabe in Pixel"
+        HSIZE:
+          LABEL: "Grösse Titel"
+          SUBLABEL: "Grösse Untertitel"
+          OPTIONS:
+            0: "h1"
+            1: "h2"
+            2: "h3"
+            3: "h4"
+            4: "h5"
+            5: "h6"
         SUBTITLESIZE:
           LABEL: "Grösse Untertitel"
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        BG_ADDBLK:
+          LABEL: "Hintergrundfarbe Adress Block"
         TXT_COLOR:
           LABEL: "Farbe des Textes"
         CONTENT:
@@ -460,6 +506,8 @@ de:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Hervorheben?"
           ICON:
             DESCRIPTION: "Icon oder Bild hochladen"
           NAME:
@@ -616,6 +664,12 @@ de:
         FIXHEAD:
           LABEL: "Fixierte Navigation"
           HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "Wie viele Links sollen vor dem Hamburger Menu angezeigt werden?"
+          HELP: "Wenn diese Option aktiviert ist, wird die Anzahl der Links angezeigt, die vor dem Hamburger Menu angezeigt werden sollen."
+        HAMBURGER:
+          LABEL: "Hamburger Menu"
+          HELP: "Wenn diese Option aktiviert ist, wird das Hamburger Menu angezeigt."
         DNAV:
           TITLE: "Desktop Navigation"
         MNAV:
@@ -657,6 +711,8 @@ de:
           LABEL: "Icon Links anzeigen"
         SHOW_CONTACT:
           LABEL: "Kontakt anzeigen"
+        MOBILENAV:
+          LABEL: "In mobiler Navigation unten anzeigen"
         SHOW_FBOTTOM:
           LABEL: "Bereich anzeigen?"
         SHOW_IMP:
@@ -697,14 +753,33 @@ de:
           LABEL: "Schriften importieren"
         LOAD:
           LABEL: "Google Fonts schneller laden?"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          NAME: "Schriftname"
+          TYPE: "Schrifttyp"
+          FILE: "Datei hochladen"
+          WEIGHT: "Font weight"
+          OPTIONS: 
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Lade Schriften lokal hoch. Akzeptierte Files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Schriften hochladen"
+          LABEL: "Remote fonts benutzen oder fonts lokal hochladen?"  
+          HELP: "Benutze das Upload Feld unten, um Schriften lokal hochzuladen."
+          OPTIONS:
+            0: "Remote"
+            1: "lokal hochladen"
         MAIN_FONT:
-          LABEL: "Fliesstext"
+          LABEL: "Fliesstext + Buttons"
         TITLE_FONT:
           LABEL: "Titelschrift"
         NAV_FONT:
-          LABEL: "Schrift Navigation"
+          LABEL: "Untertitelschrift"
         FTR_FONT:
-          LABEL: "Schrift Footer"
+          LABEL: "Nav + Footer Schrift"
         HTML:
           LABEL: "Custom HTML im Header"
         BLOG:

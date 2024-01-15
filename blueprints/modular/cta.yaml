@@ -47,8 +47,8 @@ form:
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
             cards:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.CARDS
@@ -92,8 +92,8 @@ form:
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
                       default: 0
                       options:
-                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
-                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
 
         settings:
             type: tab
@@ -106,10 +106,17 @@ form:
                 options:
                   0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
                   1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
-              header.section.settings.title.fontsize:
-                type: text
-                label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
-                description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
+              header.section.settings.title.hsize:
+                type: select
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.LABEL
+                default: 2
+                options:
+                  0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                  1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                  2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                  3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                  4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                  5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
               header.section.settings.txtcolor:
                 type: colorpicker
                 label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL

@@ -3,11 +3,11 @@
 {% set mediaFilePath = 'theme://images/hero/' ~ media %}
 {% if page.header.section.content.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
+</div></div>  {#  end row #}
 
 {% endif %} 
 <div class="hero-area position-relative d-flex">
-    <div class="container ">
+    <div class="container "><div class="container-inner">
         {# <div class="{% if page.header.section.settings.txt.column == 1 %}col-12 col-md-12
                     {% elseif page.header.section.settings.txt.column == 2 %}col-12 col-md-6
                     {% elseif page.header.section.settings.txt.column == 3 %}col-12 col-md-4
@@ -17,8 +17,24 @@
                     {% else %}col-12 col-md-6{% endif %}">         #}
             <div class="hero-content">
             {% if page.header.section.content.title.show %}
-                <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
-                <h1>{{page.header.section.content.left.title}}</h1>
+            
+                {% if page.header.section.content.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
+                {% elseif page.header.section.content.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.content.left.subtitle}}</h2>
+                {% elseif page.header.section.content.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.content.left.subtitle}}</h3>
+                {% elseif page.header.section.content.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.content.left.subtitle}}</h4>
+                {% elseif page.header.section.content.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.content.left.subtitle}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.content.left.subtitle}}</h6>
+                {% endif %}  
+               
+
+                {% if page.header.section.content.title.hsize == '1' %}<h2>{{page.header.section.content.left.title}}</h2>
+                {% elseif page.header.section.content.title.hsize == '2' %}<h3>{{page.header.section.content.left.title}}</h3>
+                {% elseif page.header.section.content.title.hsize == '3' %}<h4>{{page.header.section.content.left.title}}</h4>
+                {% elseif page.header.section.content.title.hsize == '4' %}<h5>{{page.header.section.content.left.title}}</h5>
+                {% elseif page.header.section.content.title.hsize == '5' %}<h6>{{page.header.section.content.left.title}}</h6>
+                {% else %}<h1>{{page.header.section.content.left.title}}</h1>
+                {% endif %}  
+               
             {% endif %}  
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
                 <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.button.open.type %}target="_blank"{% endif %}>{{page.header.section.content.left.anchor}}<i
@@ -67,27 +83,17 @@
  
  
 
-    </div>    
+    </div></div>    
 </div>
 {% if page.header.section.wrap.container == 1 %}
 
-<div class="row container">  {# start row #}
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %} 
 {% endif %}
 <style>
 {% if page.header.section.content.hero.square.bgcolor %}
 .hero-video::after{
     background-color: {{page.header.section.content.hero.square.bgcolor}}!important;
-}
-{% endif %}
-{% if page.header.section.content.title.fontsize %}
-.hero-content h1{
-    font-size: {{page.header.section.content.title.fontsize}}px
-}
-{% endif %}
-{% if page.header.section.content.subtitle.fontsize %}
-.hero-content h6{
-    font-size: {{page.header.section.content.subtitle.fontsize}}px
 }
 {% endif %}
 </style>

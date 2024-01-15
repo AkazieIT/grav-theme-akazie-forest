@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.0
+version: 0.1.1
 description: A Forest Theme
 icon: rebel
 author:
@@ -118,7 +118,6 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-
             nav.desktop:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE
@@ -136,7 +135,26 @@ form:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.HNAV.LABEL
                   default: 85
-
+                nav.hamburger:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.HELP
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                nav.linksbeforehamburger:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.HELP
+                  default: 0
+                  validate:
+                      type: number
+                      min: 0
+                      max: 10
             nav.mobile:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.MNAV.TITLE
@@ -279,7 +297,16 @@ form:
                         1: PLUGIN_ADMIN.ENABLED
                       validate:
                         type: bool
-
+                    .mobilenav.enabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILENAV.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool                        
             footer.bottom:
               type: fieldset
               title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_BTM.TITLE
@@ -482,6 +509,59 @@ form:
               options:
                 0: PLUGIN_ADMIN.DISABLED
                 1: PLUGIN_ADMIN.ENABLED
+            style.fonts.upload:
+              type: fieldset
+              title: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.TITLE
+              collapsed: false
+              collapsible: true
+              fields:
+                style.fonts.uploadselect:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.HELP
+                  highlight: 1
+                  default: 0
+                  options:
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.1
+                style.fonts.uploadfiles:
+                  name: uploadfiles
+                  type: list
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.LABEL
+                  collapsed: true
+                  fields:
+                    .file:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.FILE
+                      description: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
+                      size: large
+                      destination: 'theme://fonts/upload'
+                      multiple: true
+                      markdown: true
+                      accept:
+                        - application/vnd.ms-fontobject
+                        - application/x-font-opentype
+                        - application/x-font-truetype
+                        - application/x-font-ttf
+                        - application/x-font-woff
+                        - application/x-font-woff2
+                        - font/opentype
+                        - font/otf
+                        - font/ttf
+                        - font/woff
+                        - font/woff2
+                        - image/svg+xml
+                        - image/svg
+                        - application/octet-stream
+                    .name:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.NAME
+                    .weight:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.WEIGHT
+                      default: '400'
+                      validate:
+                        type: number
             style.fonts.main:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIN_FONT.LABEL

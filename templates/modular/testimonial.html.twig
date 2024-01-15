@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
+</div></div>
 <div class="quote-area">
-    <div class="container">
+    <div class="container"><div class="container-inner">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% for slide in page.header.section.slides %}
@@ -14,7 +15,7 @@
                         <p>{{slide.text}}</p>
                         <div class="quote-author">
                             <span class="designation">{{slide.position}}</span>
-                            <h6>{{slide.author}}</h6>
+                            <h6 class="subh">{{slide.author}}</h6>
                         </div>
                     </div>
                 </div>
@@ -26,8 +27,8 @@
                         </span>
                         <p>{{slide.text}}</p>
                         <div class="quote-author">
-                            <span class="designation text-capitalize">{{slide.position}}</span>
-                            <h6>{{slide.author}}</h6>
+                            <span class="designation">{{slide.position}}</span>
+                            <h6 class="subh">{{slide.author}}</h6>
                         </div>
                     </div>
                 </div>
@@ -43,8 +44,9 @@
                 <i class="fal fa-chevron-right"></i>
             </button>
         </div>
-    </div>
+    </div></div>
 </div>
+<div class="container"><div class="container-inner">
 {% endif %}
 
 <style>

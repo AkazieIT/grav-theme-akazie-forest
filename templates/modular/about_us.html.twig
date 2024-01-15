@@ -11,7 +11,7 @@
                     {% else %}col-12 col-md-6{% endif %}">         
             <div class="primary-title">
                 <h2>{{page.header.section.heading.title}}</h2>
-                <p class="text_lg ff_fira_sans text_secondary">{{page.header.section.text}}
+                <p class="text_lg text_secondary">{{page.header.section.text}}
                 </p>
             </div>
         </div>    
@@ -75,7 +75,7 @@
                     {% elseif page.header.section.settings.txt.column == 6 %}col-4 col-md-2
                     {% else %}col-12 col-md-6{% endif %}  cmn-content about-content">         
 
-                <h6 class="text-uppercase">{{page.header.section.content.right.subtitle}}</h6>
+                <h6 class="subh">{{page.header.section.content.right.subtitle}}</h6>
                 <h3>{{page.header.section.content.right.title}}</h3>
                 <p>{{page.header.section.content.right.text}}</p>
                 <a href="{{page.header.section.content.right.link}}" class="box-btn" {% if header.section.content.link.open.type %}target="_blank"{% endif %}>
