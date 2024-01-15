@@ -583,8 +583,6 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.HTML.LABEL
               rows: 2
               size: large
-
-
         blog:
           type: fieldset
           title: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG.TITLE
