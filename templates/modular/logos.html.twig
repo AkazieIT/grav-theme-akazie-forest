@@ -3,8 +3,24 @@
 <div class="brand-area"><div class="container-inner">
         <div class="secondary-title text-center">
             {% if page.header.sec_two.settings.title.show %}
-                <h6 class="text-uppercase">{{page.header.sec_two.subtitle}}</h6>
-                <h3>{{page.header.sec_two.title}}</h3>
+                
+                 {% if page.header.sec_two.settings.subtitle.hsize == '0' %}<h1 class="text-uppercase">{{page.header.sec_two.subtitle}}</h1>
+                {% elseif page.header.sec_two.settings.subtitle.hsize == '1' %}<h2 class="text-uppercase">{{page.header.sec_two.subtitle}}</h2>
+                {% elseif page.header.sec_two.settings.subtitle.hsize == '2' %}<h3 class="text-uppercase">{{page.header.sec_two.subtitle}}</h3>
+                {% elseif page.header.sec_two.settings.subtitle.hsize == '3' %}<h4 class="text-uppercase">{{page.header.sec_two.subtitle}}</h4>
+                {% elseif page.header.sec_two.settings.subtitle.hsize == '4' %}<h5 class="text-uppercase">{{page.header.sec_two.subtitle}}</h5>
+                {% else %}<h6 class="text-uppercase">{{page.header.sec_two.subtitle}}</h6>
+                {% endif %}                  
+               
+
+                {% if page.header.sec_two.settings.title.hsize == '1' %}<h2>{{page.header.sec_two.title}}</h2>
+                {% elseif page.header.sec_two.settings.title.hsize == '2' %}<h3>{{page.header.sec_two.title}}</h3>
+                {% elseif page.header.sec_two.settings.title.hsize == '3' %}<h4>{{page.header.sec_two.title}}</h4>
+                {% elseif page.header.sec_two.settings.title.hsize == '4' %}<h5>{{page.header.sec_two.title}}</h5>
+                {% elseif page.header.sec_two.settings.title.hsize == '5' %}<h6>{{page.header.sec_two.title}}</h6>
+                {% else %}<h1>{{page.header.sec_two.title}}</h1>
+                {% endif %}  
+                
             {% endif %} 
         </div>
         <div class="brand-flex-wrapper d-flex flex-wrap justify-content-center">
@@ -27,16 +43,6 @@
 {% if page.header.sec_two.settings.bgcolor %}
 .brand-area{
     background-color: {{page.header.sec_two.settings.bgcolor}};
-}
-{% endif %}
-{% if page.header.sec_two.settings.title.fontsize %}
-.secondary-title h3{
-    font-size: {{page.header.sec_two.settings.title.fontsize}}px;
-}
-{% endif %}
-{% if page.header.sec_two.settings.subtitle.fontsize %}
-.secondary-title h6{
-    font-size: {{page.header.sec_two.settings.subtitle.fontsize}}px;
 }
 {% endif %}
 </style>

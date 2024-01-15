@@ -7,21 +7,13 @@
                 <div class="cmn-content st-content">
                     {% if page.header.section.settings.title.show %}   
                     
-                        {% if page.header.section.settings.title.hsize == '1' %}<h2>
-                        {% elseif page.header.section.settings.title.hsize == '2' %}<h3>
-                        {% elseif page.header.section.settings.title.hsize == '3' %}<h4>
-                        {% elseif page.header.section.settings.title.hsize == '4' %}<h5>
-                        {% elseif page.header.section.settings.title.hsize == '5' %}<h6>
-                        {% else %}<h1>
+                        {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.section.content.left.title}}</h2>
+                        {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.section.content.left.title}}</h3>
+                        {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.section.content.left.title}}</h4>
+                        {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.section.content.left.title}}</h5>
+                        {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.section.content.left.title}}</h6>
+                        {% else %}<h1>{{page.header.section.content.left.title}}</h1>
                         {% endif %}        
-                        {{page.header.section.content.left.title}}
-                        {% if page.header.section.settings.title.hsize == '1' %}</h2>
-                        {% elseif page.header.section.settings.title.hsize == '2' %}</h3>
-                        {% elseif page.header.section.settings.title.hsize == '3' %}</h4>
-                        {% elseif page.header.section.settings.title.hsize == '4' %}</h5>
-                        {% elseif page.header.section.settings.title.hsize == '5' %}</h6>
-                        {% else %}</h1>
-                        {% endif %}
 
                     {% endif %}
                     <p>{{page.header.section.content.left.text|markdown|raw}}</p>

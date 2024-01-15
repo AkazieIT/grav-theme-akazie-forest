@@ -36,6 +36,9 @@ en:
         TITLESIZE:
           LABEL: "Size title"
           DESCRIPTION: "Unit is pixel"
+        HSIZE:
+          LABEL: "Size title"
+          SUBLABEL: "Size subtitle"
         SUBTITLESIZE:
           LABEL: "Size subtitle"
           DESCRIPTION: "Unit is pixel"
@@ -426,6 +429,7 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         HSIZE:
           LABEL: "Grösse Titel"
+          SUBLABEL: "Grösse Untertitel"
           OPTIONS:
             0: "h1"
             1: "h2"
