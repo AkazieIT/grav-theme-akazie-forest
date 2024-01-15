@@ -117,8 +117,6 @@ form:
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
                 5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
-
-
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL

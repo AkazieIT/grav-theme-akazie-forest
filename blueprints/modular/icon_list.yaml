@@ -86,14 +86,28 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
-            header.section.settings.title.fontsize:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
-            header.section.settings.subtitle.fontsize:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
+            header.section.settings.title.hsize:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.LABEL
+              default: 2
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
+            header.section.settings.subtitle.hsize:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.SUBLABEL
+              default: 5
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
             header.section.settings.text.alignment:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
