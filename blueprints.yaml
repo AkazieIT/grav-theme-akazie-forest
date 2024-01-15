@@ -509,6 +509,61 @@ form:
               options:
                 0: PLUGIN_ADMIN.DISABLED
                 1: PLUGIN_ADMIN.ENABLED
+            style.fonts.upload:
+              type: fieldset
+              title: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.TITLE
+              collapsed: false
+              collapsible: true
+              fields:
+                style.fonts.uploadselect:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.HELP
+                  highlight: 1
+                  default: 0
+                  options:
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.1
+                style.fonts.uploadfiles:
+                  name: uploadfiles
+                  type: list
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.LABEL
+                  collapsed: true
+                  fields:
+                    .file:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.FILE
+                      description: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
+                      size: large
+                      destination: 'theme://fonts/upload'
+                      multiple: true
+                      markdown: true
+                      accept:
+                        - application/vnd.ms-fontobject
+                        - application/x-font-opentype
+                        - application/x-font-truetype
+                        - application/x-font-ttf
+                        - application/x-font-woff
+                        - application/x-font-woff2
+                        - font/opentype
+                        - font/otf
+                        - font/ttf
+                        - font/woff
+                        - font/woff2
+                        - image/svg+xml
+                        - image/svg
+                        - application/octet-stream
+                    .name:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.NAME
+                    .weight:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.WEIGHT
+                      default: '400'
+                      validate:
+                        type: number
+                        min: 100
+                        max: 900
             style.fonts.main:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIN_FONT.LABEL

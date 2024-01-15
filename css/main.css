@@ -15,12 +15,18 @@
     --tertiary: #F6F6F6;
 
 
-    --barlow: 'Barlow', sans-serif;
-    --fira_sans: 'Fira Sans', sans-serif;
+    --mainFont: 'Barlow', sans-serif;
+
+    /* Nav + Footer Font */
+    --navfooterFont: 'Barlow', sans-serif;
+    
+    /* TODO rename to Subtitle Font */
+    --subhFont: 'Barlow', sans-serif;
+    --hmFont: 'Fira Sans', sans-serif;
 }
 
 body {
-    font-family: var(--barlow);
+    font-family: var(--mainFont);
     font-weight: 400;
     color: var(--secondaryDark);
     background-color: #FBFBFB;
@@ -42,12 +48,17 @@ h6 {
     line-height: 1.2;
     color: var(--secondaryDark);
     font-weight: bold;
+    font-family: var(--hmFont);
+}
+.subh {
+    font-family: var(--subhFont);
+    text-transform: uppercase;
 }
 
 p {
     line-height: 1.3;
     font-size: 16px;
-    font-family: var(--fira_sans);
+    font-family: var(--mainFont);
     color: var(--secondary);
     margin-bottom: 10px;
     line-height: 24px;
@@ -89,7 +100,7 @@ a {
 }
 
 .ff_fira_sans {
-    font-family: var(--fira_sans);
+    font-family: var(--hmFont);
 }
 
 .text_secondary {
@@ -156,6 +167,21 @@ a {
 
 
 /* Header Css Start */
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6 {
+    font-weight: bold;
+    font-family: var(--navfooterFont);
+}
+
+header, header p, header a, header a.cmn-link.type-2 {
+    font-family: var(--navfooterFont);
+}
+
+
 .header-area {
     background-color: var(--tertiary);
     padding: 24px 0px !important;
@@ -431,7 +457,7 @@ header.header-area.fixed {
 
 .cmn-link.type-2 {
     font-size: 16px;
-    font-family: var(--fira_sans);
+    font-family: var(--mainFont);
     color: var(--secondaryDark);
     display: inline-flex;
     align-items: center;
@@ -532,7 +558,6 @@ header.header-area.fixed {
 
 .hero-content p {
     font-size: 16px;
-    font-family: var(--fira_sans);
     color: var(--secondary);
     margin-bottom: 10px;
     line-height: 24px;
@@ -645,7 +670,6 @@ header.header-area.fixed {
 }
 
 .cmn-content.icon-list-content p {
-    font-family: var(--fira_sans);
     font-size: 16px;
     color: var(--secondaryLight);
     margin-bottom: 20px;
@@ -664,7 +688,7 @@ header.header-area.fixed {
 }
 
 .card_body p {
-    font-family: var(--fira_sans);
+    
     color: var(--secondary);
 }
 
@@ -747,7 +771,6 @@ header.header-area.fixed {
 .card_body p {
     font-size: 16px;
     line-height: 24px;
-    font-family: var(--fira_sans);
     color: var(--secondary);
     margin-bottom: 10px;
 }
@@ -796,7 +819,6 @@ header.header-area.fixed {
 
 .cmn-content p {
     font-size: 16px;
-    font-family: var(--fira_sans);
     color: var(--secondary);
     line-height: 24px;
     margin-bottom: 2rem;
@@ -815,6 +837,20 @@ header.header-area.fixed {
 
 /* Footer Css Start */
 
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6 {
+    font-weight: bold;
+    font-family: var(--navfooterFont);
+}
+
+footer, footer p, footer a {
+    font-family: var(--navfooterFont);
+}
+
 .footer-top {
     background-color: var(--primaryLight);
 }
@@ -830,7 +866,6 @@ header.header-area.fixed {
 }
 
 .ft-widget h3 {
-    font-family: var(--barlow);
     font-size: 20px;
     font-weight: 600;
     line-height: 1.3;
@@ -841,7 +876,6 @@ header.header-area.fixed {
 .ft-nv li a {
     color: var(--secondaryLight);
     font-size: 16px;
-    font-family: var(--fira_sans);
     transition: .3s;
     display: inline-block;
 }
@@ -851,7 +885,6 @@ header.header-area.fixed {
 }
 
 .ft-nv li {
-    font-family: var(--fira_sans);
     font-size: 16px;
     color: var(--secondaryLight);
 }
@@ -859,7 +892,6 @@ header.header-area.fixed {
 .ft-widget p {
     font-size: 16px;
     color: var(--secondaryLight);
-    font-family: var(--fira_sans);
     line-height: 1.7;
     margin-bottom: 0;
 }
@@ -920,7 +952,6 @@ header.header-area.fixed {
 
 .ft-widget-first p {
     font-size: 16px;
-    font-family: var(--fira_sans);
     color: var(--secondaryLight);
     margin-bottom: 0;
 }
@@ -973,7 +1004,7 @@ header.header-area.fixed {
     color: var(--primary);
     text-decoration: none !important;
     font-weight: 600;
-    font-family: var(--barlow);
+    font-family: var(--subhFont);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -1050,6 +1081,9 @@ header.header-area.fixed {
 .price-area p {
     margin-bottom: 6rem;
 }
+.price > .d-block {
+    font-family: var(--subhFont);
+}
 
 .range-area {
     padding-bottom: 100px;
@@ -1071,7 +1105,6 @@ header.header-area.fixed {
     font-size: 120px;
     color: #B6D191;
     line-height: 1;
-    font-family: var(--fira_sans);
     font-weight: 700;
     margin-bottom: 3rem;
   }
@@ -1083,7 +1116,6 @@ header.header-area.fixed {
     color: #8D8D8D;
     font-size: 25px;
     font-weight: 700;
-    font-family: var(--fira_sans);
     margin-bottom: 2.5rem;
   }
 
@@ -1126,7 +1158,6 @@ header.header-area.fixed {
 .ct-list li {
     color: var(--primary);
     font-size: 18px;
-    font-family: var(--fira_sans);
 }
 
 .ct-list li i {
@@ -1177,7 +1208,6 @@ header.header-area.fixed {
 
 .address p {
     color: var(--secondaryDark);
-    font-family: var(--fira_sans);
     font-size: 18px;
     line-height: 30px;
     margin: 0;
@@ -1282,7 +1312,6 @@ header.header-area.fixed {
     font-weight: 700;
     background-color: transparent;
     border: 0;
-    font-family: var(--barlow);
     color: var(--primary);
     position: relative;
     padding: 20px 34px;
@@ -1333,6 +1362,9 @@ header.header-area.fixed {
     opacity: 0;
     visibility: hidden;
     transform: translateX(100%);
+}
+.mobile_menu, .mobile_menu a, .mobile_menu p, .mobile_menu li, .mobile_menu li a, .mobile_menu .cmn-link {
+    font-family: var(--navfooterFont);
 }
 
 .mobile_menu.show {
@@ -1397,6 +1429,10 @@ header.header-area.fixed {
 	background-color: #5A784D;
 	padding: 30px;
 	margin-top: auto;
+    font-family: var(--navfooterFont);
+}
+.m_menu_footer, .m_menu_footer a, .m_menu_footer p, .m_menu_footer li, .m_menu_footer h1, m_menu_footer h2, .m_menu_footer h3, .m_menu_footer h4, .m_menu_footer h5, .m_menu_footer h6 {
+    font-family: var(--navfooterFont);
 }
 .mobile_menu-inner {
 	overflow-y: scroll;
@@ -1811,7 +1847,6 @@ section.section {
 .hero p {
   max-width: 63%;
   font-size: 16px;
-  font-family: var(--fira_sans);
   color: var(--secondary);
   line-height: 24px;
 }

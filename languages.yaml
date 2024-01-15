@@ -335,14 +335,33 @@ en:
           LABEL: "Font import"
         LOAD:
           LABEL: "Faster loading for Google Fonts"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          FILE: "Upload file"
+          NAME: "Font name"
+          TYPE: "Font type"
+          WEIGHT: "Font weight"
+          OPTIONS: 
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Upload fonts locally. Accepted files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Upload fonts"
+          LABEL: "Use remote fonts or upload locally?"  
+          HELP: "Use upload field below to use local fonts."
+          OPTIONS:
+            0: "Use remote"
+            1: "Upload local"
         MAIN_FONT:
-          LABEL: "Main font"
+          LABEL: "Main font + Buttons"
         TITLE_FONT:
           LABEL: "Title font"
         NAV_FONT:
-          LABEL: "Navigation font"
+          LABEL: "Subtitle font"
         FTR_FONT:
-          LABEL: "Footer font"
+          LABEL: "Nav + Footer font"
         HTML:
           LABEL: "Custom HTML in head"
         BLOG:
@@ -734,14 +753,33 @@ de:
           LABEL: "Schriften importieren"
         LOAD:
           LABEL: "Google Fonts schneller laden?"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          NAME: "Schriftname"
+          TYPE: "Schrifttyp"
+          FILE: "Datei hochladen"
+          WEIGHT: "Font weight"
+          OPTIONS: 
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Lade Schriften lokal hoch. Akzeptierte Files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Schriften hochladen"
+          LABEL: "Remote fonts benutzen oder fonts lokal hochladen?"  
+          HELP: "Benutze das Upload Feld unten, um Schriften lokal hochzuladen."
+          OPTIONS:
+            0: "Remote"
+            1: "lokal hochladen"
         MAIN_FONT:
-          LABEL: "Fliesstext"
+          LABEL: "Fliesstext + Buttons"
         TITLE_FONT:
           LABEL: "Titelschrift"
         NAV_FONT:
-          LABEL: "Schrift Navigation"
+          LABEL: "Untertitelschrift"
         FTR_FONT:
-          LABEL: "Schrift Footer"
+          LABEL: "Nav + Footer Schrift"
         HTML:
           LABEL: "Custom HTML im Header"
         BLOG:

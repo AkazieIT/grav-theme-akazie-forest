@@ -22,31 +22,63 @@
     {% endif %}    
     <link rel="canonical" href="{{ page.canonical(true)|e }}" />
 
-    {% if theme_var('style.fonts.import') %}
-        {% if theme_var ('style.fonts.google') %}
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link
-            rel="preload"
-            as="style"
-            href="{{ theme_var('style.fonts.import') }}"
-            />
-            <link
-            rel="stylesheet"
-            href="{{ theme_var('style.fonts.import') }}"
-            media="print"
-            onload="this.media='all'"
-            />
-            <noscript>
-            <link
+
+    {% if theme_var('style.fonts.uploadselect') %}
+
+    {# instead of individual files: Repeating field where you can type Name and select type (ttf, otf, woff, woff2) #}
+
+    {% for font in theme_var('style.fonts.uploadfiles') %}
+        {# loop through the repeating field #}
+
+         {% set weight = 'normal' %}
+         {% if font.weight != 400 %}
+            {% set weight = font.weight %}
+         {% endif %}
+            {% for file in font.file %}
+            <link rel="preload" as="font" href="{{ file.path }}" type="font/{{ file.path|split('.')|last }}" > 
+            {% endfor %}
+            <style>
+                        @font-face {
+                            font-family: "{{ font.name }}";
+                            src: {% for file in font.file %}url("{{ file.path }}") format("{% if file.path|split('.')|last == 'ttf' %}truetype{% else %}{{file.path|split('.')|last}}{% endif %}"){% if not loop.last %},{% endif %}{% endfor %};
+                            font-weight: {{ weight }};
+                            font-style: normal;
+                            font-display: swap;
+                        }
+            </style>
+        
+    {% endfor %}
+
+             
+
+    {% else %}
+        {% if theme_var('style.fonts.import') %}
+            {% if theme_var ('style.fonts.google') %}
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link
+                rel="preload"
+                as="style"
+                href="{{ theme_var('style.fonts.import') }}"
+                />
+                <link
                 rel="stylesheet"
                 href="{{ theme_var('style.fonts.import') }}"
-            />
-            </noscript>
-        {% else %}
-            <link rel="preload" as="style" href="{{ theme_var('style.fonts.import') }}" onload="this.rel='stylesheet'" />
+                media="print"
+                onload="this.media='all'"
+                />
+                <noscript>
+                <link
+                    rel="stylesheet"
+                    href="{{ theme_var('style.fonts.import') }}"
+                />
+                </noscript>
+            {% else %}
+                <link rel="preload" as="style" href="{{ theme_var('style.fonts.import') }}" onload="this.rel='stylesheet'" />
+            {% endif %}
         {% endif %}
     {% endif %}
+
     {% if theme_var('style.fonts.customhtml') %}
         {{ theme_var('style.fonts.customhtml') }}   
     {% endif %}
