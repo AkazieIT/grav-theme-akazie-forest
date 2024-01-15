@@ -562,8 +562,6 @@ form:
                       default: '400'
                       validate:
                         type: number
-                        min: 100
-                        max: 900
             style.fonts.main:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIN_FONT.LABEL
