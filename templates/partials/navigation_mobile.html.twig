@@ -13,10 +13,10 @@
     </a>
     <ul class="submenu">
         {# {{ _self.nav_loop(p) }} #}
-        {% for item in p.header.submenu %}
+        {% for item in p.children.visible %}
         <li>
             <a href="{{ item.url }}">
-                {{item.icon|raw}} {{ item.text }}
+                {{ item.menu }}
             </a>
         </li>
         {% endfor %}
@@ -54,9 +54,4 @@
         </a>
     </li>
     {% endfor %}
-    <li>
-        <a href="{{url('contact')}}" class="cmn-link type-2">
-        <!--<i class="fas fa-phone"></i>-->
-        Kontakt</a>
-    </li>
 </ul>

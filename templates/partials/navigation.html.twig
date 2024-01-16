@@ -12,13 +12,13 @@
             </a>
             <ul class="submenu">
                 {# {{ _self.loop(p) }} #}
-                {% for item in p.header.submenu %}
-                <li>
-                    <a href="{{ item.url }}">
-                        {{item.icon|raw}} {{ item.text }}
-                    </a>
-                </li>
-                {% endfor %}
+                    {% for item in p.children.visible %}
+                    <li>
+                        <a href="{{ item.url }}">
+                            {{ item.menu }}
+                        </a>
+                    </li>
+                    {% endfor %}
             </ul>
         </li>
         {% else %}

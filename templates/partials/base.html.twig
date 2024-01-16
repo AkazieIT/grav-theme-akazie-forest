@@ -35,16 +35,19 @@
             {% set weight = font.weight %}
          {% endif %}
             {% for file in font.file %}
-            <link rel="preload" as="font" href="{{ file.path }}" type="font/{{ file.path|split('.')|last }}" > 
+            <link rel="preload" as="font" href="/{{ file.path }}" type="font/{{ file.path|split('.')|last }}" crossorigin="anonymous"> 
             {% endfor %}
             <style>
+           {% for file in font.file %}
                         @font-face {
                             font-family: "{{ font.name }}";
-                            src: {% for file in font.file %}url("{{ file.path }}") format("{% if file.path|split('.')|last == 'ttf' %}truetype{% else %}{{file.path|split('.')|last}}{% endif %}"){% if not loop.last %},{% endif %}{% endfor %};
+                            src: {% for file in font.file %}url("/{{ file.path }}") format("{% if file.path|split('.')|last == 'ttf' %}truetype{% else %}{{file.path|split('.')|last}}{% endif %}"){% if not loop.last %},{% endif %}{% endfor %};
                             font-weight: {{ weight }};
                             font-style: normal;
                             font-display: swap;
                         }
+            {% endfor %}
+
             </style>
         
     {% endfor %}

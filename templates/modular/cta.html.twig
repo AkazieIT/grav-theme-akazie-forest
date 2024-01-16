@@ -26,11 +26,16 @@
                 <div class="offer-g-wrapper">
                     {% for card in page.header.section.content.right.cards %}
                     {# {% set icon = page.find('/images').media[card.icon].url | e %} #}
+                    {% set img = false %}
+                    {% if card.image is not empty %}
                     {% set img = (card.image | first).name %}
+                    {% endif %}
                     <div class="single-offer">
                         <div class="offer-icon">
                             {# <img src="{{icon}}" alt="Icon" class="img-fluid"> #}
+                            {% if img != false %}
                             <img src="{{ url('theme://images/' ~ img)  }}" alt="{{card.alt}}" class="img-fluid">
+                            {% endif %}
                         </div>
                         <h5>{{card.heading}}</h5>
                         <p>{{card.text}}</p>
