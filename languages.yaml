@@ -272,6 +272,8 @@ en:
           LABEL: "Mobile Navigation custom height"
         CHMNAV:
           LABEL: "Mobile Navigation height (60-300)"
+        HAMCOL:
+          LABEL: "Hamburger menu / close button color"
         NAV_BUTTON:
           TITLE: "Custom Navigation Button"
           LABEL: "Custom nav button enabled?"
@@ -698,6 +700,8 @@ de:
           LABEL: "Höhe der mobilen Navigation manuell einstellen?"
         CHMNAV:
           LABEL: "Höhe der mobilen Navigation (60-300)"
+        HAMCOL:
+          LABEL: "Hamburger Menu / Schliessen Button Farbe"
         NAV_BUTTON:
           TITLE: "Button in der Navigation"
           LABEL: "Soll der Button in der Navigation angezeigt werden?"

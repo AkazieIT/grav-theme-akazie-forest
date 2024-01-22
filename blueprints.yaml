@@ -181,6 +181,10 @@ form:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
                   default: 85
+                nav.hamburgercolor:
+                  type: colorpicker
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMCOL.LABEL
+                  default: '#7b9b50'
 
 
             nav.button:
