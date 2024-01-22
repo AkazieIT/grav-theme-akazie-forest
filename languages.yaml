@@ -44,6 +44,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        PADDING:
+          LABEL: "Module Padding"
         BG_ADDBLK:
           LABEL: "Background color Address Block"
         TXT_COLOR:
@@ -341,7 +343,7 @@ en:
           NAME: "Font name"
           TYPE: "Font type"
           WEIGHT: "Font weight"
-          OPTIONS: 
+          OPTIONS:
             0: "ttf"
             1: "otf"
             2: "woff2"
@@ -349,7 +351,7 @@ en:
           DESCRIPTION: "Upload fonts locally. Accepted files: .woff, .woff2, .ttf, .otf"
         UPLOAD:
           TITLE: "Upload fonts"
-          LABEL: "Use remote fonts or upload locally?"  
+          LABEL: "Use remote fonts or upload locally?"
           HELP: "Use upload field below to use local fonts."
           OPTIONS:
             0: "Use remote"
@@ -461,6 +463,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        PADDING:
+          LABEL: "Modul Padding"
         BG_ADDBLK:
           LABEL: "Hintergrundfarbe Adress Block"
         TXT_COLOR:
@@ -759,7 +763,7 @@ de:
           TYPE: "Schrifttyp"
           FILE: "Datei hochladen"
           WEIGHT: "Font weight"
-          OPTIONS: 
+          OPTIONS:
             0: "ttf"
             1: "otf"
             2: "woff2"
@@ -767,7 +771,7 @@ de:
           DESCRIPTION: "Lade Schriften lokal hoch. Akzeptierte Files: .woff, .woff2, .ttf, .otf"
         UPLOAD:
           TITLE: "Schriften hochladen"
-          LABEL: "Remote fonts benutzen oder fonts lokal hochladen?"  
+          LABEL: "Remote fonts benutzen oder fonts lokal hochladen?"
           HELP: "Benutze das Upload Feld unten, um Schriften lokal hochzuladen."
           OPTIONS:
             0: "Remote"

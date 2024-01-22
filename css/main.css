@@ -19,7 +19,7 @@
 
     /* Nav + Footer Font */
     --navfooterFont: 'Barlow', sans-serif;
-    
+
     /* TODO rename to Subtitle Font */
     --subhFont: 'Barlow', sans-serif;
     --hmFont: 'Fira Sans', sans-serif;
@@ -69,6 +69,10 @@ a {
     color: var(--secondaryLight);
 }
 
+.row {
+
+      --bs-gutter-x: 0px !important;
+}
 /* utility css start */
 .cs-padding {
     padding-left: calc(24px + 3.75vw) !important;
@@ -83,10 +87,17 @@ a {
     padding-right: 24px;*/
     margin: auto;
 }
+.container:has(.img_wrap) {
+  padding:0px;
+}
 
 .container-inner {
     max-width: 1468px;
     margin:auto;
+}
+.container-inner:has(.col-md-12) {
+
+  padding:0px;
 }
 
 
@@ -127,13 +138,13 @@ a {
 
 /* common css start */
 .section_wrap{
-    padding: 20px 10px;
+    padding: 20px 20px;
 }
-
+/*
 .title_wrap {
   margin-top: 30px;
 }
-
+*/
 .primary-title {
     margin-bottom: 50px;
 }
@@ -267,12 +278,12 @@ header.header-area.fixed {
     padding: 5px 5px;
 }
 @media screen and (max-width: 991px) {
-    
+
     .main-menu li ul.submenu li a {
         padding: 5px 10px;
     }
 
-} 
+}
 
 .main-menu li ul.submenu li a svg {
     margin-right: 10px;
@@ -696,7 +707,7 @@ header.header-area.fixed {
 }
 
 .card_body p {
-    
+
     color: var(--secondary);
 }
 
@@ -743,12 +754,12 @@ header.header-area.fixed {
 .cta-area {
     background-color: var(--tertiary);
     padding: 8rem 0rem 4rem 0rem;
-    
+
 }
 
 .cta-area .container-inner {
-    
-        
+
+
     padding-right:22px;
     padding-left:22px;
 }
@@ -1152,7 +1163,7 @@ footer, footer p, footer a {
 
 }
 .team-area .container-inner {
-    
+
     padding-right:22px;
     padding-left:22px;
 }
@@ -1414,7 +1425,7 @@ footer, footer p, footer a {
 
        column-count: 2;
        max-width: 1200px;
-    
+
     }
     .main-menu.m_menu > li {
         break-inside: avoid;
@@ -1453,7 +1464,7 @@ footer, footer p, footer a {
     .main-menu.m_menu > li > a {
         margin-bottom:10px;
     }
-    
+
 }
 
 .main-menu.m_menu li ul.submenu li a svg {
@@ -1627,7 +1638,7 @@ footer, footer p, footer a {
     .price-area {
         padding: 100px 0;
         padding-bottom: 100px;
-    
+
     }
 
     .price-card-g-wrapper {
@@ -1678,7 +1689,7 @@ footer, footer p, footer a {
     .cta-area {
         padding: 70px 0;
     }
-    
+
     .ft-g-wrapper {
         padding: 70px 0;
         grid-template-columns: 1fr 1fr;

@@ -121,6 +121,10 @@ form:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
               default: '#fbfbfb'
+            header.section.settings.padding:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
+              default: '0px 0px 0px 0px'
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
