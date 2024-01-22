@@ -50,6 +50,14 @@ form:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAXW.LABEL
               default: 1280
+            site.sectionwrappadding:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAP.LABEL
+              default: '20px 20px'
+            site.sectionwrappaddingmobile:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAPMOBILE.LABEL
+              default: '20px 20px'
         header:
           type: fieldset
           title: THEME_AKAZIEForest.ADMIN.FIELDS.HEADER.TITLE

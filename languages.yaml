@@ -120,6 +120,8 @@ en:
             LABEL: "Link text"
         ALT:
           LABEL: "Alt-tag"
+        OBJECTFIT:
+          LABEL: "Focus of the image Bilds"
         IMAGE:
           LABEL: "Upload image"
         IMAGEDES:
@@ -228,6 +230,10 @@ en:
           DESCRIPTION: "Used instead of theme: // images / favicon.png"
         MAXW:
           LABEL: "Maximum content width (1000-2000 / default 1280)"
+        SECTIONWRAP:
+          LABEL: "Padding for sections"       
+        SECTIONWRAPMOBILE:
+          LABEL: "Padding for sections in mobile"
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Used instead of theme://images/logo.png"
@@ -542,6 +548,8 @@ de:
             LABEL: "Zitat"
         ALT:
           LABEL: "Alt-Tag"
+        OBJECTFIT:
+          LABEL: "Fokus des Bilds"
         IMAGE:
           LABEL: "Foto hochladen"
         IMAGEDES:
@@ -648,6 +656,10 @@ de:
           DESCRIPTION: "Anstelle von theme: // images / favicon.png verwenden"
         MAXW:
           LABEL: "Maximale Breite des Inhalts (1000-2000 / default 1280)"
+        SECTIONWRAP:
+          LABEL: "Padding für sections"       
+        SECTIONWRAPMOBILE:
+          LABEL: "Padding für sections in mobile"
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Anstelle von theme://images/logo.png verwenden"

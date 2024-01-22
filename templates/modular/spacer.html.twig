@@ -4,7 +4,7 @@
         {% set imgPath = 'theme://images/' ~ img %}
     {% endif %}
 </div></div>
-<div class="spacer_module"
+<div class="spacer_module oztest"
      style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}
             {% if page.header.section.background.image %} background-image: url('{{ url(imgPath)  }}');
                 background-position: center;
@@ -12,8 +12,7 @@
                 background-size: cover;
             {% endif %}
             {% if page.header.section.space.height %} height: {{header.section.space.height}}px;{% endif %}
-            "
->
+            ">
 </div>
-<div class="container"><div class="container-inner">
+<div class="container"><div class="row container-inner">
 {% endif %}

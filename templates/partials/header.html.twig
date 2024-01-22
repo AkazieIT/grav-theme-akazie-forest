@@ -24,7 +24,7 @@
 <header class="header-area  {{ theme_var('header.fixed.option') ? 'fixed' : '' }} {% if theme_var('nav.fittocontent') == '1' %}fittowidth{% endif %}">
     <div class="container-fluid cs-padding header-inner">
         <div class="row align-items-center">
-            <div class="col-7">
+            <div class="col-12">
                 <div class="header-left d-flex align-items-center">
                     <a href="#" class="logo d-inline-block">
                         {% if theme_var('header.displaylogo') == 1 %}
@@ -40,15 +40,9 @@
                     </a>
                     {% include 'partials/navigation.html.twig' %}
 
-                </div>
-            </div>
-
-            <div class="col-5">
-                <div class="header-right d-flex align-items-center justify-content-end">
                     {% if theme_var('nav.button.enabled') %}    
-                    <a href="{{ base_url }}{{ theme_var('nav.button.link') }}" class="custom-btn">{{ theme_var('nav.button.text') }}<i class="far fa-angle-right"></i>
+                    <a href="{{ base_url }}{{ theme_var('nav.button.link') }}" class="custom-btn">{{ theme_var('nav.button.text') }}<i class="far fa-angle-right"></i></a>
                     {% endif %}
-                    </a>
                     <button id="mobile_bar" class="mobile-menu d-lg-none d-xl-none  bg-transparent border-0 p-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21">
                             <g id="Group_1" data-name="Group 1" transform="translate(0 0.718)">
@@ -64,6 +58,7 @@
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
 </header>
