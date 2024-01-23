@@ -13,9 +13,8 @@
 
 
     {% if favicon %}
-        {% set favicon_file = (favicon | first).name %}
-        <link rel="icon" type="image/png" href="{{ url('theme://custom/favicon/' ~ favicon_file) }}" sizes="32x32"/>
-        <link rel="apple-touch-icon" href="{{ url('theme://custom/favicon/' ~ favicon_file) }}">
+        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon/' ~ (favicon | first).name) }}" sizes="32x32"/>
+        <link rel="apple-touch-icon" href="{{ url('theme://images/favicon/' ~ (favicon | first).name) }}">
     {% else %}
         <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" sizes="32x32"/>
         <link rel="apple-touch-icon" href="{{ url('theme://images/favicon.png') }}">
@@ -132,6 +131,7 @@
     {% endblock %}
 
     {% block body %}
+
     <main>
         {% block hero %}{% endblock %}
         <div class="row container"><div class="row container-inner">         
