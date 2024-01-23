@@ -81,13 +81,17 @@
             {% endif %}
         </div>
     {% endif %}
-    {% if page.header.section.button.title %}
     <div class="button_wrap cmn-content">
-        <a href="{{page.header.section.button.link}}" class="box-btn" {% if page.header.section.button.open.type %}target="_blank"{% endif %}>
-            {{page.header.section.button.title}}<i class="fal fa-angle-right"></i>
+    
+    {% for button in page.header.section.buttons %}
+        <a href="{{button.link}}" class="box-btn" {% if button.open.type != 1 %}target="_blank"{% endif %}>
+            {{button.text}}<i class="fal fa-angle-right"></i>
         </a>
+        {% if not loop.last %}<br /><br />{% endif %}
+    {% endfor %}
     </div>
-    {% endif %}
+    
+
 {% if page.header.section.settings.bgcolor %}</div>{% endif %}
 
 </div>

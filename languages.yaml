@@ -82,6 +82,7 @@ en:
               1: "No"
         ICON:
           LABEL: "Upload icon"
+          HELP: "If no icon is uploaded, the button will be displayed as a standard button. Otherwise as a link with icon"
         ENTRY:
           LABEL: "Entries"
           TITLE:
@@ -143,6 +144,7 @@ en:
         FORMAT:
           LABEL: "Image format"
           OPTIONS:
+            0: "Automatically fit to height of adjacent sections"
             1: "Landscape 4:3"
             2: "Landscape 16:9"
             3: "Landscape 2.35:1"
@@ -151,8 +153,6 @@ en:
         IMGSIZING:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
-        IMGFIT:
-          LABEL: "Fit image"
         TEXTALIGN:
           LABEL: "Text alignment"
           OPTIONS:
@@ -510,6 +510,7 @@ de:
             1: "Nein"
         ICON:
           LABEL: "Icon hochladen"
+          HELP: "Wenn kein Icon hochgeladen wird, wird der Button als Standard-Button angezeigt. Sonst als Link mit Icon"
         ENTRY:
           LABEL: "Einträge"
           TITLE:
@@ -573,6 +574,7 @@ de:
         FORMAT:
           LABEL: "Bildformat"
           OPTIONS:
+            0: "Automatisch auf die Höhe der Sections nebenan anpassen"
             1: "Querformat 4:3"
             2: "Querformat 16:9"
             3: "Querformat 2.35:1"
@@ -581,8 +583,6 @@ de:
         IMGSIZING:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
-        IMGFIT:
-          LABEL: "Bild ganz anzeigen"
         TEXTALIGN:
           LABEL: "Text ausrichten"
           OPTIONS:

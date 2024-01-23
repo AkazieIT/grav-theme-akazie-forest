@@ -71,9 +71,10 @@ form:
             header.scale:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.LABEL
-              default: 1
+              default: 0
               size: medium
               options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.1
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.3
@@ -83,16 +84,6 @@ form:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
               default: 'center center'
-            header.cropzoom:
-              type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGFIT.LABEL
-              highlight: 0
-              default: 0
-              options:
-                0: PLUGIN_ADMIN.ENABLED
-                1: PLUGIN_ADMIN.DISABLED
-              validate:
-                type: bool
             header.imagesizing:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.LABEL

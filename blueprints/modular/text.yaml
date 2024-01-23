@@ -35,19 +35,23 @@ form:
               title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
               underline: true
               fields:
-                header.section.button.title:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
-                header.section.button.link:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
-                header.section.button.open.type:
-                  type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
-                  default: 0
-                  options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                header.section.buttons:
+                  type: list
+                  label: 'Buttons'
+                  fields:
+                    .text:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
+                    .link:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
+                    .open.type:
+                      type: select
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
             media:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA

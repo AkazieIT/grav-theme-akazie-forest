@@ -48,14 +48,11 @@ a:hover{
     color: {{ theme_var('style.color.text.primary') }};
 }
 
-    {# if theme_var('site.maxwidth') >= 999 and theme_var('site.maxwidth') < 2001  %}
+    {% if theme_var('site.maxwidth') >= 999 and theme_var('site.maxwidth') < 2001  %}
         @media screen and (min-width: 992px) {
-            .container  { max-width: {{ theme_var('site.maxwidth') }}px; }
-            header.header-area.fittowidth .header-inner { max-width: {{ theme_var('site.maxwidth') }}px; }
-            .footer-area.test .footer_inner { max-width: {{ theme_var('site.maxwidth') }}px; }
-            header.header-area.fittowidth .cs-padding {padding-left: 24px!important;  padding-right: 24px!important;}
+            .container-inner  { max-width: {{ theme_var('site.maxwidth') }}px; }
         }
-    {% endif #}
+    {% endif %}
 
     {# TODO: MAXWIDTH #}
 
