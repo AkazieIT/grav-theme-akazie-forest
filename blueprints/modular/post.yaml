@@ -109,3 +109,12 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+        #    header.tag:
+        #      type: selectize
+        #      label: Select Tag
+        #      classes: fancy
+        #      help: 'Select a tag to filter blog posts'
+        #      data-options@: '\Grav\Theme\AkazieForest::getAllBlogTags'
+        #      validate:
+        #        type: commalist
+        #        required: false

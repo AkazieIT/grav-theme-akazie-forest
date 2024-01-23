@@ -1023,8 +1023,16 @@ footer, footer p, footer a {
 /* Footer Css End */
 
 /* portfolio-area css start */
+
+.headerimage-blog {
+    height:100%;
+
+    max-height: 200px;
+    width:auto;
+}
+
 .portfolio_wrap{
-    padding: 15px 0px;
+    padding: 10px 10px;
 }
 
 .portfolio-area {
@@ -1884,6 +1892,18 @@ footer, footer p, footer a {
 
 
 /* Start Blog page style */
+
+#blog-hero > .container, #portfolio-hero > .container {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.container.bloglist {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top:40px;
+}
+
 .container-inner:has(.is-post-area) {
     padding-left:10px;
     padding-right:10px;
@@ -1924,13 +1944,23 @@ section.section {
 .overlay-dark-gradient .image-overlay {
     background: linear-gradient(to bottom,rgba(0,0,0,.5),rgba(0,0,0,.2));
 }
+#blog-hero, #portfolio-hero {
+    margin:auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
 .image-overlay {
+    /*
     position: absolute;
     z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    */
+
+    justify-content: normal;
+    flex-direction: unset;
 }
 .hero.text-light h1 {
     color: #fff;
@@ -2038,7 +2068,6 @@ section.section {
 
 
 #body-wrapper{
-    padding: 60px 0;
-    width: 80%;
+    padding: 40px 10px 60px 10px;
 }
 /* End Blog page style */

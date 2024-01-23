@@ -392,7 +392,7 @@ en:
           HELP: "Please create file in theme directory akazie-forest/js/custom.js"
         HERO:
           LABEL: "Hero classes"
-          DESCRIPTION: "There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+          DESCRIPTION: "There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
         HERO_IMG:
           LABEL: "Image hero section"
           DESCRIPTION: "If not specified, this defaults to the first image found in the page''s folder"
@@ -822,7 +822,7 @@ de:
           HELP: "Bitte erstelle eine Datei im Theme-Ordner akazie-forest/js/custom.js"
         HERO:
           LABEL: "Klassen Hero Abschnitt"
-          DESCRIPTION: "Es gibt mehrere Möglichkeiten, im Hero Abschnitt Klassen zu vergeben (Trennung durch Abstand):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+          DESCRIPTION: "Es gibt mehrere Möglichkeiten, im Hero Abschnitt Klassen zu vergeben (Trennung durch Abstand):<br />`text-light`, `text-dark`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
         HERO_IMG:
           LABEL: "Bild Hero Abschnitt"
           DESCRIPTION: "Wenn das Bild hier nicht spezifiziert ist, dann wird das erste gefundene Bild im Seitenordner gewählt."

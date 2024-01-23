@@ -9,12 +9,11 @@
 
 
 {% block hero %}
-    {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %}
+    {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content} %}
 {% endblock %}
 
 {% block content %}
-    <section id="body-wrapper" class="section blog-listing">
-        <section class="container {{ grid_size }}">
+     <section id="body-wrapper" class="section ">
 
         {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
             {% include 'partials/breadcrumbs.html.twig' %}
@@ -75,7 +74,6 @@
             {% endblock %} #}
         {% endembed %}
         </section>
-    </section>
 
 {% endblock %}
 

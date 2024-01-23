@@ -37,7 +37,6 @@ form:
               default: '@self.children'
               validate:
                 type: yaml
-
             header.content.limit:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAX.LABEL
@@ -46,7 +45,6 @@ form:
                 required: true
                 type: int
                 min: 1
-
             header.content.order.by:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.LABEL
@@ -64,7 +62,6 @@ form:
               options:
                 asc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.ASC
                 desc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.DESC
-
             header.content.pagination:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.PAGINATION.LABEL
@@ -75,18 +72,6 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-
-            #header.content.url_taxonomy_filters:
-            #  type: toggle
-            #  label: URL Taxonomy Filters
-            #  highlight: 1
-            #  default: 1
-            #  options:
-            #    1: PLUGIN_ADMIN.ENABLED
-            #    0: PLUGIN_ADMIN.DISABLED
-            #  validate:
-            #    type: bool
-
             header.section.settings.column:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
@@ -125,7 +110,6 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
-
           import@:
             type: partials/blog-bits
             context: blueprints://pages

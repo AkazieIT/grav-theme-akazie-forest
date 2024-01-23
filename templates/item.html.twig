@@ -5,6 +5,8 @@
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 {% set hero_image_name = page.header.hero_image %}
 
+
+
 {% block hero %}
     {% if hero_image_name %}
         {% set hero_image = page.media[hero_image_name] %}
@@ -38,4 +40,9 @@
 
     </section>
 </section>
+
+{# for module in page.collection() %}
+{{ module.content|raw }}
+{% endfor #}
+
 {% endblock %}
