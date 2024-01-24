@@ -89,6 +89,8 @@ a {
 }
 .container:has(.img_wrap) {
   padding:0px;
+
+  flex-direction: column;
 }
 
 .container-inner {

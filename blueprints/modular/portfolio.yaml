@@ -87,6 +87,9 @@ form:
             #   type: text
             #   label: "Font size for Title"
             #   description: "(unit: px)"
+            header.title:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.INT
             header.section.settings.column:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL

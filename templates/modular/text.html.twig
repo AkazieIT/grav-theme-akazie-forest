@@ -49,14 +49,14 @@
 
 
         {% endif %}
-        {% if page.header.section.title %}
+        {% if page.header.title %}
 
-                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.section.title}}</h2>
-                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.section.title}}</h3>
-                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.section.title}}</h4>
-                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.section.title}}</h5>
-                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.section.title}}</h6>
-                {% else %}<h1>{{page.header.section.title}}</h1>
+                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% else %}<h1>{{page.header.title}}</h1>
                 {% endif %}
 
         {% endif %}

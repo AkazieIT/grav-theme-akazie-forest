@@ -19,7 +19,7 @@ form:
               title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA
               underline: true
               fields:
-                header.section.title:
+                header.title:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
                   validate:

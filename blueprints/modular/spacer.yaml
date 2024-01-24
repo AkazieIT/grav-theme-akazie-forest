@@ -24,6 +24,9 @@ form:
           type: tab
           title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
+            header.title:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.INT
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL

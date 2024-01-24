@@ -14,7 +14,7 @@ form:
           title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
-            header.sec_two.title:
+            header.title:
               type: text
               autofocus: true
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL

@@ -14,7 +14,11 @@ form:
           title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
 
           fields:
-
+            header.title:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+              validate:
+                required: true
             header.section.slides:
               name: slides
               type: list

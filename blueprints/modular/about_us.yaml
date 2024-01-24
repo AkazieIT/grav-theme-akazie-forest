@@ -19,7 +19,7 @@ form:
               title: "Text Section"
               underline: true
               fields:                     
-                header.section.heading.title:
+                header.title:
                   type: text
                   label: "Heading"
                 header.section.text:

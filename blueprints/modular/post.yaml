@@ -35,6 +35,9 @@ form:
             #   options:
             #     0: No
             #     1: Yes
+            header.title:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.INT
             header.section.settings.column:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
