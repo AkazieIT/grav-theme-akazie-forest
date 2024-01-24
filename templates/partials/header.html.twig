@@ -26,7 +26,7 @@
         <div class="row align-items-center">
             <div class="col-12 flex-header">
                 <div class="header-left d-flex align-items-center">
-                    <a href="#" class="logo d-inline-block">
+                    <a href="{{ base_url_absolute }}" class="logo d-inline-block">
                         {% if theme_var('header.displaylogo') == 1 %}
                             {% if logo_desktop %}
                                 {% set logo_file = (logo_desktop|first).name %}

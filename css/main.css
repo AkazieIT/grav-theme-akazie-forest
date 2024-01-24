@@ -1024,6 +1024,12 @@ footer, footer p, footer a {
 
 /* portfolio-area css start */
 
+.footerimage {
+    margin-bottom: 30px;
+    max-width:250px;
+    height:auto;
+}
+
 .headerimage-blog {
     height:100%;
 

@@ -274,6 +274,15 @@ form:
                       type: text
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_HEAD.LABEL
                       rows: 1
+                    .image:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_LOGO.LABEL
+                      size: large
+                      destination: 'theme://images/logo'
+                      multiple: false
+                      markdown: true
+                      accept:
+                        - image/*
                     .text:
                       type: textarea
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
@@ -411,6 +420,11 @@ form:
                           show_all: false
                           show_modular: false
                           show_root: false
+                        footer.datenschutz.text:
+                          type: text
+                          size: medium
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.LABEL
+                          help: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.HELP
                         footer.agb.link:
                           type: pages
                           size: medium

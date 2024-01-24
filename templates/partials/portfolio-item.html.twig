@@ -12,7 +12,11 @@
     <div class="e-content">
         {{ page.content|raw }}
     </div>
-
+    <div class="modular-children">
+        {% for module in page.collection() %}
+        {{ module.content|raw }}
+        {% endfor %}
+    </div>
     {# {% if page.header.continue_link is same as(true) and config.plugins.comments.enabled %}
         {% include 'partials/comments.html.twig' %}
     {% endif %} #}

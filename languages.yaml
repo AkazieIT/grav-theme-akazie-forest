@@ -319,6 +319,9 @@ en:
           LABEL: "Link imprint"
         LINK_DP:
           LABEL: "Link data policy"
+        LINK_DPTXT:
+          LABEL: "Custom link data policy"
+          HELP: "Overwrite data policy link with custom link?"
         LINK_AGB:
           LABEL: "Link AGB"
         LINK_SITE:
@@ -725,6 +728,8 @@ de:
           LABEL: "Footer Inhaltsblöcke"
         FOOTER_HEAD:
           LABEL: "Titel des Blocks"
+        FOOTER_LOGO:
+          LABEL: "Logo im Footer"  
         SHOW_NAV:
           LABEL: "Navigation anzeigen"
         SHOW_ICON:
@@ -746,7 +751,10 @@ de:
         LINK_IMP:
           LABEL: "Link Impressum"
         LINK_DP:
-          LABEL: "Link Datenschuzt"
+          LABEL: "Link Datenschutz"
+        LINK_DPTXT:
+          LABEL: "Eigener Datenschutzlink"
+          HELP: "Dieser Wert überschreibt den Datenschutzlink. Wenn kein Wert angegeben wird, wird die Page von oben verwendet."
         LINK_AGB:
           LABEL: "Link AGB"
         LINK_SITE:

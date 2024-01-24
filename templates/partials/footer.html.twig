@@ -26,7 +26,7 @@
                         </li>
                         <li>
                         {% if theme_var('footer.datenschutz.enabled') %}
-                            <a href="{{ base_url }}{{ theme_var('footer.datenschutz.link') }}">
+                            <a href="{{ base_url }}{{ theme_var('footer.datenschutz.text') ? theme_var('footer.datenschutz.text') : theme_var('footer.datenschutz.link') }}">
                             Datenschutz
                             </a>
                         {% endif %}

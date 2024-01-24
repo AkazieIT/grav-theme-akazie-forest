@@ -10,6 +10,8 @@
                 {% if show == true %}
 
                     <div class="ft-widget{% if index == 1 and mobilefooter == false %}-first{% endif %}">
+                        {% if column.image %}<img src="{{ (column.image|first).path }}" alt="Logo" class="footerimage">
+                        {% endif %}
                         <h3>{{column.heading| nl2br | raw}}</h3>
                         {% if column.social.enabled %}
                         <div class="social-wrap d-flex align-items-center flex-wrap">
