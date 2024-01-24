@@ -4,7 +4,7 @@
     <div class="container"><div class="container-inner">
         <div class="row">
             <div class="col-lg-6">
-                <div class="cmn-content st-content">
+                <div class="cmn-content st-content ctap">
                     {% if page.header.section.settings.title.show %}   
                     
                         {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
@@ -30,7 +30,7 @@
                     {% if card.image is not empty %}
                     {% set img = (card.image | first).name %}
                     {% endif %}
-                    <div class="single-offer">
+                    <div class="single-offer ctap">
                         <div class="offer-icon">
                             {# <img src="{{icon}}" alt="Icon" class="img-fluid"> #}
                             {% if img != false %}
@@ -60,7 +60,7 @@
 {% endif %}
 
 {% if page.header.section.settings.txtcolor %}
-.cmn-content p, .single-offer p{
+.cmn-content.ctap p, .single-offer.ctap p{
     color: {{page.header.section.settings.txtcolor}};
 }
 {% endif %}
