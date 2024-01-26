@@ -19,14 +19,15 @@
                 background-repeat: no-repeat;
                 background-size: cover;
             {% endif %} #}
-
+            {#
             {% if page.header.section.settings.txt.align == 1 %}
                 text-align: left;
             {% elseif page.header.section.settings.txt.align == 2 %}
                 text-align: center;
-            {% else %}
+            {% elseif page.header.section.settings.txt.align == 3 %}
                 text-align: right;
             {% endif %}
+            #}
             {% if page.header.section.settings.padding and page.header.section.settings.padding is empty %}
               padding:{{page.header.section.settings.padding}};
             {% endif %}

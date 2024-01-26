@@ -252,6 +252,10 @@ form:
                           type: text
                           label: THEME_AKAZIEForest.ADMIN.FIELDS.PHONE.LABEL
                           size: large
+                top.footer.socialtext:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.SOCIALTEXT.LABEL         
+                  default: 'Folge uns'
                 top.footer.socials:
                   name: socials
                   type: list
@@ -264,6 +268,14 @@ form:
                     .link:
                       type: text
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.LINK.LABEL
+                    .fontsize:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.BIG
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.SMALL
                 top.footer.columns:
                   name: columns
                   type: list

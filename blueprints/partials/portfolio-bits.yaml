@@ -10,11 +10,17 @@ form:
       label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.LABEL
       markdown: true
       description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.DESCRIPTION
+
     header.hero_image:
       type: filepicker
       label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.LABEL
       preview_images: true
       description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
+
+    header.objectfit:
+      type: text
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
+      default: 'center center'
 
     toggles_title:
       type: spacer

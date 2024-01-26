@@ -15,10 +15,10 @@
                         <h3>{{column.heading| nl2br | raw}}</h3>
                         {% if column.social.enabled %}
                         <div class="social-wrap d-flex align-items-center flex-wrap">
-                            <h5>Folge uns</h5>
+                            <h5>{{ theme_var('top.footer.socialtext') ? theme_var('top.footer.socialtext') : 'Folge uns' }}</h5>
                             <ul class="social-links d-flex align-items-center">
                                 {% for social in theme_var('top.footer.socials') %}
-                                <li><a href="{{social.link}}" target="_blank">{{social.icon | raw}}</a></li>
+                                <li><a href="{{social.link}}" target="_blank" class="{% if social.fontsize == 1 %}smallsocials{% endif %}">{{social.icon | raw}}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>

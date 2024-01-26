@@ -84,14 +84,14 @@ form:
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.4
                 5: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.5
                 6: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.6
-            header.section.settings.txt.align:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
-              default: 1
-              options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
+            #header.section.settings.txt.align:
+            #  type: select
+            #  label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
+            #  default: 1
+            #  options:
+            #    1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
+            #    2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
+            #    3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
             header.section.settings.title.show:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL

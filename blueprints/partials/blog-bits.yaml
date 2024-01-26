@@ -17,6 +17,11 @@ form:
       preview_images: true
       description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
 
+    header.objectfit:
+      type: text
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
+      default: 'center center'
+
     toggles_title:
       type: spacer
       title: THEME_AKAZIEForest.ADMIN.SECTION.CONFIG

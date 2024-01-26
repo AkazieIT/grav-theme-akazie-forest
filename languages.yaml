@@ -290,10 +290,17 @@ en:
           LABEL: "Phone in footer"
         SM:
           LABEL: "Icons with links"
+          SOCIALTEXT:
+            LABEL: "Social media text"
+            VALUE: "Follow us"
           ICON:
-            LABEL: "Insert icon code"
+            LABEL: "Insert icon code or text"
           LINK:
             LABEL: "Insert link"
+          FONTSIZE:
+            LABEL: "Schriftgrösse"
+            SMALL: "klein (Schrift)"
+            BIG: "gross (Icon)"  
         FOOTER_CLMNS:
           LABEL: "Footer columns"
         FOOTER_HEAD:
@@ -722,10 +729,17 @@ de:
           LABEL: "Telefonnummer"
         SM:
           LABEL: "Icons mit Links"
+          SOCIALTEXT:
+            LABEL: "Social media text"
+            VALUE: "Folge uns"
           ICON:
-            LABEL: "Icon Code einfügen"
+            LABEL: "Icon Code oder Text einfügen"
           LINK:
             LABEL: "Link einfügen"
+          FONTSIZE:
+            LABEL: "Schriftgrösse"
+            SMALL: "klein (Schrift)"
+            BIG: "gross (Icon)"  
         FOOTER_CLMNS:
           LABEL: "Footer Inhaltsblöcke"
         FOOTER_HEAD:

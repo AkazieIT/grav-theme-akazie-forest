@@ -1,6 +1,8 @@
 <section id="{{ id }}" class="section modular-hero hero {{ page.header.hero_classes }} {{ page.header.background.parallax ? 'parallax' : '' }}">
-    <div class="image-overlay">{% if hero_image %}<img class="headerimage-blog" src="{{ hero_image.url }}" />{% endif %}</div>
+
     <section class="container {{ grid_size }}" ><div class="container-inner">
         {{ content|raw }}
     </div></section>
+    
+   {% if hero_image %}<img class="headerimage-blog" src="{{ hero_image.url }}" style="{% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %}"/>{% endif %}
 </section>

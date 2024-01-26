@@ -113,9 +113,9 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
               default: 1
               options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
             header.section.settings.txtcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
