@@ -581,6 +581,7 @@ form:
                         - application/x-font-opentype
                         - application/x-font-truetype
                         - application/x-font-ttf
+                        - application/font-sfnt
                         - application/x-font-woff
                         - application/x-font-woff2
                         - font/opentype
