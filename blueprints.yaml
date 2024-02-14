@@ -40,7 +40,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.LABEL
               size: large
-              destination: 'theme://images/favicon'
+              destination: 'theme://custom/images/favicon'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.DESCRIPTION
@@ -76,7 +76,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.LABEL
               size: large
-              destination: 'theme://images/logo'
+              destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
@@ -86,7 +86,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MLOGO.LABEL
               size: large
-              destination: 'theme://images/logo'
+              destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
@@ -290,7 +290,7 @@ form:
                       type: file
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_LOGO.LABEL
                       size: large
-                      destination: 'theme://images/logo'
+                      destination: 'theme://custom/images/logo'
                       multiple: false
                       markdown: true
                       accept:
@@ -573,7 +573,7 @@ form:
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.FILE
                       description: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
                       size: large
-                      destination: 'theme://fonts/upload'
+                      destination: 'theme://custom/fonts'
                       multiple: true
                       markdown: true
                       accept:

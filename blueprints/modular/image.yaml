@@ -36,7 +36,7 @@ form:
                 #   type: file
                 #   label: "Choose Image"
                 #   size: large
-                #   destination: 'theme://images'
+                #   destination: 'theme://custom/images'
                 #   multiple: false
                 #   markdown: true
                 #   description: "upload image"

@@ -59,7 +59,7 @@ form:
                   type: file
                   label: "Choose Logo/Image"
                   size: large
-                  destination: 'theme://images'
+                  destination: 'theme://custom/images'
                   multiple: false
                   markdown: true
                   description: "upload image"

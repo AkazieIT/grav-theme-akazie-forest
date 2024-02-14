@@ -1,6 +1,6 @@
 {# {% set videoOne = page.find('/videos').media[page.header.section.content.right.video].url | e %} #}
 {% set media = (page.header.section.content.right.media | first).name %}
-{% set mediaFilePath = 'theme://images/hero/' ~ media %}
+{% set mediaFilePath = 'theme://custom/images/hero/' ~ media %}
 {% if page.header.section.content.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
@@ -36,7 +36,7 @@
                     {% if button.icon|first %}
                         {% set logo_file = (button.icon|first).name %}
                         <a href="{{button.link}}" class="cmn-link type-2 type-3" {% if button.open.type != 0 %}target="_blank"{% endif %}>
-                                <img src="{{ url('theme://images/' ~ logo_file)  }}"  class="btn_ico" />                            
+                                <img src="{{ url('theme://custom/images/' ~ logo_file)  }}"  class="btn_ico" />                            
                                 {{button.text}}
                         </a>
                     {% else %}
@@ -59,7 +59,7 @@
                 {% elseif fileType starts with 'video/' %}
                     <video autoplay muted loop src="{{ url(mediaFilePath)}}"></video>
                 {% endif %}           
-                        {# <video autoplay muted loop src="{{ url('theme://images/video/' ~ videoOne)}}"></video> #}
+                        {# <video autoplay muted loop src="{{ url('theme://custom/images/video/' ~ videoOne)}}"></video> #}
             {% endif %}
         </div>    
    

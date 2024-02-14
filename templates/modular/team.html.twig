@@ -39,7 +39,7 @@
                         {{ dump(member) }}
                 <div class="team-member">
                     <div class="member-img">
-                        {# <img src="{{ url('theme://images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
+                        {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
                         {% set resize = 4 / 3 %}
                         {% set cropzoom = 0 %}
                         {% set image = page.media[(member.img|keys|first)] %}

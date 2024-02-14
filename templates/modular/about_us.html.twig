@@ -39,8 +39,8 @@
                 {% endif %} #}
 
                 {% set img = (page.header.section.content.left.image | first).name %}
-                {# {% set image = "{{ url('theme://images/' ~ img)  }}" %} #}
-                <img  src="{{ url('theme://images/' ~ img)  }}" alt="" class="img-fluid">
+                {# {% set image = "{{ url('theme://custom/images/' ~ img)  }}" %} #}
+                <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="" class="img-fluid">
 {# 
 {% if page.header.imagesizing == 1 %}
     {% if page.header.section.settings.img.column == 1  %}

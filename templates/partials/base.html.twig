@@ -13,8 +13,8 @@
 
 
     {% if favicon %}
-        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon/' ~ (favicon | first).name) }}" sizes="32x32"/>
-        <link rel="apple-touch-icon" href="{{ url('theme://images/favicon/' ~ (favicon | first).name) }}">
+        <link rel="icon" type="image/png" href="{{ url('theme://custom/images/favicon/' ~ (favicon | first).name) }}" sizes="32x32"/>
+        <link rel="apple-touch-icon" href="{{ url('theme://custom/images/favicon/' ~ (favicon | first).name) }}">
     {% else %}
         <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" sizes="32x32"/>
         <link rel="apple-touch-icon" href="{{ url('theme://images/favicon.png') }}">
@@ -109,7 +109,7 @@
     {% endblock %}
     {% include 'partials/custom-css.html.twig' %}
     {% if theme_var('style.css') %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://custom/css/custom.css', 98) %}
     {% endif %}    
 
 
@@ -153,7 +153,7 @@
         {{ theme_var('footer.javascript.code')|raw }}
         <script src="{{ url('theme://js/main.js') }}"></script>
         {% if theme_var('style.js') %}
-            {% do assets.addJs('theme://css/custom.js', 98) %}
+            {% do assets.addJs('theme://custom/css/custom.js', 98) %}
         {% endif %}   
     {% endblock %}
 

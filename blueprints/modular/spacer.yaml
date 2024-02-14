@@ -35,7 +35,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_IMG.LABEL
               size: large
-              destination: 'theme://images'
+              destination: 'theme://custom/images'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL

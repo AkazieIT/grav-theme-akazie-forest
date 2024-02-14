@@ -50,7 +50,7 @@
     <div class="img_wrap cmn-content">
     {# 
         {% set img = (page.header.section.image | first).name %}
-        <img  src="{{ url('theme://images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
+        <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
     #}
 
     {% if page.header.section.image | first is iterable %}

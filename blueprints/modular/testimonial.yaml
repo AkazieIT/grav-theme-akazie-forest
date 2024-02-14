@@ -29,7 +29,7 @@ form:
                   type: file
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                   size: large
-                  destination: 'theme://images'
+                  destination: 'theme://custom/images'
                   multiple: false
                   markdown: true
                   description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION

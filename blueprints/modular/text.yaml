@@ -61,7 +61,7 @@ form:
                   type: pagemedia
                   label: PLUGIN_ADMIN.PAGE_MEDIA
                   size: large
-                  destination: 'theme://images'
+                  destination: 'theme://custom/images'
                   multiple: true
                   markdown: true
                   accept:

@@ -10,11 +10,8 @@ Thumbs.db
 
 node_modules
 package-lock.json
-custom/*
 custom/css/*
 custom/js/*
-custom/logo/*
-custom/images/*
-custom/favicon/*
-fonts/upload/*
-images/*
+custom/images/hero/*
+custom/images/logo/*
+custom/images/favicon/*

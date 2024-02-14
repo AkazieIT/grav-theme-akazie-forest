@@ -39,7 +39,7 @@
                         {% else %}col-lg-6{% endif %}  mb-30">
                 <div class="cmn-content icon-list-content">
                     <div class="icn-icon">
-                        {# <img src="{{ url('theme://images/' ~ icon)  }}" alt="{{card.alt}}" class="img-fluid"> #}
+                        {# <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="{{card.alt}}" class="img-fluid"> #}
                         {% set resize = 1 %}
                         {% set cropzoom = 0 %}
                         {% set image = page.media[(card.icon|keys|first)] %}
