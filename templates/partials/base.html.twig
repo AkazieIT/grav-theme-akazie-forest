@@ -124,7 +124,7 @@
 
 </head>
 
-<body id="top" class="{{ page.header.body_classes|e }}">
+<body id="top" class="{{ page.header.body_classes|e }} {% if page.home %}home{% endif %} template-{{ page.template }} slug-{{ page.slug }}">
 
     {% block header %}
     {% include 'partials/header.html.twig' %}
