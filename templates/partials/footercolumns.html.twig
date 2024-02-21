@@ -53,7 +53,12 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
+
+                        {% if column.renderhtml.enabled %}
+                        {{column.text | raw}}
+                        {% else %}
                         <p>{{column.text | nl2br | raw}}</p>
+                        {% endif %}
                     </div>
                     {% set index = index + 1 %}
 

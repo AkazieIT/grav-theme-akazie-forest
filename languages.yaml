@@ -271,6 +271,8 @@ en:
           LABEL: "Navigation height (65-205)"
         CHNAV:
           LABEL: "Mobile Navigation custom height"
+        MOBILELOGO:
+          LABEL: "Place logo in mobile nav?"
         CHMNAV:
           LABEL: "Mobile Navigation height (60-300)"
         HAMCOL:
@@ -307,6 +309,8 @@ en:
           LABEL: "Column heading"
         SHOW_NAV:
           LABEL: "Show navigation"
+        RENDERHTML:
+          LABEL: "Render HTML in footer?"
         SHOW_ICON:
           LABEL: "Show icon links"
         SHOW_CONTACT:
@@ -710,6 +714,8 @@ de:
           LABEL: "Höhe der Navigation (65-205)"
         CHNAV:
           LABEL: "Höhe der mobilen Navigation manuell einstellen?"
+        MOBILELOGO:
+          LABEL: "Logo in mobiler Navigation platzieren?"
         CHMNAV:
           LABEL: "Höhe der mobilen Navigation (60-300)"
         HAMCOL:
@@ -748,6 +754,8 @@ de:
           LABEL: "Logo im Footer"  
         SHOW_NAV:
           LABEL: "Navigation anzeigen"
+        RENDERHTML:
+          LABEL: "HTML im Footer rendern?"
         SHOW_ICON:
           LABEL: "Icon Links anzeigen"
         SHOW_CONTACT:

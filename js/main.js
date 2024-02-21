@@ -13,3 +13,19 @@ closeBtn.addEventListener('click', function (e) {
 if (typeof osm === "function") {
     osm();
 }
+
+// Select the header element
+var header = document.querySelector('header.header-area');
+
+// Function to add or remove the sticky class based on scroll position
+function toggleStickyClass() {
+  if (window.scrollY > 180) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+}
+
+// Listen for scroll events on the window
+window.addEventListener('scroll', toggleStickyClass);
+document.addEventListener('DOMContentLoaded',toggleStickyClass);

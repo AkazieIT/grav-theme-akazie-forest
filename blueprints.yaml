@@ -177,6 +177,14 @@ form:
                   options:
                     0: PLUGIN_ADMIN.DISABLED
                     1: PLUGIN_ADMIN.ENABLED
+                nav.mobilelogoenabled:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILELOGO.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
                 nav.mobilenavheight:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
@@ -303,6 +311,16 @@ form:
                     .navigation.enabled:
                       type: toggle
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_NAV.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool
+                    .renderhtml.enabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.RENDERHTML.LABEL
                       highlight: 0
                       default: 0
                       options:
