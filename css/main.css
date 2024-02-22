@@ -32,6 +32,10 @@ body {
     background-color: #FBFBFB;
 }
 
+body.noscroll {
+    overflow:hidden;
+}
+
 ul,
 ol {
     margin: 0;

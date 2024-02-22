@@ -4,11 +4,15 @@ const closeBtn = document.getElementById('close_menu');
 const mobileBar = document.getElementById('mobile_bar');
 mobileBar.addEventListener('click', function (e) {
     e.preventDefault();
-    mobileMenu.classList.add('show')
+    mobileMenu.classList.add('show');
+    document.body.classList.add("noscroll");
+
 })
 closeBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    mobileMenu.classList.remove('show')
+    mobileMenu.classList.remove('show');
+    document.body.classList.remove("noscroll");
+
 })
 if (typeof osm === "function") {
     osm();
