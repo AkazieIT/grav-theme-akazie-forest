@@ -16,7 +16,7 @@ form:
           fields:
             txt_section:
               type: section
-              title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
+              title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA
               underline: true
               fields:
                 header.title:
@@ -24,111 +24,92 @@ form:
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
                   validate:
                     required: true
-                header.section.subtitle:
+                header.section.alt_tag:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
+                  validate:
+                    required: true
                 header.section.text:
                   type: markdown
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
-            buttons:
-              type: section
-              title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
-              underline: true
-              fields:
-                header.section.buttons:
-                  type: list
-                  label: 'Buttons'
-                  fields:
-                    .text:
-                      type: text
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
-                    .link:
-                      type: text
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
-                    .open.type:
-                      type: select
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
-                      default: 0
-                      options:
-                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
-            media:
-              type: section
-              title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA
-              underline: true
-              fields:
-                header.section.background.image:
+                # header.section.image:
+                #   type: file
+                #   label: "Choose Image"
+                #   size: large
+                #   destination: 'theme://custom/images'
+                #   multiple: false
+                #   markdown: true
+                #   description: "upload image"
+                #   accept:
+                #     - image/*
+                header.section.image:
                   type: pagemedia
-                  label: PLUGIN_ADMIN.PAGE_MEDIA
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL
                   size: large
-                  destination: 'theme://custom/images'
-                  multiple: true
-                  markdown: true
+                  destination: '@self'
                   accept:
                     - image/*
-                    - application/pdf
-
+                header.section.image_description:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGEDES.LABEL
+                buttons:
+                    type: section
+                    title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
+                    underline: true
+                    fields:
+                      header.section.buttons:
+                        type: list
+                        label: 'Buttons'
+                        fields:
+                          .text:
+                            type: text
+                            label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
+                          .link:
+                            type: text
+                            label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
+                          .open.type:
+                            type: select
+                            label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
+                            default: 0
+                            options:
+                              0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                              1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
 
         settings:
           type: tab
           title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
           fields:
-            header.section.settings.module.width:
+            header.scale:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.LABEL
-              default: 2
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.LABEL
+              default: 0
+              size: medium
               options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.3
-                4: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.4
-                5: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.5
-                6: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.6
-            #header.section.settings.txt.align:
-            #  type: select
-            #  label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
-            #  default: 1
-            #  options:
-            #    1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
-            #    2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
-            #    3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
-            header.section.settings.title.show:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
-              default: 1
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.5
+            header.objectfit:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
+              default: 'center center'
+            header.imagesizing:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.LABEL
+              help: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.HELP
+              highlight: 0
+              default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
-            header.section.settings.title.hsize:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.LABEL
-              default: 2
-              options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
-                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
-                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
-            header.section.settings.subtitle.hsize:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.SUBLABEL
-              default: 5
-              options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
-                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
-                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
-            header.section.settings.padding:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
-              default: '0px 0px 0px 0px'
+              default: '#fbfbfb'
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
@@ -146,10 +127,6 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1
-            header.section.settings.classes:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLASSES.LABEL
-              default: ''
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED

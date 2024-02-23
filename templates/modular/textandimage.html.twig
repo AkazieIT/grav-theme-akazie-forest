@@ -1,0 +1,92 @@
+{% if page.header.section.settings.module.enabled %}
+{% if page.header.section.wrap.container == 1 %}
+</div></div>  {#  end row #}
+<div class="row container imgtext_module" style="{% if page.header.section.settings.bgcolor %}background-color: {{page.header.section.settings.bgcolor}};{% endif %}">
+<div class="row container-inner">
+{% endif %}  
+
+<div class="col-12 col-md-6 section_wrap">   
+    <div class="container">
+    {% if page.header.section.image %}
+    <div class="img_wrap cmn-content">
+    {# 
+        {% set img = (page.header.section.image | first).name %}
+        <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
+    #}
+
+    {% if page.header.section.image | first is iterable %}
+      {% set imgtemp = page.header.section.image | first %}
+      {% set image = page.media[imgtemp.name] %}
+    {% else %}
+      {% set image = page.media | first %}
+    {% endif %}
+
+    {% if page.header.scale == 1 %}
+        {% set resize = 3 / 4 %}
+    {% elseif page.header.scale == 2 %}
+        {% set resize = 9 / 16 %}
+    {% elseif page.header.scale == 3 %}
+        {% set resize = 1 / 2.35 %}
+    {% elseif page.header.scale == 4 %}
+        {% set resize = 1 %}
+    {% elseif page.header.scale == 5 %}
+        {% set resize = 4 / 3 %}
+    {% endif %}    
+
+
+{% if page.header.imagesizing == 1 %}
+{# TODO #}
+    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
+    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
+    style="
+    {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
+    {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
+    " />
+
+{% else %}
+    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
+    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
+    style="
+    {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
+    {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
+    " />
+
+{% endif %}
+
+    </div>
+    
+
+    {% endif %}
+    {% if page.header.section.image_description %}
+    <div class="content_wrap cmn-content">
+       <p> {{page.header.section.image_description}} </p>
+    </div>
+    {% endif %}
+    </div>
+</div>
+
+<div class="col-12 col-md-6 section_wrap textimage-text"
+     style="{% if page.header.section.settings.padding and page.header.section.settings.padding is empty %}
+              padding:{{page.header.section.settings.padding}};
+            {% endif %}
+            ">
+
+
+    {% if page.header.section.text %}
+    <div class="content_wrap cmn-content cmn-textimage-text">
+        {{page.header.section.text|markdown }}
+     {% for button in page.header.section.buttons %}
+        <a href="{{button.link}}" class="box-btn" {% if button.open.type != 1 %}target="_blank"{% endif %}>
+            {{button.text}}<i class="fal fa-angle-right"></i>
+        </a>
+        {% if not loop.last %}<br /><br />{% endif %}
+    {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
+{% if page.header.section.wrap.container == 1 %}
+</div></div>
+<div class="row container"><div class="row container-inner">  {# start row #}
+{% endif %} 
+{% endif %}

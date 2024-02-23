@@ -12,7 +12,7 @@
             {% elseif page.header.section.settings.module.width == 5 %}col-6 col-md-3
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
             {% else %}col-12 col-md-6{% endif %}
-            txt_module section_wrap"
+            txt_module section_wrap {{page.header.section.settings.classes}}" 
      style="
             {# {% if page.header.section.background.image %} background-image: url("{{ url('theme://custom/images/' ~ img)  }}");
                 background-position: center;

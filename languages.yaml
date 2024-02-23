@@ -45,6 +45,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        SLIDERCOLOR:
+          LABEL: "Slider color"
         PADDING:
           LABEL: "Module Padding"
         BG_ADDBLK:
@@ -124,10 +126,14 @@ en:
           LABEL: "Alt-tag"
         OBJECTFIT:
           LABEL: "Focus of the image Bilds"
+        MAXHEIGHT:
+          LABEL: "Max height of slider"
         IMAGE:
           LABEL: "Upload image"
         IMAGEDES:
           LABEL: "Image description"
+        CLASSES:
+          LABEL: "Classes separated by space (e.g. mytext uppercase)"
         WRAP:
           LABEL: "Wrap container?"
           OPTIONS:
@@ -487,6 +493,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        SLIDERCOLOR:
+          LABEL: "Slider Farbe"
         PADDING:
           LABEL: "Modul Padding"
         BG_ADDBLK:
@@ -569,10 +577,14 @@ de:
           LABEL: "Alt-Tag"
         OBJECTFIT:
           LABEL: "Fokus des Bilds"
+        MAXHEIGHT:
+          LABEL: "Maximale Höhe des Sliders"
         IMAGE:
           LABEL: "Foto hochladen"
         IMAGEDES:
           LABEL: "Bildbeschreibung"
+        CLASSES:
+          LABEL: "Klassen mit Leerschlag getrennt (z.b: mytext uppercase)"
         WRAP:
           LABEL: "Container ganz füllen?"
           OPTIONS:

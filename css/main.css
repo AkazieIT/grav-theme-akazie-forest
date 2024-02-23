@@ -2100,3 +2100,13 @@ section.section {
     padding: 40px 10px 60px 10px;
 }
 /* End Blog page style */
+
+
+.textimage-text {
+    display:flex;
+    justify-content: center;
+}
+
+.container-inner:has(.swipercontainer) {
+    width:100%;
+}
