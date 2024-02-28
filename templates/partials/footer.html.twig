@@ -34,7 +34,7 @@
                         <li>
                         {% if theme_var('footer.agb.enabled') %}    
                             <a href="{{ base_url }}{{ theme_var('footer.agb.link') }}">
-                            AGB
+                            {{ theme_var('footer.agb.text') ? theme_var('footer.agb.text') : 'AGB' }}
                             </a>
                         {% endif %}
                         </li>

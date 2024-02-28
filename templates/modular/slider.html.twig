@@ -151,7 +151,10 @@ var mySwiper{{cleanSlug}} = new Swiper('.swiper.{{cleanSlug}}', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
+  autoplay: {
+    delay: 5000, // Delay in milliseconds between slides, adjust to your liking
+    disableOnInteraction: false, // Set to false to keep autoplay after user interactions
+  },
   // And if you need scrollbar
 });
 </script>

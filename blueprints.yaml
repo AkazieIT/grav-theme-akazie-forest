@@ -462,6 +462,9 @@ form:
                           show_all: false
                           show_modular: false
                           show_root: false
+                        .footer.agb.text:
+                          type: text
+                          label:  THEME_AKAZIEForest.ADMIN.FIELDS.TEXT_AGB.LABEL
                         footer.sitemap.link:
                           type: pages
                           size: medium

@@ -40,7 +40,7 @@
                             {% endif %}                        
                             {% if logo_mobile %}
                                 {% set logo_file = (logo_mobile|first).name %}
-                                <img id="headerlogo" src="{{ url('theme://custom/images/logo/' ~ logo_file)  }}"  class="img-fluid d-lg-none d-xl-none" alt="{{ site.name }}" />
+                                <img id="headerlogomobile" src="{{ url('theme://custom/images/logo/' ~ logo_file)  }}"  class="img-fluid d-lg-none d-xl-none" alt="{{ site.name }}" />
                             {% endif %}                        
                         {% endif %}
                     </a>

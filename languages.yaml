@@ -342,6 +342,8 @@ en:
           HELP: "Overwrite data policy link with custom link?"
         LINK_AGB:
           LABEL: "Link AGB"
+        TEXT_AGB:
+          LABEL: "AGB text"  
         LINK_SITE:
           LABEL: "Link sitemap"
         FOOTER_JS:
@@ -793,6 +795,8 @@ de:
           HELP: "Dieser Wert überschreibt den Datenschutzlink. Wenn kein Wert angegeben wird, wird die Page von oben verwendet."
         LINK_AGB:
           LABEL: "Link AGB"
+        TEXT_AGB:
+          LABEL: "AGB text"  
         LINK_SITE:
           LABEL: "Link Sitemap"
         FOOTER_JS:

@@ -32,6 +32,12 @@ body {
     background-color: #FBFBFB;
 }
 
+@media screen and (max-width: 991px) {
+body {
+
+    overflow-x: hidden;
+}
+}
 body.noscroll {
     overflow:hidden;
 }
@@ -889,7 +895,7 @@ header.header-area.fixed {
   }
 
   .txt_module .cmn-content p{
-    padding: 0px 100px 0px 0px;
+    padding: 0px 0px 0px 0px; 
     margin-bottom: 2rem !important;
   }
 
