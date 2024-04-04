@@ -93,6 +93,7 @@
     {# {% do assets.addCss('theme://css/bricklayer.css') %} #}
     {% do assets.addCss('theme://css/simple-masonry.css') %}
     {% do assets.addCss('theme://css/swiper-bundle.min.css') %}
+    {% do assets.addCss('theme://js/lightgallery/css/lightgallery.css') %}
     {% do assets.addCss('theme://css/main.css', 98) %}
     {% endblock %}
 
@@ -102,6 +103,9 @@
     {% do assets.add('theme://js/simple-masonry.js') %}
     {% do assets.add('theme://js/swiper-bundle.min.js') %}
     {% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %}
+    {% do assets.add('theme://js/lightgallery/lightgallery.min.js') %}
+    {% do assets.add('theme://js/lightgallery/plugins/lg-fullscreen.min.js') %}
+    {% do assets.add('theme://js/lightgallery/plugins/lg-thumbnail.min.js') %}
     {% do assets.addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', 99) %}
     {% endblock %}
 

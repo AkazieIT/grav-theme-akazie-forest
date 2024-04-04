@@ -170,6 +170,18 @@ a {
     flex:1;
     display:flex;
 }
+
+.gallery_wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.gallery_wrap img {
+
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
 /*
 .title_wrap {
   margin-top: 30px;
