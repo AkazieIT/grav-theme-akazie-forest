@@ -40,8 +40,8 @@
 
 <div id="lightgallery" class="gallery_wrap cmn-content">
     {% for elem in page.media %}
-        <a href="{{elem.url}}">
-            <img class="media" alt="{{elem.alt}}" src="{{elem.url}}">
+        <a href="{{elem.url}}" class="element">
+            <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
         </a>          
     {% endfor %}
 </div>
@@ -49,9 +49,12 @@
     <script>
 document.addEventListener('DOMContentLoaded', function() {
     lightGallery(document.getElementById('lightgallery'), {
-        selector: 'a',
-        download: false, // Set to true if you want to enable image download button
-        // Other options you might want to configure
+        selector: '.element',
+        download: true, 
+        enableSwipe: true,
+        escKey: true,
+        // center images
+        mode: 'lg-fade',
     });
 });
 </script>

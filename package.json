@@ -1,0 +1,36 @@
+{
+  "name": "grav-theme-akazie-forest",
+  "version": "1.0.2",
+  "description": "The **Akazie Forest** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkazieIT/grav-theme-akazie-forest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkazieIT/grav-theme-akazie-forest/issues"
+  },
+  "homepage": "https://github.com/AkazieIT/grav-theme-akazie-forest#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "postcss": "^8.4.38",
+    "sass": "^1.74.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "lightgallery": "^2.7.2",
+    "swiper": "^11.1.0"
+  }
+}
