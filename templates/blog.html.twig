@@ -7,8 +7,17 @@
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 
 
-
 {% block hero %}
+
+
+
+    {# set the variable currentpath as the path to the current page: /aktuelles #}
+    {% set currentpath = page.route() %}
+    {% for module in page.collection({'items':{'@page.modular': currentpath}, 'order': {'by': 'default', 'dir': 'asc'}}) %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+    
     {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content} %}
 {% endblock %}
 

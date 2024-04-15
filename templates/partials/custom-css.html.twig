@@ -50,7 +50,7 @@ a:hover{
 
     {% if theme_var('site.maxwidth') >= 999 and theme_var('site.maxwidth') < 2001  %}
         @media screen and (min-width: 992px) {
-            .container-inner  { max-width: {{ theme_var('site.maxwidth') }}px; }
+            .container-inner, .modular-row.form  { max-width: {{ theme_var('site.maxwidth') }}px; }
             #blog-hero  { max-width: {{ theme_var('site.maxwidth') }}px; }
             #portfolio-hero  { max-width: {{ theme_var('site.maxwidth') }}px; }
         }
