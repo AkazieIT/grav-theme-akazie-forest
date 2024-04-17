@@ -68,6 +68,20 @@ form:
       validate:
         type: bool
 
+
+    header.show_gallery:
+      type: toggle
+      toggleable: true
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.GALLERY.LABEL
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+
     header.content.items:
       type: select
       label: PLUGIN_ADMIN.ITEMS

@@ -425,6 +425,8 @@ en:
           LABEL: "Show breadcrumbs"
         PAGINATION:
           LABEL: "Show pagination"
+        GALLERY:
+          LABEL: "Show gallery"
         CONT_DEF:
           TITLE: "Content definiton"
         ORDER:
@@ -880,6 +882,8 @@ de:
           LABEL: "Breadcrumbs anzeigen"
         PAGINATION:
           LABEL: "Nummerierung anzeigen"
+        GALLERY:
+          LABEL: "Galerie anzeigen"
         ORDER:
           LABEL: "Ordnen nach..."
           OPTIONS:

@@ -3,6 +3,7 @@
 {% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
 {% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
 {% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
+{% set show_gallery = header_var('show_gallery', [page, portfolio])|defined(false) %}
 {% set hero_image_name = page.header.hero_image %}
 
 {% block hero %}
@@ -34,6 +35,33 @@
                 {% include 'partials/sidebar.html.twig' %}
             {% endblock %} #}
         {% endembed %}
+
+
+    {% if show_gallery %}
+
+        <div id="lightgallery" class="gallery_wrap cmn-content gallery_portfolio">
+            {% for elem in page.media %}
+                <a href="{{elem.url}}" class="element">
+                    <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
+                </a>          
+            {% endfor %}
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lightGallery(document.getElementById('lightgallery'), {
+                selector: '.element',
+                download: true, 
+                enableSwipe: true,
+                escKey: true,
+                // center images
+                mode: 'lg-fade',
+            });
+        });
+        </script>
+
+
+    {% endif %}
 
     </section>
 </section>

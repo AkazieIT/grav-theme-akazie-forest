@@ -38,26 +38,26 @@
     </div>
     {% endif %}
 
-<div id="lightgallery" class="gallery_wrap cmn-content">
-    {% for elem in page.media %}
-        <a href="{{elem.url}}" class="element">
-            <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
-        </a>          
-    {% endfor %}
-</div>
+    <div id="lightgallery" class="gallery_wrap cmn-content">
+        {% for elem in page.media %}
+            <a href="{{elem.url}}" class="element">
+                <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
+            </a>          
+        {% endfor %}
+    </div>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    lightGallery(document.getElementById('lightgallery'), {
-        selector: '.element',
-        download: true, 
-        enableSwipe: true,
-        escKey: true,
-        // center images
-        mode: 'lg-fade',
+    document.addEventListener('DOMContentLoaded', function() {
+        lightGallery(document.getElementById('lightgallery'), {
+            selector: '.element',
+            download: true, 
+            enableSwipe: true,
+            escKey: true,
+            // center images
+            mode: 'lg-fade',
+        });
     });
-});
-</script>
+    </script>
 
 
     </div>
