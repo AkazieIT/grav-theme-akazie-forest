@@ -17,8 +17,9 @@
         {{ module.content|raw }}
     {% endfor %}
 
-    
+    {% if page.content is not empty %}
     {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content} %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}

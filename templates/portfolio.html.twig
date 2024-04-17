@@ -13,7 +13,10 @@
     {% for module in page.collection({'items':{'@page.modular': currentpath}, 'order': {'by': 'default', 'dir': 'asc'}}) %}
         {{ module.content|raw }}
     {% endfor %}
+    
+    {% if page.content is not empty %}
     {% include 'partials/hero.html.twig' with {id: 'portfolio-hero', content: page.content} %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
