@@ -70,11 +70,32 @@
         {% set resize = 1 %}
     {% elseif page.header.scale == 5 %}
         {% set resize = 4 / 3 %}
+    {% else %}
+        {% set resize = 0 %}
     {% endif %}    
+        
+    {# TODO: Resize bei page.header.scale #}
 
 
-{% if page.header.imagesizing == 1 %}
-{# TODO #}
+    {% if theme_var('style.compress') %}
+
+
+     {% include 'partials/imagesizing.html.twig' with {
+        'image': image, 
+        'title' : page.header.section.title, 
+        'alt': page.header.section.alt_tag, 
+        'objectfit': page.header.objectfit, 
+        'scale': page.header.scale , 
+        'resize': resize,
+        'classes': 'media' } 
+    %}
+ 
+ 
+
+
+    {% else %}
+
+
     <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
     src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
@@ -82,15 +103,7 @@
     {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
     " />
 
-{% else %}
-    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
-    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
-    style="
-    {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
-    {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
-    " />
-
-{% endif %}
+    {% endif %}
 
     </div>
     

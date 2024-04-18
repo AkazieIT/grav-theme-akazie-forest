@@ -1,0 +1,57 @@
+
+{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
+       {% set tempimage = image.resize(size / divider,(height / (width / size)) / divider) %}
+       {% if xresize != 0 %}
+              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
+        {% else %}
+            {% set defimage = tempimage %}
+        {% endif %}    
+       <source media="(max-width: {{size}}px)"
+            srcset="{{ 
+                image.defimage.url 
+            }}">
+{% endmacro %}
+
+
+{% set width = image.width %}
+{% set height = image.height %}
+
+{% if page.header.section.settings.module.width == 1 %}{% set divider = 1 %}
+{% elseif page.header.section.settings.module.width == 2 %}{% set divider = 2 %}
+{% elseif page.header.section.settings.module.width == 3 %}{% set divider = 3 %}
+{% elseif page.header.section.settings.module.width == 4 %}{% set divider = 1.5 %}
+{% elseif page.header.section.settings.module.width == 5 %}{% set divider = 4 %}
+{% elseif page.header.section.settings.module.width == 6 %}{% set divider = 6 %}
+{% else %}{% set divider = 2 %}{% endif %} 
+
+{# divider jump: 768px #}
+
+<picture>
+  <!-- High resolution screens -->
+    {% set breakpoints = [2400, 1800, 1400, 1000, 768, 550, 400] %}
+
+    {% for breakpoint in breakpoints %}
+        {% if width > breakpoint %}
+            {% set funcdiv = divider %}
+            {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
+            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize) }}
+        {% endif %}
+    {% endfor %}
+
+
+  <img class="{{classes}}" 
+       {% if resize == 0 %}
+        src="{{ image.url }}"
+       {% else %}
+        src="{{ image.cropZoom(image.height,image.height * resize).url }}"
+       {% endif %}
+       alt="{{ alt }}" 
+       title="{{ title }}"
+       style="
+         {% if objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
+         {% if scale != 0 %}object-fit:contain;{% endif %}">
+</picture>
+
+
+
+

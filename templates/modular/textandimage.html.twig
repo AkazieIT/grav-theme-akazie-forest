@@ -34,24 +34,12 @@
     {% endif %}    
 
 
-{% if page.header.imagesizing == 1 %}
-{# TODO #}
     <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
     src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
     {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
     " />
-
-{% else %}
-    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
-    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
-    style="
-    {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
-    {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
-    " />
-
-{% endif %}
 
     </div>
     

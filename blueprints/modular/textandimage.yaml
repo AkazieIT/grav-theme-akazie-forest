@@ -95,17 +95,6 @@ form:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
               default: 'center center'
-            header.imagesizing:
-              type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.HELP
-              highlight: 0
-              default: 0
-              options:
-                0: PLUGIN_ADMIN.DISABLED
-                1: PLUGIN_ADMIN.ENABLED
-              validate:
-                type: bool
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
