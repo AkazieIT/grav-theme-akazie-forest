@@ -136,25 +136,28 @@
 </style>
 
 <script>
-var mySwiper{{cleanSlug}} = new Swiper('.swiper.{{cleanSlug}}', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
+document.addEventListener("DOMContentLoaded", function() {
 
-  // If you want to include pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+  var mySwiper{{cleanSlug}} = new Swiper('.swiper.{{cleanSlug}}', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  autoplay: {
-    delay: 5000, // Delay in milliseconds between slides, adjust to your liking
-    disableOnInteraction: false, // Set to false to keep autoplay after user interactions
-  },
-  // And if you need scrollbar
+    // If you want to include pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 5000, // Delay in milliseconds between slides, adjust to your liking
+      disableOnInteraction: false, // Set to false to keep autoplay after user interactions
+    },
+    // And if you need scrollbar
+  });
 });
 </script>

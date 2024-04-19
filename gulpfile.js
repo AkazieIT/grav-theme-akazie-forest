@@ -13,6 +13,7 @@ function styles() {
     'css/**/*.css',
     'css/**/*.scss',
     'node_modules/lightgallery/css/lightgallery.css',
+    'node_modules/swiper/swiper-bundle.min.css',
     ])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -26,6 +27,7 @@ function styles() {
 function scripts() {
   return gulp.src([
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    'node_modules/swiper/swiper-bundle.min.js',
     'node_modules/lightgallery/lightgallery.min.js',
     'js/**/*.js'
     ])
