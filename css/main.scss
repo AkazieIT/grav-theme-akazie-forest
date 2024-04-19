@@ -841,6 +841,7 @@ header.header-area.fixed {
 
    /* max-width: 1400px; */
     margin:auto;
+    padding:0px;
 }
 .offer-g-wrapper {
     display: grid;
@@ -1267,11 +1268,15 @@ footer, footer p, footer a {
 
     padding-right:10px;
     padding-left:10px;
+
 }
 
 
 .member-img {
     margin-bottom: 24px;
+}
+.member-img .media {
+    width:100%;
 }
 
 .ct-list li a,
@@ -1368,6 +1373,9 @@ footer, footer p, footer a {
 
 .quote-area {
     padding: 8rem 0;
+}
+.quote-area .container {
+    padding:0px;
 }
 .quote-area .container-inner {
     padding-right:22px;

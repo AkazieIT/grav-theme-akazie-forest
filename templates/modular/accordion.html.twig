@@ -1,4 +1,11 @@
 {% if page.header.section.settings.module.enabled %}
+
+{% if page.header.section.wrap.container == 1 %}
+</div></div>  {#  end row #}
+<div class="row container">
+<div class="row container-inner">
+{% endif %}
+
         {# <div class="accordion bg-transparent faq-area" id="faq"> #}
             {% for faqItem in page.header.content.faqs %}
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
@@ -17,7 +24,7 @@
                     aria-labelledby="heading{{loop.index}}" data-bs-parent="#faq">
                     <div class="accordion-body p-0 col-md-8">
                         <p class="text_lg text_secondaryLight">{{faqItem.text}}</p>
-                        <a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>
+                        {% if faqItem.anchor %}<a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>{% endif %}
                         </a>
                     </div>
                 </div>
@@ -36,5 +43,11 @@
     }
     </style>
     {% endif %}
+
+{% if page.header.section.wrap.container == 1 %}
+</div></div>
+<div class="row container"><div class="row container-inner"> {# start row #}
+{% endif %}
+
 {% endif %}
 

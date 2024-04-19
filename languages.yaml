@@ -244,6 +244,11 @@ en:
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Used instead of theme://images/logo.png"
+        LOGOS:
+          WINDOW:
+            OPTIONS:
+              0: "No"
+              1: "Yes"
         MLOGO:
           LABEL: "Mobile logo"
         DLOGO:
@@ -697,6 +702,11 @@ de:
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Anstelle von theme://images/logo.png verwenden"
+        LOGOS:
+          WINDOW:
+            OPTIONS:
+              0: "Nein"
+              1: "Ja"
         MLOGO:
           LABEL: "Mobiles Logo"
         DLOGO:

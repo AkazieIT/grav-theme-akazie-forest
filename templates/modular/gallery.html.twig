@@ -41,7 +41,9 @@
     <div id="lightgallery" class="gallery_wrap cmn-content">
         {% for elem in page.media %}
             <a href="{{elem.url}}" class="element">
+            
                 <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
+                
             </a>          
         {% endfor %}
     </div>

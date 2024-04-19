@@ -67,7 +67,26 @@
     <div class="swiper-wrapper">
         {% for image in page.media %}
         <div class="swiper-slide">
-        <img src="{{ image.url }}">
+
+        {#
+                        {% if theme_var('style.compress') %}
+                                 
+                                              
+                          {% include 'partials/imagesizing.html.twig' with {
+                              'image': image, 
+                              'title' : 'Slideshow Image', 
+                              'alt': 'Slideshow Image', 
+                              'objectfit': 'center center',
+                              'scale': 0, 
+                              'resize': 0,
+                              'classes': 'media' } 
+                          %}
+                      
+                            
+                        {% else %}
+                        #}
+                               <img src="{{ image.url }}">
+                        {# endif #}
         </div>
         {% endfor %}
     </div>

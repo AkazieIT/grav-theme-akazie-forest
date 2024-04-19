@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.1
+version: 0.1.2
 description: A Forest Theme
 icon: rebel
 author:
@@ -291,9 +291,9 @@ form:
                   collapsed: true
                   fields:
                     .heading:
-                      type: text
+                      type: textarea
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_HEAD.LABEL
-                      rows: 1
+                      rows: 2
                     .image:
                       type: file
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_LOGO.LABEL
