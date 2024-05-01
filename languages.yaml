@@ -78,6 +78,8 @@ en:
             OPTIONS:
               0: "Yes"
               1: "No"
+          OPENTEXT:
+            LABEL: "What's the label of the More info button?"
           WINDOWTWO:
             LABEL: "Open link in new tab?"
             OPTIONS:
@@ -536,6 +538,8 @@ de:
           OPTIONS:
             0: "Ja"
             1: "Nein"
+        OPENTEXT:
+          LABEL: "Bezeichnung des Buttons"    
         WINDOWTWO:
           LABEL: "Link in neuem Fenster öffnen?"
           OPTIONS:

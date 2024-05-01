@@ -110,6 +110,10 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+            header.section.card.opentext:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.OPENTEXT.LABEL
+              default: 'Zum Angebot'
           import@:
             type: partials/blog-bits
             context: blueprints://pages
