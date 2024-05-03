@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.2
+version: 0.1.21
 description: A Forest Theme
 icon: rebel
 author:
@@ -192,6 +192,10 @@ form:
                 nav.hamburgercolor:
                   type: colorpicker
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMCOL.LABEL
+                  default: '#7b9b50'
+                nav.xcolor:
+                  type: colorpicker
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.XCOL.LABEL
                   default: '#7b9b50'
 
 

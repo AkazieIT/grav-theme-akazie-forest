@@ -40,6 +40,7 @@ form:
                   description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
                   accept:
                     - image/*
+                    - application/pdf
                 .alt:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
