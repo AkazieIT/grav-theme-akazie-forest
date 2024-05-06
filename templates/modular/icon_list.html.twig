@@ -46,7 +46,7 @@
                         {% if image  %}
                             {% if image.mime == 'application/pdf' %}
                             <a href="{{ image.url }}" target="_blank" class="pdf-link">
-                                Download PDF
+                                Download PDF<i class="far fa-angle-right"></i>
                             </a>
                             {% else %}
                              <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{{ image.url }}" />
