@@ -1,6 +1,7 @@
 {# {% set videoOne = page.find('/videos').media[page.header.section.content.right.video].url | e %} #}
-{% set media = (page.header.section.content.right.media | first).name %}
-{% set mediaFilePath = 'theme://custom/images/hero/' ~ media %}
+{% set media = (page.header.section.content.right.media | first) %}
+
+{% set mediaFilePath = 'theme://custom/images/hero/' ~ media.name %}
 {% if page.header.section.content.module.enabled %}
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
@@ -55,7 +56,23 @@
         <div class="hero-video position-absolute">
             {% if page.header.section.content.right.media %}
                 {% if fileType starts with 'image/' %}
-                    <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+
+
+                    {% if theme_var('style.compress') %}
+                        
+                        {% include 'partials/imagesizing.html.twig' with {
+                            'image': page.media[(page.header.section.content.right.media|keys|first)],
+                            'title' : page.title, 
+                            'alt': page.title, 
+                            'objectfit': 'center center', 
+                            'scale': 0, 
+                            'resize': 0,
+                            'classes': 'hero-media-image' } 
+                        %}
+                     {% else %}
+                        <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+                    {% endif %}
+
                 {% elseif fileType starts with 'video/' %}
                     <video autoplay muted loop src="{{ url(mediaFilePath)}}"></video>
                 {% endif %}           

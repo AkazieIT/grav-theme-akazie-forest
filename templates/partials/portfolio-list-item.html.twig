@@ -31,9 +31,9 @@
             </div>
             {% if show_content %}
                 {% if page.summary != page.content %}
-                    {{ page.summary|truncate(150, true)|raw }}
+                    {{ page.summary|strip_tags_truncate(150)|raw }}
                 {% else %}
-                    {{ page.content|truncate(150, true)|raw }}
+                     {{ page.content|strip_tags_truncate(150)|raw }}
                 {% endif %}
             {% endif %}    
         </div>

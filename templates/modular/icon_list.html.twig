@@ -38,25 +38,31 @@
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
                 <div class="cmn-content icon-list-content">
-                    <div class="icn-icon">
                         {# <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="{{card.alt}}" class="img-fluid"> #}
                         {% set image = page.media[(card.icon|keys|first)] %}
 
 
                         {% if image  %}
                             {% if image.mime == 'application/pdf' %}
-                            <a href="{{ image.url }}" target="_blank" class="pdf-link">
-                                Download PDF<i class="far fa-angle-right"></i>
-                            </a>
                             {% else %}
-                             <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{{ image.url }}" />
+                             <div class="icn-icon">
+                                 <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{{ image.url }}" />               
+                             </div>
                             {% endif %}
 
                         {% endif %}                        
 
-                    </div>
                     <h4>{{card.heading}}</h4>
                     <p>{{card.text}}</p>
+                        {% if image  %}
+                            {% if image.mime == 'application/pdf' %}
+                            <div class="icn-icon">
+                                <a href="{{ image.url }}" target="_blank" class="pdf-link">
+                                    Download PDF<i class="far fa-angle-right"></i>
+                                </a>                           
+                             </div>
+                            {% endif %}
+                        {% endif %}       
                     <a href="{{card.link}}" class="box-btn" {% if card.open.type %}target="_blank"{% endif %}>
                         {{card.b_name}}<i class="far fa-angle-right"></i>
                     </a>
