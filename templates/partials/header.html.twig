@@ -48,7 +48,7 @@
                 </div>
                 <div class="header-right">
                     {% if theme_var('nav.button.enabled') %}    
-                    <a href="{{ base_url }}{{ theme_var('nav.button.link') }}" class="custom-btn">{{ theme_var('nav.button.text') }}<i class="far fa-angle-right"></i></a>
+                    <a href="{{ theme_var('nav.button.url') ? theme_var('nav.button.url') : base_url ~ theme_var('nav.button.link') }}" class="custom-btn" {{ theme_var('nav.button.url') ? 'target="_blank"' }}>{{ theme_var('nav.button.text') }}<i class="far fa-angle-right"></i></a>
                     {% endif %}
                     <button id="mobile_bar" class="mobile-menu d-lg-none d-xl-none  bg-transparent border-0 p-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="21" viewBox="0 0 30 21">

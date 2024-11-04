@@ -295,6 +295,8 @@ en:
         NAV_BUTTON:
           TITLE: "Custom Navigation Button"
           LABEL: "Custom nav button enabled?"
+        BUTTONURL:
+          LABEL: "Custom link (if set, will overwrite page link)"
         FOOTER:
           TITLE: "Footer"
         FOOTER_MAIN:
@@ -757,6 +759,8 @@ de:
         NAV_BUTTON:
           TITLE: "Button in der Navigation"
           LABEL: "Soll der Button in der Navigation angezeigt werden?"
+        BUTTONURL:
+          LABEL: "Eigener link (falls gesetzt, ist dieser Link vorrangig)"
         FOOTER:
           TITLE: "Footer"
         FOOTER_MAIN:

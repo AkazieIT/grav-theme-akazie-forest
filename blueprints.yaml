@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.22
+version: 0.1.25
 description: A Forest Theme
 icon: rebel
 author:
@@ -226,6 +226,10 @@ form:
                     show_all: false
                     show_modular: false
                     show_root: true
+                nav.button.url:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONURL.LABEL
+                  default: ''
 
         footer:
           type: fieldset
