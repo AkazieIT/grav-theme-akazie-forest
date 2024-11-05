@@ -17,7 +17,7 @@
 
                     {% endif %}
                     <p>{{page.header.section.content.left.text|markdown|raw}}</p>
-                    <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.link.open.type %}target="_blank"{% endif %}>
+                    <a href="{{ page.header.section.content.left.pdfenabled ? page.media[page.header.section.content.left.pdfselect].url : page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.linkopen.type %}target="_blank"{% endif %}>
                         {{page.header.section.content.left.anchor}}<i class="far fa-angle-right"></i>
                     </a>
                 </div>

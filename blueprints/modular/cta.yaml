@@ -49,6 +49,19 @@ form:
                   options:
                     0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
                     1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                header.section.content.left.pdfenabled:
+                  type: toggle
+                  label: 'PDF Link'
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                header.section.content.left.pdfselect:
+                  type: pagemediaselect
+                  label: 'PDF File'
             cards:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.CARDS
@@ -94,6 +107,19 @@ form:
                       options:
                         0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
                         1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+            media:
+              type: section
+              title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA
+              underline: true
+              fields:
+                header.section.background.image:
+                  type: pagemedia
+                  label: PLUGIN_ADMIN.PAGE_MEDIA
+                  size: large
+                  multiple: true
+                  markdown: true
+                  accept:
+                    - application/pdf
         settings:
             type: tab
             title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
