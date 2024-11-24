@@ -90,6 +90,12 @@ en:
           HELP: "If no icon is uploaded, the button will be displayed as a standard button. Otherwise as a link with icon"
         ENTRY:
           LABEL: "Entries"
+          PDF:
+            LABEL: "PDF file"
+            HELP: "the PDF can be uploaded in the media section at the bottom of the page"
+          PDFENABLED:
+            LABEL: "PDF Link"
+            HELP: "If activated, the URL above will be overwritten with the URL to the PDF"
           TITLE:
             LABEL: "Titel"
           TEXT:
@@ -556,6 +562,12 @@ de:
           LABEL: "Einträge"
           TITLE:
             LABEL: "Titel"
+          PDF:
+            LABEL: "PDF Datei"
+            HELP: "das PDF kann im Medienbereich unten an der Seite hochgeladen werden"
+          PDFENABLED:
+            LABEL: "PDF Link"
+            HELP: "Wenn aktiviert, wird die URL oben mit der URL zum PDF überschrieben"
           TEXT:
             LABEL: "Text"
           BUTTON:

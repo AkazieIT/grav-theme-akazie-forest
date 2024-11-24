@@ -51,7 +51,8 @@ form:
                     1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
                 header.section.content.left.pdfenabled:
                   type: toggle
-                  label: 'PDF Link'
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDFENABLED.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDFENABLED.HELP
                   highlight: 0
                   default: 0
                   options:
@@ -61,7 +62,8 @@ form:
                     type: bool
                 header.section.content.left.pdfselect:
                   type: pagemediaselect
-                  label: 'PDF File'
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.HELP
             cards:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.CARDS
@@ -99,7 +101,21 @@ form:
                     .link:
                       type: text
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.URL.LABEL
-
+                    .pdfenabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDFENABLED.LABEL
+                      help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDFENABLED.HELP
+                      highlight: 0
+                      default: 0
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
+                    .pdfselect:
+                      type: pagemediaselect
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.LABEL
+                      help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.HELP
                     .open.type:
                       type: select
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
