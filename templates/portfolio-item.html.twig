@@ -38,30 +38,28 @@
 
 
     {% if show_gallery %}
-
         <div id="lightgallery" class="gallery_wrap cmn-content gallery_portfolio">
-                        
-                {# Convert the string into an array #}
-                {% set order = page.header.media_order|split(',') %}
+            {# Convert the string into an array #}
+            {% set order = page.header.media_order|split(',') %}
 
-                {# Initialize an empty array for sorted media #}
-                {% set sorted_media = [] %}
+            {# Initialize an empty array for sorted media #}
+            {% set sorted_media = [] %}
 
-                {# Populate sorted_media in the order specified by the order array #}
-                {% for filename in order %}
-                    {% if page.media[filename] %}
-                        {% set sorted_media = sorted_media|merge([page.media[filename]]) %}
-                    {% endif %}
-                {% endfor %}
+            {# Populate sorted_media in the order specified by the order array, but only include images #}
+            {% for filename in order %}
+                {% if page.media[filename] and page.media[filename].type == 'image' %}
+                    {% set sorted_media = sorted_media|merge([page.media[filename]]) %}
+                {% endif %}
+            {% endfor %}
 
-                {# Display sorted images #}
-                {% for elem in sorted_media %}
-                    <a href="{{ elem.url }}" class="element">
-                        <img class="lightgallerymedia" src="{{ elem.cropZoom(400,400).url }}">
-                    </a>
-                {% endfor %}
-
+            {# Display sorted images #}
+            {% for elem in sorted_media %}
+                <a href="{{ elem.url }}" class="element">
+                    <img class="lightgallerymedia" src="{{ elem.cropZoom(400,400).url }}">
+                </a>
+            {% endfor %}
         </div>
+
 
         <script>
         document.addEventListener('DOMContentLoaded', function() {
