@@ -42,17 +42,20 @@
         {% for elem in page.media %}
             <a href="{{elem.url}}" class="element">
             
-                <img class="lightgallerymedia" src="{{elem.cropZoom(400,400).url}}">
+                <img class="lightgallerymedia" src="{{elem.cropResize(520,520).url}}">
                 
             </a>          
         {% endfor %}
     </div>
-
+    {% set download = 'false' %}
+    {% if page.header.section.settings.download == 1 %}
+        {% set download = 'true' %}
+    {% endif %}
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         lightGallery(document.getElementById('lightgallery'), {
             selector: '.element',
-            download: true, 
+            download: {{download}}, 
             enableSwipe: true,
             escKey: true,
             // center images

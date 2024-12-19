@@ -45,6 +45,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        DOWNLOAD:
+          LABEL: "Enable downloading of images in gallery"
         SLIDERCOLOR:
           LABEL: "Slider color"
         PADDING:
@@ -514,6 +516,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        DOWNLOAD:
+          LABEL: "Download von Bildern in der Galerie erlauben?"
         SLIDERCOLOR:
           LABEL: "Slider Farbe"
         PADDING:

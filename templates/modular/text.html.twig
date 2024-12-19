@@ -11,27 +11,9 @@
             {% elseif page.header.section.settings.module.width == 4 %}col-12 col-md-8
             {% elseif page.header.section.settings.module.width == 5 %}col-6 col-md-3
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
-            {% else %}col-12 col-md-6{% endif %}
-            txt_module section_wrap {{page.header.section.settings.classes}}" 
-     style="
-            {# {% if page.header.section.background.image %} background-image: url("{{ url('theme://custom/images/' ~ img)  }}");
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            {% endif %} #}
-            {#
-            {% if page.header.section.settings.txt.align == 1 %}
-                text-align: left;
-            {% elseif page.header.section.settings.txt.align == 2 %}
-                text-align: center;
-            {% elseif page.header.section.settings.txt.align == 3 %}
-                text-align: right;
-            {% endif %}
-            #}
-            {% if page.header.section.settings.padding and page.header.section.settings.padding is empty %}
-              padding:{{page.header.section.settings.padding}};
-            {% endif %}
-            "
+            {% else %}col-12 col-md-6{% endif %} txt_module section_wrap {{page.header.section.settings.classes}}" 
+     style="{% if page.header.section.settings.txt.align == 1 %}text-align: center;{% elseif page.header.section.settings.txt.align == 2 %}text-align: right;{% endif %}
+            {% if page.header.section.settings.padding and page.header.section.settings.padding is empty %}padding:{{page.header.section.settings.padding}};{% endif %}"
 >
 
 {% if page.header.section.settings.bgcolor %}<div class="bgcolorwrapper" style="background-color:{{page.header.section.settings.bgcolor}};{% if page.header.section.settings.padding %}padding:{{page.header.section.settings.padding}};{% endif %}">{% endif %}
