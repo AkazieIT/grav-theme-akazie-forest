@@ -431,6 +431,8 @@ en:
         PRTFL_ROUTE:
           LABEL: "Portfolio page"
           HELP: "The route to the portfolio page when working with portfolio sidebar"
+        PORTFOLIO:
+          TITLE: "Portfolio"
         OTHER:
           TITLE: "Other"
         CUSTOM_CSS:
