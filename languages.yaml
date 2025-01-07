@@ -73,27 +73,26 @@ en:
           OPTIONS:
             0: "No"
             1: "Yes"
-        BUTTONS:
-          ANCHOR:
-            LABEL: "Button text"
-          ANCHORTWO:
-            LABEL: "Link text"
-          LINK:
-            LABEL: "Button link"
-          LINKTWO:
-            LABEL: "Link"
-          WINDOW:
-            LABEL: "Open button link in new tab?"
-            OPTIONS:
-              0: "Yes"
-              1: "No"
-          OPENTEXT:
-            LABEL: "What's the label of the More info button?"
-          WINDOWTWO:
-            LABEL: "Open link in new tab?"
-            OPTIONS:
-              0: "Yes"
-              1: "No"
+        BUTTON:
+          LABEL: "Button text"
+        ANCHOR:
+          LABEL: "Link text"
+        LINK:
+          LABEL: "Button link"
+        LINKTWO:
+          LABEL: "Link"
+        WINDOW:
+          LABEL: "Open button link in new tab?"
+          OPTIONS:
+            0: "Yes"
+            1: "No"
+        OPENTEXT:
+          LABEL: "What's the label of the More info button?"
+        WINDOWTWO:
+          LABEL: "Open link in new tab?"
+          OPTIONS:
+            0: "Yes"
+            1: "No"
         ICON:
           LABEL: "Upload icon"
           HELP: "If no icon is uploaded, the button will be displayed as a standard button. Otherwise as a link with icon"
