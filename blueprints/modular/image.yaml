@@ -78,6 +78,7 @@ form:
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.1
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.3
+                6: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.6
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.4
                 5: THEME_AKAZIEForest.ADMIN.FIELDS.FORMAT.OPTIONS.5
             header.objectfit:
