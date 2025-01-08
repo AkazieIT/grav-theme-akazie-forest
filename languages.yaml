@@ -339,6 +339,8 @@ en:
           LABEL: "Footer columns"
         FOOTER_HEAD:
           LABEL: "Column heading"
+        FOOTER_LOGO:
+          LABEL: "Logo in Footer"  
         SHOW_NAV:
           LABEL: "Show navigation"
         RENDERHTML:
