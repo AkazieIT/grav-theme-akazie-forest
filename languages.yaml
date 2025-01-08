@@ -171,6 +171,7 @@ en:
             1: "Landscape 4:3"
             2: "Landscape 16:9"
             3: "Landscape 2.35:1"
+            6: "Strip 4:1"
             4: "Square"
             5: "Portrait"
         IMGSIZING:
@@ -647,6 +648,7 @@ de:
             1: "Querformat 4:3"
             2: "Querformat 16:9"
             3: "Querformat 2.35:1"
+            6: "Streifen 4:1"
             4: "Quadrat"
             5: "Hochformat"
         IMGSIZING:

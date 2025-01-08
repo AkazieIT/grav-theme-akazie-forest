@@ -70,6 +70,8 @@
         {% set resize = 1 %}
     {% elseif page.header.scale == 5 %}
         {% set resize = 4 / 3 %}
+    {% elseif page.header.scale == 6 %}
+        {% set resize = 1 / 4 %}
     {% else %}
         {% set resize = 0 %}
     {% endif %}    
