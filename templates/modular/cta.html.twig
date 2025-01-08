@@ -3,7 +3,7 @@
 <div class="cta-area">
     <div class="container"><div class="container-inner">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% else %}col-lg-6{% endif %}">
                 <div class="cmn-content st-content ctap">
                     {% if page.header.section.settings.title.show %}   
                     

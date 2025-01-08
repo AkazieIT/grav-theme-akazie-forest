@@ -167,6 +167,14 @@ form:
                 type: colorpicker
                 label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
                 default: '#fbfbfb'
+                
+              header.section.settings.module.width:
+                type: select
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.LABEL
+                default: 0
+                options:
+                  0: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.2
+                  1: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.1
 
               header.section.settings.module.enabled:
                 type: toggle
