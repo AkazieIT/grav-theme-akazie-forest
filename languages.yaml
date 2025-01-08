@@ -173,7 +173,7 @@ en:
             3: "Landscape 2.35:1"
             4: "Square"
             5: "Portrait"
-            6: "Strip 4:1"
+            6: "Strip 5:1"
         IMGSIZING:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
@@ -650,7 +650,7 @@ de:
             3: "Querformat 2.35:1"
             4: "Quadrat"
             5: "Hochformat"
-            6: "Streifen 4:1"
+            6: "Streifen 5:1"
         IMGSIZING:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
