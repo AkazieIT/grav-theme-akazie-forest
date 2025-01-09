@@ -43,16 +43,24 @@
 
         {% set i = 0 %}
         {% for page in pages.children.visible %}
-            {% if i < theme_var('nav.linksbeforehamburger') or theme_var('nav.hamburger') == false %}
-                {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-                <li class="{{ current_page|e }}">
-                    <a href="{{ page.url|e }}">
-                        {% if page.header.icons %}<i class="fal fa-{{ page.header.icons.arrow_down|e }}"></i>{% endif %}
-                         {{ page.menu == '%LOGO%' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : page.menu }}
+        {% if i < theme_var('nav.linksbeforehamburger') or theme_var('nav.hamburger') == false %}
+            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ page.url|e }}">
+                    {% if page.header.icons %}
+                        <i class="fal fa-{{ page.header.icons.arrow_down|e }}"></i>
+                    {% endif %}
+                    
+                    {% if page.menu == '%LOGO%' %}
+                        {{ ('<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~
+                            '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />')|raw }}
+                    {% else %}
+                        {{ page.menu|e }}
+                    {% endif %}
+                </a>
+            </li>
+        {% endif %}
 
-                    </a>
-                </li>
-            {% endif %}
 
             {% set i = i + 1 %}
         {% endfor %}
