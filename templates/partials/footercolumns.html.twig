@@ -14,7 +14,7 @@
 
                         {% if column.image %}<img src="{{ (column.image|first).path|first == '/' ? ((column.image|first).path) : ('/' ~ (column.image|first).path) }}" alt="Logo" class="footerimage">
                         {% endif %}
-                       {{column.heading ? '<h3>' ~ column.heading | nl2br | raw ~ '</h3>' }}
+                       {{column.heading ? ('<h3>' ~ column.heading | nl2br ~ '</h3>')| raw  }}
                         {% if column.social.enabled %}
                         <div class="social-wrap d-flex align-items-center flex-wrap">
                             <h5>{{ theme_var('top.footer.socialtext') ? theme_var('top.footer.socialtext') : 'Folge uns' }}</h5>
