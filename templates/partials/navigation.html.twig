@@ -15,7 +15,7 @@
                     {% for item in p.children.visible %}
                     <li>
                         <a href="{{ item.url }}">
-                            {{ item.menu }}
+                            {{ item.menu == '%LOGO%' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : item.menu }}
                         </a>
                     </li>
                     {% endfor %}
