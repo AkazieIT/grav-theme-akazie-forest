@@ -7,7 +7,8 @@
         {% if p.children.visible.count > 0 %}
         <li class="has-children {{ current_page|e }}">
             <a href="{{ p.url|e }}">
-                {{ p.menu|e }}
+
+                {{ p.menu|e }}  
                 {% if p.header.icons %}<i class="fal fa-{{ p.header.icons.angle_down|e }}"></i>{% endif %}
             </a>
             <ul class="submenu">
@@ -15,7 +16,7 @@
                     {% for item in p.children.visible %}
                     <li>
                         <a href="{{ item.url }}">
-                            {{ item.menu == 'LOGO' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : item.menu }}
+                            {{ item.menu }}
                         </a>
                     </li>
                     {% endfor %}
@@ -23,8 +24,8 @@
         </li>
         {% else %}
         <li class="{{ current_page|e }}">
-            <a href="{{ p.url|e }}">
-                {{ p.menu|e }}
+            <a href="{{ p.url|e }}">                
+            {{ p.menu|e == '%LOGO%' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : p.menu|e }}
             </a>
         </li>
         {% endif %}
