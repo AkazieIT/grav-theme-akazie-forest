@@ -48,8 +48,8 @@
                 <li class="{{ current_page|e }}">
                     <a href="{{ page.url|e }}">
                         {% if page.header.icons %}<i class="fal fa-{{ page.header.icons.arrow_down|e }}"></i>{% endif %}
-                        {{ page.menu|e }}
-                        <p>pagemenu</p>
+                         {{ page.menu|e == '%LOGO%' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : page.menu|e }}
+
                     </a>
                 </li>
             {% endif %}
@@ -64,7 +64,6 @@
         <a href="{{ mitem.url|e }}">
             {% if mitem.icon %}<i class="fal fa-{{ mitem.icon|e }}"></i>{% endif %}
             {{ mitem.text|e }}
-            <p>mitem</p>
         </a>
     </li>
     {% endfor %}
