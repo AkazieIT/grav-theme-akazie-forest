@@ -52,7 +52,7 @@
                     {% endif %}
                     
                     {% if page.menu == '%LOGO%' %}
-                        {{ ('<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~
+                        {{ ('<img src="' ~ url('theme://custom/images/logo/' ~ (logo_desktop|first).name) ~
                             '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />')|raw }}
                     {% else %}
                         {{ page.menu|e }}
