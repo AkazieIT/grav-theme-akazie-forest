@@ -24,12 +24,8 @@
         </li>
         {% else %}
         <li class="{{ current_page|e }}">
-            <a href="{{ p.url|e }}">    
-            logohier
-            <span>{{ p.menu}} </span>
-            {{ p.menu|e }}
-                    
-            {{ p.menu|e == '%LOGO%' ? '<img src="' ~ url('theme://custom/images/logo/' ~ logo_file) ~ '" class="imgcenterlogo img-fluid d-none d-lg-block" alt="' ~ site.name ~ '" />' : p.menu|e }}
+            <a href="{{ p.url|e }}">
+                {{ p.menu|e }}
             </a>
         </li>
         {% endif %}
@@ -53,6 +49,7 @@
                     <a href="{{ page.url|e }}">
                         {% if page.header.icons %}<i class="fal fa-{{ page.header.icons.arrow_down|e }}"></i>{% endif %}
                         {{ page.menu|e }}
+                        <p>pagemenu</p>
                     </a>
                 </li>
             {% endif %}
@@ -67,6 +64,7 @@
         <a href="{{ mitem.url|e }}">
             {% if mitem.icon %}<i class="fal fa-{{ mitem.icon|e }}"></i>{% endif %}
             {{ mitem.text|e }}
+            <p>mitem</p>
         </a>
     </li>
     {% endfor %}
