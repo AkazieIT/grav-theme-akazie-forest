@@ -30,6 +30,9 @@ form:
                 header.section.text:
                   type: markdown
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
+                content:
+                  type: markdown
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
             buttons:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
@@ -61,7 +64,7 @@ form:
                   type: pagemedia
                   label: PLUGIN_ADMIN.PAGE_MEDIA
                   size: large
-                  destination: 'theme://custom/images'
+                  destination: '@self'
                   multiple: true
                   markdown: true
                   accept:

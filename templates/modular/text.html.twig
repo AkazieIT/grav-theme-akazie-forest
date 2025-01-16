@@ -49,10 +49,12 @@
     <div class="content_wrap cmn-content">
         {{page.header.section.text|markdown }}
     </div>
+    {% elseif content %}
+    {{ content|markdown }}
     {% endif %}
     {% if page.header.section.background.media %}
         {% set media = (page.header.section.background.media | first).name %}
-        {% set mediaFilePath = 'theme://custom/images/' ~ media %}
+        {% set mediaFilePath = page.media[media].url ?: page.parent.media[media].url %}
         {% set fileType = page.header.section.background.media[page.header.section.background.media|keys|first].type %}
         <div class="media-wrap">
             {% if page.header.section.background.media %}
