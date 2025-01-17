@@ -1,6 +1,6 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-{% set selfid = 'module-' ~ page.template|md5 ~ '-' ~ page.slug|md5  %}
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 <div class="cta-area {{selfid}}">
     <div class="container"><div class="container-inner">
         <div class="row">
