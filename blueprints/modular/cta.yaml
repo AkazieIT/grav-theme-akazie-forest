@@ -170,7 +170,7 @@ form:
                 
               header.section.settings.bgcontain:
                 type: toggle
-                label: THEME_AKAZIEForest.ADMIN.BGCONTAIN.LABEL
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.BGCONTAIN.LABEL
                 highlight: 0
                 default: 0
                 options:
