@@ -62,14 +62,13 @@
 {% if page.header.section.settings.bgcolor %}
     
     {% if page.header.section.settings.bgcontain %}
-    .cta-area.{{selfid}}{
-        background-color: {{page.header.section.settings.bgcolor}};
-    }
+        .cta-area.{{selfid}} .cmn-content{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
     {% else %}
-    
-    .cta-area.{{selfid}} .cmn-content{
-        background-color: {{page.header.section.settings.bgcolor}};
-    }
+        .cta-area.{{selfid}}{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
     {% endif %}
 {% endif %}
 
