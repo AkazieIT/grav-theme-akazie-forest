@@ -27,9 +27,6 @@ form:
                 header.section.subtitle:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
-                header.section.text:
-                  type: markdown
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
                 content:
                   type: markdown
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
