@@ -1,7 +1,9 @@
 {% if page.header.section.settings.module.enabled %}
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
-<div class="row container img_module"><div class="row container-inner">
+
+<div class="row container img_module {{selfid}}"><div class="row container-inner">
 {% endif %}  
 <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
             {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
@@ -126,7 +128,7 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.img_module{
+.img_module.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}

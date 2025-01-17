@@ -1,8 +1,9 @@
 {% if page.header.section.settings.module.enabled %}
 
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
-<div class="row container">
+<div class="row container {{selfid}}">
 <div class="row container-inner">
 {% endif %}
 
@@ -38,7 +39,7 @@
 
     {% if page.header.section.settings.bgcolor %}
     <style>
-    .container:has(.container-inner > .accordion){
+    .container.{{selfid}}:has(.container-inner > .accordion){
         background-color: {{page.header.section.settings.bgcolor}};
     }
     </style>

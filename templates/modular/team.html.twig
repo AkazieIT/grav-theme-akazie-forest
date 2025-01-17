@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="team-area">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="team-area {{selfid}}">
     <div class="container"><div class="container-inner">
         {% if page.header.section.settings.title.show %}
         <div class="secondary-title">
@@ -90,7 +91,7 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.team-area{
+.team-area.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}

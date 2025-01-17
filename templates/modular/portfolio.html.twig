@@ -1,5 +1,6 @@
 {% if page.header.section.settings.module.enabled %}
 
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
     {% if page.header.section.card.date.show == 1 %}
         {% set show_date = true %}
     {% else %}
@@ -28,7 +29,7 @@
 
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
-<div class="row container portfolio-area"><div class="row container-inner">
+<div class="row container portfolio-area {{selfid}}"><div class="row container-inner">
     {# <div class="row"> #}
 {% endif %}
     {# <div class="container bricklayer">         #}
@@ -71,7 +72,7 @@
   <style>
 {% if page.header.section.settings.bgcolor %}
 
-.portfolio-area {
+.portfolio-area.{{selfid}} {
 background-color: {{ page.header.section.settings.bgcolor }};
 }
 

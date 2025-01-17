@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="price-area">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="price-area {{selfid}}">
     <div class="container"><div class="container-inner">
         <div class="primary-title">
             {% if page.header.section.settings.title.show %}
@@ -27,7 +28,7 @@
 
         <div class="price-card-g-wrapper">
             {% for card in page.header.section.content.cards %}
-            <div class="price-card {{ card.highlight ? 'highlight' }}">
+            <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
                 <h5 class="price">{{card.price}}.– <span class="d-block">{{card.priceText}}</span></h5>
                 <p>{{card.text}}</p>
                 <a href="{{card.link}}" class="box-btn {{ card.highlight ? 'type-2' : 'type-1' }}" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
@@ -41,14 +42,14 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.price-area{
+.price-area.{{selfid}} {
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
 
 
 {% if page.header.section.settings.pricecolor %}
-.price-card .price{
+.price-card.{{selfid}} .price{
     color: {{page.header.section.settings.pricecolor}};
 }
 {% endif %}

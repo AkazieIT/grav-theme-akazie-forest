@@ -1,9 +1,11 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="contact-area">
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="contact-area {{selfid}}">
     <div class="container"><div class="container-inner">
         <div class="address-wrapper">
-            <div class="secondary-title address-blk border_radius_sm mb-0">
+            <div class="secondary-title {{selfid}} address-blk {{selfid}} border_radius_sm mb-0">
 
 
                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
@@ -80,22 +82,22 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.contact-area{
+.contact-area.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
 {% if page.header.section.settings.bgaddblk %}
-.address-blk{
+.address-blk.{{selfid}}{
     background-color: {{page.header.section.settings.bgaddblk}};
 }
 {% endif %}
 {% if page.header.section.settings.title.fontsize %}
-.secondary-title h3{
+.secondary-title.{{selfid}} h3{
     font-size: {{page.header.section.settings.title.fontsize}}px;
 }
 {% endif %}
 {% if page.header.section.settings.subtitle.fontsize %}
-.secondary-title h6{
+.secondary-title.{{selfid}} h6{
     font-size: {{page.header.section.settings.subtitle.fontsize}}px;
 }
 {% endif %}

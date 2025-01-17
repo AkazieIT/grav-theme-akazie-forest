@@ -3,6 +3,8 @@
 
 {% set mediaFilePath = 'theme://custom/images/hero/' ~ media.name %}
 {% if page.header.section.content.module.enabled %}
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 {% if page.header.section.wrap.container == 1 %}
 </div></div>  {#  end row #}
 
@@ -54,7 +56,7 @@
             </div>
             
  {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
-        <div class="hero-video position-absolute">
+        <div class="hero-video {{selfid}} position-absolute">
             {% if page.header.section.content.right.media %}
                 {% if fileType starts with 'image/' %}
 
@@ -94,7 +96,7 @@
 {% endif %}
 <style>
 {% if page.header.section.content.hero.square.bgcolor %}
-.hero-video::after{
+.hero-video.{{selfid}}::after{
     background-color: {{page.header.section.content.hero.square.bgcolor}}!important;
 }
 {% endif %}

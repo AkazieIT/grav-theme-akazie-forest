@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="icon-list-area">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="icon-list-area {{selfid}}">
     <div class="container"><div class="container-inner">
         {% if page.header.section.settings.title.show %}
         <div class="secondary-title">
@@ -37,7 +38,7 @@
                         {% elseif page.header.section.settings.column == 5 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
-                <div class="cmn-content icon-list-content">
+                <div class="cmn-content icon-list-content {{selfid}}">
                         {# <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="{{card.alt}}" class="img-fluid"> #}
                         {% set image = page.media[(card.icon|keys|first)] %}
 
@@ -76,19 +77,19 @@
 {% endif %}
 <style>
 {% if page.header.section.settings.bgcolor %}
-.icon-list-area{
+.icon-list-area.{{selfid}} {
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
 
 
-.cmn-content.icon-list-content p{
+.cmn-content.icon-list-content.{{selfid}} p{
 {% if page.header.section.settings.txtcolor %}
     color: {{page.header.section.settings.txtcolor}};
 {% endif %}
 }
-.cmn-content.icon-list-content p, .cmn-content.icon-list-content h1, .cmn-content.icon-list-content h2, .cmn-content.icon-list-content h3, 
-.cmn-content.icon-list-content h4, .cmn-content.icon-list-content h5, .cmn-content.icon-list-content h6, .cmn-content.icon-list-content{
+.cmn-content.icon-list-content.{{selfid}} p, .cmn-content.icon-list-content.{{selfid}} h1, .cmn-content.icon-list-content.{{selfid}} h2, .cmn-content.icon-list-content.{{selfid}} h3, 
+.cmn-content.icon-list-content.{{selfid}} h4, .cmn-content.icon-list-content.{{selfid}} h5, .cmn-content.icon-list-content.{{selfid}} h6, .cmn-content.icon-list-content.{{selfid}}{
 
 {% if page.header.section.settings.text.alignment == 0 %}
     text-align: left;
