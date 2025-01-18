@@ -73,7 +73,14 @@
 {% endif %}
 
 {% if page.header.section.settings.txtcolor %}
-.cmn-content.ctap.{{selfid}} p, .single-offer.ctap.{{selfid}} p{
+.cmn-content.ctap.{{selfid}} p, 
+.single-offer.ctap.{{selfid}} h1, 
+.single-offer.ctap.{{selfid}} h2, 
+.single-offer.ctap.{{selfid}} h3, 
+.single-offer.ctap.{{selfid}} h4, 
+.single-offer.ctap.{{selfid}} h5, 
+.single-offer.ctap.{{selfid}} h6,  
+.single-offer.ctap.{{selfid}} a,{
     color: {{page.header.section.settings.txtcolor}};
 }
 {% endif %}
