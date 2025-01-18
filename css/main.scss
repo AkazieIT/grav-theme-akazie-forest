@@ -747,16 +747,7 @@ header.header-area.fixed {
     font-weight: 600;
     margin-bottom: 6px;
     letter-spacing: 1px;
-    &.bgcontain {
-        
-        padding: 4rem 0rem 4rem 0rem;
-        @media (max-width: 991px) {
-                padding: 70px 0;
-        }
-        @media (max-width: 767px) {
-            padding: 50px 0;
-        }
-    }
+
 }
 
 .about-us-area.home_page {
@@ -933,6 +924,18 @@ header.header-area.fixed {
     margin-bottom: 1.5rem;
     width: 80%;
 }
+.cmn-content {
+    &.bgcontain {
+        
+        padding: 4rem 0rem 4rem 0rem;
+        @media (max-width: 991px) {
+                padding: 70px 0;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 0;
+        }
+    }
+}
 
 .cmn-content p {
     font-size: 16px;
@@ -945,7 +948,16 @@ header.header-area.fixed {
     padding: 0px 0px 0px 0px; 
     margin-bottom: 2rem !important;
   }
-
+    &.bgcontain {
+        
+        padding: 4rem 0rem 4rem 0rem;
+        @media (max-width: 991px) {
+                padding: 70px 0;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 0;
+        }
+    }
 
 .txt_module.section_wrap > .bgcolorwrapper {
     width: 100%;
