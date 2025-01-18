@@ -926,12 +926,12 @@ header.header-area.fixed {
 }
 .cmn-content.bgcontain {
         
-        padding: 4rem 0rem 4rem 0rem;
+        padding: 4rem 2rem 4rem 2rem;
         @media (max-width: 991px) {
-                padding: 70px 0;
+                padding: 70px 35px;
         }
         @media (max-width: 767px) {
-            padding: 50px 0;
+            padding: 50px 25px;
         }
  }
 
