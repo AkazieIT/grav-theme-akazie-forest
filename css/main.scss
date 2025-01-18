@@ -924,8 +924,7 @@ header.header-area.fixed {
     margin-bottom: 1.5rem;
     width: 80%;
 }
-.cmn-content {
-    &.bgcontain {
+.cmn-content.bgcontain {
         
         padding: 4rem 0rem 4rem 0rem;
         @media (max-width: 991px) {
@@ -934,8 +933,8 @@ header.header-area.fixed {
         @media (max-width: 767px) {
             padding: 50px 0;
         }
-    }
-}
+ }
+
 
 .cmn-content p {
     font-size: 16px;
@@ -948,16 +947,6 @@ header.header-area.fixed {
     padding: 0px 0px 0px 0px; 
     margin-bottom: 2rem !important;
   }
-    &.bgcontain {
-        
-        padding: 4rem 0rem 4rem 0rem;
-        @media (max-width: 991px) {
-                padding: 70px 0;
-        }
-        @media (max-width: 767px) {
-            padding: 50px 0;
-        }
-    }
 
 .txt_module.section_wrap > .bgcolorwrapper {
     width: 100%;
