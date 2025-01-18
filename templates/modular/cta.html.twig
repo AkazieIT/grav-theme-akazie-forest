@@ -5,7 +5,7 @@
     <div class="container"><div class="container-inner">
         <div class="row">
             <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% else %}col-lg-6{% endif %}">
-                <div class="cmn-content st-content ctap {{selfid}}" {{ page.header.section.settings.module.width == 1 ? 'style="max-width:none;"' }}>
+                <div class="cmn-content st-content ctap {{selfid}}{{page.header.section.settings.bgcontain ? ' bgcontain'}}" {{ page.header.section.settings.module.width == 1 ? 'style="max-width:none;"' }}>
                     {% if page.header.section.settings.title.show %}   
                     
                         {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
