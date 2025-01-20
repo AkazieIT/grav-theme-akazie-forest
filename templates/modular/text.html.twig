@@ -17,10 +17,10 @@
             {% if page.header.section.settings.padding and page.header.section.settings.padding is empty %}padding:{{page.header.section.settings.padding}};{% endif %}"
 >
 
-{% if page.header.section.settings.bgcolor %}<div class="bgcolorwrapper" style="background-color:{{page.header.section.settings.bgcolor}};{% if page.header.section.settings.padding %}padding:{{page.header.section.settings.padding}};{% endif %}">{% endif %}
+{% if page.header.section.settings.bgcolor %}<div class="bgcolorwrapper txttitle {{selfid}}" style="background-color:{{page.header.section.settings.bgcolor}};{% if page.header.section.settings.padding %}padding:{{page.header.section.settings.padding}};{% endif %}">{% endif %}
 
     {% if page.header.section.settings.title.show %}
-    <div class="title_wrap cmn-content txttitle {{selfid}}">
+    <div class="title_wrap cmn-content">
         {% if page.header.section.subtitle %}
 
                  {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh txttitle {{selfid}}">{{page.header.section.subtitle}}</h1>
