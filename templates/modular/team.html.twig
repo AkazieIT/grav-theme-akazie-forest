@@ -90,6 +90,7 @@
                             
                             {% if member.additional_txt %}
                             <p>{% if member.designation %}{{member.designation}}<br /><br />{% endif %}{{ member.additional_txt|nl2br }}</p>
+                             {% if member.mail %}<li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>{% endif %}
                             {% endif %}
                         </div>
                     {% else %}
