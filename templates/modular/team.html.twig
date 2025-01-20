@@ -65,7 +65,6 @@
         {# If design.enabled == 1, we want an overlay that appears on hover #}
                     {% if page.header.section.settings.design.enabled == 1 %}
                         <div class="team-member-overlay">
-                            <h6 class="subh">{{ member.designation }}</h6>
                             <h3>{{ member.name }}</h3>
                             <ul class="ct-list">
                                 {% if member.linkedin.linkedinProfile %}
@@ -88,8 +87,9 @@
                                 </li>
                                 {% endif %}
                             </ul>
+                            
                             {% if member.additional_txt %}
-                            <p>{{ member.additional_txt }}</p>
+                            <p>{{ member.designation }} <br />{{ member.additional_txt }}</p>
                             {% endif %}
                         </div>
                     {% else %}

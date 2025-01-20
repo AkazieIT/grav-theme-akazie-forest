@@ -2213,6 +2213,8 @@ section.section {
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    flex-direction: column;
     /* Add a background overlay color or gradient if you want */
     background-color: #7B6A58;
     color: #fff; /* or whatever fits your design */
@@ -2226,3 +2228,4 @@ section.section {
     visibility: visible;
   }
   
+
