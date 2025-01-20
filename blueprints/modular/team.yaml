@@ -66,6 +66,14 @@ form:
                   type: textarea
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
                   rows: 2
+                .onlyshowtext:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ONLYSHOWTEXT.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
 
         settings:
           type: tab
@@ -125,8 +133,6 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-
-                
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
