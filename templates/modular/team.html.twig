@@ -63,7 +63,6 @@
                     </div>
 
         {# If design.enabled == 1, we want an overlay that appears on hover #}
-        <p>test</p>
                     {% if page.header.section.settings.design.enabled == 1 %}
                         <div class="team-member-overlay">
                             <h3>{{ member.name }}</h3>
@@ -90,7 +89,7 @@
                             </ul>
                             
                             {% if member.additional_txt %}
-                            <p>{{ member.designation }} <br />{{ member.additional_txt|nl2br }}</p>
+                            <p>{% if member.designation %}{{member.designation}}<br /><br />{% endif %}{{ member.additional_txt|nl2br }}</p>
                             {% endif %}
                         </div>
                     {% else %}
