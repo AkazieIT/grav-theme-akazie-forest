@@ -2192,6 +2192,10 @@ section.section {
     height: auto;
   }
   
+  .team-member--hover .member-img {
+    margin-bottom:0px;
+  }
+  
   /* The overlay container */
   .team-member-overlay {
     position: absolute;
