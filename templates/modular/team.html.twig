@@ -39,8 +39,9 @@
                         {% else %}col-lg-6{% endif %}  mb-30">
                 {% if member.onlyshowtext == 1 %}
 
-                    <div class="">
-                        <p>nurtext test</p>
+                    <div class="team-onlyshowtext">
+                        <h3>{{ member.name }}</h3>
+                        <p>{{ member.additional_txt }}</p>
                     </div>
 
                 {% else %}

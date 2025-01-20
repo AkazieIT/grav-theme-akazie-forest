@@ -143,7 +143,7 @@ en:
           URL_TXT:
             LABEL: "Link text"
           ONLYSHOWTEXT:
-            LABEL: "Show only title + text (instead of team member details + photo)"
+            LABEL: "Show only Name + text (instead of team member details + photo)"
         ALT:
           LABEL: "Alt-tag"
         OBJECTFIT:
@@ -608,7 +608,7 @@ de:
           URL_TXT:
             LABEL: "Linktext"
           ONLYSHOWTEXT:
-            LABEL: "Nur Titel + Text anzeigen (anstatt Details + Foto)"
+            LABEL: "Nur Name + Text anzeigen (anstatt Details + Foto)"
           UPLOAD:
             LABEL: "Datei hochladen"
             DESCRIPTION: "Bild oder Logo hochladen"
