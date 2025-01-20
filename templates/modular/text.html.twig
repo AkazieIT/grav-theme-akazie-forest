@@ -5,6 +5,7 @@
 <div class="row container">
 <div class="row container-inner">
 {% endif %}
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
             {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
             {% elseif page.header.section.settings.module.width == 3 %}col-12 col-md-4
@@ -22,11 +23,11 @@
     <div class="title_wrap cmn-content">
         {% if page.header.section.subtitle %}
 
-                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.subtitle}}</h1>
-                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.subtitle}}</h2>
-                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.subtitle}}</h3>
-                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.subtitle}}</h4>
-                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.subtitle}}</h5>
+                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh" class="txttitle {{selfid}}">{{page.header.section.subtitle}}</h1>
+                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh" class="txttitle {{selfid}}">>{{page.header.section.subtitle}}</h2>
+                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh" class="txttitle {{selfid}}">>{{page.header.section.subtitle}}</h3>
+                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh" class="txttitle {{selfid}}">>{{page.header.section.subtitle}}</h4>
+                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh" class="txttitle {{selfid}}">>{{page.header.section.subtitle}}</h5>
                 {% else %}<h6 class="subh">{{page.header.section.subtitle}}</h6>
                 {% endif %}
 
@@ -34,11 +35,11 @@
         {% endif %}
         {% if page.header.title %}
 
-                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
-                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
-                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
-                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
-                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% if page.header.section.settings.title.hsize == '1' %}<h2 class="txttitle {{selfid}}">>{{page.header.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3 class="txttitle {{selfid}}">>{{page.header.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4 class="txttitle {{selfid}}">>{{page.header.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5 class="txttitle {{selfid}}">>{{page.header.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6 class="txttitle {{selfid}}">>{{page.header.title}}</h6>
                 {% else %}<h1>{{page.header.title}}</h1>
                 {% endif %}
 
@@ -46,7 +47,7 @@
     </div>
     {% endif %}
     {% if page.header.section.text %}
-    <div class="content_wrap cmn-content">
+    <div class="content_wrap cmn-content txttitle {{selfid}}">
         {{page.header.section.text|markdown }}
     </div>
     {% elseif content %}
@@ -56,12 +57,12 @@
         {% set media = (page.header.section.background.media | first).name %}
         {% set mediaFilePath = page.media[media].url ?: page.parent.media[media].url %}
         {% set fileType = page.header.section.background.media[page.header.section.background.media|keys|first].type %}
-        <div class="media-wrap">
+        <div class="media-wrap txttitle {{selfid}}">
             {% if page.header.section.background.media %}
                 {% if fileType starts with 'image/' %}
-                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}" download>download image</a>
+                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}"  class="txttitle {{selfid}}" download>download image</a>
                 {% elseif fileType starts with 'application/' %}
-                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}" download>download pdf</a>
+                    <a href="{{ url(mediaFilePath)}}" alt="{{ media }}"  class="txttitle {{selfid}}" download>download pdf</a>
                 {% endif %}
             {% endif %}
         </div>
@@ -69,7 +70,7 @@
     <div class="button_wrap cmn-content">
     
     {% for button in page.header.section.buttons %}
-        <a href="{{button.link}}" class="box-btn" {% if button.open.type != 1 %}target="_blank"{% endif %}>
+        <a href="{{button.link}}" class="box-btn txttitle {{selfid}}" {% if button.open.type != 1 %}target="_blank"{% endif %}>
             {{button.text}}<i class="fal fa-angle-right"></i>
         </a>
         {% if not loop.last %}<br /><br />{% endif %}
@@ -84,4 +85,13 @@
 </div></div>
 <div class="row container"><div class="row container-inner"> {# start row #}
 {% endif %}
+
+{% if page.header.settings.txtcolor %}
+<style>
+.txttitle.{{selfid}} {
+    color: {{page.header.settings.txtcolor}};
+}
+</style>
+ {% endif %}   
+
 {% endif %}
