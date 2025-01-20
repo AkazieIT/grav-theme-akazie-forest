@@ -115,6 +115,18 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
               default: '#fbfbfb'
 
+            header.section.settings.design.enabled:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.DESIGN.LABEL
+              highlight: 0
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+              validate:
+                type: bool
+
+                
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL

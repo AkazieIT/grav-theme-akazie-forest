@@ -68,6 +68,8 @@ en:
           TITLE: "Media Section"
         ENABLED:
           LABEL: "Show module?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Show image or movie until the edge?"
           OPTIONS:
@@ -112,6 +114,8 @@ en:
             LABEL: "Button text"
           HIGHLIGHT:
             LABEL: "Highlight?"
+          ICON:
+            DESCRIPTION: "Upload icon or image"
           NAME:
             LABEL: "Name (alt-tag)"
           URL:
@@ -547,6 +551,8 @@ de:
           LABEL: "Video oder Bild Upload"
         ENABLED:
           LABEL: "Modul anzeigen?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Video oder Bild bis ganz zum Rand anzeigen?"
           OPTIONS:
