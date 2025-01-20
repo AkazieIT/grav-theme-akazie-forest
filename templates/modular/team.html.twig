@@ -37,8 +37,7 @@
                         {% elseif page.header.section.settings.column == 4 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
-                        {{ dump(member) }}
-                <div class="team-member">
+                <div class="team-member{% if page.header.section.settings.design.enabled == 1 %} team-member--hover {% endif %}">">
                     <div class="member-img">
                         {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
                         {% set resize = 4 / 3 %}
@@ -62,6 +61,39 @@
                                  <img class="media"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
                         {% endif %}
                     </div>
+
+        {# If design.enabled == 1, we want an overlay that appears on hover #}
+                    {% if page.header.section.settings.design.enabled == 1 %}
+                        <div class="team-member-overlay">
+                            <h6 class="subh">{{ member.designation }}</h6>
+                            <h3>{{ member.name }}</h3>
+                            <ul class="ct-list">
+                                {% if member.linkedin.linkedinProfile %}
+                                <li>
+                                    <i class="fal fa-envelope"></i>
+                                    <a href="mailto:{{ member.mail }}" class="d-inline-block">{{ member.mail }}</a>
+                                </li>
+                                <li>
+                                    <i class="fab fa-linkedin"></i>
+                                    <a href="{{ member.linkedin.linkedinProfile }}" target="_blank"
+                                    class="d-inline-block text-decoration-underline">
+                                        {{ member.linkedin.linkedin_user }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if member.phone %}
+                                <li>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                            {% if member.additional_txt %}
+                            <p>{{ member.additional_txt }}</p>
+                            {% endif %}
+                        </div>
+                    {% else %}
+
                     <div class="secondary-title member-content mb-0">
                         <h6 class="subh">{{member.designation}}</h6>
                         <h3>{{member.name}}</h3>
@@ -80,6 +112,10 @@
                         <p>{{member.additional_txt}}</p>
                         {% endif %}
                     </div>
+
+
+                    {% endif %}
+
                 </div>
             </div>
             {% endfor %}
