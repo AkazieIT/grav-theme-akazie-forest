@@ -1,8 +1,8 @@
 
-{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
-       {% set tempimage = image.resize((size / divider ) * mult,((height / (width / size)) / divider) * mult) %}
+{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
+       {% set tempimage = image.resize(size / divider,(height / (width / size)) / divider) %}
        {% if xresize != 0 %}
-              {% set defimage = tempimage.cropZoom(tempimage.height * mult,tempimage.height * xresize * mult) %}
+              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
@@ -24,7 +24,6 @@
 {% elseif page.header.section.settings.module.width == 6 %}{% set divider = 6 %}
 {% else %}{% set divider = 2 %}{% endif %} 
 
-
 {# divider jump: 768px #}
 
 <picture>
@@ -35,7 +34,7 @@
         {% if width > breakpoint %}
             {% set funcdiv = divider %}
             {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
+            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize) }}
         {% endif %}
     {% endfor %}
 
@@ -44,7 +43,7 @@
        {% if resize == 0 %}
         src="{{ image.url }}"
        {% else %}
-        src="{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}"
+        src="{{ image.cropZoom(image.height,image.height * resize).url }}"
        {% endif %}
        alt="{{ alt }}" 
        title="{{ title }}"
