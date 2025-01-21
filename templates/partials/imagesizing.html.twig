@@ -24,7 +24,6 @@
 {% elseif page.header.section.settings.module.width == 6 %}{% set divider = 6 %}
 {% else %}{% set divider = 2 %}{% endif %} 
 
-<p>Divider: {{divider}}</p>
 
 {# divider jump: 768px #}
 
@@ -41,6 +40,7 @@
     {% endfor %}
 
 
+<p>Divider: {{divider}}</p>
   <img class="{{classes}}" 
        {% if resize == 0 %}
         src="{{ image.url }}"
