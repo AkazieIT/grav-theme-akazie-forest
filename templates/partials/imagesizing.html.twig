@@ -1,8 +1,8 @@
 
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
-       {% set tempimage = image.resize((size / divider ) * mult,((height / (width / size)) / divider) * mult) %}
+       {% set tempimage = image.resize((size / divider ),((height / (width / size)) / divider)) %}
        {% if xresize != 0 %}
-              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
+              {% set defimage = tempimage.cropZoom(tempimage.height * mult,tempimage.height * xresize * mult) %}
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
