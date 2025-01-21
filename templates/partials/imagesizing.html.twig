@@ -1,6 +1,6 @@
 
-{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
-       {% set tempimage = image.resize(size / divider,(height / (width / size)) / divider) %}
+{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
+       {% set tempimage = image.resize((size / divider ) * mult,((height / (width / size)) / divider) * mult) %}
        {% if xresize != 0 %}
               {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
@@ -35,8 +35,7 @@
         {% if width > breakpoint %}
             {% set funcdiv = divider %}
             {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-            {% set funcdiv = funcdiv * mult %}
-            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize) }}
+            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
         {% endif %}
     {% endfor %}
 
