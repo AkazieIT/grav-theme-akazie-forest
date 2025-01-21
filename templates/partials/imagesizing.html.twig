@@ -35,6 +35,7 @@
         {% if width > breakpoint %}
             {% set funcdiv = divider %}
             {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
+            {% set funcdiv = funcdiv * mult %}
             {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize) }}
         {% endif %}
     {% endfor %}
