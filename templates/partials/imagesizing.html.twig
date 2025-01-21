@@ -40,7 +40,6 @@
     {% endfor %}
 
 
-<p>Divider: {{divider}}</p>
   <img class="{{classes}}" 
        {% if resize == 0 %}
         src="{{ image.url }}"
@@ -50,7 +49,7 @@
        alt="{{ alt }}" 
        title="{{ title }}"
        style="
-         {% if objectfit %}object-position:{{divider}};{% endif %} 
+         {% if objectfit %}object-position:{{objectfit}};{% endif %} 
          {% if scale != 0 %}object-fit:contain;{% endif %}">
 </picture>
 

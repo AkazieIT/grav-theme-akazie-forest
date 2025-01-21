@@ -77,7 +77,13 @@
     {% else %}
         {% set resize = 0 %}
     {% endif %}    
-        
+    {% if page.header.section.settings.module.width == 1 %}
+    {% set mult = 2 %}
+    {% elseif page.header.section.settings.module.width == 4 %}
+    {% set mult = 1.5 %}
+    {% else %}
+    {% set mult = 1 %}
+    {% endif %}
     {# TODO: Resize bei page.header.scale #}
 
 
@@ -91,7 +97,8 @@
         'objectfit': page.header.objectfit, 
         'scale': page.header.scale , 
         'resize': resize,
-        'classes': 'media' } 
+        'classes': 'media',
+        'mult': mult } 
     %}
  
  
@@ -101,7 +108,7 @@
 
 
     <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
-    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize).url }}{% else %}{{ image.url }}{% endif %}" 
+    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
     {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
