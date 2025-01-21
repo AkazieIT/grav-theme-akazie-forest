@@ -186,6 +186,7 @@ form:
                 options:
                   0: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.2
                   1: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.1
+                  2: THEME_AKAZIEForest.ADMIN.FIELDS.MODULEWIDTH.OPTIONS.4
 
               header.section.settings.module.enabled:
                 type: toggle
