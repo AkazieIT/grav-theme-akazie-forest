@@ -5,7 +5,7 @@
         {% set widthneu = ((height * 2) / (width / size)) / divider %}
        {% set tempimage = image.cropResize(heightneu,widthneu) %}
        {% if xresize != 0 %}
-              {% set defimage = tempimage.crop(tempimage.height,tempimage.height * xresize) %}
+              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
