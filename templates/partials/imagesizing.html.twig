@@ -46,9 +46,9 @@
        {% if resize == 0 %}
         src="{{ image.url }}"
        {% else %}
-        src="{{ image.cropResize(image.height * 2 * resize * mult,image.height * 2 * mult).url }}"
+        src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
        {% endif %}
-       alt="{{ alt }}imageheight:{{ image.height * 2 * mult }}imagewidth:{{ image.height * resize * 2 * mult }}" 
+       alt="{{ alt }}" 
        title="{{ title }}"
        style="
          {% if objectfit %}object-position:{{objectfit}};{% endif %} 
