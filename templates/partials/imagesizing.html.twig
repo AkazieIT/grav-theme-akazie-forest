@@ -2,11 +2,9 @@
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
        {% set tempimage = image.resize((size * 2) / divider,((height * 2) / (width / size)) / divider) %}
        {% if xresize != 0 %}
-              {% set defimage = tempimage.cropZoom(tempimage.height * 2,tempimage.height * xresize * 2) %}
-              <p>xresize</p>
+              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
             {% set defimage = tempimage %}
-              <p>not xresize</p>
         {% endif %}    
        <source media="(max-width: {{size}}px)"
             srcset="{{ 
