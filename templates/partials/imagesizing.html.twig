@@ -46,7 +46,7 @@
        {% else %}
         src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
        {% endif %}
-       alt="{{ alt }}" 
+       alt="{{ alt }}mult:{{ mult }}resize:{{resize}}" 
        title="{{ title }}"
        style="
          {% if objectfit %}object-position:{{objectfit}};{% endif %} 
