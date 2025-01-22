@@ -44,9 +44,9 @@
 
   <img class="{{classes}}" 
        {% if resize == 0 %}
-        src="{{ image.url }}&imageurl"
+        src="{{ image.url }}"
        {% else %}
-        src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
+        src="{{ image.cropZoom(image.width * mult,image.width * resize * mult).url }}"
        {% endif %}
        alt="{{ alt }}imageheight:{{ image.height * 2 * mult }}imagewidth:{{ image.height * resize * 2 * mult }}" 
        title="{{ title }}"
