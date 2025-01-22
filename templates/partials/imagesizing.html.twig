@@ -1,21 +1,11 @@
 
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
-<<<<<<< HEAD
 
         {% set heightneu = (size * 2) / divider %}
         {% set widthneu = ((height * 2) / (width / size)) / divider %}
        {% set tempimage = image.cropResize(heightneu,widthneu) %}
        {% if xresize != 0 %}
               {% set defimage = tempimage.crop(tempimage.height,tempimage.height * xresize) %}
-=======
-<p>width: {{ (size * 2) / divider }}</p>
-<p>width original:  {{ size / divider }}</p>
-<p>height:  {{ ((height * 2) / (width / size)) / divider }}</p>
-<p>height original:  {{ (height / (width / size)) / divider }}</p>
-       {% set tempimage = image.resize((size * 2) / divider,((height * 2) / (width / size)) / divider) %}
-       {% if xresize != 0 %}
-              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
->>>>>>> origin/main
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
