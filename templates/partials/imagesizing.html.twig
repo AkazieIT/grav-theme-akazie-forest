@@ -1,8 +1,8 @@
 
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
-       {% set tempimage = image.resize(size / divider,(height / (width / size)) / divider) %}
+       {% set tempimage = image.resize((size * 2) / divider,((height * 2) / (width / size)) / divider) %}
        {% if xresize != 0 %}
-              {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
+              {% set defimage = tempimage.cropZoom(tempimage.height * 2,tempimage.height * xresize * 2) %}
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
@@ -25,7 +25,6 @@
 {% else %}{% set divider = 2 %}{% endif %} 
 
 {# divider jump: 768px #}
-<p>mult: {{mult}}</p>
 <picture>
   <!-- High resolution screens -->
     {% set breakpoints = [2400, 1800, 1400, 1000, 768, 550, 400] %}
