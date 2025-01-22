@@ -40,13 +40,15 @@
     {% endfor %}
 
 
+  {# todo: funktioniert noch nicht mit breiten Bildern wegen der kleinen Ratio #}
+
   <img class="{{classes}}" 
        {% if resize == 0 %}
         src="{{ image.url }}"
        {% else %}
         src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
        {% endif %}
-       alt="{{ alt }}mult:{{ mult }}resize:{{resize}}" 
+       alt="{{ alt }}imageheight:{{ image.height * 2 * mult }}" 
        title="{{ title }}"
        style="
          {% if objectfit %}object-position:{{objectfit}};{% endif %} 
