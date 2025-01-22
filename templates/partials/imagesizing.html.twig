@@ -48,7 +48,7 @@
        {% else %}
         src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
        {% endif %}
-       alt="{{ alt }}imageheight:{{ image.height * 2 * mult }}" 
+       alt="{{ alt }}imageheight:{{ image.height * 2 * mult }}imagewidth:{{ image.height * resize * 2 * mult }}" 
        title="{{ title }}"
        style="
          {% if objectfit %}object-position:{{objectfit}};{% endif %} 
