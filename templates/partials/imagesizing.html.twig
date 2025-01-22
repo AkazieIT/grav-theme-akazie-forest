@@ -1,6 +1,6 @@
 
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
-
+        <p>mult: {{mult}}</p>
         {% set heightneu = (size * 2 * mult) / divider %}
         {% set widthneu = ((height * 2 * mult) / (width / size)) / divider %}
        {% set tempimage = image.cropResize(heightneu,widthneu) %}
