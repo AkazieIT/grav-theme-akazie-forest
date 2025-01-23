@@ -361,6 +361,8 @@ en:
           LABEL: "Show in mobile navigation"
         SHOW_FBOTTOM:
           LABEL: "Show footer bottom area"
+        SHOW_CPY:
+          LABEL: "Show copyright"
         SHOW_IMP:
           LABEL: "Show imprint"
         SHOW_DP:
@@ -844,6 +846,8 @@ de:
           LABEL: "In mobiler Navigation unten anzeigen"
         SHOW_FBOTTOM:
           LABEL: "Bereich anzeigen?"
+        SHOW_CPY:
+          LABEL: "Copyright anzeigen"
         SHOW_IMP:
           LABEL: "Impressum anzeigen?"
         SHOW_DP:
