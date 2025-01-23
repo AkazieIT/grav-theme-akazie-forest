@@ -26,7 +26,7 @@ function toggleStickyClass() {
   if (window.scrollY > 80) {
     header.classList.add('sticky');
   } else {
-    if (window.scrollY < 65) {
+    if (window.scrollY < 55) {
     header.classList.remove('sticky');
     }
   }
