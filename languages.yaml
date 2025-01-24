@@ -68,6 +68,8 @@ en:
           TITLE: "Media Section"
         ENABLED:
           LABEL: "Show module?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Show image or movie until the edge?"
           OPTIONS:
@@ -112,6 +114,8 @@ en:
             LABEL: "Button text"
           HIGHLIGHT:
             LABEL: "Highlight?"
+          ICON:
+            DESCRIPTION: "Upload icon or image"
           NAME:
             LABEL: "Name (alt-tag)"
           URL:
@@ -138,6 +142,8 @@ en:
             LABEL: "Quote"
           URL_TXT:
             LABEL: "Link text"
+          ONLYSHOWTEXT:
+            LABEL: "Show only Name + text (instead of team member details + photo)"
         ALT:
           LABEL: "Alt-tag"
         OBJECTFIT:
@@ -155,6 +161,8 @@ en:
           OPTIONS:
             0: "No"
             1: "Yes"
+        BGCONTAIN:
+          LABEL: "Contain BG Color in Padding (show white space left/right)"
         MODULEWIDTH:
           LABEL: "Module width"
           OPTIONS:
@@ -355,6 +363,8 @@ en:
           LABEL: "Show in mobile navigation"
         SHOW_FBOTTOM:
           LABEL: "Show footer bottom area"
+        SHOW_CPY:
+          LABEL: "Show copyright"
         SHOW_IMP:
           LABEL: "Show imprint"
         SHOW_DP:
@@ -547,6 +557,8 @@ de:
           LABEL: "Video oder Bild Upload"
         ENABLED:
           LABEL: "Modul anzeigen?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Video oder Bild bis ganz zum Rand anzeigen?"
           OPTIONS:
@@ -599,6 +611,8 @@ de:
             LABEL: "Link-URL"
           URL_TXT:
             LABEL: "Linktext"
+          ONLYSHOWTEXT:
+            LABEL: "Nur Name + Text anzeigen (anstatt Details + Foto)"
           UPLOAD:
             LABEL: "Datei hochladen"
             DESCRIPTION: "Bild oder Logo hochladen"
@@ -636,6 +650,8 @@ de:
           OPTIONS:
             0: "Nein"
             1: "Ja"
+        BGCONTAIN:
+          LABEL: "Hintergrundfarbe im Padding enthalten (zeigt whitespace links/rechts)"
         MODULEWIDTH:
           LABEL: "Modulbreite"
           OPTIONS:
@@ -834,6 +850,8 @@ de:
           LABEL: "In mobiler Navigation unten anzeigen"
         SHOW_FBOTTOM:
           LABEL: "Bereich anzeigen?"
+        SHOW_CPY:
+          LABEL: "Copyright anzeigen"
         SHOW_IMP:
           LABEL: "Impressum anzeigen?"
         SHOW_DP:

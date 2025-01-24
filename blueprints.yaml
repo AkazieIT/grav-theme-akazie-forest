@@ -386,6 +386,16 @@ form:
                     1: PLUGIN_ADMIN.ENABLED
                   validate:
                     type: bool
+                footer.copyright.enabled:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_CPY.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                  validate:
+                    type: bool
                 footer.copyright.text:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL

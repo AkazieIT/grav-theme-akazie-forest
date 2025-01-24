@@ -747,6 +747,7 @@ header.header-area.fixed {
     font-weight: 600;
     margin-bottom: 6px;
     letter-spacing: 1px;
+
 }
 
 .about-us-area.home_page {
@@ -923,6 +924,17 @@ header.header-area.fixed {
     margin-bottom: 1.5rem;
     width: 80%;
 }
+.cmn-content.bgcontain {
+        
+        padding: 4rem 2rem 4rem 2rem;
+        @media (max-width: 991px) {
+                padding: 70px 35px;
+        }
+        @media (max-width: 767px) {
+            padding: 50px 25px;
+        }
+ }
+
 
 .cmn-content p {
     font-size: 16px;
@@ -935,7 +947,6 @@ header.header-area.fixed {
     padding: 0px 0px 0px 0px; 
     margin-bottom: 2rem !important;
   }
-
 
 .txt_module.section_wrap > .bgcolorwrapper {
     width: 100%;
@@ -2165,4 +2176,58 @@ section.section {
 .icn-icon:has(.pdf-link) {
     max-width:none;
     width:100%;
+}
+
+
+/* Only for the enabled design */
+.team-member--hover {
+    position: relative; /* So the overlay can be absolutely positioned */
+    overflow: hidden;   /* Hide overlay edges if it goes beyond container */
+    padding:0px;
+  }
+  
+  .team-member--hover .member-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .team-member--hover .member-img {
+    margin-bottom:0px;
+  }
+  
+  /* The overlay container */
+  .team-member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Start hidden (or invisible) */
+    opacity: 0;
+    visibility: hidden;
+    /* Make sure it's on top of the image */
+    z-index: 2;
+    /* Center the text etc. or place it as you prefer */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    flex-direction: column;
+    /* Add a background overlay color or gradient if you want */
+    background-color: #7B6A58;
+    color: #fff; /* or whatever fits your design */
+    padding: 20px;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  
+  .team-member--hover:hover .team-member-overlay {
+    /* Show the overlay on hover */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+.team-onlyshowtext {
+    height:100%;
 }

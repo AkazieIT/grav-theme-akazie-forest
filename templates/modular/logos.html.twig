@@ -1,6 +1,8 @@
 {% if page.header.sec_two.settings.module.enabled %}
 </div></div>
-<div class="brand-area"><div class="container-inner">
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="brand-area {{selfid}}"><div class="container-inner">
         <div class="secondary-title text-center">
             {% if page.header.sec_two.settings.title.show %}
                 
@@ -41,7 +43,7 @@
 {% endif %}
 <style>
 {% if page.header.sec_two.settings.bgcolor %}
-.brand-area{
+.brand-area.{{selfid}} {
     background-color: {{page.header.sec_two.settings.bgcolor}};
 }
 {% endif %}

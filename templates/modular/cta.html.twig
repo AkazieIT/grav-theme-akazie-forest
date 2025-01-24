@@ -1,10 +1,11 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="cta-area">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="cta-area {{selfid}}">
     <div class="container"><div class="container-inner">
         <div class="row">
-            <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% else %}col-lg-6{% endif %}">
-                <div class="cmn-content st-content ctap" {{ page.header.section.settings.module.width == 1 ? 'style="max-width:none;"' }}>
+            <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% elseif page.header.section.settings.module.width == 2 %}col-lg-9{% else %}col-lg-6{% endif %}">
+                <div class="cmn-content st-content ctap {{selfid}}{{page.header.section.settings.bgcontain ? ' bgcontain'}}" {{ page.header.section.settings.module.width ? 'style="max-width:none;"' }}>
                     {% if page.header.section.settings.title.show %}   
                     
                         {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
@@ -16,7 +17,9 @@
                         {% endif %}        
 
                     {% endif %}
-                    <p>{{page.header.section.content.left.text|markdown|raw}}</p>
+                    {% if page.header.section.content.left.text %}
+                    <p>{{page.header.section.content.left.text|raw }}</p>
+                    {% endif %}
                     <a href="{{ page.header.section.content.left.pdfenabled ? page.media[page.header.section.content.left.pdfselect].url : page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.linkopen.type %}target="_blank"{% endif %}>
                         {{page.header.section.content.left.anchor}}<i class="far fa-angle-right"></i>
                     </a>
@@ -59,13 +62,28 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.cta-area{
-    background-color: {{page.header.section.settings.bgcolor}};
-}
+    
+    {% if page.header.section.settings.bgcontain %}
+        .cta-area.{{selfid}} .cmn-content{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
+    {% else %}
+        .cta-area.{{selfid}}{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
+    {% endif %}
 {% endif %}
 
 {% if page.header.section.settings.txtcolor %}
-.cmn-content.ctap p, .single-offer.ctap p{
+.cmn-content.ctap.{{selfid}} p, .single-offer.ctap.{{selfid}} p,
+.cmn-content.ctap.{{selfid}} h1, .single-offer.ctap.{{selfid}} h1,
+.cmn-content.ctap.{{selfid}} h2, .single-offer.ctap.{{selfid}} h2,
+.cmn-content.ctap.{{selfid}} h3, .single-offer.ctap.{{selfid}} h3,
+.cmn-content.ctap.{{selfid}} h4, .single-offer.ctap.{{selfid}} h4,
+.cmn-content.ctap.{{selfid}} h5, .single-offer.ctap.{{selfid}} h5,
+.cmn-content.ctap.{{selfid}} h6, .single-offer.ctap.{{selfid}} h6,
+.cmn-content.ctap.{{selfid}} a, .single-offer.ctap.{{selfid}} a
+ {
     color: {{page.header.section.settings.txtcolor}};
 }
 {% endif %}

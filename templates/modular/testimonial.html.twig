@@ -1,6 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
 </div></div>
-<div class="quote-area">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="quote-area {{selfid}}">
     <div class="container"><div class="container-inner">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -13,8 +14,8 @@
                             <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="Inverted Icon">
                         </span>
                         <p>{{slide.text}}</p>
-                        <div class="quote-author">
-                            <span class="designation">{{slide.position}}</span>
+                        <div class="quote-author {{selfid}}">
+                            <span class="designation {{selfid}}">{{slide.position}}</span>
                             <h6 class="subh">{{slide.author}}</h6>
                         </div>
                     </div>
@@ -51,17 +52,17 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.quote-area{
+.quote-area.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
 {% if page.header.section.settings.title.fontsize %}
-.quote-author h6{
+.quote-author.{{selfid}} h6{
     font-size: {{page.header.section.settings.title.fontsize}}px;
 }
 {% endif %}
 {% if page.header.section.settings.subtitle.fontsize %}
-.designation{
+.designation.{{selfid}}{
     font-size: {{page.header.section.settings.subtitle.fontsize}}px;
 }
 {% endif %}

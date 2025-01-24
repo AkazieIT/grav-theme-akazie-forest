@@ -1,6 +1,8 @@
 
-{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0) %}
-       {% set tempimage = image.resize(size / divider,(height / (width / size)) / divider) %}
+{% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
+        {% set heightneu = (size * 2 * mult) / divider %}
+        {% set widthneu = ((height * 2 * mult) / (width / size)) / divider %}
+       {% set tempimage = image.cropResize(heightneu,widthneu) %}
        {% if xresize != 0 %}
               {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
@@ -25,7 +27,6 @@
 {% else %}{% set divider = 2 %}{% endif %} 
 
 {# divider jump: 768px #}
-
 <picture>
   <!-- High resolution screens -->
     {% set breakpoints = [2400, 1800, 1400, 1000, 768, 550, 400] %}
@@ -34,16 +35,18 @@
         {% if width > breakpoint %}
             {% set funcdiv = divider %}
             {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize) }}
+            {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
         {% endif %}
     {% endfor %}
 
+
+  {# todo: funktioniert noch nicht mit breiten Bildern wegen der kleinen Ratio #}
 
   <img class="{{classes}}" 
        {% if resize == 0 %}
         src="{{ image.url }}"
        {% else %}
-        src="{{ image.cropZoom(image.height,image.height * resize).url }}"
+        src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
        {% endif %}
        alt="{{ alt }}" 
        title="{{ title }}"

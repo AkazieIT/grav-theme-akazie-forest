@@ -27,7 +27,7 @@ form:
                 header.section.subtitle:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
-                header.section.text:
+                content:
                   type: markdown
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTENT.LABEL
             buttons:
@@ -61,7 +61,7 @@ form:
                   type: pagemedia
                   label: PLUGIN_ADMIN.PAGE_MEDIA
                   size: large
-                  destination: 'theme://custom/images'
+                  destination: '@self'
                   multiple: true
                   markdown: true
                   accept:
@@ -124,6 +124,10 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              default: ''
+            header.section.settings.txtcolor:
+              type: colorpicker
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
               default: ''
             header.section.settings.padding:
               type: text

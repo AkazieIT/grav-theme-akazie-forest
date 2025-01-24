@@ -1,4 +1,7 @@
 {% if page.header.section.settings.module.enabled %}
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+
     {% if page.header.section.card.date.show == 1 %}
         {% set show_date = true %}
     {% else %}
@@ -24,7 +27,7 @@
     {% endif %}
     {% if page.header.section.wrap.container == 1 %}
     </div></div>  {#  end row #}
-    <div class="row container"><div class="row container-inner">
+    <div class="row container {{selfid}}"><div class="row container-inner">
     {% endif %}
     {% set featured = page.collection({'items':{'@taxonomy.category': 'blog', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
     {% for row in featured|batch(3) %}
@@ -48,7 +51,7 @@
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.container:has(.container-inner > .is-post-area){
+.container.{{selfid}}:has(.container-inner > .is-post-area){
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
