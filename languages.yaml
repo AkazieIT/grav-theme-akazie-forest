@@ -373,6 +373,8 @@ en:
           LABEL: "Show AGB"
         SHOW_SITE:
           LABEL: "Show sitemap"
+        SHOWINNAV:
+          LABEL: "Show in mobile navigation"
         LINK_IMP:
           LABEL: "Link imprint"
         LINK_DP:
@@ -860,6 +862,8 @@ de:
           LABEL: "AGB anzeigen?"
         SHOW_SITE:
           LABEL: "Sitemap anzeigen?"
+        SHOWINNAV:
+          LABEL: "In mobiler Navigation anzeigen"
         LINK_IMP:
           LABEL: "Link Impressum"
         LINK_DP:
