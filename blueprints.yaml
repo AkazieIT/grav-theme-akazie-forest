@@ -126,6 +126,10 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
+            header.closemenucaption:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLOSEMENU.LABEL
+              default: 'schliessen'
             nav.desktop:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE

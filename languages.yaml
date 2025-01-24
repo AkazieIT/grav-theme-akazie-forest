@@ -280,6 +280,8 @@ en:
         SUBNAV:
           LABEL: "Dropdown in Menu"
           HELP: "Allows to have another navigation level"
+        CLOSEMENU:
+          LABEL: "Close button label"
         FIXHEAD:
           LABEL: "Fixed Header"
           HELP: "If activated, the header will always be at the top of the browser window."
@@ -757,6 +759,8 @@ de:
         SUBNAV:
           LABEL: "Dropdown im Menu"
           HELP: "Erlaubt ein zweites Level im Menu"
+        CLOSEMENU:
+          LABEL: "Beschriftung des Schliessen-Buttons"
         FIXHEAD:
           LABEL: "Fixierte Navigation"
           HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
