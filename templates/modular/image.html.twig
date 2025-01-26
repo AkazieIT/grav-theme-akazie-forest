@@ -107,7 +107,7 @@
     {% else %}
 
 
-    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
+    <img class="media {{selfid}}" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
     src="{% if page.header.scale != 0 and not theme_var('style.noresize') %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
@@ -138,6 +138,11 @@
 .img_module.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
+{% if theme_var('style.noresize') %}
+.media.{{selfid}} {
+ aspect-ratio: {{ resize != 0 ? resize : 'auto' }};
+}
+{% endif %}
 {% endif %}
   
 </style>
