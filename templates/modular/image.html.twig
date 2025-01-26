@@ -116,7 +116,7 @@
     src="{% if page.header.scale != 0 and not theme_var('style.noresize') %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
-    {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
+    {% if page.header.scale != 0 and not theme_var('style.noresize') %}object-fit:contain;{% endif %}
     " />
 
     {% endif %}
