@@ -186,7 +186,7 @@ en:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
         NOCROP:
-          LABEL: 'Dont use image cropping in theme images  (experimental feature. not working with dynamic resizing)'
+          LABEL: 'Dont use image cropping in theme images and use CSS aspect-ratio instead (experimental feature. not compatible with dynamic resizing)'
           HELP:  'This prevents GRAV cache to crop images which lets you style your page better. **Experimental and not compatible with dynamic resizing!**'
         TEXTALIGN:
           LABEL: "Text alignment"
@@ -680,7 +680,7 @@ de:
           LABEL: 'Dynamisches Bildzuschneiden mit picture tag verwenden (experimentelle Funktion. Stellen Sie sicher, dass der Cache aktiviert ist)'
           HELP:  'Für Produktionsseiten bitte Cache aktivieren und die Löschzeiten auf jeden Monat oder länger setzen. Auch "Bildcache standardmässig löschen" auf "Nein" setzen **Wenn Sie den Cache nicht aktivieren, haben Sie sehr lange Ladezeiten aufgrund der responsiven Bilder im modular/image Modul.**'
         NOCROP:
-          LABEL: 'Kein Bildzuschnitt in theme Bildern verwenden (experimentelle Funktion. nicht kompatibel mit dynamischem Zuschneiden)'
+          LABEL: 'Kein Bildzuschnitt in theme Bildern verwenden und an dessen Stelle CSS aspect-ratio verwenden (experimentelle Funktion. nicht kompatibel mit dynamischem Zuschneiden)'
           HELP:  'Diese Funktion verhindert, dass GRAV Bilder zuschneidet, was es Ihnen ermöglicht, Ihre Seite besser zu gestalten. **Experimentell und nicht kompatibel mit dynamischem Zuschneiden!**'
         TEXTALIGN:
           LABEL: "Text ausrichten"

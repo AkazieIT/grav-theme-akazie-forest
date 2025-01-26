@@ -108,7 +108,7 @@
 
 
     <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
-    src="{% if page.header.scale != 0 %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
+    src="{% if page.header.scale != 0 and not theme_var('style.noresize') %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
     {% if page.header.scale != 0 %}object-fit:contain;{% endif %}
