@@ -51,7 +51,7 @@
                             {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
                             {% set resize = 4 / 3 %}
                             {% set cropzoom = 0 %}
-                            {% if page.header.section.settings.nocropzoom == 1 %}
+                            {% if page.header.section.settings.nocropzoom.enabled == 1 %}
                                 {% set cropzoom = 1 %}
                             {% endif %}
                             {% set image = page.media[(member.img|keys|first)] %}
