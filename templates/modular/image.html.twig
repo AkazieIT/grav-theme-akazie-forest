@@ -64,16 +64,22 @@
 
     {% if page.header.scale == 1 %}
         {% set resize = 3 / 4 %}
+        {% set aspectratio = 4 / 3 %}
     {% elseif page.header.scale == 2 %}
         {% set resize = 9 / 16 %}
+        {% set aspectratio = 16 / 9 %}
     {% elseif page.header.scale == 3 %}
         {% set resize = 1 / 2.35 %}
+        {% set aspectratio = 2.35 / 1 %}
     {% elseif page.header.scale == 4 %}
         {% set resize = 1 %}
+        {% set aspectratio = 1 %}
     {% elseif page.header.scale == 5 %}
         {% set resize = 4 / 3 %}
+        {% set aspectratio = 3 / 4 %}
     {% elseif page.header.scale == 6 %}
         {% set resize = 1 / 5 %}
+        {% set aspectratio = 5 / 1 %}
     {% else %}
         {% set resize = 0 %}
     {% endif %}    
@@ -140,7 +146,7 @@
 }
 {% if theme_var('style.noresize') %}
 .media.{{selfid}} {
- aspect-ratio: {{ resize != 0 ? resize : 'auto' }};
+ aspect-ratio: {{ resize != 0 ? aspectratio : 'auto' }};
 }
 {% endif %}
 {% endif %}
