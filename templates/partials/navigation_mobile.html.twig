@@ -12,12 +12,7 @@
         {% if p.children.visible.count > 0 and not(p.template == 'blog') and not(p.template == 'portfolio') %}
         <li class="has-children {{ current_page|e }}">
             <a href="{{ p.url|e }}">
-
-                    {% if p.menu == '%LOGO%' %}
-                    LOGOGO
-                    {% else %}
-                        {{ p.menu|e }}
-                    {% endif %}
+                {{ p.menu|e }}
                 {% if p.header.icons %}<i class="fal fa-{{ p.header.icons.angle_down|e }}"></i>{% endif %}
             </a>
             <ul class="submenu">
@@ -32,11 +27,15 @@
             </ul>
         </li>
         {% else %}
-        <li class="{{ current_page|e }}">
-            <a href="{{ p.url|e }}">
-                {{ p.menu|e }}
-            </a>
-        </li>
+            {% if p.menu == '%LOGO%' %}
+            {% else %}
+                <li class="{{ current_page|e }}">
+                    
+                    <a href="{{ p.url|e }}">
+                        {{ p.menu|e }}
+                    </a>
+                </li>
+            {% endif %}
         {% endif %}
 
     {% endfor %}
@@ -62,12 +61,6 @@
         <a href="{{ mitem.url|e }}">
             {% if mitem.icon %}<i class="fal fa-{{ mitem.icon|e }}"></i>{% endif %}
             {{ mitem.text|e }}
-
-                    {% if mitem.text == '%LOGO%' %}
-                    LOGOGO3
-                    {% else %}
-                     {{ mitem.text|e }}
-                    {% endif %}
         </a>
     </li>
     {% endfor %}
