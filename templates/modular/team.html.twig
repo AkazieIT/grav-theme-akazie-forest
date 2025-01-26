@@ -47,10 +47,13 @@
                 {% else %}
                     
                     <div class="team-member{% if page.header.section.settings.design.enabled == 1 %} team-member--hover {% endif %}">
-                        <div class="member-img {{selfid}}">
+                        <div class="member-img">
                             {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
                             {% set resize = 4 / 3 %}
                             {% set cropzoom = 0 %}
+                            {% if page.header.section.settings.nocropzoom == 1 %}
+                                {% set cropzoom = 1 %}
+                            {% endif %}
                             {% set image = page.media[(member.img|keys|first)] %}
 
                             
@@ -67,7 +70,7 @@
                                     %}
                                 
                             {% else %}
-                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{% if theme_var('style.noresize') %}{{ image.url }}{% else %}{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}{% endif %}" />
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
                             {% endif %}
                         </div>
 

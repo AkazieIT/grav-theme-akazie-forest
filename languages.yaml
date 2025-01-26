@@ -52,6 +52,8 @@ en:
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        NOCROPZOOM:
+          LABEL: "Prevent image cropping"
         DOWNLOAD:
           LABEL: "Enable downloading of images in gallery"
         SLIDERCOLOR:
@@ -544,6 +546,8 @@ de:
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        NOCROPZOOM:
+          LABEL: "Bildzuschneiden verhindern"
         DOWNLOAD:
           LABEL: "Download von Bildern in der Galerie erlauben?"
         SLIDERCOLOR:
