@@ -12,7 +12,11 @@
         {% if p.children.visible.count > 0 and not(p.template == 'blog') and not(p.template == 'portfolio') %}
         <li class="has-children {{ current_page|e }}">
             <a href="{{ p.url|e }}">
-                {{ p.menu|e }}
+
+                    {% if p.menu == '%LOGO%' %}
+                    {% else %}
+                        {{ p.menu|e }}
+                    {% endif %}
                 {% if p.header.icons %}<i class="fal fa-{{ p.header.icons.angle_down|e }}"></i>{% endif %}
             </a>
             <ul class="submenu">
