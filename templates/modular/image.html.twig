@@ -148,6 +148,11 @@
  aspect-ratio: {{ resize != 0 ? aspectratio : 'auto' }};
  object-fit: cover;
 }
+@media (max-width: 768px) {
+    .media.{{selfid}} {
+        aspect-ratio: auto;
+    }
+}
 {% endif %}
 {% endif %}
   
