@@ -1302,7 +1302,13 @@ footer, footer p, footer a {
 .team-area {
     padding: 8rem 0;
     background-color: var(--tertiary);
-    @media (max-width: 991px) {
+    @media (max-width: 1218px) {
+        &.team-design .container .container-inner .row {
+            grid-template-columns: 1fr 1fr;
+            
+        }
+    }    
+    @media (max-width: 768px) {
         &.team-design .container .container-inner .row {
             grid-template-columns: 1fr;
             
