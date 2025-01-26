@@ -61,7 +61,6 @@
     {% else %}
       {% set image = page.media | first %}
     {% endif %}
-
     {% if page.header.scale == 1 %}
         {% set resize = 3 / 4 %}
         {% set aspectratio = 4 / 3 %}
@@ -147,6 +146,7 @@
 {% if theme_var('style.noresize') %}
 .media.{{selfid}} {
  aspect-ratio: {{ resize != 0 ? aspectratio : 'auto' }};
+ object-fit: cover;
 }
 {% endif %}
 {% endif %}
