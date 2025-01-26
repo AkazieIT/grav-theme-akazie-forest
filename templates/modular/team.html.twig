@@ -67,7 +67,7 @@
                                     %}
                                 
                             {% else %}
-                                    <img class="media"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{% if cropzoom and not theme_var('style.noresize') %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
                             {% endif %}
                         </div>
 
