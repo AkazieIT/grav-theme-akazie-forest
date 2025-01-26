@@ -1304,7 +1304,7 @@ footer, footer p, footer a {
     background-color: var(--tertiary);
     @media (max-width: 991px) {
         &.team-design .container .container-inner .row {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             
         }
     }
