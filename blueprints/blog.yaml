@@ -48,7 +48,7 @@ form:
             header.content.order.by:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.LABEL
-              default: date
+              default: folder
               options:
                 folder: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.FOLDER
                 title: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.TITLE
@@ -58,7 +58,7 @@ form:
             header.content.order.dir:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.LABEL
-              default: desc
+              default: asc
               options:
                 asc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.ASC
                 desc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.DESC
