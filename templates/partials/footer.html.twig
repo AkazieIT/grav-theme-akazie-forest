@@ -10,43 +10,15 @@
     <div class="footer-bottom">
         <div class="container-fluid cs-padding  footer_inner">
             <div class="row">
+            
                 {% if theme_var('footer.copyright.enabled') %}
                 <div class="col-md-6">
                     <p class="m-0">{{ theme_var('footer.copyright.text') }}</p>
                 </div>
                 {% endif %}
-                <div class="{% if theme_var('footer.copyright.enabled') %} col-md-6 {% else %} col-md-12 {% endif %}">
-                    <ul class="ft-links d-md-flex align-items-center justify-content-end">
-                        <li>
-                        {% if theme_var('footer.impressum.enabled') %}
-                            <a href="{{ base_url }}{{ theme_var('footer.impressum.link') }}">
-                            Impressum
-                            </a>
-                        {% endif %}
-                        </li>
-                        <li>
-                        {% if theme_var('footer.datenschutz.enabled') %}
-                            <a href="{{ base_url }}{{ theme_var('footer.datenschutz.text') ? theme_var('footer.datenschutz.text') : theme_var('footer.datenschutz.link') }}">
-                            Datenschutz
-                            </a>
-                        {% endif %}
-                        </li>
-                        <li>
-                        {% if theme_var('footer.agb.enabled') %}    
-                            <a href="{{ base_url }}{{ theme_var('footer.agb.link') }}">
-                            {{ theme_var('footer.agb.text') ? theme_var('footer.agb.text') : 'AGB' }}
-                            </a>
-                        {% endif %}
-                        </li>
-                        <li>
-                        {% if theme_var('footer.sitemap.enabled') %}
-                            <a href="{{ base_url }}{{ theme_var('footer.sitemap.link') }}">
-                            Sitemap
-                            </a>
-                        {% endif %}
-                        </li>
-                    </ul>
-                </div>
+
+                
+                {% include 'partials/footerbottomcolumns.html.twig' with {'mobilefooter': false} %}
             </div>
         </div>
     </div>
