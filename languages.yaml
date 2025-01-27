@@ -983,11 +983,6 @@ de:
             DEFAULT: "Standard"
         MAX:
           LABEL: "Anzahl Einträge (maximal)"
-        ORDERBY:
-          LABEL: "Wie ordnen?"
-          OPTIONS:
-            FOLDER: "Ordner"
-            DATE: "Datum"
         SEQUENCE:
           LABEL: "Auf- oder Absteigend"
           OPTIONS:
