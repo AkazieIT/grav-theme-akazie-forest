@@ -4,14 +4,15 @@
 
 <div class="mobile_menu" id="mobile_menu">
     <div class="close-div">
-    
     {% if theme_var ('nav.mobilelogoenabled') %}
         {% if logo_desktop %}
             {% set logo_file = (logo_desktop|first).name %}
             <img id="minilogo" src="{{ url('theme://custom/images/logo/' ~ logo_file)  }}"  alt="{{ site.name }}" />
         {% endif %}     
     {% endif %}
+    <p>test1</p>
     {% if theme_var('nav.customcode') %}
+        <p>test2</p>
         {{ theme_var('nav.customcode')|raw }}
     {% endif %}
         
