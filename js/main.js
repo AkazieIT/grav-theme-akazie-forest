@@ -23,7 +23,7 @@ var header = document.querySelector('header.header-area');
 
 // Function to add or remove the sticky class based on scroll position
 function toggleStickyClass() {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 120) {
     header.classList.add('sticky');
   } else {
     if (window.scrollY < 40) {
