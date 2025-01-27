@@ -316,6 +316,8 @@ en:
           LABEL: "Mobile Navigation custom height"
         MOBILELOGO:
           LABEL: "Place logo in mobile nav?"
+        CUSTOMCODE:
+          LABEL: "Custom code in header"
         CHMNAV:
           LABEL: "Mobile Navigation height (60-300)"
         HAMCOL:
@@ -810,6 +812,8 @@ de:
           LABEL: "Höhe der mobilen Navigation manuell einstellen?"
         MOBILELOGO:
           LABEL: "Logo in mobiler Navigation platzieren?"
+        CUSTOMCODE:
+          LABEL: "Custom code im Header"
         CHMNAV:
           LABEL: "Höhe der mobilen Navigation (60-300)"
         HAMCOL:

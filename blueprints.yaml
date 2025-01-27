@@ -189,6 +189,9 @@ form:
                   options:
                     0: PLUGIN_ADMIN.DISABLED
                     1: PLUGIN_ADMIN.ENABLED
+                nav.customcode:
+                  type: textarea
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOMCODE.LABEL
                 nav.mobilenavheight:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
