@@ -39,15 +39,40 @@
     </div>
     {% endif %}
 
-    <div id="lightgallery{{selfid}}" class="gallery_wrap cmn-content">
-        {% for elem in page.media %}
-            <a href="{{elem.url}}" class="element">
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+
+<div id="lightgallery{{ selfid }}" class="gallery_wrap cmn-content">
+    {# 1) Split the comma-separated filenames from frontmatter #}
+    {% set imageNames = page.header.section.image|split(',') %}
+
+    {# 2) Loop over each filename #}
+    {% for imageName in imageNames %}
+        {% set imageName = imageName|trim %} {# trim extra whitespace #}
+        {% set mediaImage = page.media[imageName] %}
+
+        {# 3) Only proceed if the file actually exists in page.media #}
+        {% if mediaImage %}
+            {# 4) Find matching metadata item (if any) #}
+            {% set item = (page.header.gallerymetadata|filter(i => i.image == imageName))|first %}
             
-                <img class="lightgallerymedia" src="{{elem.cropResize(520,520).url}}">
-                
-            </a>          
-        {% endfor %}
-    </div>
+            {% set alt   = item ? item.alt   : '' %}
+            {% set title = item ? item.title : '' %}
+            
+            {# 5) Output link + image, using alt/title as needed #}
+            <a href="{{ mediaImage.url }}"
+               class="element"
+               data-sub-html="{{ title }}"
+               title="{{ title }}"
+            >
+                <img class="lightgallerymedia"
+                     src="{{ mediaImage.cropResize(520, 520).url }}"
+                     alt="{{ alt }}"
+                >
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+
     {% set download = 'false' %}
     {% if page.header.section.settings.download == 1 %}
         {% set download = 'true' %}
