@@ -38,6 +38,7 @@ form:
                   type: list
                   label: Metadata
                   style: vertical
+                  preview_images: true
                   fields:
                     .image:
                       type: pagemediaselect
