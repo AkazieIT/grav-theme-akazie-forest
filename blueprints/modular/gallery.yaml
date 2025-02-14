@@ -40,9 +40,7 @@ form:
                   style: vertical
                   fields:
                     .image:
-                      type: file
-                      destination: '@self'
-                      multiple: false
+                      type: pagemediaselect
                       label: Image
                     .title:
                       type: text
