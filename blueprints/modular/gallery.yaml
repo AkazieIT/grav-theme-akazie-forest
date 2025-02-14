@@ -34,6 +34,23 @@ form:
                   destination: '@self'
                   accept:
                     - image/*
+                header.gallerymetadata:
+                  type: list
+                  label: Gallery
+                  style: vertical
+                  fields:
+                    .image:
+                      type: file
+                      destination: '@self'
+                      multiple: false
+                      label: Image
+                    .title:
+                      type: text
+                      label: Title
+                    .alt:
+                      type: text
+                      label: Alt Text
+
 
         settings:
           type: tab
