@@ -39,7 +39,7 @@
     </div>
     {% endif %}
 
-    <div id="lightgallery" class="gallery_wrap cmn-content">
+    <div id="lightgallery{{selfid}}" class="gallery_wrap cmn-content">
         {% for elem in page.media %}
             <a href="{{elem.url}}" class="element">
             
@@ -54,7 +54,7 @@
     {% endif %}
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        lightGallery(document.getElementById('lightgallery'), {
+        lightGallery(document.getElementById('lightgallery{{selfid}}'), {
             selector: '.element',
             download: {{download}}, 
             enableSwipe: true,
