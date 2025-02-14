@@ -265,6 +265,11 @@ header, header p, header a, header a.cmn-link.type-2 {
     display: flex;
     justify-content: space-between;
 }
+@media (max-width: 991px) {
+    .flex-header {
+        gap:1rem;
+    }
+}
 
 .header-right {
     display:flex;
