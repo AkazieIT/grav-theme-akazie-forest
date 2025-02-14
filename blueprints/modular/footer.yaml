@@ -25,6 +25,7 @@ form:
                 .icon:
                   type: pagemediaselect
                   label: "icon"
+                  preview_images: true
                 .link:
                   type: text
                   label: "link"

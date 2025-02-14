@@ -62,6 +62,7 @@ form:
                     type: bool
                 header.section.content.left.pdfselect:
                   type: pagemediaselect
+                  preview_images: true
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.LABEL
                   help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.HELP
             cards:
@@ -114,6 +115,7 @@ form:
                         type: bool
                     .pdfselect:
                       type: pagemediaselect
+                      preview_images: true
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.LABEL
                       help: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.PDF.HELP
                     .open.type:
