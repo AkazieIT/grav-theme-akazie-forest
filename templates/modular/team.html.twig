@@ -100,10 +100,10 @@
                                     {% endif %}
                                 </ul>
                                 
-                                {% if member.additional_txt %}
+                                {% if member.additional_txt or member.designation %}
                                 <p>{% if member.designation %}{{member.designation}}<br /><br />{% endif %}{{ member.additional_txt|nl2br }}</p>
-                                {% if member.mail %}<a href="mailto:{{member.mail}}" class="mailtokachel">{{member.mail}}</a>{% endif %}
                                 {% endif %}
+                                {% if member.mail %}<a href="mailto:{{member.mail}}" class="mailtokachel">{{member.mail}}</a>{% endif %}
                             </div>
                         {% else %}
 
