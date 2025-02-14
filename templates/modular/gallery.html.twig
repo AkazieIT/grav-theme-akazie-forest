@@ -39,6 +39,7 @@
         {% endif %}
     </div>
     {% endif %}
+{% set galleryMetadata = page.header.gallerymetadata|default([]) %}
 
 <div id="lightgallery{{ selfid }}" class="gallery_wrap cmn-content">
   {% for mediaImage in page.media %}
