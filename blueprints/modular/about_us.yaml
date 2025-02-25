@@ -18,7 +18,7 @@ form:
               type: section
               title: "Text Section"
               underline: true
-              fields:                     
+              fields:
                 header.section.heading.title:
                   type: text
                   label: "Heading"
@@ -49,12 +49,12 @@ form:
                   default: 0
                   options:
                     0: Yes
-                    1: No      
+                    1: No
             img_section:
               type: section
               title: "Image Section"
               underline: true
-              fields:                                       
+              fields:
                 header.section.content.left.image:
                   type: file
                   label: "Choose Logo/Image"
@@ -64,7 +64,7 @@ form:
                   markdown: true
                   description: "upload image"
                   accept:
-                    - image/*      
+                    - image/*
 
         settings:
           type: tab
@@ -79,16 +79,16 @@ form:
                 1: Yes
             header.section.settings.title.fontsize:
               type: text
-              label: "Font size for Title" 
-              description: "(unit: px)"               
+              label: "Font size for Title"
+              description: "(unit: px)"
             header.section.settings.subtitle.fontsize:
               type: text
-              label: "Font size for Sub Title"  
+              label: "Font size for Sub Title"
               description: "(unit: px)"
             header.section.settings.bgcolor:
               type: colorpicker
               label: "Background color"
-              default: '#fff'
+              default: ''
             header.section.settings.module.enabled:
               type: toggle
               label: "Show Image/Text module"
@@ -98,40 +98,40 @@ form:
                 1: PLUGIN_ADMIN.ENABLED
                 0: PLUGIN_ADMIN.DISABLED
               validate:
-                type: bool     
+                type: bool
             header.section.settings.ttl.column:
               type: select
               label: "Text content width"
-              default: 2              
+              default: 2
               options:
                 1: "full width"
                 2: "1/2 full width"
                 3: "1/3 full width"
                 4: "2/3 full width"
                 5: "1/4 full width"
-                6: "1/6 full width"              
+                6: "1/6 full width"
             header.section.settings.txt.column:
               type: select
               label: "Text content width"
-              default: 2              
+              default: 2
               options:
                 1: "full width"
                 2: "1/2 full width"
                 3: "1/3 full width"
                 4: "2/3 full width"
                 5: "1/4 full width"
-                6: "1/6 full width"              
+                6: "1/6 full width"
             header.section.settings.img.column:
               type: select
               label: "Image content width"
-              default: 2              
+              default: 2
               options:
                 1: "full width"
                 2: "1/2 full width"
                 3: "1/3 full width"
                 4: "2/3 full width"
                 5: "1/4 full width"
-                6: "1/6 full width"              
+                6: "1/6 full width"
             # header.scale:
             #   type: select
             #   label: 'Image Format'
@@ -164,9 +164,3 @@ form:
             #     1: PLUGIN_ADMIN.DISABLED
             #   validate:
             #     type: bool
-                  
-                            
-
-            
-                  
-                      

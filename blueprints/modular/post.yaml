@@ -71,12 +71,12 @@ form:
             header.section.settings.txtcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
-              default: '#000'
+              default: ''
 
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: '#fbfbfb'
+              default: ''
 
             header.section.settings.module.enabled:
               type: toggle

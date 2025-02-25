@@ -118,7 +118,7 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: '#fbfbfb'
+              default: ''
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
@@ -129,10 +129,10 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-            header.section.wrap.container:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.LABEL
-              default: 0
-              options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1
+            #header.section.wrap.container:
+            #  type: select
+            #  label: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.LABEL
+            #  default: 0
+            #  options:
+            #    0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
+            #    1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1
