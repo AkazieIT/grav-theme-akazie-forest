@@ -5,10 +5,7 @@
 {% if page.header.section.content.module.enabled %}
 
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
-{% if page.header.section.wrap.container == 1 %}
-</div></div>  {#  end row #}
 
-{% endif %} 
 </div> {# end row container #}
 <div class="hero-area position-relative d-flex">
     <div class="container "> <div class="container-inner">
@@ -89,10 +86,9 @@
 
     </div></div>    
 </div>
-{% if page.header.section.wrap.container == 1 %}
 
-<div class="row container"><div class="row container-inner">  {# start row #}
-{% endif %} 
+    </div></div><div class="row container"><div class="row container-inner">  {# start row #}
+
 {% endif %}
 <style>
 {% if page.header.section.content.hero.square.bgcolor %}

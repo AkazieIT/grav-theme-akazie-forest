@@ -131,13 +131,13 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-            header.section.wrap.container:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.LABEL
-              default: 0
-              options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.1
+          #  header.section.wrap.container:
+          #    type: select
+          #    label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.LABEL
+          #    default: 0
+          #    options:
+          #      0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.0
+          #      1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.1
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED
