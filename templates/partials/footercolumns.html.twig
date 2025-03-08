@@ -1,0 +1,70 @@
+
+
+
+              {% set index = 1 %}
+              {% for column in theme_var('top.footer.columns') %}
+                {% set show = false %}
+                {% if mobilefooter == false %}{% set show = true %}{% endif %}
+                {% if column.mobilenav.enabled == true %}{% set show = true %}{% endif %}
+
+                {% if show == true %}
+
+                    <div class="ft-widget{% if index == 1 and mobilefooter == false %}-first{% endif %}">
+
+
+                        {% if column.image %}<img src="{{ (column.image|first).path|first == '/' ? ((column.image|first).path) : ('/' ~ (column.image|first).path) }}" alt="Logo" class="footerimage">
+                        {% endif %}
+                       {{column.heading ? ('<h3>' ~ column.heading | nl2br ~ '</h3>')| raw  }}
+                        {% if column.social.enabled %}
+                        <div class="social-wrap d-flex align-items-center flex-wrap">
+                            <h5>{{ theme_var('top.footer.socialtext') ? theme_var('top.footer.socialtext') : 'Folge uns' }}</h5>
+                            <ul class="social-links d-flex align-items-center">
+                                {% for social in theme_var('top.footer.socials') %}
+                                <li><a href="{{social.link}}" target="_blank" class="{% if social.fontsize == 1 %}smallsocials{% endif %}">{{social.icon | raw}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if column.contact.enabled %}
+                        <p>
+                            {% if theme_var('footer.mail') %}
+                                <a href="mailto:{{ theme_var('footer.mail')|safe_email }}">
+                                    {{ theme_var('footer.mail')|safe_email }}
+                                </a> 
+                            {% endif %}        
+                            {% if theme_var('footer.phone') %}
+                                &nbsp;|&nbsp; 
+                                <a href="tel:{{ theme_var('footer.phone')|format_phone }}">
+                                    {{ theme_var('footer.phone') }}
+                                </a>
+                            {% endif %}    
+                        </p>
+                        {% endif %}
+                        {% if column.navigation.enabled %}
+                            <ul class="ft-nv">
+                                {% for p in pages.children.visible | slice(0, (theme_var('header.nav.length'))) %}
+                                {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+                                {% if (p.home() and p.header.markdown.title == false) or p.home() == false %}
+                                    <li>
+                                    <a href="{{ p.url }}" class="{{ active_page }}" link>
+                                        {{ p.menu }}
+                                    </a>
+                                    </li>
+                                {% endif %}
+
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+                        {% if column.renderhtml.enabled %}
+                        {{column.text | raw}}
+                        {% else %}
+                        <p>{{column.text | nl2br | raw}}</p>
+                        {% endif %}
+                    </div>
+                    {% set index = index + 1 %}
+
+              
+                {% endif %}
+
+              {% endfor %}

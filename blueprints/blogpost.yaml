@@ -5,6 +5,16 @@ form:
     tabs:
 
       fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+
+          fields:
+            header.subtitle:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+
+
         blog:
           type: tab
           title: THEME_AKAZIEForest.ADMIN.TAB.BLOG

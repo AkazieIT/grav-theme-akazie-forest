@@ -1,93 +1,99 @@
 {# {% set videoOne = page.find('/videos').media[page.header.section.content.right.video].url | e %} #}
-{% set media = (page.header.section.content.right.media | first).name %}
-{% set mediaFilePath = 'theme://images/hero/' ~ media %}
-{% if page.header.section.content.module.enabled %}
-{% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
+{% set media = (page.header.section.content.right.media | first) %}
 
-{% endif %} 
+{% set mediaFilePath = 'theme://custom/images/hero/' ~ media.name %}
+{% if page.header.section.content.module.enabled %}
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+
+</div> {# end row container #}
 <div class="hero-area position-relative d-flex">
-    <div class="container ">
-        {# <div class="{% if page.header.section.settings.txt.column == 1 %}col-12 col-md-12
-                    {% elseif page.header.section.settings.txt.column == 2 %}col-12 col-md-6
-                    {% elseif page.header.section.settings.txt.column == 3 %}col-12 col-md-4
-                    {% elseif page.header.section.settings.txt.column == 4 %}col-12 col-md-8
-                    {% elseif page.header.section.settings.txt.column == 5 %}col-6 col-md-3
-                    {% elseif page.header.section.settings.txt.column == 6 %}col-4 col-md-2
-                    {% else %}col-12 col-md-6{% endif %}">         #}
+    <div class="container "> <div class="container-inner">
             <div class="hero-content">
             {% if page.header.section.content.title.show %}
-                <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
-                <h1>{{page.header.section.content.left.title}}</h1>
+            
+                {% if page.header.section.content.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
+                {% elseif page.header.section.content.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.content.left.subtitle}}</h2>
+                {% elseif page.header.section.content.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.content.left.subtitle}}</h3>
+                {% elseif page.header.section.content.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.content.left.subtitle}}</h4>
+                {% elseif page.header.section.content.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.content.left.subtitle}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.content.left.subtitle}}</h6>
+                {% endif %}  
+               
+
+                {% if page.header.section.content.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                {% elseif page.header.section.content.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                {% elseif page.header.section.content.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                {% elseif page.header.section.content.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                {% elseif page.header.section.content.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% else %}<h1>{{page.header.title}}</h1>
+                {% endif %}  
+               
             {% endif %}  
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
-                <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.button.open.type %}target="_blank"{% endif %}>{{page.header.section.content.left.anchor}}<i
-                        class="far fa-angle-right"></i></a>
-                <div>
-                    <a href="{{page.header.section.content.left.linkTwo}}" class="cmn-link type-2 type-3" {% if page.header.section.content.anchor.open.type %}target="_blank"{% endif %}>
-                        {% if page.header.section.content.anchor.icon %}
-                            {% set logo_file = (page.header.section.content.anchor.icon|first).name %}
-                            <img src="{{ url('theme://images/' ~ logo_file)  }}"  class="btn_ico" />                            
-                            {{page.header.section.content.left.anchorTwo}}
-                        {% else %}
-                        <svg class="mr-10" xmlns="http://www.w3.org/2000/svg"
-                            width="36" height="25.5" viewBox="0 0 36 25.5" class="ml-0">
-                            <path id="Icon_material-laptop-chromebook" data-name="Icon material-laptop-chromebook"
-                                d="M33,27V4.5H3V27H0v3H36V27ZM21,27H15V25.5h6Zm9-4.5H6V7.5H30Z"
-                                transform="translate(0 -4.5)" fill="#555" />
-                        </svg>{{page.header.section.content.left.anchorTwo}}
-                        {% endif %}
-                    </a>
+
+
+                {% for button in header.section.content.left.button %}
+                    {% if button.icon|first %}
+                        {% set logo_file = (button.icon|first).name %}
+                        <a href="{{button.link}}" class="cmn-link type-2 type-3" {% if button.open.type != 0 %}target="_blank"{% endif %}>
+                                <img src="{{ url('theme://custom/images/' ~ logo_file)  }}"  class="btn_ico" />                            
+                                {{button.text}}
+                        </a>
+                    {% else %}
+                        <a href="{{button.link}}" class="box-btn type-2" {% if button.open.typ != 0 %}target="_blank"{% endif %}>{{button.text}}<i class="far fa-angle-right"></i></a>
+                    {% endif %}
+                   
+                    {% if not loop.last %}<br />{% endif %} 
+
+                {% endfor %}
+
+
                 </div>
             </div>
-        {# </div> #}
-        {# <div class="{% if page.header.section.settings.img.column == 1 %}col-12 col-md-12
-                    {% elseif page.header.section.settings.img.column == 2 %}col-12 col-md-6
-                    {% elseif page.header.section.settings.img.column == 3 %}col-12 col-md-4
-                    {% elseif page.header.section.settings.img.column == 4 %}col-12 col-md-8
-                    {% elseif page.header.section.settings.img.column == 5 %}col-6 col-md-3
-                    {% elseif page.header.section.settings.img.column == 6 %}col-4 col-md-2
-                    {% else %}col-12 col-md-6{% endif %}  hero-video position-absolute">  #}
- 
+            
  {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
-        <div class="hero-video position-absolute">
+        <div class="hero-video {{selfid}} position-absolute">
             {% if page.header.section.content.right.media %}
                 {% if fileType starts with 'image/' %}
-                    <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+
+
+                    {% if theme_var('style.compress') %}
+                        
+                        {% include 'partials/imagesizing.html.twig' with {
+                            'image': page.media[(page.header.section.content.right.media|keys|first)],
+                            'title' : page.title, 
+                            'alt': page.title, 
+                            'objectfit': 'center center', 
+                            'scale': 0, 
+                            'resize': 0,
+                            'classes': 'hero-media-image' } 
+                        %}
+                     {% else %}
+                        <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+                    {% endif %}
+
                 {% elseif fileType starts with 'video/' %}
                     <video autoplay muted loop src="{{ url(mediaFilePath)}}"></video>
                 {% endif %}           
-                        {# <video autoplay muted loop src="{{ url('theme://images/video/' ~ videoOne)}}"></video> #}
+                        {# <video autoplay muted loop src="{{ url('theme://custom/images/video/' ~ videoOne)}}"></video> #}
             {% endif %}
         </div>    
-        {# </div> #}
- 
    
 
  
  
 
-    </div>    
+    </div></div>    
 </div>
-{% if page.header.section.wrap.container == 1 %}
 
-<div class="row container">  {# start row #}
-{% endif %} 
+    </div></div><div class="row container"><div class="row container-inner">  {# start row #}
+
 {% endif %}
 <style>
 {% if page.header.section.content.hero.square.bgcolor %}
-.hero-video::after{
+.hero-video.{{selfid}}::after{
     background-color: {{page.header.section.content.hero.square.bgcolor}}!important;
-}
-{% endif %}
-{% if page.header.section.content.title.fontsize %}
-.hero-content h1{
-    font-size: {{page.header.section.content.title.fontsize}}px
-}
-{% endif %}
-{% if page.header.section.content.subtitle.fontsize %}
-.hero-content h6{
-    font-size: {{page.header.section.content.subtitle.fontsize}}px
 }
 {% endif %}
 </style>

@@ -1,10 +1,30 @@
 {% if page.header.section.settings.module.enabled %}
-<div class="team-area">
-    <div class="container">
+</div></div>
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="team-area {{selfid}}{% if page.header.section.settings.design.enabled == 1 %} team-design{% endif %}">
+    <div class="container"><div class="container-inner">
         {% if page.header.section.settings.title.show %}
         <div class="secondary-title">
-            <h6 class="text-uppercase">{{page.header.section.title.subHeading}}</h6>
-            <h3>{{page.header.section.title.heading}}</h3>
+
+
+                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.title.subHeading}}</h1>
+                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.title.subHeading}}</h2>
+                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.title.subHeading}}</h3>
+                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.title.subHeading}}</h4>
+                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.title.subHeading}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.title.subHeading}}</h6>
+                {% endif %}                  
+                        
+                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% else %}<h1>{{page.header.title}}</h1>
+                {% endif %}  
+
+
+
         </div>
         {% endif %}
         <div class="row">
@@ -17,72 +37,113 @@
                         {% elseif page.header.section.settings.column == 4 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
-{{ dump(member) }}
-                <div class="team-member">
-                    <div class="member-img">
-                        {# <img src="{{ url('theme://images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
-                        {% set resize = 4 / 3 %}
-                        {% set cropzoom = 0 %}
-                        {% set image = page.media[(member.img|keys|first)] %}
+                {% if member.onlyshowtext == 1 %}
 
-                        {% if page.header.section.settings.img.column == 1  %}
-                            <picture>
-                                <source media="(min-width:992px)" srcset="{% if cropzoom %}{{ image.resize(1250,1250 * resize).url }}{% else %}{{ image.cropZoom(1250,1250 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(2500,2500 * resize).url }}{% else %}{{ image.cropZoom(2500,2500 * resize).url }}{% endif %} 2x">
-                                <source media="(min-width:870px)" srcset="{% if cropzoom %}{{ image.resize(840,840 * resize).url }}{% else %}{{ image.cropZoom(840,840 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(1680,1680 * resize).url }}{% else %}{{ image.cropZoom(1680,1680 * resize).url }}{% endif %} 2x">
-                                <source media="(min-width:500px)" srcset="{% if cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(1020,1020 * resize).url }}{% else %}{{ image.cropZoom(1020,1020 * resize).url }}{% endif %} 2x">
-                                <source media="(max-width:499px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-                                <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
-                            </picture>
+                    <div class="team-onlyshowtext">
+                        <h3>{{ member.name }}</h3>
+                        <p>{{ member.additional_txt }}</p>
+                    </div>
+
+                {% else %}
+                    
+                    <div class="team-member{% if page.header.section.settings.design.enabled == 1 %} team-member--hover {% endif %}">
+                        <div class="member-img">
+                            {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
+                            {% set resize = 4 / 3 %}
+                            {% set cropzoom = 0 %}
+                            {% if page.header.section.settings.nocropzoom.enabled == 1 %}
+                                {% set cropzoom = 1 %}
+                            {% endif %}
+                            {% set image = page.media[(member.img|keys|first)] %}
+
+                            
+                            {% if theme_var('style.compress') %}
+                                    
+                                    {% include 'partials/imagesizing.html.twig' with {
+                                        'image': image, 
+                                        'title' : member.name, 
+                                        'alt': member.alt, 
+                                        'objectfit': page.header.objectfit, 
+                                        'scale': 0, 
+                                        'resize': 0,
+                                        'classes': 'media' } 
+                                    %}
+                                
+                            {% else %}
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                            {% endif %}
+                        </div>
+
+            {# If design.enabled == 1, we want an overlay that appears on hover #}
+                        {% if page.header.section.settings.design.enabled == 1 %}
+                            <div class="team-member-overlay">
+                                <h3>{{ member.name }}</h3>
+                                <ul class="ct-list">
+                                    {% if member.linkedin.linkedinProfile %}
+                                    <li>
+                                        <i class="fal fa-envelope"></i>
+                                        <a href="mailto:{{ member.mail }}" class="d-inline-block">{{ member.mail }}</a>
+                                    </li>
+                                    <li>
+                                        <i class="fab fa-linkedin"></i>
+                                        <a href="{{ member.linkedin.linkedinProfile }}" target="_blank"
+                                        class="d-inline-block text-decoration-underline">
+                                            {{ member.linkedin.linkedin_user }}
+                                        </a>
+                                    </li>
+                                    {% endif %}
+                                    {% if member.phone %}
+                                    <li>
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                        <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                                
+                                {% if member.additional_txt or member.designation %}
+                                <p>{% if member.designation %}{{member.designation}}<br /><br />{% endif %}{{ member.additional_txt|nl2br }}</p>
+                                {% endif %}
+                                {% if member.mail %}<a href="mailto:{{member.mail}}" class="mailtokachel">{{member.mail}}</a>{% endif %}
+                            </div>
                         {% else %}
-                            <picture>
-                                <source media="(min-width:1220px)" srcset="{% if cropzoom %}{{ image.resize(610,610 * resize).url }}{% else %}{{ image.cropZoom(610,610 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-                                <source media="(min-width:992px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(800,800 * resize).url }}{% else %}{{ image.cropZoom(800,800 * resize).url }}{% endif %} 2x">
-                                <source media="(min-width:500px)" srcset="{% if cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-                                <source media="(max-width:499px)" srcset="{% if cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-                                <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
-                            </picture>
-                        {% endif %}
-                    </div>
-                    <div class="secondary-title member-content mb-0">
-                        <h6 class="text-uppercase">{{member.designation}}</h6>
-                        <h3>{{member.name}}</h3>
-                        <ul class="ct-list">
-                            {% if member.linkedin.linkedinProfile %}
-                            <li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>
-                            <li><i class="fab fa-linkedin"></i><a href="{{member.linkedin.linkedinProfile}}" target="_blank"
-                                    class="d-inline-block text-decoration-underline">{{member.linkedin.linkedin_user}}</a>
-                            </li>
+
+                        <div class="secondary-title member-content mb-0">
+                            <h6 class="subh">{{member.designation}}</h6>
+                            <h3>{{member.name}}</h3>
+                            <ul class="ct-list">
+                                {% if member.linkedin.linkedinProfile %}
+                                <li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>
+                                <li><i class="fab fa-linkedin"></i><a href="{{member.linkedin.linkedinProfile}}" target="_blank"
+                                        class="d-inline-block text-decoration-underline">{{member.linkedin.linkedin_user}}</a>
+                                </li>
+                                {% endif %}
+                                {% if member.phone %}
+                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{member.phone}}">{{member.phone}}</a></li>
+                                {% endif %}
+                            </ul>
+                            {% if member.additional_txt %}
+                            <p>{{member.additional_txt}}</p>
                             {% endif %}
-                            {% if member.phone %}
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{member.phone}}">{{member.phone}}</a></li>
-                            {% endif %}
-                        </ul>
-                        {% if member.additional_txt %}
-                        <p>{{member.additional_txt}}</p>
+                        </div>
+
+
                         {% endif %}
+
                     </div>
-                </div>
+                
+                {% endif %}
             </div>
             {% endfor %}
         </div>
-    </div>
+    </div></div>
 </div>
+<div class="container"><div class="container-inner">
 {% endif %}
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.team-area{
+.team-area.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
-}
-{% endif %}
-{% if page.header.section.settings.title.fontsize %}
-.secondary-title h3{
-    font-size: {{page.header.section.settings.title.fontsize}}px;
-}
-{% endif %}
-{% if page.header.section.settings.subtitle.fontsize %}
-.secondary-title h6{
-    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
 }
 {% endif %}
 

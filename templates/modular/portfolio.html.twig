@@ -1,5 +1,6 @@
 {% if page.header.section.settings.module.enabled %}
 
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
     {% if page.header.section.card.date.show == 1 %}
         {% set show_date = true %}
     {% else %}
@@ -27,8 +28,8 @@
     {% set masonry = true %}
 
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
-<div class="row container portfolio-area">
+</div></div>  {#  end row #}
+<div class="row container portfolio-area {{selfid}}"><div class="row container-inner">
     {# <div class="row"> #}
 {% endif %}
     {# <div class="container bricklayer">         #}
@@ -45,8 +46,7 @@
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}   #}
                         "
-                 style="{% if page.header.section.settings.bgcolor %}background-color: {{page.header.section.settings.bgcolor}};{% endif %}"
-            >
+                 style="">
                 {% include 'partials/portfolio-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_content':show_content, 'card_opentype':card_opentype, 'masonry':masonry} %}
             </div>
         </li>
@@ -55,8 +55,8 @@
     </div>
 {% if page.header.section.wrap.container == 1 %}
     {# </div> #}
-</div>
-<div class="row container">  {# start row #}
+</div></div>
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %}
     <script>
         //Bricklayer
@@ -70,6 +70,14 @@
 {% endif %}
 
   <style>
+{% if page.header.section.settings.bgcolor %}
+
+.portfolio-area.{{selfid}} {
+background-color: {{ page.header.section.settings.bgcolor }};
+}
+
+{% endif %}
+
 {% if page.header.section.settings.column == 1 %}
     .js-masonry-elm {
         width: 100%;

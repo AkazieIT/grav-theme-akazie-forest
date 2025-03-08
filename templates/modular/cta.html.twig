@@ -1,14 +1,26 @@
 {% if page.header.section.settings.module.enabled %}
-<div class="cta-area">
-    <div class="container">
+</div></div>
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="cta-area {{selfid}}">
+    <div class="container"><div class="container-inner">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="cmn-content st-content">
-                    {% if page.header.section.settings.title.show %}                
-                    <h3>{{page.header.section.content.left.title}}</h3>
+            <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% elseif page.header.section.settings.module.width == 2 %}col-lg-9{% else %}col-lg-6{% endif %}">
+                <div class="cmn-content st-content ctap {{selfid}}{{page.header.section.settings.bgcontain ? ' bgcontain'}}" {{ page.header.section.settings.module.width ? 'style="max-width:none;"' }}>
+                    {% if page.header.section.settings.title.show %}   
+                    
+                        {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                        {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                        {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                        {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                        {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                        {% else %}<h1>{{page.header.title}}</h1>
+                        {% endif %}        
+
                     {% endif %}
-                    <p>{{page.header.section.content.left.text|markdown|raw}}</p>
-                    <a href="{{page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.link.open.type %}target="_blank"{% endif %}>
+                    {% if page.header.section.content.left.text %}
+                    <p>{{page.header.section.content.left.text|raw }}</p>
+                    {% endif %}
+                    <a href="{{ page.header.section.content.left.pdfenabled ? page.media[page.header.section.content.left.pdfselect].url : page.header.section.content.left.link}}" class="box-btn type-2" {% if page.header.section.content.left.linkopen.type %}target="_blank"{% endif %}>
                         {{page.header.section.content.left.anchor}}<i class="far fa-angle-right"></i>
                     </a>
                 </div>
@@ -17,15 +29,25 @@
                 <div class="offer-g-wrapper">
                     {% for card in page.header.section.content.right.cards %}
                     {# {% set icon = page.find('/images').media[card.icon].url | e %} #}
+                    {% set img = false %}
+                    {% if card.image is not empty %}
                     {% set img = (card.image | first).name %}
-                    <div class="single-offer">
+                    {% endif %}
+                    <div class="single-offer ctap">
                         <div class="offer-icon">
                             {# <img src="{{icon}}" alt="Icon" class="img-fluid"> #}
-                            <img src="{{ url('theme://images/' ~ img)  }}" alt="{{card.alt}}" class="img-fluid">
+                            {% if img != false %}
+                            <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{card.alt}}" class="img-fluid">
+                            {% endif %}
                         </div>
                         <h5>{{card.heading}}</h5>
                         <p>{{card.text}}</p>
-                        <a href="{{card.link}}" class="cmn-link" {% if card.open.type %}target="_blank"{% endif %}>
+                        {% if card.pdfenabled %}
+                        {% set link = page.media[card.pdfselect].url %}
+                        {% else %}
+                        {% set link = card.link %}
+                        {% endif %}
+                        <a href="{{link}}" class="cmn-link" {% if card.open.type %}target="_blank"{% endif %}>
                             {{card.anchor}}<i class="far fa-long-arrow-right"></i>
                         </a>
                     </div>
@@ -33,24 +55,35 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div></div>
 </div>
+<div class="container"><div class="container-inner">
 {% endif %}
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.cta-area{
-    background-color: {{page.header.section.settings.bgcolor}};
-}
-{% endif %}
-{% if page.header.section.settings.title.fontsize %}
-.cmn-content h3{
-    font-size: {{page.header.section.settings.title.fontsize}}px;
-}
+    
+    {% if page.header.section.settings.bgcontain %}
+        .cta-area.{{selfid}} .cmn-content{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
+    {% else %}
+        .cta-area.{{selfid}}{
+            background-color: {{page.header.section.settings.bgcolor}};
+        }
+    {% endif %}
 {% endif %}
 
 {% if page.header.section.settings.txtcolor %}
-.cmn-content p, .single-offer p{
+.cmn-content.ctap.{{selfid}} p, .single-offer.ctap.{{selfid}} p,
+.cmn-content.ctap.{{selfid}} h1, .single-offer.ctap.{{selfid}} h1,
+.cmn-content.ctap.{{selfid}} h2, .single-offer.ctap.{{selfid}} h2,
+.cmn-content.ctap.{{selfid}} h3, .single-offer.ctap.{{selfid}} h3,
+.cmn-content.ctap.{{selfid}} h4, .single-offer.ctap.{{selfid}} h4,
+.cmn-content.ctap.{{selfid}} h5, .single-offer.ctap.{{selfid}} h5,
+.cmn-content.ctap.{{selfid}} h6, .single-offer.ctap.{{selfid}} h6,
+.cmn-content.ctap.{{selfid}} a, .single-offer.ctap.{{selfid}} a
+ {
     color: {{page.header.section.settings.txtcolor}};
 }
 {% endif %}

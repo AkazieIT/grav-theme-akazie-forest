@@ -1,7 +1,9 @@
 {% if page.header.section.settings.module.enabled %}
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 {% if page.header.section.wrap.container == 1 %}
-</div>  {#  end row #}
-<div class="row container img_module">
+</div></div>  {#  end row #}
+
+<div class="row container img_module {{selfid}}"><div class="row container-inner">
 {% endif %}  
 <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12
             {% elseif page.header.section.settings.module.width == 2 %}col-12 col-md-6
@@ -11,16 +13,37 @@
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
             {% else %}col-12 col-md-6{% endif %} 
              section_wrap"
-    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}"         
->   
+    style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}" >   
     <div class="container">
     {% if page.header.section.settings.title.show %}
     <div class="title_wrap cmn-content">
         {% if page.header.section.subtitle %}
-        <h6 class="text-uppercase">{{page.header.section.subtitle}}</h6>
+
+
+                 {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.subtitle}}</h1>
+                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.subtitle}}</h2>
+                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.subtitle}}</h3>
+                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.subtitle}}</h4>
+                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.subtitle}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.subtitle}}</h6>
+                {% endif %}                  
+               
+
+
         {% endif %}
-        {% if page.header.section.title %}
-        <h3>{{page.header.section.title}}</h3>
+        {% if page.header.title %}
+
+         
+                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% else %}<h1>{{page.header.title}}</h1>
+                {% endif %}  
+
+
+
         {% endif %}
     </div>
     {% endif %}
@@ -29,7 +52,7 @@
     <div class="img_wrap cmn-content">
     {# 
         {% set img = (page.header.section.image | first).name %}
-        <img  src="{{ url('theme://images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
+        <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
     #}
 
     {% if page.header.section.image | first is iterable %}
@@ -38,44 +61,69 @@
     {% else %}
       {% set image = page.media | first %}
     {% endif %}
-
     {% if page.header.scale == 1 %}
         {% set resize = 3 / 4 %}
+        {% set aspectratio = 4 / 3 %}
     {% elseif page.header.scale == 2 %}
         {% set resize = 9 / 16 %}
+        {% set aspectratio = 16 / 9 %}
     {% elseif page.header.scale == 3 %}
         {% set resize = 1 / 2.35 %}
+        {% set aspectratio = 2.35 / 1 %}
     {% elseif page.header.scale == 4 %}
         {% set resize = 1 %}
+        {% set aspectratio = 1 %}
     {% elseif page.header.scale == 5 %}
         {% set resize = 4 / 3 %}
-    {% endif %}    
-
-
-{% if page.header.imagesizing == 1 %}
-    {% if page.header.section.settings.img.column == 1  %}
-            <picture>
-          <source media="(min-width:992px)" srcset="{% if page.header.cropzoom %}{{ image.resize(1250,1250 * resize).url }}{% else %}{{ image.cropZoom(1250,1250 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(2500,2500 * resize).url }}{% else %}{{ image.cropZoom(2500,2500 * resize).url }}{% endif %} 2x">
-          <source media="(min-width:870px)" srcset="{% if page.header.cropzoom %}{{ image.resize(840,840 * resize).url }}{% else %}{{ image.cropZoom(840,840 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(1680,1680 * resize).url }}{% else %}{{ image.cropZoom(1680,1680 * resize).url }}{% endif %} 2x">
-          <source media="(min-width:500px)" srcset="{% if page.header.cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(1020,1020 * resize).url }}{% else %}{{ image.cropZoom(1020,1020 * resize).url }}{% endif %} 2x">
-          <source media="(max-width:499px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-              <img class="media" style="width:100%;" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" src="{% if page.header.cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
-            </picture>
+        {% set aspectratio = 3 / 4 %}
+    {% elseif page.header.scale == 6 %}
+        {% set resize = 1 / 5 %}
+        {% set aspectratio = 5 / 1 %}
     {% else %}
-            <picture>
-          <source media="(min-width:1220px)" srcset="{% if page.header.cropzoom %}{{ image.resize(610,610 * resize).url }}{% else %}{{ image.cropZoom(610,610 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-        <source media="(min-width:992px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(800,800 * resize).url }}{% else %}{{ image.cropZoom(800,800 * resize).url }}{% endif %} 2x">
-      <source media="(min-width:500px)" srcset="{% if page.header.cropzoom %}{{ image.resize(510,510 * resize).url }}{% else %}{{ image.cropZoom(510,510 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-    <source media="(max-width:499px)" srcset="{% if page.header.cropzoom %}{{ image.resize(450,450 * resize).url }}{% else %}{{ image.cropZoom(450,450 * resize).url }}{% endif %} 1x, {% if page.header.cropzoom %}{{ image.resize(900,900 * resize).url }}{% else %}{{ image.cropZoom(900,900 * resize).url }}{% endif %} 2x">
-              <img class="media" style="width:100%;" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" src="{% if page.header.cropzoom %}{{ image.resize(1280,1280 * resize).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
-            </picture>
+        {% set resize = 0 %}
+    {% endif %}    
+    {% if page.header.section.settings.module.width == 1 %}
+    {% set mult = 2 %}
+    {% elseif page.header.section.settings.module.width == 4 %}
+    {% set mult = 1.5 %}
+    {% else %}
+    {% set mult = 1 %}
     {% endif %}
-{% else %}
-    <img class="media" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" src="{{ image.url }}" />
+    {# TODO: Resize bei page.header.scale #}
 
-{% endif %}
+
+    {% if theme_var('style.compress') %}
+
+
+     {% include 'partials/imagesizing.html.twig' with {
+        'image': image, 
+        'title' : page.header.section.title, 
+        'alt': page.header.section.alt_tag, 
+        'objectfit': page.header.objectfit, 
+        'scale': page.header.scale , 
+        'resize': resize,
+        'classes': 'media',
+        'mult': mult } 
+    %}
+ 
+ 
+
+
+    {% else %}
+
+
+    <img class="media {{selfid}}" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
+    src="{% if page.header.scale != 0 and not theme_var('style.noresize') %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
+    style="
+    {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
+    {% if page.header.scale != 0 and not theme_var('style.noresize') %}object-fit:contain;{% endif %}
+    " />
+
+    {% endif %}
 
     </div>
+    
+
     {% endif %}
     {% if page.header.section.image_description %}
     <div class="content_wrap cmn-content">
@@ -85,26 +133,32 @@
     </div>
 </div>
 {% if page.header.section.wrap.container == 1 %}
-</div>
-<div class="row container">  {# start row #}
+</div></div>
+<div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %} 
 {% endif %}
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.img_module{
+.img_module.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
+{% if theme_var('style.noresize') %}
+.media.{{selfid}} {
+ aspect-ratio: {{ resize != 0 ? aspectratio : 'auto' }};
+ object-fit: cover;
+}
+@media (max-width: 768px) {
+    .media.{{selfid}} {
+        aspect-ratio: auto;
+    }
+}
+@media (max-width: 468px) {
+    .media.{{selfid}} {
+        aspect-ratio: 0.75;
+    }
+}
+{% endif %}
 {% endif %}
   
-{% if page.header.section.settings.title.fontsize %}
-.title_wrap h3{
-    font-size: {{page.header.section.settings.title.fontsize}}px;
-}
-{% endif %}
-{% if page.header.section.settings.subtitle.fontsize %}
-.title_wrap h6{
-    font-size: {{page.header.section.settings.subtitle.fontsize}}px;
-}
-{% endif %}
 </style>

@@ -5,7 +5,7 @@
 <head>
     {% block head %}
     <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title|e }} | {% endif %}{{ site.title|e }}</title>
+    <title>{% if header.title %}{{ header.title == '%LOGO%' ? site.title : header.title|e }} | {% endif %}{{ site.title|e }}</title>
     {{ theme_var('header.javascript')|raw }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,40 +13,74 @@
 
 
     {% if favicon %}
-        {% set favicon_file = (favicon | first).name %}
-        <link rel="icon" type="image/png" href="{{ url('theme://custom/favicon/' ~ favicon_file) }}" sizes="32x32"/>
-        <link rel="apple-touch-icon" href="{{ url('theme://custom/favicon/' ~ favicon_file) }}">
+        <link rel="icon" type="image/png" href="{{ url('theme://custom/images/favicon/' ~ (favicon | first).name) }}" sizes="32x32"/>
+        <link rel="apple-touch-icon" href="{{ url('theme://custom/images/favicon/' ~ (favicon | first).name) }}">
     {% else %}
         <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" sizes="32x32"/>
         <link rel="apple-touch-icon" href="{{ url('theme://images/favicon.png') }}">
     {% endif %}    
     <link rel="canonical" href="{{ page.canonical(true)|e }}" />
 
-    {% if theme_var('style.fonts.import') %}
-        {% if theme_var ('style.fonts.google') %}
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link
-            rel="preload"
-            as="style"
-            href="{{ theme_var('style.fonts.import') }}"
-            />
-            <link
-            rel="stylesheet"
-            href="{{ theme_var('style.fonts.import') }}"
-            media="print"
-            onload="this.media='all'"
-            />
-            <noscript>
-            <link
+
+    {% if theme_var('style.fonts.uploadselect') %}
+
+    {# instead of individual files: Repeating field where you can type Name and select type (ttf, otf, woff, woff2) #}
+
+    {% for font in theme_var('style.fonts.uploadfiles') %}
+        {# loop through the repeating field #}
+
+         {% set weight = 'normal' %}
+         {% if font.weight != 400 %}
+            {% set weight = font.weight %}
+         {% endif %}
+            {% for file in font.file %}
+            <link rel="preload" as="font" href="/{{ file.path }}" type="font/{{ file.path|split('.')|last }}" crossorigin="anonymous"> 
+            {% endfor %}
+            <style>
+           {% for file in font.file %}
+                        @font-face {
+                            font-family: "{{ font.name }}";
+                            src: {% for file in font.file %}url("/{{ file.path }}") format("{% if file.path|split('.')|last == 'ttf' %}truetype{% else %}{{file.path|split('.')|last}}{% endif %}"){% if not loop.last %},{% endif %}{% endfor %};
+                            font-weight: {{ weight }};
+                            font-style: normal;
+                            font-display: swap;
+                        }
+            {% endfor %}
+
+            </style>
+        
+    {% endfor %}
+
+             
+
+    {% else %}
+        {% if theme_var('style.fonts.import') %}
+            {% if theme_var ('style.fonts.google') %}
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link
+                rel="preload"
+                as="style"
+                href="{{ theme_var('style.fonts.import') }}"
+                />
+                <link
                 rel="stylesheet"
                 href="{{ theme_var('style.fonts.import') }}"
-            />
-            </noscript>
-        {% else %}
-            <link rel="preload" as="style" href="{{ theme_var('style.fonts.import') }}" onload="this.rel='stylesheet'" />
+                media="print"
+                onload="this.media='all'"
+                />
+                <noscript>
+                <link
+                    rel="stylesheet"
+                    href="{{ theme_var('style.fonts.import') }}"
+                />
+                </noscript>
+            {% else %}
+                <link rel="preload" as="style" href="{{ theme_var('style.fonts.import') }}" onload="this.rel='stylesheet'" />
+            {% endif %}
         {% endif %}
     {% endif %}
+
     {% if theme_var('style.fonts.customhtml') %}
         {{ theme_var('style.fonts.customhtml') }}   
     {% endif %}
@@ -54,19 +88,27 @@
     {% endblock head %}
 
     {% block stylesheets %}
-    {% do assets.addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css', 100) %}
+    {#
     {% do assets.addCss('theme://css/fontawesome-5.5.0.min.css', 99) %}
-    {# {% do assets.addCss('theme://css/bricklayer.css') %} #}
     {% do assets.addCss('theme://css/simple-masonry.css') %}
+    {% do assets.addCss('theme://css/swiper-bundle.min.css') %}
+    {% do assets.addCss('theme://js/lightgallery/css/lightgallery.css') %}
     {% do assets.addCss('theme://css/main.css', 98) %}
+    #}
+    {% do assets.addCss('theme://build/all.min.css', 98) %}
     {% endblock %}
 
     {% block javascripts %}
     {% do assets.addJs('jquery', 100) %}
-    {# {% do assets.add('theme://js/bricklayer.min.js') %} #}
+    {#
     {% do assets.add('theme://js/simple-masonry.js') %}
+    {% do assets.add('theme://js/swiper-bundle.min.js') %}
     {% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %}
-    {% do assets.addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', 99) %}
+    {% do assets.add('theme://js/lightgallery/lightgallery.min.js') %}
+    {% do assets.add('theme://js/lightgallery/plugins/lg-fullscreen.min.js') %}
+    {% do assets.add('theme://js/lightgallery/plugins/lg-thumbnail.min.js') %}
+    #}
+
     {% endblock %}
 
     {% block assets deferred %}
@@ -75,23 +117,34 @@
     {% endblock %}
     {% include 'partials/custom-css.html.twig' %}
     {% if theme_var('style.css') %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://custom/css/custom.css', 98) %}
     {% endif %}    
+
+
+    {% if theme_var('nav.hamburger') %}
+        <style>
+            #mobile_bar {
+                display: flex !important;
+            }
+        </style>
+    {% endif %}
+
 
 </head>
 
-<body id="top" class="{{ page.header.body_classes|e }}">
+<body id="top" class="{{ page.header.body_classes|e }} {% if page.home %}home{% endif %} template-{{ page.template }} slug-{{ page.slug }}">
 
     {% block header %}
     {% include 'partials/header.html.twig' %}
     {% endblock %}
 
     {% block body %}
+
     <main>
         {% block hero %}{% endblock %}
-        <div class="row container">         
+        <div class="row container"><div class="row container-inner">         
         {% block content %}{% endblock %}
-        </div>
+        </div></div>
     </main>
     {% endblock %}
     {% block footer %}
@@ -106,9 +159,9 @@
         
         {{ assets.js('bottom')|raw }}
         {{ theme_var('footer.javascript.code')|raw }}
-        <script src="{{ url('theme://js/main.js') }}"></script>
+        <script src="{{ url('theme://build/all.min.js') }}"></script>
         {% if theme_var('style.js') %}
-            {% do assets.addJs('theme://css/custom.js', 98) %}
+            {% do assets.addJs('theme://custom/css/custom.js', 98) %}
         {% endif %}   
     {% endblock %}
 

@@ -20,14 +20,14 @@
         </div>
         <div class="card_body">
             {% if page.summary != page.content %}
-                {{ page.summary|truncate(150, true)|raw }}
+                {{ page.summary|strip_tags_truncate(150)|raw }}
             {% else %}
-                {{ page.content|truncate(150, true)|raw }}
+                {{ page.content|strip_tags_truncate(150)|raw }} 
             {% endif %}
         </div>
         <div class="card_link">
             <a href="{{ page.url }}" class="cmn-link" {% if card_opentype %}target="_blank"{% endif %}>
-                Zum Angebot<i class="far fa-long-arrow-right"></i>
+                {{moreinfo}}<i class="far fa-long-arrow-right"></i>
             </a>    
         </div>
         {% if show_tax %}

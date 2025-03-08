@@ -1,4 +1,12 @@
 {% if page.header.section.settings.module.enabled %}
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+{% if page.header.section.wrap.container == 1 %}
+</div></div>  {#  end row #}
+<div class="row container {{selfid}}">
+<div class="row container-inner">
+{% endif %}
+
         {# <div class="accordion bg-transparent faq-area" id="faq"> #}
             {% for faqItem in page.header.content.faqs %}
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
@@ -16,14 +24,31 @@
                 <div id="collapse{{loop.index}}" class="accordion-collapse collapse row"
                     aria-labelledby="heading{{loop.index}}" data-bs-parent="#faq">
                     <div class="accordion-body p-0 col-md-8">
-                        <p class="text_lg ff_fira_sans text_secondaryLight">{{faqItem.text}}</p>
-                        <a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>
+                        <p class="text_lg text_secondaryLight">{{faqItem.text}}</p>
+                        {% if faqItem.anchor %}<a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>{% endif %}
                         </a>
                     </div>
                 </div>
             </div>
 
             {% endfor %}
+            <div class="accordion">
+            </div>
         {# </div> #}
+
+
+    {% if page.header.section.settings.bgcolor %}
+    <style>
+    .container.{{selfid}}:has(.container-inner > .accordion){
+        background-color: {{page.header.section.settings.bgcolor}};
+    }
+    </style>
+    {% endif %}
+
+{% if page.header.section.wrap.container == 1 %}
+</div></div>
+<div class="row container"><div class="row container-inner"> {# start row #}
+{% endif %}
+
 {% endif %}
 

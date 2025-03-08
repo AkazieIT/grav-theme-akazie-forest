@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.0
+version: 0.1.32
 description: A Forest Theme
 icon: rebel
 author:
@@ -40,7 +40,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.LABEL
               size: large
-              destination: 'theme://images/favicon'
+              destination: 'theme://custom/images/favicon'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.DESCRIPTION
@@ -50,6 +50,14 @@ form:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAXW.LABEL
               default: 1280
+            site.sectionwrappadding:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAP.LABEL
+              default: '20px 20px'
+            site.sectionwrappaddingmobile:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAPMOBILE.LABEL
+              default: '20px 20px'
         header:
           type: fieldset
           title: THEME_AKAZIEForest.ADMIN.FIELDS.HEADER.TITLE
@@ -68,7 +76,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.LABEL
               size: large
-              destination: 'theme://images/logo'
+              destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
@@ -78,7 +86,7 @@ form:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MLOGO.LABEL
               size: large
-              destination: 'theme://images/logo'
+              destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
               description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
@@ -118,7 +126,10 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-
+            header.closemenucaption:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLOSEMENU.LABEL
+              default: 'schliessen'
             nav.desktop:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE
@@ -136,7 +147,26 @@ form:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.HNAV.LABEL
                   default: 85
-
+                nav.hamburger:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.HELP
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+                nav.linksbeforehamburger:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.HELP
+                  default: 0
+                  validate:
+                      type: number
+                      min: 0
+                      max: 10
             nav.mobile:
               type: fieldset
               title:  THEME_AKAZIEForest.ADMIN.FIELDS.MNAV.TITLE
@@ -151,10 +181,29 @@ form:
                   options:
                     0: PLUGIN_ADMIN.DISABLED
                     1: PLUGIN_ADMIN.ENABLED
+                nav.mobilelogoenabled:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILELOGO.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                nav.customcode:
+                  type: textarea
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOMCODE.LABEL
                 nav.mobilenavheight:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
                   default: 85
+                nav.hamburgercolor:
+                  type: colorpicker
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMCOL.LABEL
+                  default: '#7b9b50'
+                nav.xcolor:
+                  type: colorpicker
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.XCOL.LABEL
+                  default: '#7b9b50'
 
 
             nav.button:
@@ -184,6 +233,10 @@ form:
                     show_all: false
                     show_modular: false
                     show_root: true
+                nav.button.url:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONURL.LABEL
+                  default: ''
 
         footer:
           type: fieldset
@@ -222,6 +275,10 @@ form:
                           type: text
                           label: THEME_AKAZIEForest.ADMIN.FIELDS.PHONE.LABEL
                           size: large
+                top.footer.socialtext:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.SOCIALTEXT.LABEL         
+                  default: 'Folge uns'
                 top.footer.socials:
                   name: socials
                   type: list
@@ -234,6 +291,14 @@ form:
                     .link:
                       type: text
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.LINK.LABEL
+                    .fontsize:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.BIG
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.SMALL
                 top.footer.columns:
                   name: columns
                   type: list
@@ -241,9 +306,18 @@ form:
                   collapsed: true
                   fields:
                     .heading:
-                      type: text
+                      type: textarea
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_HEAD.LABEL
-                      rows: 1
+                      rows: 2
+                    .image:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_LOGO.LABEL
+                      size: large
+                      destination: 'theme://custom/images/logo'
+                      multiple: false
+                      markdown: true
+                      accept:
+                        - image/*
                     .text:
                       type: textarea
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
@@ -252,6 +326,16 @@ form:
                     .navigation.enabled:
                       type: toggle
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_NAV.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool
+                    .renderhtml.enabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.RENDERHTML.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -279,7 +363,16 @@ form:
                         1: PLUGIN_ADMIN.ENABLED
                       validate:
                         type: bool
-
+                    .mobilenav.enabled:
+                      type: toggle
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILENAV.LABEL
+                      highlight: 0
+                      default: 0
+                      options:
+                        0: PLUGIN_ADMIN.DISABLED
+                        1: PLUGIN_ADMIN.ENABLED
+                      validate:
+                        type: bool                        
             footer.bottom:
               type: fieldset
               title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_BTM.TITLE
@@ -289,6 +382,16 @@ form:
                 footer.bottom.enabled:
                   type: toggle
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_FBOTTOM.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
+                  validate:
+                    type: bool
+                footer.copyright.enabled:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_CPY.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -355,6 +458,16 @@ form:
                             1: PLUGIN_ADMIN.ENABLED
                           validate:
                             type: bool
+                        footer.showinnav.enabled:
+                          type: toggle
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWINNAV.LABEL
+                          highlight: 0
+                          default: 0
+                          options:
+                            0: PLUGIN_ADMIN.DISABLED
+                            1: PLUGIN_ADMIN.ENABLED
+                          validate:
+                            type: bool
                     column2:
                       type: column
                       fields:
@@ -372,6 +485,11 @@ form:
                           show_all: false
                           show_modular: false
                           show_root: false
+                        footer.datenschutz.text:
+                          type: text
+                          size: medium
+                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.LABEL
+                          help: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.HELP
                         footer.agb.link:
                           type: pages
                           size: medium
@@ -379,6 +497,9 @@ form:
                           show_all: false
                           show_modular: false
                           show_root: false
+                        .footer.agb.text:
+                          type: text
+                          label:  THEME_AKAZIEForest.ADMIN.FIELDS.TEXT_AGB.LABEL
                         footer.sitemap.link:
                           type: pages
                           size: medium
@@ -482,6 +603,60 @@ form:
               options:
                 0: PLUGIN_ADMIN.DISABLED
                 1: PLUGIN_ADMIN.ENABLED
+            style.fonts.upload:
+              type: fieldset
+              title: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.TITLE
+              collapsed: false
+              collapsible: true
+              fields:
+                style.fonts.uploadselect:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.LABEL
+                  help: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.HELP
+                  highlight: 1
+                  default: 0
+                  options:
+                    0: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.0
+                    1: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.1
+                style.fonts.uploadfiles:
+                  name: uploadfiles
+                  type: list
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.LABEL
+                  collapsed: true
+                  fields:
+                    .file:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.FILE
+                      description: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
+                      size: large
+                      destination: 'theme://custom/fonts'
+                      multiple: true
+                      markdown: true
+                      accept:
+                        - application/vnd.ms-fontobject
+                        - application/x-font-opentype
+                        - application/x-font-truetype
+                        - application/x-font-ttf
+                        - application/font-sfnt
+                        - application/x-font-woff
+                        - application/x-font-woff2
+                        - font/opentype
+                        - font/otf
+                        - font/ttf
+                        - font/woff
+                        - font/woff2
+                        - image/svg+xml
+                        - image/svg
+                        - application/octet-stream
+                    .name:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.NAME
+                    .weight:
+                      type: text
+                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.WEIGHT
+                      default: '400'
+                      validate:
+                        type: number
             style.fonts.main:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIN_FONT.LABEL
@@ -503,8 +678,6 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.HTML.LABEL
               rows: 2
               size: large
-
-
         blog:
           type: fieldset
           title: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG.TITLE
@@ -557,3 +730,26 @@ form:
                 1: PLUGIN_ADMIN.ENABLED
               validate:
                 type: bool
+            style.compress:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.LABEL
+              help: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.HELP
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool
+            style.noresize:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.NOCROP.LABEL
+              help: THEME_AKAZIEForest.ADMIN.FIELDS.NOCROP.HELP
+              highlight: 0
+              default: 0
+              options:
+                0: PLUGIN_ADMIN.DISABLED
+                1: PLUGIN_ADMIN.ENABLED
+              validate:
+                type: bool
+

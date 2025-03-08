@@ -9,12 +9,18 @@
 
 
 {% block hero %}
-    {% include 'partials/hero.html.twig' with {id: 'portfolio-hero', content: page.content, hero_image: portfolio_image} %}
+    {% set currentpath = page.route() %}
+    {% for module in page.collection({'items':{'@page.modular': currentpath}, 'order': {'by': 'default', 'dir': 'asc'}}) %}
+        {{ module.content|raw }}
+    {% endfor %}
+    
+    {% if page.content is not empty %}
+    {% include 'partials/hero.html.twig' with {id: 'portfolio-hero', content: page.content} %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <section id="body-wrapper" class="section portfolio-listing">
-        <section class="container {{ grid_size }}">
+    <section id="body-wrapper" class="section ">
 
         {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
             {% include 'partials/breadcrumbs.html.twig' %}
@@ -76,8 +82,14 @@
                 {% include 'partials/sidebar.html.twig' %}
             {% endblock %} #}
         {% endembed %}
-        </section>
+
+
+
+
+
     </section>
+
+
 
 {% endblock %}
 

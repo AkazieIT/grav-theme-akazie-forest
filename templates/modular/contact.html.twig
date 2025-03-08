@@ -1,10 +1,30 @@
 {% if page.header.section.settings.module.enabled %}
-<div class="contact-area">
-    <div class="container">
+</div></div>
+
+{% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
+<div class="contact-area {{selfid}}">
+    <div class="container"><div class="container-inner">
         <div class="address-wrapper">
-            <div class="secondary-title address-blk border_radius_sm mb-0">
-                <h6 class="text-uppercase">{{page.header.section.content.left.subtitle}}</h6>
-                <h3>{{page.header.section.content.left.title}}</h3>
+            <div class="secondary-title {{selfid}} address-blk {{selfid}} border_radius_sm mb-0">
+
+
+                {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
+                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.content.left.subtitle}}</h2>
+                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.content.left.subtitle}}</h3>
+                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.content.left.subtitle}}</h4>
+                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.content.left.subtitle}}</h5>
+                {% else %}<h6 class="subh">{{page.header.section.content.left.subtitle}}</h6>
+                {% endif %}                  
+                        
+                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
+                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
+                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
+                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
+                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
+                {% else %}<h1>{{page.header.title}}</h1>
+                {% endif %}  
+
+
 
                 <div class="content_wrap cmn-content">
                     {{page.header.section.text|markdown }}
@@ -54,23 +74,30 @@
             </div>
             {% endif %}
         </div>
-    </div>
+    </div></div>
+    
+ <div class="container"><div class="container-inner">
 </div>
 {% endif %}
 
 <style>
 {% if page.header.section.settings.bgcolor %}
-.contact-area{
+.contact-area.{{selfid}}{
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
+{% if page.header.section.settings.bgaddblk %}
+.address-blk.{{selfid}}{
+    background-color: {{page.header.section.settings.bgaddblk}};
+}
+{% endif %}
 {% if page.header.section.settings.title.fontsize %}
-.secondary-title h3{
+.secondary-title.{{selfid}} h3{
     font-size: {{page.header.section.settings.title.fontsize}}px;
 }
 {% endif %}
 {% if page.header.section.settings.subtitle.fontsize %}
-.secondary-title h6{
+.secondary-title.{{selfid}} h6{
     font-size: {{page.header.section.settings.subtitle.fontsize}}px;
 }
 {% endif %}

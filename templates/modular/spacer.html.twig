@@ -1,10 +1,10 @@
 {% if page.header.section.settings.module.enabled %}
     {% if page.header.section.background.image %}
         {% set img = (page.header.section.background.image | first).name %}
-        {% set imgPath = 'theme://images/' ~ img %}
+        {% set imgPath = 'theme://custom/images/' ~ img %}
     {% endif %}
-
-<div class="spacer_module"
+</div></div>
+<div class="spacer_module oztest"
      style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}
             {% if page.header.section.background.image %} background-image: url('{{ url(imgPath)  }}');
                 background-position: center;
@@ -12,7 +12,7 @@
                 background-size: cover;
             {% endif %}
             {% if page.header.section.space.height %} height: {{header.section.space.height}}px;{% endif %}
-            "
->
+            ">
 </div>
+<div class="container"><div class="row container-inner">
 {% endif %}

@@ -19,7 +19,7 @@ form:
               title: THEME_AKAZIEForest.ADMIN.SECTION.CONTENT
               underline: true
               fields:
-                header.section.content.left.title:
+                header.title:
                   type: text
                   autofocus: true
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
@@ -38,49 +38,35 @@ form:
               title: THEME_AKAZIEForest.ADMIN.SECTION.BUTTON
               underline: true
               fields:
-                header.section.content.left.anchor:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
-                header.section.content.left.link:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
-                header.section.content.button.open.type:
-                  type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
-                  default: 0
-                  options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
-                header.section.content.left.anchorTwo:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ANCHOR.LABEL
-                header.section.content.left.linkTwo:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.LINKTWO.LABEL
-                header.section.content.anchor.open.type:
-                  type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
-                  default: 0
-                  options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
-
-                header.section.content.anchor.icon:
-                  type: file
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ICON.LABEL
-                  size: large
-                  destination: 'theme://images'
-                  multiple: false
-                  markdown: true
-                  description: "upload icon"
-                  accept:
-                    - image/*
-
-            # img_section:
-            #   type: section
-            #   title: "Image Section"
-            #   underline: true
-            #   fields:
+              # create a list of buttons instead of just one
+                header.section.content.left.button:
+                  type: list
+                  label: 'Buttons'
+                  fields:
+                    .text:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
+                    .link:
+                      type: text
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
+                    .open.type:
+                      type: select
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
+                      default: 0
+                      options:
+                        0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                        1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                    .icon:
+                      type: file
+                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ICON.LABEL
+                      help: THEME_AKAZIEForest.ADMIN.FIELDS.ICON.HELP
+                      size: large
+                      destination: 'theme://custom/images'
+                      multiple: false
+                      markdown: true
+                      description: "upload icon"
+                      accept:
+                        - image/*  
             media:
               type: section
               title: THEME_AKAZIEForest.ADMIN.SECTION.MEDIA
@@ -90,7 +76,7 @@ form:
                   type: file
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.MEDIA.LABEL
                   size: large
-                  destination: 'theme://images/hero'
+                  destination: 'theme://custom/images/hero'
                   multiple: false
                   markdown: true
                   description: "upload video/image"
@@ -109,54 +95,32 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
-            header.section.content.title.fontsize:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.LABEL
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.TITLESIZE.DESCRIPTION
-            header.section.content.subtitle.fontsize:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.LABEL
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLESIZE.DESCRIPTION
-            # header.section.content.bgcolor:
-            #   type: colorpicker
-            #   label: "Background color"
-            #   default: '#bdd896'
-            # header.section.content.background.image:
-            #   type: file
-            #   label: "Background Image"
-            #   size: large
-            #   destination: 'theme://images'
-            #   multiple: false
-            #   markdown: true
-            #   description: "upload background image"
-            #   accept:
-            #     - image/*
+            header.section.content.title.hsize:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.LABEL
+              default: 2
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
+            header.section.content.subtitle.hsize:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.SUBLABEL
+              default: 5
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
             header.section.content.hero.square.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
               default: '#fbfbfb'
-            # header.section.settings.txt.column:
-            #   type: select
-            #   label: "Text content width"
-            #   default: 2
-            #   options:
-            #     1: "full width"
-            #     2: "1/2 full width"
-            #     3: "1/3 full width"
-            #     4: "2/3 full width"
-            #     5: "1/4 full width"
-            #     6: "1/6 full width"
-            # header.section.settings.img.column:
-            #   type: select
-            #   label: "Image content width"
-            #   default: 2
-            #   options:
-            #     1: "full width"
-            #     2: "1/2 full width"
-            #     3: "1/3 full width"
-            #     4: "2/3 full width"
-            #     5: "1/4 full width"
-            #     6: "1/6 full width"
             header.section.content.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
@@ -167,10 +131,274 @@ form:
                 0: PLUGIN_ADMIN.DISABLED
               validate:
                 type: bool
-            header.section.wrap.container:
-              type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.LABEL
-              default: 0
-              options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.1
+          #  header.section.wrap.container:
+          #    type: select
+          #    label: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.LABEL
+          #    default: 0
+          #    options:
+          #      0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.0
+          #      1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTAINER.OPTIONS.1
+        advanced:
+          type: tab
+          title: PLUGIN_ADMIN.ADVANCED
+
+          fields:
+            columns:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  fields:
+
+                    settings:
+                      type: section
+                      title: PLUGIN_ADMIN.SETTINGS
+                      underline: true
+
+                    folder:
+                      type: text
+                      label: PLUGIN_ADMIN.FOLDER_NAME
+                      validate:
+                        rule: slug
+
+                    route:
+                      type: parents
+                      label: PLUGIN_ADMIN.PARENT
+                      classes: fancy
+
+                    name:
+                      type: select
+                      classes: fancy
+                      label: PLUGIN_ADMIN.PAGE_FILE
+                      help: PLUGIN_ADMIN.PAGE_FILE_HELP
+                      default: default
+                      data-options@: '\Grav\Common\Page\Pages::pageTypes'
+
+                    header.body_classes:
+                      type: text
+                      label: PLUGIN_ADMIN.BODY_CLASSES
+
+
+                column2:
+                  type: column
+
+                  fields:
+                    order_title:
+                      type: section
+                      title: PLUGIN_ADMIN.ORDERING
+                      underline: true
+
+                    ordering:
+                      type: toggle
+                      label: "PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX"
+                      help: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP
+                      highlight: 1
+                      options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                      validate:
+                        type: bool
+
+                    order:
+                      type: order
+                      label: "PLUGIN_ADMIN.SORTABLE_PAGES"
+                      sitemap:
+
+            overrides:
+              type: section
+              title: PLUGIN_ADMIN.OVERRIDES
+              underline: true
+
+              fields:
+
+                header.dateformat:
+                  toggleable: true
+                  type: select
+                  size: medium
+                  selectize:
+                    create: true
+                  label: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT
+                  help: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_HELP
+                  placeholder: PLUGIN_ADMIN.DEFAULT_DATE_FORMAT_PLACEHOLDER
+                  data-options@: '\Grav\Common\Utils::dateFormats'
+                  validate:
+                    type: string
+
+                header.menu:
+                  type: text
+                  label: PLUGIN_ADMIN.MENU
+                  toggleable: true
+                  help: PLUGIN_ADMIN.MENU_HELP
+
+                header.slug:
+                  type: text
+                  label: PLUGIN_ADMIN.SLUG
+                  toggleable: true
+                  help: PLUGIN_ADMIN.SLUG_HELP
+                  validate:
+                    message: PLUGIN_ADMIN.SLUG_VALIDATE_MESSAGE
+                    rule: slug
+
+                header.redirect:
+                  type: text
+                  label: PLUGIN_ADMIN.REDIRECT
+                  toggleable: true
+                  help: PLUGIN_ADMIN.REDIRECT_HELP
+
+                header.process:
+                  type: checkboxes
+                  label: PLUGIN_ADMIN.PROCESS
+                  toggleable: true
+                  config-default@: system.pages.process
+                  default:
+                    markdown: true
+                    twig: false
+                  options:
+                    markdown: Markdown
+                    twig: Twig
+                  use: keys
+
+                header.twig_first:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.TWIG_FIRST
+                  help: PLUGIN_ADMIN.TWIG_FIRST_HELP
+                  highlight: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+                header.never_cache_twig:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.NEVER_CACHE_TWIG
+                  help: PLUGIN_ADMIN.NEVER_CACHE_TWIG_HELP
+                  highlight: 0
+                  options:
+                    1: PLUGIN_ADMIN.YES
+                    0: PLUGIN_ADMIN.NO
+                  validate:
+                    type: bool
+
+                header.child_type:
+                  type: select
+                  toggleable: true
+                  label: PLUGIN_ADMIN.DEFAULT_CHILD_TYPE
+                  default: default
+                  placeholder: PLUGIN_ADMIN.USE_GLOBAL
+                  data-options@: '\Grav\Common\Page\Pages::types'
+
+                header.routable:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.ROUTABLE
+                  help: PLUGIN_ADMIN.ROUTABLE_HELP
+                  highlight: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.cache_enable:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.CACHING
+                  highlight: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.visible:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.VISIBLE
+                  help: PLUGIN_ADMIN.VISIBLE_HELP
+                  highlight: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.debugger:
+                  type: toggle
+                  toggleable: true
+                  label: PLUGIN_ADMIN.DEBUGGER
+                  help: PLUGIN_ADMIN.DEBUGGER_HELP
+                  highlight: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                  validate:
+                    type: bool
+
+                header.template:
+                  type: text
+                  toggleable: true
+                  label: PLUGIN_ADMIN.DISPLAY_TEMPLATE
+
+                header.append_url_extension:
+                  type: text
+                  label: PLUGIN_ADMIN.APPEND_URL_EXT
+                  toggleable: true
+                  help: PLUGIN_ADMIN.APPEND_URL_EXT_HELP
+
+            routes_only:
+              type: section
+              title: PLUGIN_ADMIN.ROUTE_OVERRIDES
+              underline: true
+
+              fields:
+
+                header.routes.default:
+                  type: text
+                  toggleable: true
+                  label: PLUGIN_ADMIN.ROUTE_DEFAULT
+
+                header.routes.canonical:
+                  type: text
+                  toggleable: true
+                  label: PLUGIN_ADMIN.ROUTE_CANONICAL
+
+                header.routes.aliases:
+                  type: array
+                  toggleable: true
+                  value_only: true
+                  size: large
+                  label: PLUGIN_ADMIN.ROUTE_ALIASES
+
+
+            admin_only:
+              type: section
+              title: PLUGIN_ADMIN.ADMIN_SPECIFIC_OVERRIDES
+              underline: true
+
+              fields:
+
+                header.admin.children_display_order:
+                  type: select
+                  label: PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER
+                  help: PLUGIN_ADMIN.ADMIN_CHILDREN_DISPLAY_ORDER_HELP
+                  toggleable: true
+                  classes: fancy
+                  default: 'collection'
+                  options:
+                    'default': 'Ordered by Folder name (default)'
+                    'collection': 'Ordered by Collection definition'
+
+
+                header.order_by:
+                  type: hidden
+
+                header.order_manual:
+                  type: hidden
+                  validate:
+                    type: commalist
+
+                blueprint:
+                  type: blueprint

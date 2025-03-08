@@ -5,9 +5,12 @@ use Grav\Common\Data\Blueprints;
 use Grav\Common\Theme;
 use Grav\Common\Utils;
 use RocketTheme\Toolbox\Event\Event;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 class AkazieForest extends Theme
 {
+    /*
     public function getThemeConfigKey($key = null) {
         $pluginKey = 'themes.' . $this->name;
         return ($key !== null) ? $pluginKey . '.' . $key : $pluginKey;
@@ -20,15 +23,22 @@ class AkazieForest extends Theme
     public function getConfigValue($key, $default = null) {
         return $this->config->get($key, $default);
     }
+    */
 
     public static function getSubscribedEvents()
     {
       return [
      
-        'onBlueprintCreated' => ['onBlueprintCreated', 0],
+    //    'onBlueprintCreated' => ['onBlueprintCreated', 0],
+            'onTwigExtensions' => ['onTwigExtensions', 0],
       ];
     }
+    public function onTwigExtensions()
+    {
 
+        $this->grav['twig']->twig->addExtension(new StripTagsExtension());
+    }
+/*
     public function onBlueprintCreated(Event $event)
     {
         $newtype = $event['type'];
@@ -41,6 +51,7 @@ class AkazieForest extends Theme
             $blueprints = new Blueprints(__DIR__ . '/blueprints/extended/');
             $extends = $blueprints->get('options');
             $blueprint->extend($extends, true);
+    
             }
         }
 
@@ -56,5 +67,22 @@ class AkazieForest extends Theme
             }
         }
     }    
+*/
     
+}
+class StripTagsExtension extends AbstractExtension
+{
+    public function getFilters()
+    {
+        return [
+            new TwigFilter('strip_tags_truncate', [$this, 'stripTagsTruncate'])
+        ];
+    }
+
+    public function stripTagsTruncate($html, $limit, $preserve = false, $separator = '...')
+    {
+        // Strip HTML tags and then truncate
+        $text = strip_tags($html);
+        return mb_strimwidth($text, 0, $limit, $separator);
+    }
 }

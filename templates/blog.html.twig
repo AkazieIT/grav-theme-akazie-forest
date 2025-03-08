@@ -7,14 +7,23 @@
 {% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 
 
-
 {% block hero %}
-    {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %}
+
+
+
+    {# set the variable currentpath as the path to the current page: /aktuelles #}
+    {% set currentpath = page.route() %}
+    {% for module in page.collection({'items':{'@page.modular': currentpath}, 'order': {'by': 'default', 'dir': 'asc'}}) %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+    {% if page.content is not empty %}
+    {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content} %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <section id="body-wrapper" class="section blog-listing">
-        <section class="container {{ grid_size }}">
+     <section id="body-wrapper" class="section ">
 
         {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
             {% include 'partials/breadcrumbs.html.twig' %}
@@ -47,6 +56,8 @@
                     {% set card_opentype = false %}
                 {% endif %}
 
+                {% set moreinfo = page.header.section.card.opentext %}
+
 
                 <div class="bricklayer row">
                     {% for child in collection %}
@@ -57,7 +68,7 @@
                                 {% elseif page.header.section.settings.column == 5 %}col-lg-3
                                 {% elseif page.header.section.settings.column == 6 %}col-lg-2
                                 {% else %}col-lg-6{% endif %}  mb-30">                
-                        {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child, 'show_date':show_date, 'show_tax':show_tax, 'show_img':show_img, 'card_opentype':card_opentype} %}
+                        {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child, 'show_date':show_date, 'show_tax':show_tax, 'show_img':show_img, 'card_opentype':card_opentype, 'moreinfo': moreinfo|default('Zum Angebot') } %}
                     </div>    
                     {% endfor %}
                 </div>
@@ -75,7 +86,6 @@
             {% endblock %} #}
         {% endembed %}
         </section>
-    </section>
 
 {% endblock %}
 

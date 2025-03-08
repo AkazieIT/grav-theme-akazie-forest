@@ -10,11 +10,17 @@ form:
       label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.LABEL
       markdown: true
       description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.DESCRIPTION
+
     header.hero_image:
       type: filepicker
       label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.LABEL
       preview_images: true
       description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
+
+    header.objectfit:
+      type: text
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
+      default: 'center center'
 
     toggles_title:
       type: spacer
@@ -61,3 +67,40 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+
+
+    header.show_gallery:
+      type: toggle
+      toggleable: true
+      label: THEME_AKAZIEForest.ADMIN.FIELDS.GALLERY.LABEL
+      highlight: 0
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+
+    header.content.items:
+      type: select
+      label: PLUGIN_ADMIN.ITEMS
+      default: '@self.modular'
+      options:
+        '@self.modular': Modular Children
+    header.content.order.by:
+      type: select
+      label: PLUGIN_ADMIN.ORDER_BY
+      default: folder
+      options:
+        folder: PLUGIN_ADMIN.FOLDER
+        title: PLUGIN_ADMIN.TITLE
+        date: PLUGIN_ADMIN.DATE
+        default: PLUGIN_ADMIN.DEFAULT
+    header.content.order.dir:
+      type: select
+      label: PLUGIN_ADMIN.ORDER
+      default: asc
+      options:
+        asc: PLUGIN_ADMIN.ASCENDING
+        desc: PLUGIN_ADMIN.DESCENDING

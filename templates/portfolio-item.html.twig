@@ -3,6 +3,7 @@
 {% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
 {% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
 {% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
+{% set show_gallery = header_var('show_gallery', [page, portfolio])|defined(false) %}
 {% set hero_image_name = page.header.hero_image %}
 
 {% block hero %}
@@ -34,6 +35,47 @@
                 {% include 'partials/sidebar.html.twig' %}
             {% endblock %} #}
         {% endembed %}
+
+
+    {% if show_gallery %}
+        <div id="lightgallery" class="gallery_wrap cmn-content gallery_portfolio">
+            {# Convert the string into an array #}
+            {% set order = page.header.media_order|split(',') %}
+
+            {# Initialize an empty array for sorted media #}
+            {% set sorted_media = [] %}
+
+            {# Populate sorted_media in the order specified by the order array, but only include images #}
+            {% for filename in order %}
+                {% if page.media[filename] and page.media[filename].type == 'image' %}
+                    {% set sorted_media = sorted_media|merge([page.media[filename]]) %}
+                {% endif %}
+            {% endfor %}
+
+            {# Display sorted images #}
+            {% for elem in sorted_media %}
+                <a href="{{ elem.url }}" class="element">
+                    <img class="lightgallerymedia" src="{{ elem.cropZoom(400,400).url }}">
+                </a>
+            {% endfor %}
+        </div>
+
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            lightGallery(document.getElementById('lightgallery'), {
+                selector: '.element',
+                download: true, 
+                enableSwipe: true,
+                escKey: true,
+                // center images
+                mode: 'lg-fade',
+            });
+        });
+        </script>
+
+
+    {% endif %}
 
     </section>
 </section>

@@ -22,6 +22,7 @@ en:
       FIELDS:
         TITLE:
           LABEL: "Title"
+          INT: "Internal Title"
         SUBTITLE:
           LABEL: "Subtitle"
         BANNER_IMG:
@@ -36,11 +37,31 @@ en:
         TITLESIZE:
           LABEL: "Size title"
           DESCRIPTION: "Unit is pixel"
+        HSIZE:
+          LABEL: "Size title"
+          SUBLABEL: "Size subtitle"
+          OPTIONS:
+            0: "h1"
+            1: "h2"
+            2: "h3"
+            3: "h4"
+            4: "h5"
+            5: "h6"
         SUBTITLESIZE:
           LABEL: "Size subtitle"
           DESCRIPTION: "Unit is pixel"
         BG_COLOR:
           LABEL: "Background color"
+        NOCROPZOOM:
+          LABEL: "Prevent image cropping"
+        DOWNLOAD:
+          LABEL: "Enable downloading of images in gallery"
+        SLIDERCOLOR:
+          LABEL: "Slider color"
+        PADDING:
+          LABEL: "Module Padding"
+        BG_ADDBLK:
+          LABEL: "Background color Address Block"
         TXT_COLOR:
           LABEL: "Text Color"
         CONTENT:
@@ -49,40 +70,54 @@ en:
           TITLE: "Media Section"
         ENABLED:
           LABEL: "Show module?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Show image or movie until the edge?"
           OPTIONS:
             0: "No"
             1: "Yes"
-        BUTTONS:
-          ANCHOR:
-            LABEL: "Button text"
-          ANCHORTWO:
-            LABEL: "Link text"
-          LINK:
-            LABEL: "Button link"
-          LINKTWO:
-            LABEL: "Link"
-          WINDOW:
-            LABEL: "Open button link in new tab?"
-            OPTIONS:
-              0: "Yes"
-              1: "No"
-          WINDOWTWO:
-            LABEL: "Open link in new tab?"
-            OPTIONS:
-              0: "Yes"
-              1: "No"
+        BUTTON:
+          LABEL: "Button text"
+        ANCHOR:
+          LABEL: "Link text"
+        LINK:
+          LABEL: "Button link"
+        LINKTWO:
+          LABEL: "Link"
+        WINDOW:
+          LABEL: "Open button link in new tab?"
+          OPTIONS:
+            0: "Yes"
+            1: "No"
+        OPENTEXT:
+          LABEL: "What's the label of the More info button?"
+        WINDOWTWO:
+          LABEL: "Open link in new tab?"
+          OPTIONS:
+            0: "Yes"
+            1: "No"
         ICON:
           LABEL: "Upload icon"
+          HELP: "If no icon is uploaded, the button will be displayed as a standard button. Otherwise as a link with icon"
         ENTRY:
           LABEL: "Entries"
+          PDF:
+            LABEL: "PDF file"
+            HELP: "the PDF can be uploaded in the media section at the bottom of the page"
+          PDFENABLED:
+            LABEL: "PDF Link"
+            HELP: "If activated, the URL above will be overwritten with the URL to the PDF"
           TITLE:
             LABEL: "Titel"
           TEXT:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Highlight?"
+          ICON:
+            DESCRIPTION: "Upload icon or image"
           NAME:
             LABEL: "Name (alt-tag)"
           URL:
@@ -109,17 +144,27 @@ en:
             LABEL: "Quote"
           URL_TXT:
             LABEL: "Link text"
+          ONLYSHOWTEXT:
+            LABEL: "Show only Name + text (instead of team member details + photo)"
         ALT:
           LABEL: "Alt-tag"
+        OBJECTFIT:
+          LABEL: "Focus of the image Bilds"
+        MAXHEIGHT:
+          LABEL: "Max height of slider"
         IMAGE:
           LABEL: "Upload image"
         IMAGEDES:
           LABEL: "Image description"
+        CLASSES:
+          LABEL: "Classes separated by space (e.g. mytext uppercase)"
         WRAP:
           LABEL: "Wrap container?"
           OPTIONS:
             0: "No"
             1: "Yes"
+        BGCONTAIN:
+          LABEL: "Contain BG Color in Padding (show white space left/right)"
         MODULEWIDTH:
           LABEL: "Module width"
           OPTIONS:
@@ -132,16 +177,19 @@ en:
         FORMAT:
           LABEL: "Image format"
           OPTIONS:
+            0: "Automatically fit to height of adjacent sections"
             1: "Landscape 4:3"
             2: "Landscape 16:9"
             3: "Landscape 2.35:1"
             4: "Square"
             5: "Portrait"
+            6: "Strip 5:1"
         IMGSIZING:
           LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
           HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
-        IMGFIT:
-          LABEL: "Fit image"
+        NOCROP:
+          LABEL: 'Dont use image cropping in theme images and use CSS aspect-ratio instead (experimental feature. not compatible with dynamic resizing)'
+          HELP:  'This prevents GRAV cache to crop images which lets you style your page better. **Experimental and not compatible with dynamic resizing!**'
         TEXTALIGN:
           LABEL: "Text alignment"
           OPTIONS:
@@ -219,9 +267,18 @@ en:
           DESCRIPTION: "Used instead of theme: // images / favicon.png"
         MAXW:
           LABEL: "Maximum content width (1000-2000 / default 1280)"
+        SECTIONWRAP:
+          LABEL: "Padding for sections"       
+        SECTIONWRAPMOBILE:
+          LABEL: "Padding for sections in mobile"
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Used instead of theme://images/logo.png"
+        LOGOS:
+          WINDOW:
+            OPTIONS:
+              0: "No"
+              1: "Yes"
         MLOGO:
           LABEL: "Mobile logo"
         DLOGO:
@@ -236,9 +293,17 @@ en:
         SUBNAV:
           LABEL: "Dropdown in Menu"
           HELP: "Allows to have another navigation level"
+        CLOSEMENU:
+          LABEL: "Close button label"
         FIXHEAD:
           LABEL: "Fixed Header"
           HELP: "If activated, the header will always be at the top of the browser window."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "How many navigation links before hamburger menu?"
+          HELP: "If activated, set number of navigation links will be shown before the hamburger menu."
+        HAMBURGER:
+          LABEL: "Hamburger menu"
+          HELP: "If activated, the hamburger menu will be shown."
         DNAV:
           TITLE: "Desktop navigation"
         MNAV:
@@ -249,11 +314,21 @@ en:
           LABEL: "Navigation height (65-205)"
         CHNAV:
           LABEL: "Mobile Navigation custom height"
+        MOBILELOGO:
+          LABEL: "Place logo in mobile nav?"
+        CUSTOMCODE:
+          LABEL: "Custom code in header"
         CHMNAV:
           LABEL: "Mobile Navigation height (60-300)"
+        HAMCOL:
+          LABEL: "Hamburger menu color"
+        XCOL:
+          LABEL: "close button color"
         NAV_BUTTON:
           TITLE: "Custom Navigation Button"
           LABEL: "Custom nav button enabled?"
+        BUTTONURL:
+          LABEL: "Custom link (if set, will overwrite page link)"
         FOOTER:
           TITLE: "Footer"
         FOOTER_MAIN:
@@ -266,22 +341,37 @@ en:
           LABEL: "Phone in footer"
         SM:
           LABEL: "Icons with links"
+          SOCIALTEXT:
+            LABEL: "Social media text"
+            VALUE: "Follow us"
           ICON:
-            LABEL: "Insert icon code"
+            LABEL: "Insert icon code or text"
           LINK:
             LABEL: "Insert link"
+          FONTSIZE:
+            LABEL: "Schriftgrösse"
+            SMALL: "klein (Schrift)"
+            BIG: "gross (Icon)"  
         FOOTER_CLMNS:
           LABEL: "Footer columns"
         FOOTER_HEAD:
           LABEL: "Column heading"
+        FOOTER_LOGO:
+          LABEL: "Logo in Footer"  
         SHOW_NAV:
           LABEL: "Show navigation"
+        RENDERHTML:
+          LABEL: "Render HTML in footer?"
         SHOW_ICON:
           LABEL: "Show icon links"
         SHOW_CONTACT:
           LABEL: "Show contact information"
+        MOBILENAV:
+          LABEL: "Show in mobile navigation"
         SHOW_FBOTTOM:
           LABEL: "Show footer bottom area"
+        SHOW_CPY:
+          LABEL: "Show copyright"
         SHOW_IMP:
           LABEL: "Show imprint"
         SHOW_DP:
@@ -290,12 +380,19 @@ en:
           LABEL: "Show AGB"
         SHOW_SITE:
           LABEL: "Show sitemap"
+        SHOWINNAV:
+          LABEL: "Show in mobile navigation"
         LINK_IMP:
           LABEL: "Link imprint"
         LINK_DP:
           LABEL: "Link data policy"
+        LINK_DPTXT:
+          LABEL: "Custom link data policy"
+          HELP: "Overwrite data policy link with custom link?"
         LINK_AGB:
           LABEL: "Link AGB"
+        TEXT_AGB:
+          LABEL: "AGB text"  
         LINK_SITE:
           LABEL: "Link sitemap"
         FOOTER_JS:
@@ -320,14 +417,33 @@ en:
           LABEL: "Font import"
         LOAD:
           LABEL: "Faster loading for Google Fonts"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          FILE: "Upload file"
+          NAME: "Font name"
+          TYPE: "Font type"
+          WEIGHT: "Font weight"
+          OPTIONS:
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Upload fonts locally. Accepted files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Upload fonts"
+          LABEL: "Use remote fonts or upload locally?"
+          HELP: "Use upload field below to use local fonts."
+          OPTIONS:
+            0: "Use remote"
+            1: "Upload local"
         MAIN_FONT:
-          LABEL: "Main font"
+          LABEL: "Main font + Buttons"
         TITLE_FONT:
           LABEL: "Title font"
         NAV_FONT:
-          LABEL: "Navigation font"
+          LABEL: "Subtitle font"
         FTR_FONT:
-          LABEL: "Footer font"
+          LABEL: "Nav + Footer font"
         HTML:
           LABEL: "Custom HTML in head"
         BLOG:
@@ -338,6 +454,8 @@ en:
         PRTFL_ROUTE:
           LABEL: "Portfolio page"
           HELP: "The route to the portfolio page when working with portfolio sidebar"
+        PORTFOLIO:
+          TITLE: "Portfolio"
         OTHER:
           TITLE: "Other"
         CUSTOM_CSS:
@@ -348,7 +466,7 @@ en:
           HELP: "Please create file in theme directory akazie-forest/js/custom.js"
         HERO:
           LABEL: "Hero classes"
-          DESCRIPTION: "There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+          DESCRIPTION: "There are several Hero class options that can be listed here (space separated):<br />`text-light`, `text-dark`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
         HERO_IMG:
           LABEL: "Image hero section"
           DESCRIPTION: "If not specified, this defaults to the first image found in the page''s folder"
@@ -358,6 +476,8 @@ en:
           LABEL: "Show breadcrumbs"
         PAGINATION:
           LABEL: "Show pagination"
+        GALLERY:
+          LABEL: "Show gallery"
         CONT_DEF:
           TITLE: "Content definiton"
         ORDER:
@@ -402,6 +522,7 @@ de:
       FIELDS:
         TITLE:
           LABEL: "Titel"
+          INT: "Interner Titel"
         SUBTITLE:
           LABEL: "Untertitel"
         SHOWTITLE:
@@ -412,11 +533,31 @@ de:
         TITLESIZE:
           LABEL: "Grösse Titel"
           DESCRIPTION: "Angabe in Pixel"
+        HSIZE:
+          LABEL: "Grösse Titel"
+          SUBLABEL: "Grösse Untertitel"
+          OPTIONS:
+            0: "h1"
+            1: "h2"
+            2: "h3"
+            3: "h4"
+            4: "h5"
+            5: "h6"
         SUBTITLESIZE:
           LABEL: "Grösse Untertitel"
           DESCRIPTION: "Angabe in Pixel"
         BG_COLOR:
           LABEL: "Hintergrundfarbe"
+        NOCROPZOOM:
+          LABEL: "Bildzuschneiden verhindern"
+        DOWNLOAD:
+          LABEL: "Download von Bildern in der Galerie erlauben?"
+        SLIDERCOLOR:
+          LABEL: "Slider Farbe"
+        PADDING:
+          LABEL: "Modul Padding"
+        BG_ADDBLK:
+          LABEL: "Hintergrundfarbe Adress Block"
         TXT_COLOR:
           LABEL: "Farbe des Textes"
         CONTENT:
@@ -427,6 +568,8 @@ de:
           LABEL: "Video oder Bild Upload"
         ENABLED:
           LABEL: "Modul anzeigen?"
+        DESIGN:
+          LABEL: "Kachel Modus?"
         CONTAINER:
           LABEL: "Video oder Bild bis ganz zum Rand anzeigen?"
           OPTIONS:
@@ -445,6 +588,8 @@ de:
           OPTIONS:
             0: "Ja"
             1: "Nein"
+        OPENTEXT:
+          LABEL: "Bezeichnung des Buttons"    
         WINDOWTWO:
           LABEL: "Link in neuem Fenster öffnen?"
           OPTIONS:
@@ -452,14 +597,23 @@ de:
             1: "Nein"
         ICON:
           LABEL: "Icon hochladen"
+          HELP: "Wenn kein Icon hochgeladen wird, wird der Button als Standard-Button angezeigt. Sonst als Link mit Icon"
         ENTRY:
           LABEL: "Einträge"
           TITLE:
             LABEL: "Titel"
+          PDF:
+            LABEL: "PDF Datei"
+            HELP: "das PDF kann im Medienbereich unten an der Seite hochgeladen werden"
+          PDFENABLED:
+            LABEL: "PDF Link"
+            HELP: "Wenn aktiviert, wird die URL oben mit der URL zum PDF überschrieben"
           TEXT:
             LABEL: "Text"
           BUTTON:
             LABEL: "Button text"
+          HIGHLIGHT:
+            LABEL: "Hervorheben?"
           ICON:
             DESCRIPTION: "Icon oder Bild hochladen"
           NAME:
@@ -468,6 +622,8 @@ de:
             LABEL: "Link-URL"
           URL_TXT:
             LABEL: "Linktext"
+          ONLYSHOWTEXT:
+            LABEL: "Nur Name + Text anzeigen (anstatt Details + Foto)"
           UPLOAD:
             LABEL: "Datei hochladen"
             DESCRIPTION: "Bild oder Logo hochladen"
@@ -490,15 +646,23 @@ de:
             LABEL: "Zitat"
         ALT:
           LABEL: "Alt-Tag"
+        OBJECTFIT:
+          LABEL: "Fokus des Bilds"
+        MAXHEIGHT:
+          LABEL: "Maximale Höhe des Sliders"
         IMAGE:
           LABEL: "Foto hochladen"
         IMAGEDES:
           LABEL: "Bildbeschreibung"
+        CLASSES:
+          LABEL: "Klassen mit Leerschlag getrennt (z.b: mytext uppercase)"
         WRAP:
           LABEL: "Container ganz füllen?"
           OPTIONS:
             0: "Nein"
             1: "Ja"
+        BGCONTAIN:
+          LABEL: "Hintergrundfarbe im Padding enthalten (zeigt whitespace links/rechts)"
         MODULEWIDTH:
           LABEL: "Modulbreite"
           OPTIONS:
@@ -511,16 +675,19 @@ de:
         FORMAT:
           LABEL: "Bildformat"
           OPTIONS:
+            0: "Automatisch auf die Höhe der Sections nebenan anpassen"
             1: "Querformat 4:3"
             2: "Querformat 16:9"
             3: "Querformat 2.35:1"
             4: "Quadrat"
             5: "Hochformat"
+            6: "Streifen 5:1"
         IMGSIZING:
-          LABEL: 'Use dynamic image resizing with picture tag (experimental feature. make sure to activate caching)'
-          HELP:  'For production sites please activate cache and set purge and clear times to every month or longer. Also set "Clear image cache by default" to "No" **If you do not activate cache, you will have very long load times because of the responsive images in the modular/image module.**'
-        IMGFIT:
-          LABEL: "Bild ganz anzeigen"
+          LABEL: 'Dynamisches Bildzuschneiden mit picture tag verwenden (experimentelle Funktion. Stellen Sie sicher, dass der Cache aktiviert ist)'
+          HELP:  'Für Produktionsseiten bitte Cache aktivieren und die Löschzeiten auf jeden Monat oder länger setzen. Auch "Bildcache standardmässig löschen" auf "Nein" setzen **Wenn Sie den Cache nicht aktivieren, haben Sie sehr lange Ladezeiten aufgrund der responsiven Bilder im modular/image Modul.**'
+        NOCROP:
+          LABEL: 'Kein Bildzuschnitt in theme Bildern verwenden und an dessen Stelle CSS aspect-ratio verwenden (experimentelle Funktion. nicht kompatibel mit dynamischem Zuschneiden)'
+          HELP:  'Diese Funktion verhindert, dass GRAV Bilder zuschneidet, was es Ihnen ermöglicht, Ihre Seite besser zu gestalten. **Experimentell und nicht kompatibel mit dynamischem Zuschneiden!**'
         TEXTALIGN:
           LABEL: "Text ausrichten"
           OPTIONS:
@@ -596,9 +763,18 @@ de:
           DESCRIPTION: "Anstelle von theme: // images / favicon.png verwenden"
         MAXW:
           LABEL: "Maximale Breite des Inhalts (1000-2000 / default 1280)"
+        SECTIONWRAP:
+          LABEL: "Padding für sections"       
+        SECTIONWRAPMOBILE:
+          LABEL: "Padding für sections in mobile"
         LOGO:
           LABEL: "Logo"
           DESCRIPTION: "Anstelle von theme://images/logo.png verwenden"
+        LOGOS:
+          WINDOW:
+            OPTIONS:
+              0: "Nein"
+              1: "Ja"
         MLOGO:
           LABEL: "Mobiles Logo"
         DLOGO:
@@ -613,9 +789,17 @@ de:
         SUBNAV:
           LABEL: "Dropdown im Menu"
           HELP: "Erlaubt ein zweites Level im Menu"
+        CLOSEMENU:
+          LABEL: "Beschriftung des Schliessen-Buttons"
         FIXHEAD:
           LABEL: "Fixierte Navigation"
           HELP: "Wenn diese Option aktiviert ist, wird die Navivation oben an der Seite fixiert, auch wenn man scrollt."
+        NAVLINKSBEFOREHAMBURGER:
+          LABEL: "Wie viele Links sollen vor dem Hamburger Menu angezeigt werden?"
+          HELP: "Wenn diese Option aktiviert ist, wird die Anzahl der Links angezeigt, die vor dem Hamburger Menu angezeigt werden sollen."
+        HAMBURGER:
+          LABEL: "Hamburger Menu"
+          HELP: "Wenn diese Option aktiviert ist, wird das Hamburger Menu angezeigt."
         DNAV:
           TITLE: "Desktop Navigation"
         MNAV:
@@ -626,11 +810,21 @@ de:
           LABEL: "Höhe der Navigation (65-205)"
         CHNAV:
           LABEL: "Höhe der mobilen Navigation manuell einstellen?"
+        MOBILELOGO:
+          LABEL: "Logo in mobiler Navigation platzieren?"
+        CUSTOMCODE:
+          LABEL: "Custom code im Header"
         CHMNAV:
           LABEL: "Höhe der mobilen Navigation (60-300)"
+        HAMCOL:
+          LABEL: "Hamburger Menu Farbe"
+        XCOL:
+          LABEL: "Schliessen Button Farbe"
         NAV_BUTTON:
           TITLE: "Button in der Navigation"
           LABEL: "Soll der Button in der Navigation angezeigt werden?"
+        BUTTONURL:
+          LABEL: "Eigener link (falls gesetzt, ist dieser Link vorrangig)"
         FOOTER:
           TITLE: "Footer"
         FOOTER_MAIN:
@@ -643,22 +837,37 @@ de:
           LABEL: "Telefonnummer"
         SM:
           LABEL: "Icons mit Links"
+          SOCIALTEXT:
+            LABEL: "Social media text"
+            VALUE: "Folge uns"
           ICON:
-            LABEL: "Icon Code einfügen"
+            LABEL: "Icon Code oder Text einfügen"
           LINK:
             LABEL: "Link einfügen"
+          FONTSIZE:
+            LABEL: "Schriftgrösse"
+            SMALL: "klein (Schrift)"
+            BIG: "gross (Icon)"  
         FOOTER_CLMNS:
           LABEL: "Footer Inhaltsblöcke"
         FOOTER_HEAD:
           LABEL: "Titel des Blocks"
+        FOOTER_LOGO:
+          LABEL: "Logo im Footer"  
         SHOW_NAV:
           LABEL: "Navigation anzeigen"
+        RENDERHTML:
+          LABEL: "HTML im Footer rendern?"
         SHOW_ICON:
           LABEL: "Icon Links anzeigen"
         SHOW_CONTACT:
           LABEL: "Kontakt anzeigen"
+        MOBILENAV:
+          LABEL: "In mobiler Navigation unten anzeigen"
         SHOW_FBOTTOM:
           LABEL: "Bereich anzeigen?"
+        SHOW_CPY:
+          LABEL: "Copyright anzeigen"
         SHOW_IMP:
           LABEL: "Impressum anzeigen?"
         SHOW_DP:
@@ -667,12 +876,19 @@ de:
           LABEL: "AGB anzeigen?"
         SHOW_SITE:
           LABEL: "Sitemap anzeigen?"
+        SHOWINNAV:
+          LABEL: "In mobiler Navigation anzeigen"
         LINK_IMP:
           LABEL: "Link Impressum"
         LINK_DP:
-          LABEL: "Link Datenschuzt"
+          LABEL: "Link Datenschutz"
+        LINK_DPTXT:
+          LABEL: "Eigener Datenschutzlink"
+          HELP: "Dieser Wert überschreibt den Datenschutzlink. Wenn kein Wert angegeben wird, wird die Page von oben verwendet."
         LINK_AGB:
           LABEL: "Link AGB"
+        TEXT_AGB:
+          LABEL: "AGB text"  
         LINK_SITE:
           LABEL: "Link Sitemap"
         FOOTER_JS:
@@ -697,14 +913,33 @@ de:
           LABEL: "Schriften importieren"
         LOAD:
           LABEL: "Google Fonts schneller laden?"
+        UPLOAD_FILE:
+          LABEL: "Upload fonts"
+          NAME: "Schriftname"
+          TYPE: "Schrifttyp"
+          FILE: "Datei hochladen"
+          WEIGHT: "Font weight"
+          OPTIONS:
+            0: "ttf"
+            1: "otf"
+            2: "woff2"
+            3: "woff"
+          DESCRIPTION: "Lade Schriften lokal hoch. Akzeptierte Files: .woff, .woff2, .ttf, .otf"
+        UPLOAD:
+          TITLE: "Schriften hochladen"
+          LABEL: "Remote fonts benutzen oder fonts lokal hochladen?"
+          HELP: "Benutze das Upload Feld unten, um Schriften lokal hochzuladen."
+          OPTIONS:
+            0: "Remote"
+            1: "lokal hochladen"
         MAIN_FONT:
-          LABEL: "Fliesstext"
+          LABEL: "Fliesstext + Buttons"
         TITLE_FONT:
           LABEL: "Titelschrift"
         NAV_FONT:
-          LABEL: "Schrift Navigation"
+          LABEL: "Untertitelschrift"
         FTR_FONT:
-          LABEL: "Schrift Footer"
+          LABEL: "Nav + Footer Schrift"
         HTML:
           LABEL: "Custom HTML im Header"
         BLOG:
@@ -727,7 +962,7 @@ de:
           HELP: "Bitte erstelle eine Datei im Theme-Ordner akazie-forest/js/custom.js"
         HERO:
           LABEL: "Klassen Hero Abschnitt"
-          DESCRIPTION: "Es gibt mehrere Möglichkeiten, im Hero Abschnitt Klassen zu vergeben (Trennung durch Abstand):<br />`text-light`, `text-dark`, `title-h1h2`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
+          DESCRIPTION: "Es gibt mehrere Möglichkeiten, im Hero Abschnitt Klassen zu vergeben (Trennung durch Abstand):<br />`text-light`, `text-dark`, `parallax`, `overlay-dark-gradient`, `overlay-light-gradient`, `overlay-dark`, `overlay-light`, `hero-fullscreen`, `hero-large`, `hero-medium`, `hero-small`, `hero-tiny`<br />"
         HERO_IMG:
           LABEL: "Bild Hero Abschnitt"
           DESCRIPTION: "Wenn das Bild hier nicht spezifiziert ist, dann wird das erste gefundene Bild im Seitenordner gewählt."
@@ -737,6 +972,8 @@ de:
           LABEL: "Breadcrumbs anzeigen"
         PAGINATION:
           LABEL: "Nummerierung anzeigen"
+        GALLERY:
+          LABEL: "Galerie anzeigen"
         ORDER:
           LABEL: "Ordnen nach..."
           OPTIONS:

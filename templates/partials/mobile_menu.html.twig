@@ -1,11 +1,11 @@
 <div class="mobile_menu aaaaa" id="mobile_menu">
     <div class="close-div">
-        schliessen
-        <button id="close_menu"><svg xmlns="http://www.w3.org/2000/svg" width="22.825" height="22.825"
+        
+        <button id="close_menu">{{ theme_var('header.closemenucaption') ? theme_var('header.closemenucaption') : 'schliessen' }}&nbsp; &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="22.825" height="22.825"
                 viewBox="0 0 22.825 22.825">
                 <path id="xmark-regular"
                     d="M22.273,98.877a1.709,1.709,0,0,0-2.417-2.417l-8.486,8.486L2.877,96.453A1.709,1.709,0,0,0,.46,98.87l8.486,8.486L.453,115.848a1.709,1.709,0,1,0,2.417,2.417l8.486-8.486,8.493,8.493a1.709,1.709,0,1,0,2.417-2.417L13.78,107.37Z"
-                    transform="translate(0.05 -95.95)" fill="#1d1d1d" />
+                    transform="translate(0.05 -95.95)" fill="{{ theme_var('nav.xcolor') ? theme_var('nav.xcolor') : theme_var('nav.hamburgercolor') }}" />
             </svg>
         </button>
     </div>
@@ -14,21 +14,7 @@
         {% include 'partials/navigation.html.twig' %}
 
         <div class="m_menu_footer">
-            <div class="ft-widget">
-                <h3>Öffnungszeiten</h3>
-                <p>Montag bis Freitag <br>
-                    8.30-12.00 Uhr und <br>
-                    13.30-16.30 Uhr</p>
-            </div>
-            <div class="ft-widget">
-                <h3>Adresse</h3>
-                <ul class="ft-nv">
-                    <li>Musterfirma</li>
-                    <li>Musterstrasse 66
-                    </li>
-                    <li>Bern 3004 template.ch</li>
-                </ul>
-            </div>
+
         </div>
     </div>
 </div>
