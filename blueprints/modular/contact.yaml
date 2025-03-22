@@ -148,11 +148,11 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: '#fbfbfb'
+              default: ''
             header.section.settings.bgaddblk:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_ADDBLK.LABEL
-              default: '#fbfbfb'
+              default: ''
               
 
             header.section.settings.module.enabled:

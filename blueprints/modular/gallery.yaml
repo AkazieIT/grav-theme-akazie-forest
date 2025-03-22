@@ -87,7 +87,7 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: '#fbfbfb'
+              default: ''
             header.section.settings.download:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.DOWNLOAD.LABEL

@@ -259,7 +259,7 @@ form:
                         footer.top.bgcolor:
                           type: colorpicker
                           label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-                          default: '#fbfbfb'
+                          default: ''
                         footer.mail:
                           type: text
                           label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIL.LABEL
