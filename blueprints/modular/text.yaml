@@ -136,7 +136,7 @@ form:
             header.section.settings.paddingouter:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDINGOUTER.LABEL
-              default: '0px 0px 0px 0px'
+              default: '0'
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
