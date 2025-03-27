@@ -161,7 +161,7 @@
         {{ theme_var('footer.javascript.code')|raw }}
         <script src="{{ url('theme://build/all.min.js') }}"></script>
         {% if theme_var('style.js') %}
-            {% do assets.addJs('theme://custom/css/custom.js', 98) %}
+            {% do assets.addJs('theme://custom/js/custom.js', 98) %}
         {% endif %}   
     {% endblock %}
 

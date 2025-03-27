@@ -59,6 +59,9 @@ form:
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1
+            header.section.classes:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLASSES.LABEL
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED
