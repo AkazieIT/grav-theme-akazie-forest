@@ -132,7 +132,7 @@ form:
             header.section.settings.padding:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
-              default: '0px 0px 0px 0px'
+              default: '0'
             header.section.settings.paddingouter:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDINGOUTER.LABEL
