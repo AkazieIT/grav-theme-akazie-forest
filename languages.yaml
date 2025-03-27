@@ -60,6 +60,8 @@ en:
           LABEL: "Slider color"
         PADDING:
           LABEL: "Module Padding"
+        PADDINGOUTER:
+          LABEL: "Module outer Padding"
         BG_ADDBLK:
           LABEL: "Background color Address Block"
         TXT_COLOR:
@@ -556,6 +558,8 @@ de:
           LABEL: "Slider Farbe"
         PADDING:
           LABEL: "Modul Padding"
+        PADDINGOUTER:
+          LABEL: "Modul äusseres Padding"
         BG_ADDBLK:
           LABEL: "Hintergrundfarbe Adress Block"
         TXT_COLOR:

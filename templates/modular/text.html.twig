@@ -14,7 +14,7 @@
             {% elseif page.header.section.settings.module.width == 6 %}col-4 col-md-2
             {% else %}col-12 col-md-6{% endif %} txt_module section_wrap {{page.header.section.settings.classes}}" 
      style="{% if page.header.section.settings.txt.align == 1 %}text-align: center;{% elseif page.header.section.settings.txt.align == 2 %}text-align: right;{% endif %}
-            {% if page.header.section.settings.padding %}padding:{{page.header.section.settings.padding}};{% endif %}"
+            {% if page.header.section.settings.paddingouter %}padding:{{page.header.section.settings.paddingouter}};{% endif %}"
 >
 
 {% if page.header.section.settings.bgcolor %}<div class="bgcolorwrapper txttitle {{selfid}}" style="background-color:{{page.header.section.settings.bgcolor}};{% if page.header.section.settings.padding %}padding:{{page.header.section.settings.padding}};{% endif %}">{% endif %}

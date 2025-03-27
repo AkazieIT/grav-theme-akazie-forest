@@ -133,6 +133,10 @@ form:
               type: text
               label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
               default: '0px 0px 0px 0px'
+            header.section.settings.paddingouter:
+              type: text
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
+              default: '0px 0px 0px 0px'
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
