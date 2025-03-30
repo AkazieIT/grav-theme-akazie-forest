@@ -25,7 +25,7 @@
                     aria-labelledby="heading{{loop.index}}" data-bs-parent="#faq">
                     <div class="accordion-body p-0 col-md-8">
                         <p class="text_lg text_secondaryLight">{{faqItem.text}}</p>
-                        {% if faqItem.anchor %}<a href="{{faqItem.anchor_link}}" class="cmn-link">{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>{% endif %}
+                        {% if faqItem.anchor %}<a href="{{faqItem.anchor_link}}" class="cmn-link" {{ faqItem.open.type ? 'target="_blank"' }}>{{faqItem.anchor}}<i class="far fa-long-arrow-right"></i>{% endif %}
                         </a>
                     </div>
                 </div>
