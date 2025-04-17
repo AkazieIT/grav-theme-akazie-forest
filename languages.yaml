@@ -413,6 +413,8 @@ en:
           LABEL: "Head color"
         TITLE_CLR:
           LABEL: "Title color"
+        CLRLINK:
+          LABEL: "Color links in text"
         FONT:
           TITLE: "Fonts"
         IMPORT:
@@ -911,6 +913,8 @@ de:
           LABEL: "Hintergrund Navigation"
         TITLE_CLR:
           LABEL: "Titelfarbe"
+        CLRLINK:
+          LABEL: "Links im Fliesstext einfärben"
         FONT:
           TITLE: "Schriften"
         IMPORT:
