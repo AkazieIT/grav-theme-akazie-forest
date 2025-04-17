@@ -114,38 +114,32 @@ a {
 .container-inner p a:not(.btn):not(.btn-link):not(.box-btn) {
     text-decoration: underline;
 }
-.txt-module ul {
-    padding-left: 20px;
-    margin-bottom: 2rem;
-}
-.txt-module ul li {
-    margin-bottom: 0.5rem;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--secondary);
-}
-.txt-module ul li a {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: underline;
-}
-.txt-module ul li a:hover {
-    color: var(--primaryDark);
-}
-.txt-module ul li a:hover svg {
-    fill: var(--primaryDark);
-}
-.txt-module ul li a svg {
-    margin-right: 5px;
-    fill: var(--primary);
-}
-.txt-module ul li a svg path {
-    fill: var(--primary);
-}
-.txt-module ul li a svg path:hover {
-    fill: var(--primaryDark);
-}
+.txt-module {
+    ul {
+        // create a normal list with a custom bullet that's a square in var(--primary) color
+        list-style: none;
+        
+        padding-left: 0px;
+        margin-left: 0px;
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                background-color: var(--primary);
+            }
+        }
 
+
+    }
+}
 
 .mb-30 {
     margin-bottom: 5rem;
