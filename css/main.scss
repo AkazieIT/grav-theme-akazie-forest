@@ -133,11 +133,32 @@ a {
                // transform: translateY(-50%);
                 width: 6x;
                 height: 6px;
-                background-color: var(--primaryLight);
+                background-color: var(--primary);
             }
         }
 
 
+    }
+    // do the same with numbered lists
+    ol {
+        list-style: none;
+        padding-left: 0px;
+        margin-left: 0px;
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            &:before {
+                content: counter(list) ".";
+                counter-increment: list;
+                position: absolute;
+                left: 0px;
+                top: 6px;
+                transform: translateY(-50%);
+                font-weight: bold;
+                color: var(--primary);
+            }
+        }
     }
 }
 
