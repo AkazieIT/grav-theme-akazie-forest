@@ -583,6 +583,14 @@ form:
                   default: '#1D1D1D'
                   validate:
                     required: true
+                style.color.text.colorlinks:
+                  type: toggle
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CLRLINKS.LABEL
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: PLUGIN_ADMIN.DISABLED
+                    1: PLUGIN_ADMIN.ENABLED
 
 
         style.font:

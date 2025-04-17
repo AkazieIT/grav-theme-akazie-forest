@@ -127,4 +127,16 @@ a:hover{
     .ft-widget p{
         color:{{ theme_var('footer.top.color') }};        
     }
+
+
+
+{% if theme_var('style.color.text.colorlinks') %}
+
+.container-inner p a:not(.btn):not(.btn-link):not(.box-btn) {
+    color: var(--secondary);
+}
+
+{% endif %}
+
+
 </style>
