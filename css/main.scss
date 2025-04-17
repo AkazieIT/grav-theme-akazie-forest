@@ -141,26 +141,17 @@ a {
     }
 
     ol {
-        // make this into a normal numbered list. above somewhere i have delete the list style, so you need to make it again:
-        list-style: none;
-        padding-left: 0px;
+        list-style-type: decimal;  /* Restore normal numbering */
+        padding-left: 20px;
         margin-left: 0px;
-        li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            &:before {
-                content: counter(list) ". ";
-                counter-increment: list;
-                position: absolute;
-                left: 0px;
-                top: 8px;
-                transform: translateY(-50%);
-                font-weight: bold;
-                color: var(--primary);
-            }
-        }
-    }
+        color: var(--primary);  /* Make the numbers your primary color */
+      }
+      
+      ol li {
+        color: initial;  /* Reset text color to default */
+        padding-left: 5px;
+        margin-bottom: 10px;
+      }
 
 }
 
