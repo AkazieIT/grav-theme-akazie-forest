@@ -2,9 +2,7 @@
 
 {% block content %}
 
-{% for module in page.collection() %}
-{{ module.content|raw }}
-{% endfor %}
+<h1>This is your default module.</h1>
+<h2>Please replace it with a modular page or a container page in your admin area.</h2>
 
-{{ page.content|raw }}
 {% endblock %}
