@@ -129,7 +129,7 @@ a {
                 content: "";
                 position: absolute;
                 left: 0px;
-                top: 5px;
+                top: 8px;
                // transform: translateY(-50%);
                 width: 8px;
                 height: 8px;
@@ -139,6 +139,28 @@ a {
 
 
     }
+    // do the same with numbered lists (green numbers. Rest stays like a normal numbered list)
+
+    ol {
+        list-style: none;
+        padding-left: 0px;
+        margin-left: 0px;
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            &:before {
+                content: counter(list) ". ";
+                counter-increment: list;
+                position: absolute;
+                left: 0px;
+                top: 8px;
+                transform: translateY(-50%);
+                color: var(--primary);
+            }
+        }
+    }
+
 }
 
 .mb-30 {
