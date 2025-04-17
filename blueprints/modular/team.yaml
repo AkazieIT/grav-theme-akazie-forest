@@ -121,8 +121,6 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
-
             header.section.settings.design.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.DESIGN.LABEL

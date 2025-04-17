@@ -30,7 +30,6 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
             header.section.background.image:
               type: file
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_IMG.LABEL

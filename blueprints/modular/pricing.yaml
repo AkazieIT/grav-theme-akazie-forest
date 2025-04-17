@@ -104,13 +104,9 @@ form:
             header.section.settings.pricecolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
-              default: ''
-
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
-
             header.section.settings.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
