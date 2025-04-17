@@ -111,6 +111,10 @@ a {
   padding:0px;
 }
 
+.container-inner p a:not(.btn):not(.btn-link):not(.box-btn) {
+    text-decoration: underline;
+}
+
 
 .mb-30 {
     margin-bottom: 5rem;
