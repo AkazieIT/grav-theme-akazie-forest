@@ -114,6 +114,37 @@ a {
 .container-inner p a:not(.btn):not(.btn-link):not(.box-btn) {
     text-decoration: underline;
 }
+.txt-module ul {
+    padding-left: 20px;
+    margin-bottom: 2rem;
+}
+.txt-module ul li {
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--secondary);
+}
+.txt-module ul li a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.txt-module ul li a:hover {
+    color: var(--primaryDark);
+}
+.txt-module ul li a:hover svg {
+    fill: var(--primaryDark);
+}
+.txt-module ul li a svg {
+    margin-right: 5px;
+    fill: var(--primary);
+}
+.txt-module ul li a svg path {
+    fill: var(--primary);
+}
+.txt-module ul li a svg path:hover {
+    fill: var(--primaryDark);
+}
 
 
 .mb-30 {
