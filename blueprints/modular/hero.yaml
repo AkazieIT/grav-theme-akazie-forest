@@ -120,7 +120,6 @@ form:
             header.section.content.hero.square.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
             header.section.content.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL

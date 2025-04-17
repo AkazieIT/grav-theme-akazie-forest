@@ -61,7 +61,6 @@ form:
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-              default: ''
             header.section.wrap.container:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.LABEL
