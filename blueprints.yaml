@@ -586,8 +586,8 @@ form:
                 style.color.text.colorlinks:
                   type: toggle
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.CLRLINKS.LABEL
-                  highlight: 0
-                  default: 0
+                  highlight: 1
+                  default: 1
                   options:
                     0: PLUGIN_ADMIN.DISABLED
                     1: PLUGIN_ADMIN.ENABLED
