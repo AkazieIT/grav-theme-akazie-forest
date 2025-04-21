@@ -597,6 +597,10 @@ header.header-area.fixed {
     width: 100%;
 }
 
+.box-btn.type-2:not([disabled]):after {
+    background:transparent;
+}
+
 .media-wrap{
     padding: 15px 0;
 }
