@@ -27,10 +27,22 @@
     {{ result }}
 {% endmacro %}
 
-{% macro render_headings(page, subtitle, title = null) %}
+{% macro render_headings(page, subtitle, title = null, thsize = null, shsize = null) %}
     {% import _self as utils %}
-    {% set subhsize = utils.validate_hsize(page.header.section.settings.subtitle.hsize, 6)|trim %}
-    {% set hsize = utils.validate_hsize(page.header.section.settings.title.hsize, 3)|trim %}
+
+
+    {% if shsize is null %}
+        {% set shsize = page.header.section.settings.subtitle.hsize %}
+    {% endif %}
+    {% if thsize is null %}
+        {% set thsize = page.header.section.settings.title.hsize %}
+    {% endif %}
+    
+    
+
+
+    {% set subhsize = utils.validate_hsize(shsize, 6)|trim %}
+    {% set hsize = utils.validate_hsize(thsize, 3)|trim %}
     
     {% if title is null %}
         {% set title = page.header.title %}

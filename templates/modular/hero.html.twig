@@ -14,7 +14,7 @@
             
 
                 {% import 'macros/macros.html.twig' as utils %}
-                {{ utils.render_headings(page, page.header.section.content.left.subtitle) }}
+                {{ utils.render_headings(page, page.header.section.content.left.subtitle, page.header.title, page.header.section.content.title.hsize, page.header.section.content.subtitle.hsize) }}
             {% endif %}  
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
 
