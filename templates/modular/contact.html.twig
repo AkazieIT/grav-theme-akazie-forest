@@ -14,9 +14,14 @@
                 {% set subhsize = utils.validate_hsize(page.header.section.settings.subtitle.hsize, 6)|trim %}
                 {% set hsize = utils.validate_hsize(page.header.section.settings.title.hsize, 3)|trim %}
 
+                {% if header.section.settings.title.order == 1 %}
+                    <h{{subhsize}} class="subh">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
+                    <h{{hsize}}>{{page.header.title}}</h{{hsize}}>
+                {% else %}
+                    <h{{hsize}}>{{page.header.title}}</h{{hsize}}>
+                    <h{{subhsize}} class="subh">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
+                {% endif %}
 
-                <h{{subhsize}} class="subh">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
-                <h{{hsize}}>{{page.header.title}}</h{{hsize}}>
 
 
 

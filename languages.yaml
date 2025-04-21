@@ -38,7 +38,7 @@ en:
           LABEL: "Size title"
           DESCRIPTION: "Unit is pixel"
         TITLE_ORDER:
-          LABEL: "Title above subtitle?"
+          LABEL: "Title / subititle order reversal?"
           OPTIONS:
             0: "Title / Subtitle"
             1: "Subtitle / Title"
@@ -543,7 +543,7 @@ de:
           LABEL: "Grösse Titel"
           DESCRIPTION: "Angabe in Pixel"
         TITLE_ORDER:
-          LABEL: "Titel über Untertitel setzen?"
+          LABEL: "Titel / Untertitel umkehren?"
           OPTIONS:
             0: "Titel / Untertitel"
             1: "Untertitel / Titel"
