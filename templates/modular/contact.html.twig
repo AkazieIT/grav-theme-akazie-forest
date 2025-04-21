@@ -24,7 +24,15 @@
                         {% set hsize = titlehsize %}
                     {% endif %}
                 {% endif %}
-                <h{{subhsize}} class="subh test">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
+                <p>page.header.section.settings.subtitle.hsize: {{page.header.section.settings.subtitle.hsize}}</p>
+                <p>subhsize: {{subhsize}}</p>
+                <p>subtitlehsize: {{subtitlehsize}}</p>
+                <p>page.header.section.settings.title.hsize: {{page.header.section.settings.title.hsize}}</p>
+                <p>hsize: {{hsize}}</p>
+                <p>titlehsize: {{titlehsize}}</p>
+
+
+                <h{{subhsize}} class="subh">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
                 <h{{hsize}}>{{page.header.title}}</h{{hsize}}>
 
 
