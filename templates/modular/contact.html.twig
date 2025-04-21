@@ -11,7 +11,7 @@
                 {# check if page.header.section.settings.subtitle.hsize is a number from 1 to 6 #}
                 {% set subhsize = 6 %}
                 {% if page.header.section.settings.subtitle.hsize is defined and page.header.section.settings.subtitle.hsize is not empty %}
-                    {% set subtitlehsize = page.header.section.settings.subtitle.hsize + 0 %}
+                    {% set subtitlehsize = page.header.section.settings.subtitle.hsize + 1 %}
                     {% if subtitlehsize > 0 and subtitlehsize < 7 %}
                         {% set subhsize = subtitlehsize %}
                     {% endif %}
@@ -19,7 +19,7 @@
 
                 {% set hsize = 3 %}
                 {% if page.header.section.settings.title.hsize is defined and page.header.section.settings.title.hsize is not empty %}
-                    {% set titlehsize = page.header.section.settings.title.hsize + 0 %}
+                    {% set titlehsize = page.header.section.settings.title.hsize + 1 %}
                     {% if titlehsize > 0 and titlehsize < 7 %}
                         {% set hsize = titlehsize %}
                     {% endif %}
