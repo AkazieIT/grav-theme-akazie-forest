@@ -7,14 +7,9 @@
             <div class="{% if page.header.section.settings.module.width == 1 %}col-12 col-md-12{% elseif page.header.section.settings.module.width == 2 %}col-lg-9{% else %}col-lg-6{% endif %}">
                 <div class="cmn-content st-content ctap {{selfid}}{{page.header.section.settings.bgcontain ? ' bgcontain'}}" {{ page.header.section.settings.module.width ? 'style="max-width:none;"' }}>
                     {% if page.header.section.settings.title.show %}   
-                    
-                        {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
-                        {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
-                        {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
-                        {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
-                        {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
-                        {% else %}<h1>{{page.header.title}}</h1>
-                        {% endif %}        
+                       {% import 'macros/macros.html.twig' as utils %}
+                        {{ utils.render_headings(page, null) }}
+        
 
                     {% endif %}
                     {% if page.header.section.content.left.text %}
