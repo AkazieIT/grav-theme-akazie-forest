@@ -100,6 +100,13 @@ form:
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
                 5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
+            header.section.settings.title.order:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_ORDER.LABEL
+              default: 0
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_ORDER.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_ORDER.OPTIONS.1   
             header.section.settings.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
