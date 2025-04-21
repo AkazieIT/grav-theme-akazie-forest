@@ -560,9 +560,6 @@ header.header-area.fixed {
     visibility: hidden;
     transition: .3s;
 }
-.box-btn:not([disabled]):not(.type-2):after {
-    background: transparent;
-}
 
 .box-btn:hover:after,.pdf-link:hover:after {
     width: calc(100% + 4px);
