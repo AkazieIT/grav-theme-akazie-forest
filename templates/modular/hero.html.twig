@@ -12,23 +12,9 @@
             <div class="hero-content">
             {% if page.header.section.content.title.show %}
             
-                {% if page.header.section.content.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
-                {% elseif page.header.section.content.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.content.left.subtitle}}</h2>
-                {% elseif page.header.section.content.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.content.left.subtitle}}</h3>
-                {% elseif page.header.section.content.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.content.left.subtitle}}</h4>
-                {% elseif page.header.section.content.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.content.left.subtitle}}</h5>
-                {% else %}<h6 class="subh">{{page.header.section.content.left.subtitle}}</h6>
-                {% endif %}  
-               
 
-                {% if page.header.section.content.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
-                {% elseif page.header.section.content.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
-                {% elseif page.header.section.content.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
-                {% elseif page.header.section.content.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
-                {% elseif page.header.section.content.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
-                {% else %}<h1>{{page.header.title}}</h1>
-                {% endif %}  
-               
+                {% import 'macros/macros.html.twig' as utils %}
+                {{ utils.render_headings(page, page.header.section.content.left.subtitle) }}
             {% endif %}  
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
 
