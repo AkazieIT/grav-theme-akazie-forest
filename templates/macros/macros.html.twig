@@ -14,3 +14,18 @@
     </li>
   {% endfor %}
 {% endmacro %}
+
+
+{% macro validate_hsize(size, default) %}
+    {% set result = default %}
+    {% if size is defined and size is not empty %}
+        {% set numeric_size = size + 1 %}
+        {% if numeric_size > 0 and numeric_size < 7 %}
+            {% set result = numeric_size %}
+        {% endif %}
+    {% endif %}
+    {% return result %}
+{% endmacro %}
+
+
+{# templates/partials/macros.html.twig #}
