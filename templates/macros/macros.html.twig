@@ -27,7 +27,7 @@
     {{ result }}
 {% endmacro %}
 
-{% macro render_headings(page, subtitle, title = null, thsize = null, shsize = null) %}
+{% macro render_headings(page, subtitle, title = null, thsize = null, shsize = null, additionalclasses = '') %}
     {% import _self as utils %}
 
 
@@ -50,17 +50,17 @@
     
     {% if page.header.section.settings.title.order == 1 %}
         {% if subtitle %}
-            <h{{subhsize}} class="subh">{{subtitle}}</h{{subhsize}}>       
+            <h{{subhsize}} class="subh {{additionalclasses}}">{{subtitle}}</h{{subhsize}}>       
         {% endif %}
         {% if title %}
-            <h{{hsize}}>{{title}}</h{{hsize}}>
+            <h{{hsize}} class="{{additionalclasses}}">{{title}}</h{{hsize}}>
         {% endif %}
     {% else %}
         {% if title %}
-            <h{{hsize}}>{{title}}</h{{hsize}}>
+            <h{{hsize}} class="{{additionalclasses}}">{{title}}</h{{hsize}}>
         {% endif %}
         {% if subtitle %}
-            <h{{subhsize}} class="subh">{{subtitle}}</h{{subhsize}}>
+            <h{{subhsize}} class="subh {{additionalclasses}}">{{subtitle}}</h{{subhsize}}>
         {% endif %}      
     {% endif %}
 {% endmacro %}
