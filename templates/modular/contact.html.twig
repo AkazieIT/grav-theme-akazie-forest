@@ -8,21 +8,22 @@
             <div class="secondary-title {{selfid}} address-blk {{selfid}} border_radius_sm mb-0">
 
 
-                {% if page.header.section.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.section.content.left.subtitle}}</h1>
-                {% elseif page.header.section.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.section.content.left.subtitle}}</h2>
-                {% elseif page.header.section.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.section.content.left.subtitle}}</h3>
-                {% elseif page.header.section.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.section.content.left.subtitle}}</h4>
-                {% elseif page.header.section.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.section.content.left.subtitle}}</h5>
-                {% else %}<h6 class="subh">{{page.header.section.content.left.subtitle}}</h6>
-                {% endif %}                  
-                        
-                {% if page.header.section.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
-                {% elseif page.header.section.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
-                {% elseif page.header.section.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
-                {% elseif page.header.section.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
-                {% elseif page.header.section.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
-                {% else %}<h1>{{page.header.title}}</h1>
-                {% endif %}  
+                {# check if page.header.section.settings.subtitle.hsize is a number from 1 to 6 #}
+                {% set subhsize = 6 %}
+                {% if page.header.section.settings.subtitle.hsize is number %}
+                    {% if page.header.section.settings.subtitle.hsize > 0 and page.header.section.settings.subtitle.hsize < 7 %}
+                        {% set subhsize = page.header.section.settings.subtitle.hsize %}
+                    {% endif %}
+                {% endif %}
+                {% set hsize = 3 %}
+                {% if page.header.section.settings.title.hsize is number %}
+                    {% if page.header.section.settings.title.hsize > 0 and page.header.section.settings.title.hsize < 7 %}
+                        {% set hsize = page.header.section.settings.title.hsize %}
+                    {% endif %}
+                {% endif %}
+
+                <h{{subhsize}} class="subh">{{page.header.section.content.left.subtitle}}</h{{subhsize}}>       
+                <h{{hsize}}>{{page.header.title}}</h{{hsize}}>
 
 
 
