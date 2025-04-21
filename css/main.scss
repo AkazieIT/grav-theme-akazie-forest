@@ -545,7 +545,7 @@ header.header-area.fixed {
     color: #fff;
 }
 
-.box-btn:not([disabled]):not(.type-2):after,.pdf-link:not([disabled]):after {
+.box-btn:not([disabled]):after,.pdf-link:not([disabled]):after {
     content: "";
     width: 35%;
     height: calc(100% + 4px);
@@ -559,6 +559,10 @@ header.header-area.fixed {
     opacity: 0;
     visibility: hidden;
     transition: .3s;
+}
+.box-btn:not(.type-2):after {
+    background: transparent;
+
 }
 
 .box-btn:hover:after,.pdf-link:hover:after {
