@@ -6,22 +6,12 @@
         <div class="secondary-title text-center">
             {% if page.header.sec_two.settings.title.show %}
                 
-                 {% if page.header.sec_two.settings.subtitle.hsize == '0' %}<h1 class="subh">{{page.header.sec_two.subtitle}}</h1>
-                {% elseif page.header.sec_two.settings.subtitle.hsize == '1' %}<h2 class="subh">{{page.header.sec_two.subtitle}}</h2>
-                {% elseif page.header.sec_two.settings.subtitle.hsize == '2' %}<h3 class="subh">{{page.header.sec_two.subtitle}}</h3>
-                {% elseif page.header.sec_two.settings.subtitle.hsize == '3' %}<h4 class="subh">{{page.header.sec_two.subtitle}}</h4>
-                {% elseif page.header.sec_two.settings.subtitle.hsize == '4' %}<h5 class="subh">{{page.header.sec_two.subtitle}}</h5>
-                {% else %}<h6 class="subh">{{page.header.sec_two.subtitle}}</h6>
-                {% endif %}                  
-               
 
-                {% if page.header.sec_two.settings.title.hsize == '1' %}<h2>{{page.header.title}}</h2>
-                {% elseif page.header.sec_two.settings.title.hsize == '2' %}<h3>{{page.header.title}}</h3>
-                {% elseif page.header.sec_two.settings.title.hsize == '3' %}<h4>{{page.header.title}}</h4>
-                {% elseif page.header.sec_two.settings.title.hsize == '4' %}<h5>{{page.header.title}}</h5>
-                {% elseif page.header.sec_two.settings.title.hsize == '5' %}<h6>{{page.header.title}}</h6>
-                {% else %}<h1>{{page.header.title}}</h1>
-                {% endif %}  
+
+
+                {% import 'macros/macros.html.twig' as utils %}
+                {{ utils.render_headings(page, page.header.sec_two.subtitle, page.header.title, page.header.sec_two.settings.title.hsize, page.header.sec_two.settings.subtitle.hsize) }}
+
                 
             {% endif %} 
         </div>
