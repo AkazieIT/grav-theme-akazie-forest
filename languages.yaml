@@ -184,7 +184,7 @@ en:
         FORMAT:
           LABEL: "Image format"
           OPTIONS:
-            0: "Automatically fit to height of adjacent sections"
+            0: "Automatically fit to height of adjacent sections (= don't crop)"
             1: "Landscape 4:3"
             2: "Landscape 16:9"
             3: "Landscape 2.35:1"
@@ -691,7 +691,7 @@ de:
         FORMAT:
           LABEL: "Bildformat"
           OPTIONS:
-            0: "Automatisch auf die Höhe der Sections nebenan anpassen"
+            0: "Automatisch auf die Höhe der Sections nebenan anpassen (= nicht beschneiden)"
             1: "Querformat 4:3"
             2: "Querformat 16:9"
             3: "Querformat 2.35:1"
