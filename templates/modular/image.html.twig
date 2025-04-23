@@ -37,6 +37,9 @@
     {% else %}
       {% set image = page.media | first %}
     {% endif %}
+    
+    {% set is_svg = image.url|lower ends with '.svg' %}
+    
     {% if page.header.scale == 1 %}
         {% set resize = 3 / 4 %}
         {% set aspectratio = 4 / 3 %}
@@ -70,7 +73,6 @@
 
     {% if theme_var('style.compress') %}
 
-
      {% include 'partials/imagesizing.html.twig' with {
         'image': image, 
         'title' : page.header.section.title, 
@@ -79,20 +81,17 @@
         'scale': page.header.scale , 
         'resize': resize,
         'classes': 'media',
-        'mult': mult } 
+        'mult': mult,
+        'is_svg': is_svg } 
     %}
  
- 
-
-
     {% else %}
 
-
     <img class="media {{selfid}}" title="{{ page.header.section.title }}" alt="{{ page.header.section.alt_tag }}" 
-    src="{% if page.header.scale != 0 and not theme_var('style.noresize') %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
+    src="{% if page.header.scale != 0 and not theme_var('style.noresize') and not is_svg %}{{ image.cropZoom(image.height * mult,image.height * resize * mult).url }}{% else %}{{ image.url }}{% endif %}" 
     style="
     {% if page.header.objectfit %}object-position:{{page.header.objectfit}};{% endif %} 
-    {% if page.header.scale != 0 and not theme_var('style.noresize') %}object-fit:contain;{% endif %}
+    {% if page.header.scale != 0 and not theme_var('style.noresize') and not is_svg %}object-fit:contain;{% endif %}
     " />
 
     {% endif %}
@@ -121,7 +120,7 @@
 }
 {% if theme_var('style.noresize') %}
 .media.{{selfid}} {
- aspect-ratio: {{ resize != 0 ? aspectratio : 'auto' }};
+ aspect-ratio: {{ resize != 0 and not is_svg ? aspectratio : 'auto' }};
  object-fit: cover;
 }
 @media (max-width: 768px) {

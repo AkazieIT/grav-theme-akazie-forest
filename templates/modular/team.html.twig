@@ -43,7 +43,7 @@
                                 {% set cropzoom = 1 %}
                             {% endif %}
                             {% set image = page.media[(member.img|keys|first)] %}
-
+                            {% set is_svg = image.url|lower ends with '.svg' %}
                             
                             {% if theme_var('style.compress') %}
                                     
@@ -54,11 +54,13 @@
                                         'objectfit': page.header.objectfit, 
                                         'scale': 0, 
                                         'resize': 0,
-                                        'classes': 'media' } 
+                                        'classes': 'media',
+                                        'is_svg': is_svg } 
                                     %}
                                 
                             {% else %}
-                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{% if cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" 
+                                         src="{% if is_svg %}{{ image.url }}{% elseif cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
                             {% endif %}
                         </div>
 

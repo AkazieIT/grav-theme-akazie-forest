@@ -9,13 +9,14 @@
 {% block hero %}
     {% if hero_image_name %}
         {% set hero_image = page.media[hero_image_name] %}
+        {% set is_svg_hero = hero_image.url|lower ends with '.svg' %}
         {% set content %}
             <h1>{{ page.title }}</h1>
             <h2>{{ page.header.subtitle }}</h2>
             {% include 'partials/portfolio/date.html.twig' %}
             {% include 'partials/portfolio/taxonomy.html.twig' %}
         {% endset %}
-        {% include 'partials/hero.html.twig' with {id: 'portfolio-hero'} %}
+        {% include 'partials/hero.html.twig' with {id: 'portfolio-hero', is_svg: is_svg_hero} %}
 
     {% endif %}
 {% endblock %}
@@ -54,8 +55,9 @@
 
             {# Display sorted images #}
             {% for elem in sorted_media %}
+                {% set is_svg = elem.url|lower ends with '.svg' %}
                 <a href="{{ elem.url }}" class="element">
-                    <img class="lightgallerymedia" src="{{ elem.cropZoom(400,400).url }}">
+                    <img class="lightgallerymedia" src="{% if is_svg %}{{ elem.url }}{% else %}{{ elem.cropZoom(400,400).url }}{% endif %}">
                 </a>
             {% endfor %}
         </div>

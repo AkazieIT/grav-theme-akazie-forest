@@ -4,7 +4,14 @@
             {% set image = page.media.images|first %}
             {% if image %}
             <div class="card_image">
-                <a href="{{ page.url }}">{{ image.cropZoom(800,500).html|raw }}</a>
+                {% set is_svg = image.url|lower ends with '.svg' %}
+                <a href="{{ page.url }}">
+                    {% if is_svg %}
+                        {{ image.html|raw }}
+                    {% else %}
+                        {{ image.cropZoom(800,500).html|raw }}
+                    {% endif %}
+                </a>
             </div>
             {% endif %}
         {% endif %}    
