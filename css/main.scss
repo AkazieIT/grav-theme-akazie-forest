@@ -1301,7 +1301,7 @@ footer, footer p, footer a {
   width: 63.33%;
 }
 
-.price-area :not(.primary-title) p {
+.price-area :not(.primary-title) > p {
     margin-bottom: 6rem;
 }
 .price > .d-block {
