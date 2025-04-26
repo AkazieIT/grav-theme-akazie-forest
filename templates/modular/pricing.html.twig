@@ -10,7 +10,7 @@
                 {{ utils.render_headings(page, page.header.section.title.subHeading) }}
 
             {% endif %}
-            <p>{{page.header.section.title.text}}</p>
+            <p>{{page.header.section.title.text |markdown}}</p>
         </div>
 
         <div class="price-card-g-wrapper">
