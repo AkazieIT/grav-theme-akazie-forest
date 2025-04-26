@@ -5,34 +5,34 @@
 
                 <div class="{% if theme_var('footer.copyright.enabled') %} col-md-6 {% else %} col-md-12 {% endif %}">
                     <ul class="ft-links d-md-flex align-items-center justify-content-end">
-                        <li>
                         {% if theme_var('footer.impressum.enabled') %}
+                        <li>
                             <a href="{{ base_url }}{{ theme_var('footer.impressum.link') }}">
                             Impressum
                             </a>
-                        {% endif %}
                         </li>
-                        <li>
+                        {% endif %}
                         {% if theme_var('footer.datenschutz.enabled') %}
+                        <li>
                             <a href="{{ base_url }}{{ theme_var('footer.datenschutz.text') ? theme_var('footer.datenschutz.text') : theme_var('footer.datenschutz.link') }}">
                             Datenschutz
                             </a>
-                        {% endif %}
                         </li>
-                        <li>
+                        {% endif %}
                         {% if theme_var('footer.agb.enabled') %}    
+                        <li>
                             <a href="{{ base_url }}{{ theme_var('footer.agb.link') }}">
                             {{ theme_var('footer.agb.text') ? theme_var('footer.agb.text') : 'AGB' }}
                             </a>
-                        {% endif %}
                         </li>
-                        <li>
+                        {% endif %}
                         {% if theme_var('footer.sitemap.enabled') %}
+                        <li>
                             <a href="{{ base_url }}{{ theme_var('footer.sitemap.link') }}">
                             Sitemap
                             </a>
-                        {% endif %}
                         </li>
+                        {% endif %}
                     </ul>
                     
                 </div>
