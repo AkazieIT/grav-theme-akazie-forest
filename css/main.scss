@@ -114,7 +114,7 @@ a {
 .container-inner p a:not(.btn):not(.btn-link):not(.box-btn) {
     text-decoration: underline;
 }
-.txt_module {
+.txt_module, .hero-content, .contact-area .container-inner, .cta-area .cmn-content, .price-area .container-inner, .template-portfolio-item .e-content, .template-blogpost .e-content {
     ul {
         // create a normal list with a custom bullet that's a square in var(--primary) color
         list-style: none;
