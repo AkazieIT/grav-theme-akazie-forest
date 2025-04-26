@@ -459,6 +459,10 @@ header.header-area.fixed {
     font-size: 18px;
     position: relative;
     z-index: 1;
+    
+    height: auto;  
+    padding-top: 0.5rem;  
+    padding-bottom: 0.5rem;
 }
 
 .custom-btn:hover {
@@ -480,6 +484,7 @@ header.header-area.fixed {
     opacity: 0;
     visibility: hidden;
     transition: .3s;
+    height:auto;
 }
 
 .custom-btn:hover:after {
