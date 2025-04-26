@@ -2,12 +2,27 @@
 
 {% block content %}
 
+<div class="col-12 col-md-8
+             txt_module section_wrap " style="">
 
-<h1>{{ 'PLUGIN_ERROR.ERROR'|t }}</h1>
+<div class="bgcolorwrapper txttitle module-d9e5e970-9c2120ed" style="background-color:#fbfbfb;padding:0px 0px 0px 0px;">
+        <div class="title_wrap cmn-content">
+
+
+                     
+<h1>Fehler</h1>
+
+                
 {{ header.http_response_code }}
 
-<p>{{ page.content|raw }}</p>
+<p>{{ page.content|raw }}</p>      
+    
+    
+    </div>
+    
 
+</div>
+</div>
 
 {% endblock %}
 
