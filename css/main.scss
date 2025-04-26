@@ -460,9 +460,9 @@ header.header-area.fixed {
     position: relative;
     z-index: 1;
     
-    height: auto;  
-    padding-top: 0.5rem;  
-    padding-bottom: 0.5rem;
+    height: auto !important;  
+    padding-top: 0.4rem;  
+    padding-bottom: 0.4rem;
 }
 
 .custom-btn:hover {
