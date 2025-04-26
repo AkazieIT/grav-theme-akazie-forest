@@ -450,7 +450,7 @@ header.header-area.fixed {
     color: var(--primaryDark);
     padding: 0px 35px 0 20px;
     margin-right:40px;
-    //height: 45px !important;
+    height: 45px !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -460,9 +460,6 @@ header.header-area.fixed {
     position: relative;
     z-index: 1;
     
-    height: auto;  
-    padding-top: 0.4rem;  
-    padding-bottom: 0.4rem;
 }
 
 .custom-btn:hover {
@@ -484,7 +481,6 @@ header.header-area.fixed {
     opacity: 0;
     visibility: hidden;
     transition: .3s;
-    height:auto;
 }
 
 .custom-btn:hover:after {
