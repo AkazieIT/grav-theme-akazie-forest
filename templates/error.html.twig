@@ -8,9 +8,6 @@
 
 <p>{{ page.content|raw }}</p>
 
-{% if http_response_code(404) %}
-  {{ redirect_me(home_url, 301) }}
-{% endif %}
 
 {% endblock %}
 
