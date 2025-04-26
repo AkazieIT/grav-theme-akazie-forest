@@ -530,6 +530,7 @@ header.header-area.fixed {
     color:  var(--primaryDark);
     padding: 0px 35px 0 20px;
     height: 45px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -538,6 +539,11 @@ header.header-area.fixed {
     font-size: 18px;
     position: relative;
     z-index: 1;
+
+    /* box-btn höhe fix */
+    height:auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .box-btn:hover, .pdf-link:hover {
@@ -2042,9 +2048,15 @@ footer, footer p, footer a {
         padding-bottom: 10px;
     }
     .box-btn{
-        height: 50px;
         font-weight: 600;
         font-size: 20px;
+
+        //height: 50px;
+        /* button höhe Fix */
+        height: auto;  
+        padding-top: 0.5rem;  
+        padding-bottom: 0.5rem;
+  
     }
     .cmn-content h3{
         font-size: 32px;
