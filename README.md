@@ -1,7 +1,56 @@
 # Akazie Forest Theme
 
-The **Akazie Forest** Theme is for [Grav CMS](http://github.com/getgrav/grav).  
+![akazie-forest](https://github.com/AkazieIT/grav-theme-akazie-forest/blob/main/screenshot.jpg)
+
+**Akazie Forest** Theme for [Grav CMS](http://github.com/getgrav/grav).  
 
 ## Description
 
-A Forest Theme
+**Akazie - Forest**, is a theme created by Akazie IT GmbH for websites, portfolios and blogs. 
+
+## Sample
+
+[demo site](https://demo.akazie.com/akazie-forest)
+
+## Installation
+
+1. From the root of your Grav installation, run `bin/gpm install akazie-forest`.
+   - Alternatively, download this repository, unzip it, rename the folder to `akazie-forest`, and place it in the `user/themes/` directory of your Grav install
+2. Edit `user/config/system.yaml` to contain the following:
+	```yaml
+    pages:
+      theme: akazie-wood
+	```
+
+Alternatively, you can install `Akazie - Forest` via the Grav Admin interface.
+
+## Features
+
+core features include
+
+* Logo, Font, Color customisation
+* Various design settings (page, header, menu, footer)
+* A Custom footer can be implemented if necessary with the Footer module
+* Settings for adding tracking codes, custom css + js files
+* Blocks with custom text or automatic links in footer
+* Blog post types
+* Portfolio post types
+* Dynamic image sizing for SEO
+* Bootstrap style module layout (many modules can be from full width down to 1/6 width)
+* Accordion, CTA, hero modules
+* JS gallery and slider modules
+* Icon lists, images, logo ccollection
+* Contact, pricing, testimonial and team modules
+
+
+## Plugin support
+
+Currently actively supported plugins:
+- Email
+- Form
+
+
+
+## Notice
+
+If you use Langswitcher and decide to uninstall Langswitcher, please deactivate Langswitcher before removing it.
