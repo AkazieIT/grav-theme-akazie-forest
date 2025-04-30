@@ -21,6 +21,8 @@
     pages:
       theme: akazie-wood
 	```
+3. Go to your container page (e.g. `Home /` ) -> `Advanced` -> `Page Template` and set it to `Modular`
+4. Add your modules to the page (`Advanced` -> top right `Add Module`)
 
 Alternatively, you can install `Akazie - Forest` via the Grav Admin interface.
 
@@ -41,6 +43,7 @@ core features include
 * JS gallery and slider modules
 * Icon lists, images, logo ccollection
 * Contact, pricing, testimonial and team modules
+* English and German back end
 
 
 ## Plugin support
