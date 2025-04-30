@@ -52,8 +52,8 @@
                     {% else %}
                         {% set open_in_new_tab = false %}
                         {% if button.open %}
-                            {% if attribute(button.open, 'typ') %}
-                                {% if button.open.typ != 0 %}
+                            {% if attribute(button.open, 'type') %}
+                                {% if button.open.type != 0 %}
                                     {% set open_in_new_tab = true %}
                                 {% endif %}
                             {% endif %}
@@ -70,24 +70,36 @@
         {% set fileType = '' %}
         {% set media_name = '' %}
         {% set has_right_media = false %}
-        {% set media_key = '' %}
         
-        {% if attribute(page.header.section.content, 'right') %}
-            {% if attribute(page.header.section.content.right, 'media') %}
+        {# Simplified media detection logic #}
+        {% if page.header.section.content.right %}
+            {% if page.header.section.content.right.media %}
                 {% set has_right_media = true %}
                 {% set right_media = page.header.section.content.right.media %}
+                
+                {# Try to extract media name from various possible structures #}
                 {% if right_media|length > 0 %}
-                    {% set media_key = right_media|keys|first %}
-                    {% if attribute(right_media, media_key) %}
-                        {% if attribute(right_media[media_key], 'type') %}
-                            {% set fileType = right_media[media_key].type %}
+                    {% set first_key = right_media|keys|first %}
+                    
+                    {% if first_key %}
+                        {% if attribute(right_media[first_key], 'name') %}
+                            {% set media_name = right_media[first_key].name %}
+                        {% elseif attribute(right_media[first_key], 'type') %}
+                            {% set fileType = right_media[first_key].type %}
+                            {% set media_name = first_key %}
+                        {% else %}
+                            {% set media_name = first_key %}
                         {% endif %}
                     {% endif %}
-                    
-                    {% if attribute(right_media, 'first') %}
-                        {% set first_media = right_media|first %}
-                        {% if attribute(first_media, 'name') %}
-                            {% set media_name = first_media.name %}
+                {% endif %}
+                
+                {# If we couldn't get a media name from the complex structure, try direct approach #}
+                {% if media_name == '' %}
+                    {% if right_media|first %}
+                        {% if attribute(right_media|first, 'name') %}
+                            {% set media_name = right_media|first.name %}
+                        {% else %}
+                            {% set media_name = right_media|first %}
                         {% endif %}
                     {% endif %}
                 {% endif %}
@@ -95,41 +107,61 @@
         {% endif %}
         
         <div class="hero-video {{selfid}} position-absolute">
-            {% if has_right_media %}
-                {% if fileType starts with 'image/' %}
-                    {% if theme_var('style.compress') %}
-                        {% if media_key and attribute(page.media, media_key) %}
-                            {% include 'partials/imagesizing.html.twig' with {
-                                'image': page.media[media_key],
-                                'title' : page.title, 
-                                'alt': page.title, 
-                                'objectfit': 'center center', 
-                                'scale': 0, 
-                                'resize': 0,
-                                'classes': 'hero-media-image',
-                                'mult': 1
-                            } %}
-                        {% else %}
-                            <img src="{{ url('theme://images/placeholder.png') }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
-                        {% endif %}
-                    {% else %}
-                        {# Check if media exists in page media (new @self method) #}
-                        {% if media_name and attribute(page.media, media_name) %}
-                            <img src="{{ page.media[media_name].url }}" alt="{{ page.title|default('Hero image') }}">
-                        {# Fallback to old theme path for backward compatibility #}
-                        {% else %}
-                            <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" alt="{{ page.title|default('Hero image') }}" onerror="this.src='{{ url('theme://images/placeholder.png') }}'">
-                        {% endif %}
-                    {% endif %}
+            {% if has_right_media and media_name != '' %}
+                {# Debug output - uncomment to see variable values #}
+                <!-- <div style="position: absolute; top: 0; left: 0; background: rgba(255,255,255,0.8); z-index: 1000; padding: 10px; color: black;">
+                    Media name: {{ media_name }}<br>
+                    File type: {{ fileType }}<br>
+                    Media exists: {{ attribute(page.media, media_name) ? 'Yes' : 'No' }}
+                </div> -->
+                
+                {# First try to determine if it's an image by extension #}
+                {% set is_image = false %}
+                {% set is_video = false %}
+                
+                {% if media_name ends with '.jpg' or media_name ends with '.jpeg' or media_name ends with '.png' or media_name ends with '.gif' or media_name ends with '.webp' or media_name ends with '.svg' %}
+                    {% set is_image = true %}
+                {% elseif media_name ends with '.mp4' or media_name ends with '.webm' or media_name ends with '.ogg' %}
+                    {% set is_video = true %}
+                {% elseif fileType starts with 'image/' %}
+                    {% set is_image = true %}
                 {% elseif fileType starts with 'video/' %}
-                    {# Check if media exists in page media (new @self method) #}
-                    {% if media_name and attribute(page.media, media_name) %}
-                        <video autoplay muted loop src="{{ page.media[media_name].url }}"></video>
-                    {# Fallback to old theme path for backward compatibility #}
-                    {% else %}
-                        <video autoplay muted loop src="{{ url('theme://custom/images/hero/' ~ media_name) }}" onerror="this.style.display='none'"></video>
-                    {% endif %}
+                    {% set is_video = true %}
                 {% endif %}
+                
+                {# Handle the media based on type #}
+                {% if is_image %}
+                    {# Image handling #}
+                    {% if attribute(page.media, media_name) %}
+                        {# Image exists in page media #}
+                        <img src="{{ page.media[media_name].url }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
+                    {% else %}
+                        {# Try theme path as fallback #}
+                        <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}" 
+                             onerror="this.onerror=null; this.src='{{ url('theme://images/placeholder.png') }}';">
+                    {% endif %}
+                {% elseif is_video %}
+                    {# Video handling #}
+                    {% if attribute(page.media, media_name) %}
+                        {# Video exists in page media #}
+                        <video autoplay muted loop class="hero-media-video">
+                            <source src="{{ page.media[media_name].url }}" type="{{ fileType|default('video/mp4') }}">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% else %}
+                        {# Try theme path as fallback #}
+                        <video autoplay muted loop class="hero-media-video">
+                            <source src="{{ url('theme://custom/images/hero/' ~ media_name) }}" type="{{ fileType|default('video/mp4') }}">
+                            Your browser does not support the video tag.
+                        </video>
+                    {% endif %}
+                {% else %}
+                    {# Fallback if media type cannot be determined #}
+                    <img src="{{ url('theme://images/placeholder.png') }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
+                {% endif %}
+            {% else %}
+                {# No media found #}
+                <img src="{{ url('theme://images/placeholder.png') }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
             {% endif %}
         </div>
     </div></div>    
