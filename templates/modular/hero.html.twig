@@ -108,12 +108,7 @@
         
         <div class="hero-video {{selfid}} position-absolute">
             {% if has_right_media and media_name != '' %}
-                {# Debug output - uncomment to see variable values #}
-                <!-- <div style="position: absolute; top: 0; left: 0; background: rgba(255,255,255,0.8); z-index: 1000; padding: 10px; color: black;">
-                    Media name: {{ media_name }}<br>
-                    File type: {{ fileType }}<br>
-                    Media exists: {{ attribute(page.media, media_name) ? 'Yes' : 'No' }}
-                </div> -->
+
                 
                 {# First try to determine if it's an image by extension #}
                 {% set is_image = false %}
@@ -134,7 +129,19 @@
                     {# Image handling #}
                     {% if attribute(page.media, media_name) %}
                         {# Image exists in page media #}
+                        {% if theme_var('style.compress') %}
+                        {% include 'partials/imagesizing.html.twig' with {
+                            'image': page.media[media_name],
+                            'title' : page.title, 
+                            'alt': page.title, 
+                            'objectfit': 'center center', 
+                            'scale': 0, 
+                            'resize': 0,
+                            'classes': 'hero-media-image' } 
+                        %}
+                         {% else %}
                         <img src="{{ page.media[media_name].url }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
+                        {% endif %}
                     {% else %}
                         {# Try theme path as fallback #}
                         <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}" 
