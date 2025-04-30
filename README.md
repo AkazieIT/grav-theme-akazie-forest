@@ -21,8 +21,9 @@
     pages:
       theme: akazie-wood
 	```
-3. Go to your container page (e.g. `Home /` ) -> `Advanced` -> `Page Template` and set it to `Modular`
+3. Go to your container page, (e.g. `Home /` ) -> `Advanced` -> `Page Template` and set it to `Modular`
 4. Add your modules to the page (`Advanced` -> top right `Add Module`)
+5. Move your content from your page (e.g. `Home /` ) to your module (e.g. `Text` module )
 
 Alternatively, you can install `Akazie - Forest` via the Grav Admin interface.
 
