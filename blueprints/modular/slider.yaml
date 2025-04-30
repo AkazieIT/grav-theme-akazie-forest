@@ -27,16 +27,6 @@ form:
                 header.section.subtitle:
                   type: text
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
-                # header.section.image:
-                #   type: file
-                #   label: "Choose Image"
-                #   size: large
-                #   destination: 'theme://custom/images'
-                #   multiple: false
-                #   markdown: true
-                #   description: "upload image"
-                #   accept:
-                #     - image/*
                 header.section.image:
                   type: pagemedia
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL

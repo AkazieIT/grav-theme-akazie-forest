@@ -1,12 +1,20 @@
 {% if page.header.section.settings.module.enabled %}
     {% if page.header.section.background.image %}
         {% set img = (page.header.section.background.image | first).name %}
-        {% set imgPath = 'theme://custom/images/' ~ img %}
+        
+        {# Handle both new @self location and legacy theme location #}
+        {% if page.media[img] is defined %}
+            {# New image location (@self) #}
+            {% set imgUrl = page.media[img].url %}
+        {% else %}
+            {# Legacy image location (theme folder) #}
+            {% set imgUrl = url('theme://custom/images/' ~ img) %}
+        {% endif %}
     {% endif %}
 </div></div>
 <div class="spacer_module oztest {{page.header.section.classes}}"
      style="{% if page.header.section.settings.bgcolor %} background-color: {{page.header.section.settings.bgcolor}};{% endif %}
-            {% if page.header.section.background.image %} background-image: url('{{ url(imgPath)  }}');
+            {% if page.header.section.background.image %} background-image: url('{{ imgUrl }}');
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;

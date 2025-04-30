@@ -26,52 +26,6 @@ form:
         #       rows: 3
 
 
-            # header.section.content.portfolios:
-            #   name: portfolios
-            #   type: list
-            #   label: "portfolio"
-            #   collapsed: true
-            #   fields:
-            #     .img:
-            #       type: file
-            #       label: "Choose Image"
-            #       size: large
-            #       destination: 'theme://custom/images'
-            #       multiple: false
-            #       markdown: true
-            #       description: "upload image"
-            #       accept:
-            #         - image/*
-            #     .alt:
-            #       type: text
-            #       label: "Alt-tag(is also the alt-tag)"
-            #     .title:
-            #       type: text
-            #       label: "Item title"
-            #     .link.linkText:
-            #       type: text
-            #       label: "Website"
-            #     .link.url:
-            #       type: text
-            #       label: "link"
-            #     .open.type:
-            #       type: select
-            #       label: "Open in same window?"
-            #       default: 0
-            #       options:
-            #         0: Yes
-            #         1: No
-            #     .link.icon:
-            #       type: file
-            #       label: "Choose icon"
-            #       size: large
-            #       destination: 'theme://custom/images'
-            #       multiple: false
-            #       markdown: true
-            #       description: "upload icon"
-            #       accept:
-            #         - image/*
-
         settings:
           type: tab
           title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
