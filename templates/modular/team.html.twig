@@ -34,20 +34,31 @@
                                 {% set cropzoom = 1 %}
                             {% endif %}
                             
-
                             {# Get image from page media if it exists, otherwise use theme path #}
-                            {% if img is defined and img is not empty and page.media[img] is defined %}
-                                {% set image = page.media[img] %}
-                                {% set imageUrl = image.url %}
-                                {% set validImage = true %}
-                            {% elseif member.img is defined and member.img|keys|first is defined and page.media[(member.img|keys|first)] is defined %}
-                                {% set image = page.media[(member.img|keys|first)] %}
-                                {% set imageUrl = image.url %}
-                                {% set validImage = true %}
-                            {% else %}
+                            {% set validImage = false %}
+                            {% set image = null %}
+                            {% set imageUrl = '' %}
+
+                            {% if img is defined and img is not empty %}
+                                {% if attribute(page.media, img) %}
+                                    {% set image = page.media[img] %}
+                                    {% set imageUrl = image.url %}
+                                    {% set validImage = true %}
+                                {% endif %}
+                            {% endif %}
+
+                            {% if not validImage and member.img is defined %}
+                                {% set imgKey = member.img|keys|first %}
+                                {% if imgKey is defined and attribute(page.media, imgKey) %}
+                                    {% set image = page.media[imgKey] %}
+                                    {% set imageUrl = image.url %}
+                                    {% set validImage = true %}
+                                {% endif %}
+                            {% endif %}
+
+                            {% if not validImage and img is defined %}
                                 {# Fallback for when no valid image is found #}
                                 {% set imageUrl = url('theme://custom/images/' ~ img) %}
-                                {% set validImage = false %}
                             {% endif %}
 
                             {% set is_svg = imageUrl|lower ends with '.svg' %}
