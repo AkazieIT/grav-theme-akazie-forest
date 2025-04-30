@@ -12,6 +12,8 @@
         <div class="row">
             {% for member in page.header.section.content.members %}
             {% set img = (member.img | first).name %}
+
+
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
@@ -32,18 +34,25 @@
                                 {% set cropzoom = 1 %}
                             {% endif %}
                             
+
                             {# Get image from page media if it exists, otherwise use theme path #}
-                            {% if page.media[img] is defined %}
+                            {% if img is defined and img is not empty and page.media[img] is defined %}
                                 {% set image = page.media[img] %}
                                 {% set imageUrl = image.url %}
-                            {% else %}
+                                {% set validImage = true %}
+                            {% elseif member.img is defined and member.img|keys|first is defined and page.media[(member.img|keys|first)] is defined %}
                                 {% set image = page.media[(member.img|keys|first)] %}
+                                {% set imageUrl = image.url %}
+                                {% set validImage = true %}
+                            {% else %}
+                                {# Fallback for when no valid image is found #}
                                 {% set imageUrl = url('theme://custom/images/' ~ img) %}
+                                {% set validImage = false %}
                             {% endif %}
-                            
+
                             {% set is_svg = imageUrl|lower ends with '.svg' %}
-                            
-                            {% if theme_var('style.compress') and image is defined and image is not empty %}
+
+                            {% if theme_var('style.compress') and validImage %}
                                 {% include 'partials/imagesizing.html.twig' with {
                                     'image': image, 
                                     'title' : member.name, 
@@ -51,18 +60,24 @@
                                     'objectfit': page.header.objectfit, 
                                     'scale': 0, 
                                     'resize': 0,
-                                    'classes': 'media' } 
-                                %}
-                            {% elseif image is defined and image is not empty %}
-                                {% if page.media[img] is defined %}
-                                    <img class="media {{selfid}}" alt="{{ member.alt }}" 
-                                         src="{% if is_svg %}{{ imageUrl }}{% elseif cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                    'classes': 'media',
+                                    'mult': 1
+                                } %}
+                            {% elseif validImage %}
+                                {% if is_svg %}
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{{ imageUrl }}" />
+                                {% elseif cropzoom %}
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" src="{{ image.resize(1280).url }}" />
                                 {% else %}
-                                    <img class="media {{selfid}}" alt="{{ member.alt }}" 
-                                         src="{% if is_svg %}{{ imageUrl }}{% elseif cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                    {% set resize_ratio = 4 / 3 %}
+                                    {% if image.width > 0 and image.height > 0 %}
+                                        <img class="media {{selfid}}" alt="{{ member.alt }}" src="{{ image.cropZoom(1280,1280 * resize_ratio).url }}" />
+                                    {% else %}
+                                        <img class="media {{selfid}}" alt="{{ member.alt }}" src="{{ url('theme://images/placeholder.png') }}" />
+                                    {% endif %}
                                 {% endif %}
                             {% else %}
-                                <img class="media {{selfid}}" alt="{{ member.alt }}" src="{{ imageUrl }}" />
+                                <img class="media {{selfid}}" alt="{{ member.alt|default('Team member') }}" src="{{ imageUrl }}" onerror="this.src='{{ url('theme://images/placeholder.png') }}'" />
                             {% endif %}
                         </div>
 
@@ -120,6 +135,8 @@
                     </div>
                 {% endif %}
             </div>
+
+
             {% endfor %}
         </div>
     </div></div>
