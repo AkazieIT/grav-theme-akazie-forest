@@ -1,3 +1,4 @@
+```twig
 {% if page.header.section.settings.module.enabled %}
 </div></div>
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
@@ -9,8 +10,6 @@
                     {% if page.header.section.settings.title.show %}   
                        {% import 'macros/macros.html.twig' as utils %}
                         {{ utils.render_headings(page, null) }}
-        
-
                     {% endif %}
                     {% if page.header.section.content.left.text %}
                     <p>{{page.header.section.content.left.text|markdown }}</p>
@@ -23,16 +22,20 @@
             <div class="col-lg-6">
                 <div class="offer-g-wrapper">
                     {% for card in page.header.section.content.right.cards %}
-                    {# {% set icon = page.find('/images').media[card.icon].url | e %} #}
                     {% set img = false %}
                     {% if card.image is not empty %}
-                    {% set img = (card.image | first).name %}
+                        {% set img = (card.image | first).name %}
                     {% endif %}
                     <div class="single-offer ctap">
                         <div class="offer-icon">
-                            {# <img src="{{icon}}" alt="Icon" class="img-fluid"> #}
                             {% if img != false %}
-                            <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{card.alt}}" class="img-fluid">
+                                {# Check if image exists in page media (new @self method) #}
+                                {% if page.media[img] is defined %}
+                                    <img src="{{ page.media[img].url }}" alt="{{card.alt}}" class="img-fluid">
+                                {# Fallback to old theme path for backward compatibility #}
+                                {% else %}
+                                    <img src="{{ url('theme://custom/images/' ~ img) }}" alt="{{card.alt}}" class="img-fluid">
+                                {% endif %}
                             {% endif %}
                         </div>
                         <h5>{{card.heading}}</h5>
@@ -83,3 +86,4 @@
 }
 {% endif %}
 </style>
+```

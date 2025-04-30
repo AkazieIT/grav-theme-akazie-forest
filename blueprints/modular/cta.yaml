@@ -80,7 +80,7 @@ form:
                       type: file
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                       size: large
-                      destination: 'theme://custom/images'
+                      destination: '@self'  # Changed from 'theme://custom/images'
                       multiple: false
                       markdown: true
                       description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION

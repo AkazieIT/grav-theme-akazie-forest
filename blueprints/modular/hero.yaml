@@ -61,7 +61,7 @@ form:
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ICON.LABEL
                       help: THEME_AKAZIEForest.ADMIN.FIELDS.ICON.HELP
                       size: large
-                      destination: 'theme://custom/images'
+                      destination: '@self'  # Changed from 'theme://custom/images'
                       multiple: false
                       markdown: true
                       description: "upload icon"
@@ -76,13 +76,14 @@ form:
                   type: file
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.MEDIA.LABEL
                   size: large
-                  destination: 'theme://custom/images/hero'
+                  destination: '@self'  # Changed from 'theme://custom/images/hero'
                   multiple: false
                   markdown: true
                   description: "upload video/image"
                   accept:
                     - image/*
                     - video/*
+
 
         settings:
           type: tab

@@ -1,7 +1,4 @@
-{# {% set videoOne = page.find('/videos').media[page.header.section.content.right.video].url | e %} #}
-{% set media = (page.header.section.content.right.media | first) %}
-
-{% set mediaFilePath = 'theme://custom/images/hero/' ~ media.name %}
+```twig
 {% if page.header.section.content.module.enabled %}
 
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
@@ -11,42 +8,44 @@
     <div class="container "> <div class="container-inner">
             <div class="hero-content">
             {% if page.header.section.content.title.show %}
-            
-
                 {% import 'macros/macros.html.twig' as utils %}
                 {{ utils.render_headings(page, page.header.section.content.left.subtitle, page.header.title, page.header.section.content.title.hsize, page.header.section.content.subtitle.hsize) }}
-           
             {% endif %}  
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
 
-
                 {% for button in header.section.content.left.button %}
                     {% if button.icon|first %}
-                        {% set logo_file = (button.icon|first).name %}
+                        {% set icon_name = (button.icon|first).name %}
+                        {% set icon_src = null %}
+                        
+                        {# Check if image exists in page media (new @self method) #}
+                        {% if page.media[icon_name] is defined %}
+                            {% set icon_src = page.media[icon_name].url %}
+                        {# Fallback to old theme path for backward compatibility #}
+                        {% else %}
+                            {% set icon_src = url('theme://custom/images/' ~ icon_name) %}
+                        {% endif %}
+                        
                         <a href="{{button.link}}" class="cmn-link type-2 type-3" {% if button.open.type != 0 %}target="_blank"{% endif %}>
-                                <img src="{{ url('theme://custom/images/' ~ logo_file)  }}"  class="btn_ico" />                            
-                                {{button.text}}
+                            <img src="{{ icon_src }}" class="btn_ico" />                            
+                            {{button.text}}
                         </a>
                     {% else %}
                         <a href="{{button.link}}" class="box-btn type-2" {% if button.open.typ != 0 %}target="_blank"{% endif %}>{{button.text}}<i class="far fa-angle-right"></i></a>
                     {% endif %}
                    
                     {% if not loop.last %}<br />{% endif %} 
-
                 {% endfor %}
-
-
-                </div>
             </div>
+        </div>
             
- {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
+        {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
+        {% set media_name = (page.header.section.content.right.media|first).name %}
+        
         <div class="hero-video {{selfid}} position-absolute">
             {% if page.header.section.content.right.media %}
                 {% if fileType starts with 'image/' %}
-
-
                     {% if theme_var('style.compress') %}
-                        
                         {% include 'partials/imagesizing.html.twig' with {
                             'image': page.media[(page.header.section.content.right.media|keys|first)],
                             'title' : page.title, 
@@ -56,21 +55,26 @@
                             'resize': 0,
                             'classes': 'hero-media-image' } 
                         %}
-                     {% else %}
-                        <img src="{{ url(mediaFilePath)}}" alt="{{ page.title }}">
+                    {% else %}
+                        {# Check if media exists in page media (new @self method) #}
+                        {% if page.media[media_name] is defined %}
+                            <img src="{{ page.media[media_name].url }}" alt="{{ page.title }}">
+                        {# Fallback to old theme path for backward compatibility #}
+                        {% else %}
+                            <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" alt="{{ page.title }}">
+                        {% endif %}
                     {% endif %}
-
                 {% elseif fileType starts with 'video/' %}
-                    <video autoplay muted loop src="{{ url(mediaFilePath)}}"></video>
-                {% endif %}           
-                        {# <video autoplay muted loop src="{{ url('theme://custom/images/video/' ~ videoOne)}}"></video> #}
+                    {# Check if media exists in page media (new @self method) #}
+                    {% if page.media[media_name] is defined %}
+                        <video autoplay muted loop src="{{ page.media[media_name].url }}"></video>
+                    {# Fallback to old theme path for backward compatibility #}
+                    {% else %}
+                        <video autoplay muted loop src="{{ url('theme://custom/images/hero/' ~ media_name) }}"></video>
+                    {% endif %}
+                {% endif %}
             {% endif %}
-        </div>    
-   
-
- 
- 
-
+        </div>
     </div></div>    
 </div>
 
@@ -84,3 +88,4 @@
 }
 {% endif %}
 </style>
+```
