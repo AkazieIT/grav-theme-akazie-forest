@@ -1,3 +1,4 @@
+```twig
 {% if page.header.section.settings.module.enabled %}
 </div></div>
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
@@ -11,7 +12,13 @@
                 <div class="carousel-item active">
                     <div class="quote-item">
                         <span class="quote-inverted d-inline-block">
-                            <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="Inverted Icon">
+                            {# Check if image exists in page media (new @self method) #}
+                            {% if page.media[icon] is defined %}
+                                <img src="{{ page.media[icon].url }}" alt="Inverted Icon">
+                            {# Fallback to old theme path for backward compatibility #}
+                            {% else %}
+                                <img src="{{ url('theme://custom/images/' ~ icon) }}" alt="Inverted Icon">
+                            {% endif %}
                         </span>
                         <p>{{slide.text}}</p>
                         <div class="quote-author {{selfid}}">
@@ -24,7 +31,13 @@
                 <div class="carousel-item">
                     <div class="quote-item">
                         <span class="quote-inverted d-inline-block">
-                            <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="Inverted Icon">
+                            {# Check if image exists in page media (new @self method) #}
+                            {% if page.media[icon] is defined %}
+                                <img src="{{ page.media[icon].url }}" alt="Inverted Icon">
+                            {# Fallback to old theme path for backward compatibility #}
+                            {% else %}
+                                <img src="{{ url('theme://custom/images/' ~ icon) }}" alt="Inverted Icon">
+                            {% endif %}
                         </span>
                         <p>{{slide.text}}</p>
                         <div class="quote-author">
@@ -66,6 +79,5 @@
     font-size: {{page.header.section.settings.subtitle.fontsize}}px;
 }
 {% endif %}
-
-
 </style>
+```
