@@ -2,85 +2,59 @@
     {% if image.url|lower ends with '.svg' %}
         <source media="(max-width: {{size}}px)" srcset="{{ image.url }}">
     {% else %}
-        {# Ensure divider is never zero #}
-        {% set divider = divider|default(1) %}
-        {% if divider <= 0 %}{% set divider = 1 %}{% endif %}
-        
-        {# Ensure width is never zero before division #}
-        {% set width = width|default(1) %}
-        {% if width <= 0 %}{% set width = 1 %}{% endif %}
-        
         {% set heightneu = (size * 2 * mult) / divider %}
         {% set widthneu = ((height * 2 * mult) / (width / size)) / divider %}
-        
-        {# Ensure heightneu and widthneu are at least 1 pixel #}
-        {% set heightneu = max(heightneu, 1) %}
-        {% set widthneu = max(widthneu, 1) %}
-        
-        {% set tempimage = image.cropResize(heightneu|round, widthneu|round) %}
+        {% set tempimage = image.cropResize(heightneu,widthneu) %}
         {% if xresize != 0 %}
-            {# Ensure we don't have zero values in cropZoom #}
-            {% set tempHeight = max(attribute(tempimage, 'height') ? tempimage.height : 1, 1) %}
-            {% set zoomWidth = tempHeight * xresize %}
-            {% set defimage = tempimage.cropZoom(tempHeight, max(zoomWidth, 1)) %}
+            {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
         {% else %}
             {% set defimage = tempimage %}
         {% endif %}    
         <source media="(max-width: {{size}}px)"
-            srcset="{{ defimage.url }}">
+            srcset="{{ 
+                image.defimage.url 
+            }}">
     {% endif %}
 {% endmacro %}
 
-{# Check if image exists and has dimensions #}
-{% if image is defined and attribute(image, 'url') %}
-    {% set width = attribute(image, 'width') ? image.width : 1 %}
-    {% set height = attribute(image, 'height') ? image.height : 1 %}
-    
-    {# Ensure width and height are at least 1 pixel #}
-    {% if width <= 0 %}{% set width = 1 %}{% endif %}
-    {% if height <= 0 %}{% set height = 1 %}{% endif %}
 
-    {% if page.header.section.settings.module.width == 1 %}{% set divider = 1 %}
-    {% elseif page.header.section.settings.module.width == 2 %}{% set divider = 2 %}
-    {% elseif page.header.section.settings.module.width == 3 %}{% set divider = 3 %}
-    {% elseif page.header.section.settings.module.width == 4 %}{% set divider = 1.5 %}
-    {% elseif page.header.section.settings.module.width == 5 %}{% set divider = 4 %}
-    {% elseif page.header.section.settings.module.width == 6 %}{% set divider = 6 %}
-    {% else %}{% set divider = 2 %}{% endif %} 
+{% set width = image.width %}
+{% set height = image.height %}
 
-    {# divider jump: 768px #}
-    <picture>
-      <!-- High resolution screens -->
-        {% set breakpoints = [2400, 1800, 1400, 1000, 768, 550, 400] %}
+{% if page.header.section.settings.module.width == 1 %}{% set divider = 1 %}
+{% elseif page.header.section.settings.module.width == 2 %}{% set divider = 2 %}
+{% elseif page.header.section.settings.module.width == 3 %}{% set divider = 3 %}
+{% elseif page.header.section.settings.module.width == 4 %}{% set divider = 1.5 %}
+{% elseif page.header.section.settings.module.width == 5 %}{% set divider = 4 %}
+{% elseif page.header.section.settings.module.width == 6 %}{% set divider = 6 %}
+{% else %}{% set divider = 2 %}{% endif %} 
 
-        {% if image.url|lower ends with '.svg' %}
-            <source srcset="{{ image.url }}">
-        {% else %}
-            {% for breakpoint in breakpoints %}
-                {% if width > breakpoint %}
-                    {% set funcdiv = divider %}
-                    {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-                    {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-      
-      <img class="{{classes|default('')}}" 
-           {% if resize == 0 or image.url|lower ends with '.svg' %}
-            src="{{ image.url }}"
-           {% else %}
-            {# Ensure we don't have zero values in cropZoom #}
-            {% set imgHeight = max(attribute(image, 'height') ? image.height : 1, 1) %}
-            {% set imgWidth = max(imgHeight * resize * 2 * mult, 1) %}
-            src="{{ image.cropZoom(imgHeight * 2 * mult, imgWidth).url }}"
-           {% endif %}
-           alt="{{ alt|default('') }}" 
-           title="{{ title|default('') }}"
-           style="
-             {% if objectfit %}object-position:{{objectfit}};{% endif %} 
-             {% if scale != 0 %}object-fit:contain;{% endif %}">
-    </picture>
-{% else %}
-    <!-- Fallback for missing image -->
-    <img class="{{classes|default('')}}" src="/user/themes/base/images/placeholder.png" alt="{{ alt|default('Image not found') }}" title="{{ title|default('') }}">
-{% endif %}
+{# divider jump: 768px #}
+<picture>
+  <!-- High resolution screens -->
+    {% set breakpoints = [2400, 1800, 1400, 1000, 768, 550, 400] %}
+
+    {% if image.url|lower ends with '.svg' %}
+        <source srcset="{{ image.url }}">
+    {% else %}
+        {% for breakpoint in breakpoints %}
+            {% if width > breakpoint %}
+                {% set funcdiv = divider %}
+                {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
+                {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+  {# todo: funktioniert noch nicht mit breiten Bildern wegen der kleinen Ratio #}
+  <img class="{{classes}}" 
+       {% if resize == 0 or image.url|lower ends with '.svg' %}
+        src="{{ image.url }}"
+       {% else %}
+        src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
+       {% endif %}
+       alt="{{ alt }}" 
+       title="{{ title }}"
+       style="
+         {% if objectfit %}object-position:{{objectfit}};{% endif %} 
+         {% if scale != 0 %}object-fit:contain;{% endif %}">
+</picture>
