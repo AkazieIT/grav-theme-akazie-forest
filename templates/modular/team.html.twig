@@ -5,19 +5,12 @@
     <div class="container"><div class="container-inner">
         {% if page.header.section.settings.title.show %}
         <div class="secondary-title">
-
-
-
                 {% import 'macros/macros.html.twig' as utils %}
                 {{ utils.render_headings(page, page.header.section.title.subHeading) }}
-
-
-
         </div>
         {% endif %}
         <div class="row">
             {% for member in page.header.section.content.members %}
-            {# {% set memberImg = page.find('/images').media[member.img].url | e%} #}
             {% set img = (member.img | first).name %}
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
@@ -26,44 +19,48 @@
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
                 {% if member.onlyshowtext == 1 %}
-
                     <div class="team-onlyshowtext">
                         <h3>{{ member.name }}</h3>
                         <p>{{ member.additional_txt }}</p>
                     </div>
-
                 {% else %}
-                    
                     <div class="team-member{% if page.header.section.settings.design.enabled == 1 %} team-member--hover {% endif %}">
                         <div class="member-img">
-                            {# <img src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{member.alt}}" class="img-fluid"> #}
                             {% set resize = 4 / 3 %}
                             {% set cropzoom = 0 %}
                             {% if page.header.section.settings.nocropzoom.enabled == 1 %}
                                 {% set cropzoom = 1 %}
                             {% endif %}
+                            
+                            {# Get image from page media if it exists, otherwise use theme path #}
                             {% set image = page.media[(member.img|keys|first)] %}
                             {% set is_svg = image.url|lower ends with '.svg' %}
                             
                             {% if theme_var('style.compress') %}
-                                    
-                                    {% include 'partials/imagesizing.html.twig' with {
-                                        'image': image, 
-                                        'title' : member.name, 
-                                        'alt': member.alt, 
-                                        'objectfit': page.header.objectfit, 
-                                        'scale': 0, 
-                                        'resize': 0,
-                                        'classes': 'media' } 
-                                    %}
-                                
+                                {% include 'partials/imagesizing.html.twig' with {
+                                    'image': image, 
+                                    'title' : member.name, 
+                                    'alt': member.alt, 
+                                    'objectfit': page.header.objectfit, 
+                                    'scale': 0, 
+                                    'resize': 0,
+                                    'classes': 'media' } 
+                                %}
                             {% else %}
+                                {# Check if image exists in page media (new @self method) #}
+                                {% if page.media[img] is defined %}
                                     <img class="media {{selfid}}" alt="{{ member.alt }}" 
-                                         src="{% if is_svg %}{{ image.url }}{% elseif cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                         src="{% if is_svg %}{{ page.media[img].url }}{% elseif cropzoom %}{{ page.media[img].resize(1280).url }}{% else %}{{ page.media[img].cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                {# Fallback to old theme path for backward compatibility #}
+                                {% else %}
+                                    {% set themePath = url('theme://custom/images/' ~ img) %}
+                                    <img class="media {{selfid}}" alt="{{ member.alt }}" 
+                                         src="{% if is_svg %}{{ themePath }}{% elseif cropzoom %}{{ image.resize(1280).url }}{% else %}{{ image.cropZoom(1280,1280 * resize).url }}{% endif %}" />
+                                {% endif %}
                             {% endif %}
                         </div>
 
-            {# If design.enabled == 1, we want an overlay that appears on hover #}
+                        {# If design.enabled == 1, we want an overlay that appears on hover #}
                         {% if page.header.section.settings.design.enabled == 1 %}
                             <div class="team-member-overlay">
                                 <h3>{{ member.name }}</h3>
@@ -95,31 +92,26 @@
                                 {% if member.mail %}<a href="mailto:{{member.mail}}" class="mailtokachel">{{member.mail}}</a>{% endif %}
                             </div>
                         {% else %}
-
-                        <div class="secondary-title member-content mb-0">
-                            <h6 class="subh">{{member.designation}}</h6>
-                            <h3>{{member.name}}</h3>
-                            <ul class="ct-list">
-                                {% if member.linkedin.linkedinProfile %}
-                                <li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>
-                                <li><i class="fab fa-linkedin"></i><a href="{{member.linkedin.linkedinProfile}}" target="_blank"
-                                        class="d-inline-block text-decoration-underline">{{member.linkedin.linkedin_user}}</a>
-                                </li>
+                            <div class="secondary-title member-content mb-0">
+                                <h6 class="subh">{{member.designation}}</h6>
+                                <h3>{{member.name}}</h3>
+                                <ul class="ct-list">
+                                    {% if member.linkedin.linkedinProfile %}
+                                    <li><i class="fal fa-envelope"></i><a href="mailto:{{member.mail}}" class="d-inline-block">{{member.mail}}</a></li>
+                                    <li><i class="fab fa-linkedin"></i><a href="{{member.linkedin.linkedinProfile}}" target="_blank"
+                                            class="d-inline-block text-decoration-underline">{{member.linkedin.linkedin_user}}</a>
+                                    </li>
+                                    {% endif %}
+                                    {% if member.phone %}
+                                    <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{member.phone}}">{{member.phone}}</a></li>
+                                    {% endif %}
+                                </ul>
+                                {% if member.additional_txt %}
+                                <p>{{member.additional_txt}}</p>
                                 {% endif %}
-                                {% if member.phone %}
-                                <li><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:{{member.phone}}">{{member.phone}}</a></li>
-                                {% endif %}
-                            </ul>
-                            {% if member.additional_txt %}
-                            <p>{{member.additional_txt}}</p>
-                            {% endif %}
-                        </div>
-
-
+                            </div>
                         {% endif %}
-
                     </div>
-                
                 {% endif %}
             </div>
             {% endfor %}
@@ -135,6 +127,4 @@
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
-
-
 </style>
