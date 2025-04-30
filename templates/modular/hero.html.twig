@@ -1,4 +1,3 @@
-
 {% if page.header.section.content.module.enabled %}
 
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
@@ -14,24 +13,53 @@
                 <p>{{page.header.section.content.left.text|markdown|raw}}</p>
 
                 {% for button in header.section.content.left.button %}
-                    {% if button.icon|first %}
-                        {% set icon_name = (button.icon|first).name %}
-                        {% set icon_src = null %}
-                        
-                        {# Check if image exists in page media (new @self method) #}
-                        {% if page.media[icon_name] is defined %}
-                            {% set icon_src = page.media[icon_name].url %}
-                        {# Fallback to old theme path for backward compatibility #}
-                        {% else %}
-                            {% set icon_src = url('theme://custom/images/' ~ icon_name) %}
+                    {% set has_icon = false %}
+                    {% set icon_name = '' %}
+                    {% set icon_src = '' %}
+                    
+                    {% if button.icon %}
+                        {% if button.icon|length > 0 %}
+                            {% set has_icon = true %}
+                            {% set first_icon = button.icon|first %}
+                            {% if attribute(first_icon, 'name') %}
+                                {% set icon_name = first_icon.name %}
+                                
+                                {# Check if image exists in page media (new @self method) #}
+                                {% if attribute(page.media, icon_name) %}
+                                    {% set icon_src = page.media[icon_name].url %}
+                                {% else %}
+                                    {# Fallback to old theme path for backward compatibility #}
+                                    {% set icon_src = url('theme://custom/images/' ~ icon_name) %}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    
+                    {% if has_icon and icon_src %}
+                        {% set open_in_new_tab = false %}
+                        {% if button.open %}
+                            {% if attribute(button.open, 'type') %}
+                                {% if button.open.type != 0 %}
+                                    {% set open_in_new_tab = true %}
+                                {% endif %}
+                            {% endif %}
                         {% endif %}
                         
-                        <a href="{{button.link}}" class="cmn-link type-2 type-3" {% if button.open.type != 0 %}target="_blank"{% endif %}>
-                            <img src="{{ icon_src }}" class="btn_ico" />                            
+                        <a href="{{button.link}}" class="cmn-link type-2 type-3" {% if open_in_new_tab %}target="_blank"{% endif %}>
+                            <img src="{{ icon_src }}" class="btn_ico" alt="{{ button.text|default('Button') }}" />                            
                             {{button.text}}
                         </a>
                     {% else %}
-                        <a href="{{button.link}}" class="box-btn type-2" {% if button.open.typ != 0 %}target="_blank"{% endif %}>{{button.text}}<i class="far fa-angle-right"></i></a>
+                        {% set open_in_new_tab = false %}
+                        {% if button.open %}
+                            {% if attribute(button.open, 'typ') %}
+                                {% if button.open.typ != 0 %}
+                                    {% set open_in_new_tab = true %}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                        
+                        <a href="{{button.link}}" class="box-btn type-2" {% if open_in_new_tab %}target="_blank"{% endif %}>{{button.text}}<i class="far fa-angle-right"></i></a>
                     {% endif %}
                    
                     {% if not loop.last %}<br />{% endif %} 
@@ -39,38 +67,67 @@
             </div>
         </div>
             
-        {% set fileType = page.header.section.content.right.media[page.header.section.content.right.media|keys|first].type %}
-        {% set media_name = (page.header.section.content.right.media|first).name %}
+        {% set fileType = '' %}
+        {% set media_name = '' %}
+        {% set has_right_media = false %}
+        {% set media_key = '' %}
+        
+        {% if attribute(page.header.section.content, 'right') %}
+            {% if attribute(page.header.section.content.right, 'media') %}
+                {% set has_right_media = true %}
+                {% set right_media = page.header.section.content.right.media %}
+                {% if right_media|length > 0 %}
+                    {% set media_key = right_media|keys|first %}
+                    {% if attribute(right_media, media_key) %}
+                        {% if attribute(right_media[media_key], 'type') %}
+                            {% set fileType = right_media[media_key].type %}
+                        {% endif %}
+                    {% endif %}
+                    
+                    {% if attribute(right_media, 'first') %}
+                        {% set first_media = right_media|first %}
+                        {% if attribute(first_media, 'name') %}
+                            {% set media_name = first_media.name %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
         
         <div class="hero-video {{selfid}} position-absolute">
-            {% if page.header.section.content.right.media %}
+            {% if has_right_media %}
                 {% if fileType starts with 'image/' %}
                     {% if theme_var('style.compress') %}
-                        {% include 'partials/imagesizing.html.twig' with {
-                            'image': page.media[(page.header.section.content.right.media|keys|first)],
-                            'title' : page.title, 
-                            'alt': page.title, 
-                            'objectfit': 'center center', 
-                            'scale': 0, 
-                            'resize': 0,
-                            'classes': 'hero-media-image' } 
-                        %}
+                        {% if media_key and attribute(page.media, media_key) %}
+                            {% include 'partials/imagesizing.html.twig' with {
+                                'image': page.media[media_key],
+                                'title' : page.title, 
+                                'alt': page.title, 
+                                'objectfit': 'center center', 
+                                'scale': 0, 
+                                'resize': 0,
+                                'classes': 'hero-media-image',
+                                'mult': 1
+                            } %}
+                        {% else %}
+                            <img src="{{ url('theme://images/placeholder.png') }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
+                        {% endif %}
                     {% else %}
                         {# Check if media exists in page media (new @self method) #}
-                        {% if page.media[media_name] is defined %}
-                            <img src="{{ page.media[media_name].url }}" alt="{{ page.title }}">
+                        {% if media_name and attribute(page.media, media_name) %}
+                            <img src="{{ page.media[media_name].url }}" alt="{{ page.title|default('Hero image') }}">
                         {# Fallback to old theme path for backward compatibility #}
                         {% else %}
-                            <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" alt="{{ page.title }}">
+                            <img src="{{ url('theme://custom/images/hero/' ~ media_name) }}" alt="{{ page.title|default('Hero image') }}" onerror="this.src='{{ url('theme://images/placeholder.png') }}'">
                         {% endif %}
                     {% endif %}
                 {% elseif fileType starts with 'video/' %}
                     {# Check if media exists in page media (new @self method) #}
-                    {% if page.media[media_name] is defined %}
+                    {% if media_name and attribute(page.media, media_name) %}
                         <video autoplay muted loop src="{{ page.media[media_name].url }}"></video>
                     {# Fallback to old theme path for backward compatibility #}
                     {% else %}
-                        <video autoplay muted loop src="{{ url('theme://custom/images/hero/' ~ media_name) }}"></video>
+                        <video autoplay muted loop src="{{ url('theme://custom/images/hero/' ~ media_name) }}" onerror="this.style.display='none'"></video>
                     {% endif %}
                 {% endif %}
             {% endif %}
