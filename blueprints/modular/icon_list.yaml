@@ -30,6 +30,12 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
+                .alt:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
+                .heading:
+                  type: text
+                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
                 .icon:
                   type: file
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
@@ -41,12 +47,6 @@ form:
                   accept:
                     - image/*
                     - application/pdf
-                .alt:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
-                .heading:
-                  type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TITLE.LABEL
                 .text:
                   type: textarea
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
