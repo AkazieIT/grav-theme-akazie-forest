@@ -32,16 +32,6 @@ form:
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL
                   validate:
                     required: true
-                # header.section.image:
-                #   type: file
-                #   label: "Choose Image"
-                #   size: large
-                #   destination: 'theme://custom/images'
-                #   multiple: false
-                #   markdown: true
-                #   description: "upload image"
-                #   accept:
-                #     - image/*
                 header.section.image:
                   type: pagemedia
                   label: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL

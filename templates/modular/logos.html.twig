@@ -5,14 +5,8 @@
 <div class="brand-area {{selfid}}"><div class="container-inner">
         <div class="secondary-title text-center">
             {% if page.header.sec_two.settings.title.show %}
-                
-
-
-
                 {% import 'macros/macros.html.twig' as utils %}
                 {{ utils.render_headings(page, page.header.sec_two.subtitle, page.header.title, page.header.sec_two.settings.title.hsize, page.header.sec_two.settings.subtitle.hsize) }}
-
-                
             {% endif %} 
         </div>
         <div class="brand-flex-wrapper d-flex flex-wrap justify-content-center">
@@ -21,7 +15,14 @@
                 <a href="{{brandLogo.link}}" {% if brandLogo.open.type %}target="_blank"{% endif %}>  
                 {% if brandLogo.src %}
                     {% set logo_file = (brandLogo.src|first).name %}
-                    <img id="headerlogo" src="{{ url('theme://custom/images/' ~ logo_file)  }}" alt="{{ brandLogo.name }}" class="img-fluid" />
+                    
+                    {# Check if image exists in page media (new @self method) #}
+                    {% if page.media[logo_file] is defined %}
+                        <img id="headerlogo" src="{{ page.media[logo_file].url }}" alt="{{ brandLogo.name }}" class="img-fluid" />
+                    {# Fallback to old theme path for backward compatibility #}
+                    {% else %}
+                        <img id="headerlogo" src="{{ url('theme://custom/images/' ~ logo_file) }}" alt="{{ brandLogo.name }}" class="img-fluid" />
+                    {% endif %}
                 {% endif %}                          
                 </a>    
             </div>

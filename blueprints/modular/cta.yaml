@@ -80,12 +80,13 @@ form:
                       type: file
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                       size: large
-                      destination: '@self'  # Changed from 'theme://custom/images'
+                      destination: '@self' 
                       multiple: false
                       markdown: true
                       description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
                       accept:
-                        - image/*
+                        - image/*                        
+                        - application/pdf
                     .alt:
                       type: text
                       label: THEME_AKAZIEForest.ADMIN.FIELDS.ALT.LABEL

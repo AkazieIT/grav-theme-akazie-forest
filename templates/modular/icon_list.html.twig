@@ -5,21 +5,13 @@
     <div class="container"><div class="container-inner">
         {% if page.header.section.settings.title.show %}
         <div class="secondary-title">
-
-
-
-
                 {% import 'macros/macros.html.twig' as utils %}
                 {{ utils.render_headings(page, page.header.section.title.subHeading) }}
-
-
         </div>
         {% endif %}
         <div class="row">
             {% for card in page.header.section.content.cards %}
-            {# {% set icon = page.find('/images').media[card.icon].url | e %} #}
-            {% set icon = (card.icon | first).name %}
-            {# <div class="col-lg-3 col-md-6 mb-30"> #}
+            {% set icon_name = (card.icon | first).name %}
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
@@ -28,23 +20,26 @@
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
                 <div class="cmn-content icon-list-content {{selfid}}">
-                        {# <img src="{{ url('theme://custom/images/' ~ icon)  }}" alt="{{card.alt}}" class="img-fluid"> #}
                         {% set image = page.media[(card.icon|keys|first)] %}
-
-
-                        {% if image  %}
+                        
+                        {% if image %}
                             {% if image.mime == 'application/pdf' %}
                             {% else %}
                              <div class="icn-icon">
-                                 <img class="media" style="width:100%;"  alt="{{ member.alt }}" src="{{ image.url }}" />               
+                                 {% if page.media[icon_name] is defined %}
+                                    {# New image location (@self) #}
+                                    <img class="media" style="width:100%;" alt="{{ card.alt }}" src="{{ page.media[icon_name].url }}" />
+                                 {% else %}
+                                    {# Legacy image location (theme folder) #}
+                                    <img class="media" style="width:100%;" alt="{{ card.alt }}" src="{{ url('theme://custom/images/' ~ icon_name) }}" />
+                                 {% endif %}
                              </div>
                             {% endif %}
-
                         {% endif %}                        
 
                     <h4>{{card.heading}}</h4>
                     <p>{{card.text}}</p>
-                        {% if image  %}
+                        {% if image %}
                             {% if image.mime == 'application/pdf' %}
                             <div class="icn-icon">
                                 <a href="{{ image.url }}" target="_blank" class="pdf-link">
