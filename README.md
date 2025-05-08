@@ -52,6 +52,7 @@ core features include
 Currently actively supported plugins:
 - Email
 - Form
+- Langswitcher
 
 
 

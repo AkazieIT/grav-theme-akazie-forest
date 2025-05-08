@@ -133,7 +133,10 @@
 </head>
 
 <body id="top" class="{{ page.header.body_classes|e }} {% if page.home %}home{% endif %} template-{{ page.template }} slug-{{ page.slug }}">
-
+    {% if config.plugins.langswitcher.enabled %}
+      {% include 'partials/langswitcher.html.twig' %}
+    {% endif %}
+    
     {% block header %}
     {% include 'partials/header.html.twig' %}
     {% endblock %}
