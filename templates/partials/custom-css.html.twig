@@ -142,4 +142,21 @@ a:hover{
 {% endif %}
 
 
+ul.langswitcher {
+    {% if theme_var('header.langswitcher.position') == 1 %}
+        top: 0px;
+        right 0px;
+    {% elseif theme_var('header.langswitcher.position') == 2 %}
+        bottom: 0px;
+        right:0px;
+    {% elseif theme_var('header.langswitcher.position') == 3 %}
+        bottom: 0px;
+        left:0px;
+    {% else %}
+        top: 0px;
+        left:0px;
+    {% endif %}
+}
+
+
 </style>

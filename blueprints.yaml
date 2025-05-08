@@ -97,6 +97,15 @@ form:
               label: THEME_AKAZIEForest.ADMIN.FIELDS.JS.LABEL
               rows: 2
               size: large
+            header.langswitcher.position:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.LABEL
+              default: 0
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.3
 
         nav:
           type: fieldset

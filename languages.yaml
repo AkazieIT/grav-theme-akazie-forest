@@ -295,6 +295,13 @@ en:
             0: "Hidden"
         JS:
           LABEL: "Add (Javascript) tracking code to header"
+        LANGSWITCHER:
+          LABEL: "Language switcher position"
+          OPTIONS:
+            0: "Top Left"
+            1: "Top Right"
+            2: "Bottom Right"
+            3: "Bottom Left"
         NAV:
           TITLE: "Navigation"
         SUBNAV:
@@ -800,6 +807,14 @@ de:
             0: "Verstecken"
         JS:
           LABEL: "Tracking code (Javascript) zum Header hinzufügen"
+        
+        LANGSWITCHER:
+          LABEL: "Sprach switcher position"
+          OPTIONS:
+            0: "Oben Links"
+            1: "Oben Rechts"
+            2: "Unten Rechts"
+            3: "Unten Links"
         NAV:
           TITLE: "Navigation"
         SUBNAV:
