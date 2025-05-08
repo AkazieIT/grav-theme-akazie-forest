@@ -2326,4 +2326,13 @@ section.section {
 ul.langswitcher {
     position:fixed;
     z-index:56;
+
+    -webkit-transform: none;
+    -moz-transform: none;
+    -o-transform: none;
+    -ms-transform: none;
+    transform: none;
+    margin-left: 0 !important;
+    display: inline-block;
+    padding: 10px;
 }
