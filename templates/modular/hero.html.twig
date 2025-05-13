@@ -132,7 +132,7 @@
                         {% if theme_var('style.compress') %}
 
                         {# TODO: Einbauen und division by Zero Errror fixen #}
-                        {# include 'partials/imagesizing.html.twig' with {
+                        {% include 'partials/imagesizing.html.twig' with {
                             'image': page.media[media_name],
                             'title' : page.title, 
                             'alt': page.title, 
@@ -140,9 +140,10 @@
                             'scale': 0, 
                             'resize': 0,
                             'classes': 'hero-media-image' } 
-                        #}
-                         <img src="{{ page.media[media_name].url }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
-
+                        %}
+                         {#
+                            <img src="{{ page.media[media_name].url }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
+                          #} 
                          {% else %}
                         <img src="{{ page.media[media_name].url }}" class="hero-media-image" alt="{{ page.title|default('Hero image') }}">
                         {% endif %}
