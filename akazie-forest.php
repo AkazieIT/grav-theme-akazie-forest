@@ -25,42 +25,18 @@ class AkazieForest extends Theme
 
     public function onBlueprintCreated(Event $event)
     {
-         /*
-            $newtype = $event['type'];
+        // Apply SEO blueprint to non-modular page types only
+        $newtype = $event['type'];
         
-            if (0 === strpos($newtype, 'modular/') || 0 === strpos($newtype, 'blog') || 0 === strpos($newtype, 'portfolio') || 0 === strpos($newtype, 'item') || 0 === strpos($newtype, 'portfolio-item')){
-            } else {
-                $blueprint = $event['blueprint'];
-                if ($blueprint->get('form/fields/tabs', null, '/')) {
-        
+        // Skip modular pages - only apply SEO to container pages
+        if (0 !== strpos($newtype, 'modular/')) {
+            $blueprint = $event['blueprint'];
+            if ($blueprint->get('form/fields/tabs', null, '/')) {
                 $blueprints = new Blueprints(__DIR__ . '/blueprints/extended/');
-                $extends = $blueprints->get('options');
+                $extends = $blueprints->get('seo');
                 $blueprint->extend($extends, true);
-        
-                }
             }
-        */
-
-        // Apply SEO blueprint to all page types
-        $blueprint = $event['blueprint'];
-        if ($blueprint->get('form/fields/tabs', null, '/')) {
-            $blueprints = new Blueprints(__DIR__ . '/blueprints/extended/');
-            $extends = $blueprints->get('seo');
-            $blueprint->extend($extends, true);
         }
-        /*
-            if (0 === strpos($newtype, 'blog') || 0 === strpos($newtype, 'portfolio') || 0 === strpos($newtype, 'item') || 0 === strpos($newtype, 'portfolio-item')) {
-            } else {  
-                $blueprint = $event['blueprint'];
-                if ($blueprint->get('form/fields/tabs', null, '/')) {
-            
-                    $blueprints = new Blueprints(__DIR__ . '/blueprints/extended/');
-                    $extends = $blueprints->get('advanced');
-                    $blueprint->extend($extends, true);
-            
-                }
-            }
-        */
     }    
     
 }
