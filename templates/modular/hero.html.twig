@@ -131,7 +131,6 @@
                         {# Image exists in page media #}
                         {% if theme_var('style.compress') %}
 
-                        {# TODO: Einbauen und division by Zero Errror fixen #}
                         {% include 'partials/imagesizing.html.twig' with {
                             'image': page.media[media_name],
                             'title' : page.title, 
