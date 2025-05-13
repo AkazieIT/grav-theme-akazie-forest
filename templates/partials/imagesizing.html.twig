@@ -2,8 +2,8 @@
     {% if image.url|lower ends with '.svg' %}
         <source media="(max-width: {{size}}px)" srcset="{{ image.url }}">
     {% else %}
-        {% set heightneu = divider > 0 ? (size * 2 * mult) / divider : (size * 2 * mult) %}
-        {% set widthneu = width > 0 ? ((height * 2 * mult) / (width / size)) / divider : height %}
+        {% set heightneu = (size * 2 * mult) / divider %}
+        {% set widthneu = ((height * 2 * mult) / (width / size)) / divider %}
         {% set tempimage = image.cropResize(heightneu,widthneu) %}
         {% if xresize != 0 %}
             {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
@@ -41,7 +41,7 @@
             {% if width > breakpoint %}
                 {% set funcdiv = divider %}
                 {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-                {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
+                {{ _self.sizemacro(breakpoint, height|default(1), width|default(1), image, funcdiv, resize, mult) }}
             {% endif %}
         {% endfor %}
     {% endif %}
