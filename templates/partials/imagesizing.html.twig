@@ -62,7 +62,8 @@
        {% if resize == 0 or image.url|lower ends with '.svg' %}
         src="{{ image.url }}"
        {% else %}
-        src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}"
+        {# src="{{ image.cropZoom(image.height * 2 * mult,image.height * resize * 2 * mult).url }}" #}
+        src="{{ image.url }}"
        {% endif %}
        alt="{{ alt }}" 
        title="{{ title }}"
