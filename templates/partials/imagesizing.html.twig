@@ -1,9 +1,6 @@
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
 
-        <p>heightneu = ({{size}} * 2 * {{mult}}) / {{divider}} </p>
-        <p>widthneu = (({{height}} * 2 * {{mult}}) / ({{width}} / {{size}})) / {{divider}}</p>
 
-{#
     {% if image.url|lower ends with '.svg' %}
         <source media="(max-width: {{size}}px)" srcset="{{ image.url }}">
     {% else %}
@@ -20,7 +17,7 @@
                 image.defimage.url 
             }}">
     {% endif %}
-#}
+    
 {% endmacro %}
 
 
