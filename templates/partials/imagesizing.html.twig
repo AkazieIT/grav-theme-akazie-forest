@@ -1,4 +1,5 @@
 {% macro sizemacro(size = 2400, height = 1, width = 1, image, divider = 1, xresize = 0, mult = 1) %}
+{#
     {% if image.url|lower ends with '.svg' %}
         <source media="(max-width: {{size}}px)" srcset="{{ image.url }}">
     {% else %}
@@ -15,6 +16,7 @@
                 image.defimage.url 
             }}">
     {% endif %}
+#}
 {% endmacro %}
 
 
@@ -41,7 +43,17 @@
             {% if width > breakpoint %}
                 {% set funcdiv = divider %}
                 {% if breakpoint < 769 and divider < 5 %}{% set funcdiv = 1 %}{% endif %}
-                {{ _self.sizemacro(breakpoint, height|default(1), width|default(1), image, funcdiv, resize, mult) }}
+                <p>sizemacro:</p>
+                <p>width: {{ width }}</p>
+                <p>height: {{ height }}</p>
+                <p>breakpoint: {{ breakpoint }}</p>
+                <p>divider: {{ divider }}</p>
+                <p>funcdiv: {{ funcdiv }}</p>
+                <p>mult: {{ mult }}</p>
+                <p>resize: {{ resize }}</p>
+                
+
+                {{ _self.sizemacro(breakpoint, height, width, image, funcdiv, resize, mult) }}
             {% endif %}
         {% endfor %}
     {% endif %}
