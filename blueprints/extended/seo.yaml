@@ -1,0 +1,35 @@
+form:
+  fields:
+    tabs:
+      fields:
+        seo:
+          type: tab
+          title: THEME_AKAZIEForest.SEO.TAB
+          fields:
+            header.seo:
+              type: section
+              title: THEME_AKAZIEForest.SEO.SECTION
+              underline: true
+              fields:
+                header.seo.title:
+                  type: text
+                  label: THEME_AKAZIEForest.SEO.META_TITLE.LABEL
+                  help: THEME_AKAZIEForest.SEO.META_TITLE.HELP
+                  description: THEME_AKAZIEForest.SEO.META_TITLE.DESCRIPTION
+                header.seo.description:
+                  type: textarea
+                  label: THEME_AKAZIEForest.SEO.META_DESCRIPTION.LABEL
+                  help: THEME_AKAZIEForest.SEO.META_DESCRIPTION.HELP
+                  description: THEME_AKAZIEForest.SEO.META_DESCRIPTION.DESCRIPTION
+                  rows: 4
+                header.seo.noindex:
+                  type: toggle
+                  label: THEME_AKAZIEForest.SEO.NOINDEX.LABEL
+                  help: THEME_AKAZIEForest.SEO.NOINDEX.HELP
+                  highlight: 0
+                  default: 0
+                  options:
+                    0: THEME_AKAZIEForest.SEO.NOINDEX.OPTIONS.0
+                    1: THEME_AKAZIEForest.SEO.NOINDEX.OPTIONS.1
+                  validate:
+                    type: bool

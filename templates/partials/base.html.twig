@@ -5,10 +5,20 @@
 <head>
     {% block head %}
     <meta charset="utf-8" />
-    <title>{% if header.title %}{{ header.title == '%LOGO%' ? site.title : header.title|e }} | {% endif %}{{ site.title|e }}</title>
+    {% set meta_title = page.header.seo.title ?: (header.title == '%LOGO%' ? site.title : header.title) %}
+    <title>{% if meta_title %}{{ meta_title|e }} | {% endif %}{{ site.title|e }}</title>
     {{ theme_var('header.javascript')|raw }}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {# Add SEO meta tags #}
+    {% if page.header.seo.description %}
+    <meta name="description" content="{{ page.header.seo.description|e }}">
+    {% endif %}
+    {% if page.header.seo.noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
+    
     {% include 'partials/metadata.html.twig' %}
 
 

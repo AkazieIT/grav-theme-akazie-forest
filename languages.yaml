@@ -1,5 +1,22 @@
 en:
   THEME_AKAZIEForest:
+    SEO:
+      TAB: "SEO"
+      SECTION: "Search Engine Optimization"
+      META_TITLE:
+        LABEL: "Meta Title"
+        HELP: "Custom title tag for search engines"
+        DESCRIPTION: "Ideally 50-60 characters. If empty, page title will be used."
+      META_DESCRIPTION:
+        LABEL: "Meta Description"
+        HELP: "Custom description for search engines"
+        DESCRIPTION: "Ideally 150-160 characters. Summarize this page for search results."
+      NOINDEX:
+        LABEL: "Prevent indexing"
+        HELP: "Prevent search engines from indexing this page"
+        OPTIONS:
+          0: "No - Allow indexing"
+          1: "Yes - Prevent indexing"
     ADMIN:
       TAB:
         CONTENT: "Content"
@@ -515,6 +532,23 @@ en:
 
 de:
   THEME_AKAZIEForest:
+    SEO:
+      TAB: "SEO"
+      SECTION: "Suchmaschinenoptimierung"
+      META_TITLE:
+        LABEL: "Meta Titel"
+        HELP: "Eigener Titel-Tag für Suchmaschinen"
+        DESCRIPTION: "Idealerweise 50-60 Zeichen. Wenn leer, wird der Seitentitel verwendet."
+      META_DESCRIPTION:
+        LABEL: "Meta Beschreibung"
+        HELP: "Eigene Beschreibung für Suchmaschinen"
+        DESCRIPTION: "Idealerweise 150-160 Zeichen. Fassen Sie diese Seite für Suchergebnisse zusammen."
+      NOINDEX:
+        LABEL: "Indexierung verhindern"
+        HELP: "Suchmaschinen daran hindern, diese Seite zu indexieren"
+        OPTIONS:
+          0: "Nein - Indexierung erlauben"
+          1: "Ja - Indexierung verhindern"
     THEME:
     ADMIN:
       TAB:
