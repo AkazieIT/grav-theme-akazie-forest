@@ -2,8 +2,8 @@
     {% if image.url|lower ends with '.svg' %}
         <source media="(max-width: {{size}}px)" srcset="{{ image.url }}">
     {% else %}
-        {% set heightneu = (size * 2 * mult) / divider %}
-        {% set widthneu = ((height * 2 * mult) / (width / size)) / divider %}
+        {% set heightneu = divider > 0 ? (size * 2 * mult) / divider : (size * 2 * mult) %}
+        {% set widthneu = width > 0 ? ((height * 2 * mult) / (width / size)) / divider : height %}
         {% set tempimage = image.cropResize(heightneu,widthneu) %}
         {% if xresize != 0 %}
             {% set defimage = tempimage.cropZoom(tempimage.height,tempimage.height * xresize) %}
