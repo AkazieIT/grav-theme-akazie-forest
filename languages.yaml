@@ -738,6 +738,8 @@ de:
             1: "Ja"
         DATE:
           LABEL: "Datum anzeigen?"
+        SHOW_CONT:
+          LABEL: "Content anzeigen?"
         SHOWCONT:
           LABEL: "Vorschautext anzeigen?"
         HEIGHT:
@@ -1007,6 +1009,8 @@ de:
           LABEL: "Nummerierung anzeigen"
         GALLERY:
           LABEL: "Galerie anzeigen"
+        CONT_DEF:
+          TITLE: "Definitionen des Inhalts"
         ORDER:
           LABEL: "Ordnen nach..."
           OPTIONS:
