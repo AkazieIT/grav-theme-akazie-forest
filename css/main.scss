@@ -1303,9 +1303,7 @@ footer, footer p, footer a {
 
 }
 .price-area {
-	padding: 100px 0;
 	background-color: var(--tertiary);
-	padding-bottom: 130px;
 }
 .price-area .container-inner {
     padding-right:22px;
@@ -1872,11 +1870,6 @@ footer, footer p, footer a {
     .price-card-g-wrapper .price-card:nth-child(2) {
         transform: none;
     }
-    .price-area {
-        padding: 100px 0;
-        padding-bottom: 100px;
-
-    }
 
     .price-card-g-wrapper {
         grid-template-columns: 1fr;
@@ -2038,9 +2031,6 @@ footer, footer p, footer a {
     }
     .portfolio-area {
         padding: 20px 0;
-    }
-    .price-area {
-        padding: 60px 0;
     }
     .quote-item p {
         font-size: 24px;
