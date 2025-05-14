@@ -139,6 +139,7 @@ background-color: {{ page.header.section.settings.bgcolor }};
 // Initialize any masonry layouts after DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof masonry === "function" && document.querySelector('.js-masonry-list')) {
+    console.log('Masonry function found and masonry elements present.');
     const masonryElements = document.querySelectorAll('.js-masonry-list');
     masonryElements.forEach(function(element) {
       // Get column count from dataset or default to responsive
