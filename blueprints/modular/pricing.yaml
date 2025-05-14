@@ -113,6 +113,17 @@ form:
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
                 5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5      
+                
+            header.section.settings.column:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
+              default: 3
+              options:
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.settings.title.order:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_ORDER.LABEL
