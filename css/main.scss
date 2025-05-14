@@ -1279,9 +1279,11 @@ footer, footer p, footer a {
 .price-card-g-wrapper {
     display: flex;    
     flex-wrap:wrap;
-    justify-content: space-between;
     width:100%;
     gap: 45px 0;
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
     
 
 }
