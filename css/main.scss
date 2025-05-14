@@ -1279,6 +1279,9 @@ footer, footer p, footer a {
 .price-card-g-wrapper {
     display: flex;    
     flex-wrap:wrap;
+    justify-content: space-around;
+    gap: 0px 30px;
+
 }
 
 .price-card {
