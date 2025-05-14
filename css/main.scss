@@ -1295,6 +1295,7 @@ footer, footer p, footer a {
 
     align-items: center;
     justify-content: center;
+    gap: 2.5rem;
 }
 .price-card.highlight {
     box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);
@@ -1313,10 +1314,6 @@ footer, footer p, footer a {
 
 .price-area .primary-title {
   width: 63.33%;
-}
-
-.price-area :not(.primary-title) > p {
-    margin-bottom: 6rem;
 }
 .price > .d-block {
     font-family: var(--subhFont);
@@ -1348,7 +1345,7 @@ footer, footer p, footer a {
     color: var(--secondary);
     line-height: 1;
     font-weight: 700;
-    margin-bottom: 3rem;
+    //margin-bottom: 3rem;
   }
   .price-card .price span {
     font-size: 20px;
@@ -1359,7 +1356,6 @@ footer, footer p, footer a {
     font-size: 18px;
     line-height:1.2;
     font-weight: 400;
-    margin-bottom: 2.5rem;
   }
 
   /*.price-card-g-wrapper .price-card:nth-child(2) {
