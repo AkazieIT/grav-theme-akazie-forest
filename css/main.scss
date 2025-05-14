@@ -1337,19 +1337,21 @@ footer, footer p, footer a {
 
 .price-card .price {
     font-size: 120px;
-    color: var(--primaryDark);
+//    color: var(--primaryDark);
+    color: var(--secondary);
     line-height: 1;
     font-weight: 700;
     margin-bottom: 3rem;
   }
   .price-card .price span {
     font-size: 20px;
-    color: #8D8D8D;
+    color: var(--secondary)
   }
   .price-card p {
-    color: #8D8D8D;
-    font-size: 25px;
-    font-weight: 700;
+    color: var(--secondary);
+    font-size: 18px;
+    line-height:1.2;
+    font-weight: 400;
     margin-bottom: 2.5rem;
   }
 
@@ -1357,9 +1359,9 @@ footer, footer p, footer a {
 	transform: scaleY(1.2) scaleX(1.05);
 }*/
 
-.price-card-g-wrapper .price-card:nth-child(2) h5 {
-  color: var(--primary);
-  }
+ .price-card-g-wrapper .price-card.highlight h5 {
+    color: var(--primary);
+    }
 
 /* product page css end */
 

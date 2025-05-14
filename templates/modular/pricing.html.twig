@@ -13,7 +13,7 @@
             <p>{{page.header.section.title.text |markdown}}</p>
         </div>
 
-        <div class="price-card-g-wrapper">
+        <div class="price-card-g-wrapper {{selfid}}">
             {% for card in page.header.section.content.cards %}
             <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
                 <h5 class="price">{{card.price ? card.price ~ '.– ' }}<span class="d-block">{{card.priceText}}</span></h5>
@@ -27,7 +27,39 @@
 <div class="container"><div class="container-inner">
 {% endif %}
 
+{% set card_count = page.header.section.content.cards|length %}
 <style>
+.price-card-g-wrapper.{{selfid}} {
+    
+    {% if card_count == 1 %}
+        grid-template-columns: 1fr;
+    {% elseif card_count == 2 %}
+        grid-template-columns: repeat(2, 1fr);
+    {% elseif card_count == 3 %}
+        grid-template-columns: repeat(3, 1fr);
+    {% elseif card_count == 4 %}
+        grid-template-columns: repeat(4, 1fr);
+    {% elseif card_count == 5 %}
+        grid-template-columns: repeat(5, 1fr);
+    {% else %}
+        grid-template-columns: repeat(6, 1fr);
+    {% endif %}
+
+}
+@media (max-width: 768px) {
+    
+    {% if card_count > 3 %}
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    {% else %}
+    
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    {% endif %}
+}
+
 {% if page.header.section.settings.bgcolor %}
 .price-area.{{selfid}} {
     background-color: {{page.header.section.settings.bgcolor}};
