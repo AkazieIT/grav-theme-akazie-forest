@@ -68,21 +68,33 @@
     {% endif %}
 
 }
+@media (max-width: 1200px) {
+    
 
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media (max-width: 991px) {
+    
+    
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 @media (max-width: 768px) {
     
-    {% if card_count > 3 %}
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    {% else %}
     
     .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
-    {% endif %}
 }
+
+
 
 {% if page.header.section.settings.bgcolor %}
 .price-area.{{selfid}} {
