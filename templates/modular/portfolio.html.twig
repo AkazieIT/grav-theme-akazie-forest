@@ -132,7 +132,7 @@ background-color: {{ page.header.section.settings.bgcolor }};
 {% endif %}
 
   </style>
-
+{% if masonry %}
 <script>
     masonry({
       target: '.js-masonry-list',
@@ -149,3 +149,4 @@ background-color: {{ page.header.section.settings.bgcolor }};
       }]
     });
 </script>
+{% endif %}
