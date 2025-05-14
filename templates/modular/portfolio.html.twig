@@ -132,8 +132,9 @@ background-color: {{ page.header.section.settings.bgcolor }};
 {% endif %}
 
   </style>
-{% if masonry %}
 <script>
+// add document ready event
+document.addEventListener('DOMContentLoaded', function() {
     masonry({
       target: '.js-masonry-list',
       column: {{_cols}},
@@ -148,5 +149,5 @@ background-color: {{ page.header.section.settings.bgcolor }};
         column: 1
       }]
     });
+});
 </script>
-{% endif %}
