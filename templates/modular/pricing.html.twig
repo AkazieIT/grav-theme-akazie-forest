@@ -16,11 +16,13 @@
         <div class="price-card-g-wrapper {{selfid}}">
             {% for card in page.header.section.content.cards %}
             <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
+                {% if card.price or card.priceText %}
                 <h5 class="price">{{card.price ? card.price ~ '.– ' }}
                 {% if card.priceText %}
                      <span class="d-block">{{ card.priceText }}</span>
                 {% endif %}
                 </h5>
+                {% endif %}
                 {% if card.text %}
                     <p>{{ card.text }}</p>
                 {% endif %}
