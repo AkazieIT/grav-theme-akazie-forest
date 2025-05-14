@@ -79,55 +79,16 @@ background-color: {{ page.header.section.settings.bgcolor }};
 {% endif %}
 
 {% if page.header.section.settings.column == 1 %}
-    .js-masonry-elm {
-        width: 100%;
-        margin-bottom: 20px;
-    }
     {% set _cols = 1 %}
 {% elseif page.header.section.settings.column == 2 %}
-    .js-masonry-list {
-        column-gap: 5%;
-    }
-    .js-masonry-elm {
-        width: 40%;
-        margin-bottom: 2%;
-    }
     {% set _cols = 2 %}
 {% elseif page.header.section.settings.column == 3 %}
-    .js-masonry-list {
-        column-gap: 4%;
-    }
-    .js-masonry-elm {
-        width: 30%;
-        margin-bottom: 1.25%;
-    }
     {% set _cols = 3 %}
 {% elseif page.header.section.settings.column == 4 %}
-    .js-masonry-list {
-        column-gap: 2%;
-    }
-    .js-masonry-elm {
-        width: 23%;
-        margin-bottom: 2%;
-    }
     {% set _cols = 4 %}
 {% elseif page.header.section.settings.column == 5 %}
-    .js-masonry-list {
-        column-gap: 2.5%;
-    }
-    .js-masonry-elm {
-        width: 18%;
-        margin-bottom: 2.5%;
-    }
     {% set _cols = 5 %}
 {% else %}
-    .js-masonry-list {
-        column-gap: 0.5%;
-    }
-    .js-masonry-elm {
-        width: 16%;
-        margin-bottom: 0.5%;
-    }
     {% set _cols = 6 %}
 {% endif %}
 
