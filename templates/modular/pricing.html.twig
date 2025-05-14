@@ -3,15 +3,17 @@
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 <div class="price-area {{selfid}}">
     <div class="container"><div class="container-inner">
-        <div class="primary-title">
-            {% if page.header.section.settings.title.show %}
+        {% if page.header.section.title.text %}
+            <div class="primary-title">
+                {% if page.header.section.settings.title.show %}
 
-                {% import 'macros/macros.html.twig' as utils %}
-                {{ utils.render_headings(page, page.header.section.title.subHeading) }}
+                    {% import 'macros/macros.html.twig' as utils %}
+                    {{ utils.render_headings(page, page.header.section.title.subHeading) }}
 
-            {% endif %}
-            <p>{{page.header.section.title.text |markdown}}</p>
-        </div>
+                {% endif %}
+                <p>{{page.header.section.title.text |markdown}}</p>
+            </div>
+        {% endif %}
 
         <div class="price-card-g-wrapper {{selfid}}">
             {% for card in page.header.section.content.cards %}
