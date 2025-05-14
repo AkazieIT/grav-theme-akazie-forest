@@ -54,6 +54,22 @@
     {% endif %}
 
 }
+@media (max-width: 1600px) {
+
+    {% if card_count > 3 %}
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    {% else %}
+    
+    .price-card-g-wrapper.{{selfid}} {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    {% endif %}
+
+}
+
+
 @media (max-width: 768px) {
     
     {% if card_count > 3 %}
