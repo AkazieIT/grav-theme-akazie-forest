@@ -62,6 +62,7 @@ en:
         HSIZE:
           LABEL: "Size title"
           SUBLABEL: "Size subtitle"
+          PRICELABEL: "Size Price"
           OPTIONS:
             0: "h1"
             1: "h2"
@@ -591,6 +592,7 @@ de:
         HSIZE:
           LABEL: "Grösse Titel"
           SUBLABEL: "Grösse Untertitel"
+          PRICELABEL: "Grösse Preis"
           OPTIONS:
             0: "h1"
             1: "h2"

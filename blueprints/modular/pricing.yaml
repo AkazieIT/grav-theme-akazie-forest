@@ -104,7 +104,7 @@ form:
                 
             header.section.settings.pricing.hsize:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.SUBLABEL
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.PRICELABEL
               default: 4
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
