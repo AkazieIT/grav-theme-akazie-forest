@@ -78,20 +78,28 @@ background-color: {{ page.header.section.settings.bgcolor }};
 
 {% endif %}
 
+    .js-masonry-list {
 {% if page.header.section.settings.column == 1 %}
+     width: 100%;
     {% set _cols = 1 %}
 {% elseif page.header.section.settings.column == 2 %}
+    width: 50%;
     {% set _cols = 2 %}
 {% elseif page.header.section.settings.column == 3 %}
+    width: 33.3333%;
     {% set _cols = 3 %}
 {% elseif page.header.section.settings.column == 4 %}
+    width: 25%;
     {% set _cols = 4 %}
 {% elseif page.header.section.settings.column == 5 %}
+    width: 20%;
     {% set _cols = 5 %}
 {% else %}
+    width: 16.6667%;
     {% set _cols = 6 %}
 {% endif %}
 
+    }
   </style>
 <script>
 // add document ready event
