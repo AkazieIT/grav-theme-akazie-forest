@@ -228,6 +228,8 @@ en:
             1: "Yes"
         POSTWIDTH:
           LABEL: "How many posts should fit in one row?"
+          ELEMENTS: "How many elements should fit in one row?"
+          ELEMENTSMOBILE: "How many elements should fit in one row in mobile?"
           OPTIONS:
             1: "1"
             2: "2"
@@ -760,6 +762,8 @@ de:
             1: "Ja"
         POSTWIDTH:
           LABEL: "Wie viele Posts sollen auf eine Zeile passen?"
+          ELEMENTS: "Wie viele Elemente sollen auf eine Zeile passen?"
+          ELEMENTSMOBILE: "Wie viele Elemente sollen auf eine Zeile passen in mobile?"
           OPTIONS:
             1: "1"
             2: "2"

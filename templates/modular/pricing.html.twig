@@ -59,24 +59,37 @@
     {% endif %}
 
 }
-@media (max-width: 1600px) {
-
-
-}
-@media (max-width: 1200px) {
-    
-
-}
-
 
 
 @media (max-width: 991px) {
     
+.price-card-g-wrapper.{{selfid}} .price-card  {
+    
+    {% if page.header.section.settings.columnmobile == 1 %}
+    width: 100%;
+    {% elseif page.header.section.settings.columnmobile == 2 %}
+    width: 49%;
+    {% elseif page.header.section.settings.columnmobile == 3 %}
+    width: 30%;
+    {% elseif page.header.section.settings.columnmobile == 4 %}
+    width: 24%;
+    {% elseif page.header.section.settings.columnmobile == 5 %}
+    width: 19.5%;
+    {% elseif page.header.section.settings.columnmobile == 6 %}
+    width: 16%;
+    {% else %}
+        width: 30%;
+    {% endif %}
+
+}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 468px) {
+.price-card-g-wrapper.{{selfid}} .price-card  {
     
-    
+    width: 100%;
+}
+       
 }
 
 
