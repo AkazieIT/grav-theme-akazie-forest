@@ -16,9 +16,11 @@
         <div class="price-card-g-wrapper {{selfid}}">
             {% for card in page.header.section.content.cards %}
             <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
-                <h5 class="price">{{card.price ? card.price ~ '.– ' }}<span class="d-block">{{card.priceText}}</span></h5>
-                <p>{{card.text}}</p>
-                <a href="{{card.link}}" class="box-btn {{ card.highlight ? 'type-2' : 'type-1' }}" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
+                <h5 class="price">{{card.price ? card.price ~ '.– ' }}{{card.priceText ? '<span class="d-block">' ~ card.priceText ~ '</span>' }}</h5>
+                {{card.text ? '<p>'~ card.text ~ '</p>'}}
+                {% if card.link and card.anchor %}
+                    <a href="{{card.link}}" class="box-btn {{ card.highlight ? 'type-2' : 'type-1' }}" {% if card.open.type %}target="_blank"{% endif %}>{{card.anchor}}<i class="far fa-angle-right"></i></a>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
