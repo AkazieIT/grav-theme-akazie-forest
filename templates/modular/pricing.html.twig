@@ -1,5 +1,5 @@
 {% if page.header.section.settings.module.enabled %}
-</div></div>
+
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 <div class="price-area {{selfid}}">
     <div class="row container"><div class="container-inner"><div class="section_wrap">
@@ -39,7 +39,6 @@
         </div>
     </div></div></div>
 </div>
-<div class="container"><div class="container-inner">
 {% endif %}
 
 <style>
