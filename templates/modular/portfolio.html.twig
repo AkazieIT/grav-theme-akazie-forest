@@ -134,20 +134,32 @@ background-color: {{ page.header.section.settings.bgcolor }};
   </style>
 <script>
 // add document ready event
+
+
+// Initialize any masonry layouts after DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    masonry({
-      target: '.js-masonry-list',
-      column: {{_cols}},
-      responsive: [{
-	  breakpoint: 1024,
-        column: 3
-      }, {
-        breakpoint: 600,
-        column: 2
-      }, {
-        breakpoint: 450,
-        column: 1
-      }]
+  if (typeof masonry === "function" && document.querySelector('.js-masonry-list')) {
+    const masonryElements = document.querySelectorAll('.js-masonry-list');
+    masonryElements.forEach(function(element) {
+      // Get column count from dataset or default to responsive
+      const columnCount = element.dataset.columns || 3;
+      masonry({
+        target: element,
+        column: {{_cols}},
+        responsive: [{
+          breakpoint: 1024,
+          column: 3
+        }, {
+          breakpoint: 600,
+          column: 2
+        }, {
+          breakpoint: 450,
+          column: 1
+        }]
+      });
     });
+  }
 });
+
 </script>
+
