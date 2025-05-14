@@ -229,7 +229,7 @@ en:
         POSTWIDTH:
           LABEL: "How many posts should fit in one row?"
           ELEMENTS: "How many elements should fit in one row?"
-          ELEMENTSMOBILE: "How many elements should fit in one row in mobile?"
+          ELEMENTSMOBILE: "How many elements should fit in one row on tablet? (468-991px)"
           OPTIONS:
             1: "1"
             2: "2"
@@ -763,7 +763,7 @@ de:
         POSTWIDTH:
           LABEL: "Wie viele Posts sollen auf eine Zeile passen?"
           ELEMENTS: "Wie viele Elemente sollen auf eine Zeile passen?"
-          ELEMENTSMOBILE: "Wie viele Elemente sollen auf eine Zeile passen in mobile?"
+          ELEMENTSMOBILE: "Wie viele Elemente sollen auf eine Zeile passen auf einem Tablet (468-991px)?"
           OPTIONS:
             1: "1"
             2: "2"
