@@ -18,6 +18,7 @@
             <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
                 {% if card.price or card.priceText %}
 
+                {% import 'macros/macros.html.twig' as utils %}
                 {% set pricehsize = utils.validate_hsize(page.header.section.settings.pricing.hsize, 5)|trim %}
                 <h{{pricehsize}} class="price">{{card.price ? card.price ~ '.– ' }}
                 {% if card.priceText %}
