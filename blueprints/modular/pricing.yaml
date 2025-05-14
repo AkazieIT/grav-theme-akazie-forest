@@ -123,6 +123,7 @@ form:
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.5
                 6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
                 
             header.section.settings.columnmobile:
@@ -134,6 +135,7 @@ form:
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.5
                 6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.settings.title.order:
               type: select
