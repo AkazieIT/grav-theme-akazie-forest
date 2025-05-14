@@ -17,11 +17,13 @@
             {% for card in page.header.section.content.cards %}
             <div class="price-card {{selfid}} {{ card.highlight ? 'highlight' }}">
                 {% if card.price or card.priceText %}
-                <h5 class="price">{{card.price ? card.price ~ '.– ' }}
+
+                {% set pricehsize = utils.validate_hsize(page.header.section.settings.pricing.hsize, 5)|trim %}
+                <h{{pricehsize}} class="price">{{card.price ? card.price ~ '.– ' }}
                 {% if card.priceText %}
                      <span class="d-block">{{ card.priceText }}</span>
                 {% endif %}
-                </h5>
+                </h{{pricehsize}}>
                 {% endif %}
                 {% if card.text %}
                     <p>{{ card.text }}</p>
@@ -39,61 +41,29 @@
 
 {% set card_count = page.header.section.content.cards|length %}
 <style>
-.price-card-g-wrapper.{{selfid}} {
+.price-card-g-wrapper.{{selfid}} .price-card  {
     
-    {% if card_count == 1 %}
-        grid-template-columns: 1fr;
-    {% elseif card_count == 2 %}
-        grid-template-columns: repeat(2, 1fr);
-    {% elseif card_count == 3 %}
-        grid-template-columns: repeat(3, 1fr);
-    {% elseif card_count == 4 %}
-        grid-template-columns: repeat(4, 1fr);
-    {% elseif card_count == 5 %}
-        grid-template-columns: repeat(5, 1fr);
-    {% else %}
-        grid-template-columns: repeat(6, 1fr);
-    {% endif %}
+        width: 33.3%;
 
 }
 @media (max-width: 1600px) {
 
-    {% if card_count > 3 %}
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    {% else %}
-    
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    {% endif %}
 
 }
 @media (max-width: 1200px) {
     
 
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 
 
 @media (max-width: 991px) {
     
-    
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
 @media (max-width: 768px) {
     
     
-    .price-card-g-wrapper.{{selfid}} {
-        grid-template-columns: repeat(1, 1fr);
-    }
 }
 
 

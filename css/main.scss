@@ -1277,8 +1277,8 @@ footer, footer p, footer a {
 }
 
 .price-card-g-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    
     grid-gap: 60px;
 }
 
@@ -1290,6 +1290,9 @@ footer, footer p, footer a {
     box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);
     display: flex;
     flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
 }
 .price-card.highlight {
     box-shadow: 0 5px 30px rgba(195, 195, 195, 0.16);

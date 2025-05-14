@@ -100,7 +100,19 @@ form:
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
                 4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
-                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5         
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5     
+                
+            header.section.settings.pricing.hsize:
+              type: select
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.SUBLABEL
+              default: 4
+              options:
+                0: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.0
+                1: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.1
+                2: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.2
+                3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
+                4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
+                5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5      
             header.section.settings.title.order:
               type: select
               label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_ORDER.LABEL
