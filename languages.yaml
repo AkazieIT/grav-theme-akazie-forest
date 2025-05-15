@@ -48,6 +48,7 @@ en:
           LABEL: 'Media'
         SHOWTITLE:
           LABEL: "Show title?"
+          LABELSUB: "Show title + subtitle?"
           OPTIONS:
             0: "No"
             1: "Yes"
@@ -580,6 +581,7 @@ de:
           LABEL: "Untertitel"
         SHOWTITLE:
           LABEL: "Titel anzeigen?"
+          LABELSUB: "Titel + Untertitel anzeigen?"
           OPTIONS:
             0: "Nein"
             1: "Ja"

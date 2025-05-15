@@ -74,7 +74,7 @@ form:
           fields:
             header.section.settings.title.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABEL
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.LABELSUB
               default: 1
               options:
                 0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
