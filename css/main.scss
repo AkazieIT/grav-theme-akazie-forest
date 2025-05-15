@@ -437,7 +437,7 @@ header.header-area.fixed {
     content: "";
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent #C6C6C6;
+    border-color: transparent transparent var(--secondaryDark);
     top: -19px;
     left: 92px;
     position: absolute;
