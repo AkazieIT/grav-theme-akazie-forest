@@ -391,7 +391,7 @@ header.header-area.fixed {
     position: absolute;
     top: 105%;
     left: 0;
-    background-color: rgba(198, 198, 198, 0.5);
+    background-color: var(--secondary);
     border-radius: 5px;
     min-width: 225px;
     padding: 10px 0;
