@@ -59,3 +59,9 @@ Currently actively supported plugins:
 ## Notice
 
 If you use Langswitcher and decide to uninstall Langswitcher, please deactivate Langswitcher before removing it.
+
+
+# Attributions
+
+We use the following open source scripts and libraries (thank you!):
+scopeQuerySelectorShim.js, simple-masonry.js, lightgallery, swiper, bootstrap
