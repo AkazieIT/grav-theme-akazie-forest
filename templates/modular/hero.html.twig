@@ -3,7 +3,7 @@
 {% set selfid = 'module-' ~ page.template|md5|slice(0, 8) ~ '-' ~ page.slug|md5|slice(0, 8)  %}
 
 </div> {# end row container #}
-<div class="hero-area position-relative d-flex">
+<div class="hero-area position-relative d-flex {{selfid}}">
     <div class="container "> <div class="container-inner">
             <div class="hero-content">
             {% if page.header.section.content.title.show %}
@@ -188,4 +188,12 @@
     background-color: {{page.header.section.content.hero.square.bgcolor}}!important;
 }
 {% endif %}
+
+{# if there's padding, add it: #}
+{% if page.header.section.content.padding %}
+.hero-area.{{selfid}}{
+    padding: {{page.header.section.content.padding}};
+}
+{% endif %}
+
 </style>
