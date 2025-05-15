@@ -1,14 +1,14 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.4
+version: 0.1.41
 description: A Forest Theme
 icon: rebel
 author:
   name: Tamara
   email: support@akazie.com
 homepage: https://github.com/AkazieIT/grav-theme-akazie-forest
-demo: http://demo.yoursite.com
+demo: https://demo.akazie.com/akazie-forest/
 keywords: grav, theme, etc
 bugs: https://github.com/AkazieIT/grav-theme-akazie-forest/issues
 readme: https://github.com/AkazieIT/grav-theme-akazie-forest/blob/master/README.md

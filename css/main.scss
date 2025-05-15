@@ -8,11 +8,20 @@
     --primaryDark: var(--primaryDark);
     --primaryLight: #285f19;
 
+
+
     --secondary: #707070;
     --secondaryDark: #1D1D1D;
     --secondaryLight: #555555;
 
-    --tertiary: #F6F6F6;
+    --tertiary: #FBFBFB;
+    --tertiaryDark: #C6C6C6;
+
+    --white: #fff;
+
+
+    --teamMemberOverlay: #7B6A58;
+    
 
 
     --mainFont: 'Barlow', sans-serif;
@@ -29,7 +38,7 @@ body {
     font-family: var(--mainFont);
     font-weight: 400;
     color: var(--secondaryDark);
-    background-color: #FBFBFB;
+    background-color: var(--tertiary);
 }
 
 @media screen and (max-width: 991px) {
@@ -464,7 +473,7 @@ header.header-area.fixed {
 
 .custom-btn:hover {
     border-color: transparent;
-    color: #fff;
+    color: var(--white);
 }
 
 .custom-btn:not([disabled]):after {
@@ -508,9 +517,9 @@ header.header-area.fixed {
 }
 
 .custom-btn[disabled] {
-    background-color: #C6C6C6;
-    border-color: #C6C6C6;
-    color: #fff;
+    background-color: var(--tertiaryDark);
+    border-color: var(--tertiaryDark);
+    color: var(--white);
     cursor: no-drop;
 }
 
@@ -549,7 +558,7 @@ header.header-area.fixed {
 
 .box-btn:hover, .pdf-link:hover {
     border-color: transparent;
-    color: #fff;
+    color: var(--white);
 }
 
 .box-btn:not([disabled]):after,.pdf-link:not([disabled]):after {
@@ -593,9 +602,9 @@ header.header-area.fixed {
 }
 
 .box-btn[disabled],.pdf-link[disabled] {
-    background-color: #C6C6C6;
-    border-color: #C6C6C6;
-    color: #fff;
+    background-color: var(--tertiaryDark);
+    border-color: var(--tertiaryDark);
+    color: var(--white);
     cursor: no-drop;
 }
 
@@ -757,7 +766,7 @@ header.header-area.fixed {
     background: linear-gradient(to right, var(--primary), var(--primaryDark));
     border-radius: 5px;
     /*box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);*/
-    color: #fff;
+    color: var(--white);
     border: 0;
 }
 
@@ -837,7 +846,7 @@ header.header-area.fixed {
 }
 
 .about-us-area.home_page {
-    background-color: #f6f6f6;
+    background-color: var(--tertiary);
 }
 
 
@@ -1116,12 +1125,12 @@ footer, footer p, footer a {
 
 .footer-bottom p {
     font-size: 16px;
-    color: #fff;
+    color: var(--white);
 }
 
 .ft-links li a {
     display: inline-block;
-    color: #fff;
+    color: var(--white);
     font-size: 16px;
     transition: .3s;
 }
@@ -1139,7 +1148,7 @@ footer, footer p, footer a {
     content: "";
     height: 16px;
     width: 2px;
-    background-color: #fff;
+    background-color: var(--white); 
     position: absolute;
     right: -18px;
     top: 50%;
@@ -1174,7 +1183,7 @@ footer, footer p, footer a {
 }
 
 .social-links li a {
-    color: #555555;
+    color: var(--secondaryLight);
     font-size: 23px;
     line-height: 1;
     transition: .3s;
@@ -1299,7 +1308,7 @@ footer, footer p, footer a {
 }
 
 .price-card {
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 10px;
     text-align: center;
     padding: 60px;
@@ -1475,7 +1484,7 @@ footer, footer p, footer a {
 }
 
 .address-blk {
-    background-color: #F3F3F3;
+    background-color: var(--tertiary);;
     padding: 30px;
 }
 
@@ -1514,7 +1523,7 @@ footer, footer p, footer a {
 
 .carousel-control-next:hover,
 .carousel-control-prev:hover {
-    color: #fff;
+    color: var(--white);
     background-color: var(--primaryLight);
     border-radius: 5px;
 }
@@ -1752,7 +1761,7 @@ footer, footer p, footer a {
 	flex-direction: column;
 }
 .m_menu_footer .ft-widget h3, .m_menu_footer .ft-widget p {
-	color: #fff;
+	color: var(--white);
 }
 .m_menu_footer .ft-widget:not(:last-child) {
 	margin-bottom: 24px;
@@ -2165,7 +2174,7 @@ section.section {
     flex-direction: unset;
 }
 .hero.text-light h1 {
-    color: #fff;
+    color: var(--white);
 }
 /*
 .title-h1h2 h1 {
@@ -2325,9 +2334,9 @@ section.section {
     text-align: center;
 
     flex-direction: column;
-    /* Add a background overlay color or gradient if you want */
-    background-color: #7B6A58;
-    color: #fff; /* or whatever fits your design */
+    
+    background-color: var(--teamMemberOverlay); 
+    color: var(--white);
     padding: 20px;
     transition: opacity 0.4s ease, visibility 0.4s ease;
   }
