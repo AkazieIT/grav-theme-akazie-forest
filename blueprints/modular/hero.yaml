@@ -127,9 +127,10 @@ form:
             header.section.content.hero.square.bgcolor:
               type: colorpicker
               label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
-            header.section.content.margin:
-              type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MARGIN.LABEL
+
+       #     header.section.content.margin:
+       #       type: text
+       #       label: THEME_AKAZIEForest.ADMIN.FIELDS.MARGIN.LABEL
             header.section.content.module.enabled:
               type: toggle
               label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL

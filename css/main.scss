@@ -655,7 +655,14 @@ header.header-area.fixed {
 /* hero-area css start */
 .hero-area {
     min-height: 570px;
+    @media (min-width: 1400px) {
+        margin-bottom:60px;
+    }
+    @media (min-width: 1600px) {
+        margin-bottom:100px;
+    }
 }
+
 
 .hero-content {
     max-width: 670px;
