@@ -84,6 +84,8 @@ en:
           LABEL: "Slider color"
         PADDING:
           LABEL: "Module Padding"
+        MARGIN:
+          LABEL: "Module Margin"
         PADDINGOUTER:
           LABEL: "Module outer Padding"
         BG_ADDBLK:
@@ -617,6 +619,8 @@ de:
           LABEL: "Slider Farbe"
         PADDING:
           LABEL: "Modul Padding"
+        MARGIN:
+          LABEL: "Modul Margin"
         PADDINGOUTER:
           LABEL: "Modul äusseres Padding"
         BG_ADDBLK:
