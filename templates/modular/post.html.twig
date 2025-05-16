@@ -29,9 +29,10 @@
     </div></div>  {#  end row #}
     <div class="row container {{selfid}}"><div class="row container-inner">
     {% endif %}
-    {% set featured = page.collection({'items':{'@taxonomy.category': 'blog' },'order': {'by': 'date', 'dir': 'desc'}}) %}
-    {% for child in featured %}
-            <div class="postclass col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
+    {% set featured = page.collection({'items':{'@taxonomy.category': 'blog', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {% for row in featured|batch(3) %}
+        {% for child in row %}
+            <div class="col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
                         {% elseif page.header.section.settings.column == 4 %}col-lg-3
@@ -39,6 +40,8 @@
                         {% else %}col-lg-6{% endif %} ">
                 {% include 'partials/blog-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_img':show_img, 'card_opentype':card_opentype} %}
             </div>
+        {% endfor %}
+        <div class="is-post-area"></div>
     {% endfor %}
     {% if page.header.section.wrap.container == 1 %}
     </div></div>  {#  end row #}
