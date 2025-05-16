@@ -29,7 +29,9 @@
     </div></div>  {#  end row #}
     <div class="row container {{selfid}}"><div class="row container-inner">
     {% endif %}
-    {% set featured = page.collection({'items':{'@taxonomy.category': 'blog'},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {% set featured = page.collection({'items':{'@taxonomy.category': 'blog', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {% set all_blogs = page.collection({'items':{'@taxonomy.category': 'blog', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {{ dump(all_blogs) }}
     {% for row in featured|batch(3) %}
         {% for child in row %}
             <div class="col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
