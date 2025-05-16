@@ -34,9 +34,10 @@
 {% endif %}
     {# <div class="container bricklayer">         #}
     <ul class="js-masonry-list">
-    {% set featured = page.collection({'items':{'@taxonomy.category': 'portfolio', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) %}
-    {% for row in featured|batch(3) %}
-        {% for child in row %}
+    {# set featured = page.collection({'items':{'@taxonomy.category': 'portfolio', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) #}
+    
+    {% set featured = page.collection({'items':{'@taxonomy.category': 'portfolio'},'order': {'by': 'date', 'dir': 'desc'}}) %}
+    {% for row in featured %}
         <li class="js-masonry-elm">
             <div class="
                         {# {% if page.header.section.settings.column == 1 %}col-lg-12
@@ -50,7 +51,6 @@
                 {% include 'partials/portfolio-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_content':show_content, 'card_opentype':card_opentype, 'masonry':masonry} %}
             </div>
         </li>
-        {% endfor %}
     {% endfor %}
     </div>
 {% if page.header.section.wrap.container == 1 %}
