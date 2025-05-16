@@ -30,7 +30,7 @@
     <div class="row container {{selfid}}"><div class="row container-inner">
     {% endif %}
     {% set featured = page.collection({'items':{'@taxonomy.category': 'blog' },'order': {'by': 'date', 'dir': 'desc'}}) %}
-    {% for row in featured %}
+    {% for child in featured %}
             <div class="postclass col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4

@@ -37,7 +37,7 @@
     {# set featured = page.collection({'items':{'@taxonomy.category': 'portfolio', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) #}
     
     {% set featured = page.collection({'items':{'@taxonomy.category': 'portfolio'},'order': {'by': 'date', 'dir': 'desc'}}) %}
-    {% for row in featured %}
+    {% for child in featured %}
         <li class="js-masonry-elm">
             <div class="
                         {# {% if page.header.section.settings.column == 1 %}col-lg-12
