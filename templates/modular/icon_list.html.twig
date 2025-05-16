@@ -84,4 +84,10 @@
 {% endif %} 
 }
 
+{% if page.header.section.settings.padding %}
+.icon-list-area.{{selfid}} {
+    padding: {{page.header.section.settings.padding}};
+}
+{% endif %}
+
 </style>

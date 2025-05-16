@@ -852,11 +852,6 @@ header.header-area.fixed {
 
 /* about-area css end */
 
-/* icon-list-area css start */
-.icon-list-area {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-}
 
 .icon-list-area .secondary-title {
     margin-bottom: 65px;
@@ -936,7 +931,7 @@ header.header-area.fixed {
 
 .cta-area {
     background-color: var(--tertiary);
-    padding: 8rem 0rem 4rem 0rem;
+   // padding: 8rem 0rem 4rem 0rem;
 
 }
 
@@ -1405,7 +1400,7 @@ footer, footer p, footer a {
 
 /* team-area css start */
 .team-area {
-    padding: 8rem 0;
+    
     background-color: var(--tertiary);
     @media (max-width: 1218px) {
         &.team-design .container .container-inner .row {
@@ -1633,6 +1628,13 @@ footer, footer p, footer a {
 /* contact page css end */
 
 /* mobile menu css start */
+
+
+@media screen and (min-width: 991.5px) {
+.postclass.col-lg-3 {
+    width: 24.5%;
+}
+}
 
 .mobile_menu {
     position: fixed;
@@ -1934,8 +1936,7 @@ footer, footer p, footer a {
         margin-bottom: 60px;
     }
 
-    .case-post-area,
-    .icon-list-area {
+    .case-post-area {
         padding-bottom: 0px;
         padding-top: 20px;
     }
@@ -1945,9 +1946,6 @@ footer, footer p, footer a {
         margin-top: 55px;
     }
 
-    .cta-area {
-        padding: 70px 0;
-    }
 
     .ft-g-wrapper {
         padding: 70px 0;
@@ -1984,9 +1982,7 @@ footer, footer p, footer a {
         font-size: 18px;
         line-height: 28px;
     }
-    .team-area {
-        padding: 80px 0;
-    }
+    
     .about-us-area {
         padding: 70px 0;
         padding-bottom: 70px;
@@ -2047,9 +2043,6 @@ footer, footer p, footer a {
         padding: 60px 0;
     }
 
-    .cta-area {
-        padding: 65px 0;
-    }
     .primary-title h3 {
         font-size: 36px;
         margin-bottom: 15px;

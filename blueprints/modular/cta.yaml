@@ -161,6 +161,10 @@ form:
                   3: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.3
                   4: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.4
                   5: THEME_AKAZIEForest.ADMIN.FIELDS.HSIZE.OPTIONS.5
+              header.section.settings.padding:
+                type: text
+                label: THEME_AKAZIEForest.ADMIN.FIELDS.PADDING.LABEL
+                default: '0'
               header.section.settings.txtcolor:
                 type: colorpicker
                 label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL

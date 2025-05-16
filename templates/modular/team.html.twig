@@ -161,4 +161,12 @@
     background-color: {{page.header.section.settings.bgcolor}};
 }
 {% endif %}
+
+
+{% if page.header.section.settings.padding %}
+.team-area.{{selfid}} {
+    padding: {{page.header.section.settings.padding}};
+}
+{% endif %}
+
 </style>

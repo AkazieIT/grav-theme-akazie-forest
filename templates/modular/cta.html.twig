@@ -85,4 +85,10 @@
     color: {{page.header.section.settings.txtcolor}};
 }
 {% endif %}
+
+{% if page.header.section.settings.padding %}
+.cta-area.{{selfid}} {
+    padding: {{page.header.section.settings.padding}};
+}
+{% endif %}
 </style>
