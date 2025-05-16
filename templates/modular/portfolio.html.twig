@@ -32,25 +32,18 @@
 <div class="row container portfolio-area {{selfid}}"><div class="row container-inner">
     {# <div class="row"> #}
 {% endif %}
-    {# <div class="container bricklayer">         #}
-    <ul class="js-masonry-list">
     {# set featured = page.collection({'items':{'@taxonomy.category': 'portfolio', '@taxonomy.featured': true},'order': {'by': 'date', 'dir': 'desc'}}) #}
     
     {% set featured = page.collection({'items':{'@taxonomy.category': 'portfolio'},'order': {'by': 'date', 'dir': 'desc'}}) %}
     {% for child in featured %}
-        <li class="js-masonry-elm">
-            <div class="
-                        {# {% if page.header.section.settings.column == 1 %}col-lg-12
+            <div class="col-12 {% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
                         {% elseif page.header.section.settings.column == 3 %}col-lg-4
                         {% elseif page.header.section.settings.column == 4 %}col-lg-3
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
-                        {% else %}col-lg-6{% endif %}   #}
-                        "
-                 style="">
+                        {% else %}col-lg-6{% endif %} ">
                 {% include 'partials/portfolio-list-item.html.twig' with {page: child, 'truncate':true, 'readmore': false, 'show_date':show_date, 'show_tax':show_tax, 'show_content':show_content, 'card_opentype':card_opentype, 'masonry':masonry} %}
             </div>
-        </li>
     {% endfor %}
     </div>
 {% if page.header.section.wrap.container == 1 %}
@@ -58,15 +51,7 @@
 </div></div>
 <div class="row container"><div class="row container-inner">  {# start row #}
 {% endif %}
-    <script>
-        //Bricklayer
-        /* var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
-        for (var i = 0; i < 20; i++) {
-            bricklayer.append(box())
-        }
-        var anotherBox = box()
-        bricklayer.append(anotherBox) */
-    </script>
+
 {% endif %}
 
   <style>
@@ -77,29 +62,6 @@ background-color: {{ page.header.section.settings.bgcolor }};
 }
 
 {% endif %}
-
-    .js-masonry-elm {
-{% if page.header.section.settings.column == 1 %}
-     width: 100%;
-    {% set _cols = 1 %}
-{% elseif page.header.section.settings.column == 2 %}
-    width: 50%;
-    {% set _cols = 2 %}
-{% elseif page.header.section.settings.column == 3 %}
-    width: 33.3333%;
-    {% set _cols = 3 %}
-{% elseif page.header.section.settings.column == 4 %}
-    width: 25%;
-    {% set _cols = 4 %}
-{% elseif page.header.section.settings.column == 5 %}
-    width: 20%;
-    {% set _cols = 5 %}
-{% else %}
-    width: 16.6667%;
-    {% set _cols = 6 %}
-{% endif %}
-
-    }
   </style>
 <script>
 // add document ready event
