@@ -48,7 +48,14 @@ core features include
 
 
 ## Blog + Portfolio posts
-You can use two different kinds of posts with Akazie Forest. To start with a blog, create a page with the template `Blog`. In this page, create posts by creating pages with the template `Blogpost`. In the *options* of the blog post, you can set a post date as well as tags. **make sure to put the category *blog* (for portfolio pages: *portfolio*) in the *category* field** or else the blog post won't show up! Now you can either use the blog page or the `blog` module template to display blog posts.
+You can use two different kinds of posts with Akazie Forest. 
+
+To start a blog, create a page with the template `Blog`. 
+
+In this page, create posts by creating pages with the template `Blogpost`.
+
+In the *options* of the blog post, you can set a post date as well as tags. 
+**Make sure to put the category *blog* (for portfolio pages: *portfolio*) in the *category* field** or else the blog post won't show up! Now you can either use the blog page or the `blog` module template to display blog posts.
 
 
 ## Plugin support
