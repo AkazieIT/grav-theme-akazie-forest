@@ -320,6 +320,8 @@ en:
           LABEL: "Add (Javascript) tracking code to header"
         LANGSWITCHER:
           LABEL: "Language switcher position"
+          MOB:
+            LABEL: "Add another switcher in Mobile Menu?"
           OPTIONS:
             0: "Top Left"
             1: "Top Right"
@@ -858,6 +860,8 @@ de:
         
         LANGSWITCHER:
           LABEL: "Sprach switcher position"
+          MOB:
+            LABEL: "Zusätzlichen Switcher im mobilen Menü hinzufügen?"
           OPTIONS:
             0: "Oben Links"
             1: "Oben Rechts"

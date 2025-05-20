@@ -23,6 +23,10 @@
 
     <div class="mobile_menu-inner">
         {% include 'partials/navigation_mobile.html.twig' %}
+
+        {% if config.plugins.langswitcher.enabled and theme_var('header.langswitcher.mob') %}
+          {% include 'partials/langswitcher.html.twig' %}
+        {% endif %}
         <div class="m_menu_footer">
                 {% include 'partials/footercolumns.html.twig' with {'mobilefooter': true} %}
                 {% if theme_var('footer.showinnav.enabled') %}

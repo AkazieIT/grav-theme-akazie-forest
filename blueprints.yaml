@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.42
+version: 0.1.43
 description: A Forest Theme
 icon: rebel
 author:
@@ -106,6 +106,14 @@ form:
                 1: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.1
                 2: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.2
                 3: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.3
+            header.langswitcher.mob:
+              type: toggle
+              label: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.MOB.LABEL
+              highlight: 0
+              default: 0
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
 
         nav:
           type: fieldset

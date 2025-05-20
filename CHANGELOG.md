@@ -1,3 +1,12 @@
+# v0.1.43
+1. [](#new)
+    * Possibility to add LangSwitcher to mobile menu
+
+# v0.1.42
+1. [](#improved)
+    * updated readme
+
+
 # v0.1.41
 ##  05/15/2025
 

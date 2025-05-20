@@ -2328,7 +2328,7 @@ section.section {
     height:100%;
 }
 
-ul.langswitcher {
+:not(.mobile_menu-inner) > ul.langswitcher {
     position:fixed;
     z-index:56;
 
@@ -2340,4 +2340,9 @@ ul.langswitcher {
     margin-left: 0 !important;
     display: inline-block;
     padding: 10px;
+}
+
+
+.mobile_menu-inner > ul.langswitcher { 
+    top:auto;
 }
