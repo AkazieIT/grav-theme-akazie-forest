@@ -33,7 +33,6 @@ core features include
 
 * Logo, Font, Color customisation
 * Various design settings (page, header, menu, footer)
-* A Custom footer can be implemented if necessary with the Footer module
 * Settings for adding tracking codes, custom css + js files
 * Blocks with custom text or automatic links in footer
 * Blog post types
