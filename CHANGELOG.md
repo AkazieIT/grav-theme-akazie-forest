@@ -1,3 +1,7 @@
+# v0.1.44
+1. [](#bugfix)
+    * minor bugfixes
+
 # v0.1.43
 1. [](#new)
     * Possibility to add LangSwitcher to mobile menu

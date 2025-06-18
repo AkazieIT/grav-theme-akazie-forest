@@ -48,9 +48,12 @@
                              </div>
                             {% endif %}
                         {% endif %}       
-                    <a href="{{card.link}}" class="box-btn" {% if card.open.type %}target="_blank"{% endif %}>
-                        {{card.b_name}}<i class="far fa-angle-right"></i>
-                    </a>
+
+                    {% if card.link and card.b_name %}
+                        <a href="{{card.link}}" class="box-btn" {% if card.open.type %}target="_blank"{% endif %}>
+                            {{card.b_name}}<i class="far fa-angle-right"></i>
+                        </a>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
