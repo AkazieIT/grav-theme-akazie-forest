@@ -1,5 +1,5 @@
 en:
-  THEME_AKAZIEForest:
+  THEME_AKAZIEFOREST:
     SEO:
       TAB: "SEO"
       SECTION: "Search Engine Optimization"
@@ -56,7 +56,7 @@ en:
           LABEL: "Size title"
           DESCRIPTION: "Unit is pixel"
         TITLE_ORDER:
-          LABEL: "Title / subititle order reversal?"
+          LABEL: "Title / subtitle order reversal?"
           OPTIONS:
             0: "Title / Subtitle"
             1: "Subtitle / Title"
@@ -539,7 +539,7 @@ en:
 
 
 de:
-  THEME_AKAZIEForest:
+  THEME_AKAZIEFOREST:
     SEO:
       TAB: "SEO"
       SECTION: "Suchmaschinenoptimierung"

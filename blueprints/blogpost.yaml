@@ -12,12 +12,12 @@ form:
           fields:
             header.subtitle:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SUBTITLE.LABEL
 
 
         blog:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.BLOG
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.BLOG
 
           fields:
 
@@ -117,7 +117,7 @@ form:
           #    toggleable: true
           #    label: Summary delimiter
           #    classes: large
-              placeholder: ===
+          #    placeholder: ===
 
           import@:
             type: partials/blog-bits

@@ -17,33 +17,33 @@ form:
             header.section.space.height:
               type: text
               autofocus: true
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.HEIGHT.LABEL
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.HEIGHT.DESCRIPTION
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HEIGHT.LABEL
+              description: THEME_AKAZIEFOREST.ADMIN.FIELDS.HEIGHT.DESCRIPTION
 
         settings:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.SETTINGS
           fields:
             header.title:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.INT
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TITLE.INT
             header.section.settings.bgcolor:
               type: colorpicker
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
             header.section.background.image:
               type: file
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_IMG.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_IMG.LABEL
               size: large
               destination: '@self' 
               multiple: false
               markdown: true
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.IMAGE.LABEL
+              description: THEME_AKAZIEFOREST.ADMIN.FIELDS.IMAGE.LABEL
               accept:
                 - image/*
 
             header.section.settings.module.enabled:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
@@ -53,14 +53,14 @@ form:
                 type: bool
             header.section.wrap.container:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.WRAP.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.WRAP.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.WRAP.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.WRAP.OPTIONS.1
             header.section.classes:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLASSES.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CLASSES.LABEL
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED

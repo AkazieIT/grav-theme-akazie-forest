@@ -22,25 +22,25 @@ form:
                   default: item
         portfolio:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.PORT_CONFIG
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.PORT_CONFIG
 
           fields:
 
             content_title:
               type: spacer
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.CONT_DEF.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONT_DEF.TITLE
 
             header.content.items:
               type: textarea
               yaml: true
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.LABEL
               default: '@self.children'
               validate:
                 type: yaml
 
             header.content.limit:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MAX.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MAX.LABEL
               default: 5
               validate:
                 required: true
@@ -49,25 +49,25 @@ form:
 
             header.content.order.by:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ORDER.LABEL
               default: folder
               options:
-                folder: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.FOLDER
-                title: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.TITLE
-                date: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.DATE
-                default: THEME_AKAZIEForest.ADMIN.FIELDS.ORDER.OPTIONS.DEFAULT
+                folder: THEME_AKAZIEFOREST.ADMIN.FIELDS.ORDER.OPTIONS.FOLDER
+                title: THEME_AKAZIEFOREST.ADMIN.FIELDS.ORDER.OPTIONS.TITLE
+                date: THEME_AKAZIEFOREST.ADMIN.FIELDS.ORDER.OPTIONS.DATE
+                default: THEME_AKAZIEFOREST.ADMIN.FIELDS.ORDER.OPTIONS.DEFAULT
 
             header.content.order.dir:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SEQUENCE.LABEL
               default: asc
               options:
-                asc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.ASC
-                desc: THEME_AKAZIEForest.ADMIN.FIELDS.SEQUENCE.OPTIONS.DESC
+                asc: THEME_AKAZIEFOREST.ADMIN.FIELDS.SEQUENCE.OPTIONS.ASC
+                desc: THEME_AKAZIEFOREST.ADMIN.FIELDS.SEQUENCE.OPTIONS.DESC
 
             header.content.pagination:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.PAGINATION.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.PAGINATION.LABEL
               highlight: 1
               default: 1
               options:
@@ -89,42 +89,42 @@ form:
 
             header.section.settings.column:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.LABEL
               default: 3
               options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
-                4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
-                6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
+                2: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
+                3: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
+                4: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                6: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.card.date.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.DATE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.DATE.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.1
             header.section.card.taxonomy.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.1
             header.section.card.content.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_CONT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_CONT.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.CONTROLS.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.CONTROLS.OPTIONS.1
             header.section.card.open.type:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOW.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOW.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOW.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOW.OPTIONS.1
 
           import@:
             type: partials/portfolio-bits

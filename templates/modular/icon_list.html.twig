@@ -20,7 +20,11 @@
                         {% elseif page.header.section.settings.column == 6 %}col-lg-2
                         {% else %}col-lg-6{% endif %}  mb-30">
                 <div class="cmn-content icon-list-content {{selfid}}">
-                        {% set image = page.media[(card.icon|keys|first)] %}
+                        {# A file field is stored either as a map keyed by filename (Grav 1.x)
+                           or as a list (Grav 2.0). With a list, |keys|first is the numeric
+                           index, not a filename, so look the media up by the entry's own
+                           name first and only then fall back to the key. #}
+                        {% set image = page.media[icon_name] ?: page.media[(card.icon|keys|first)] %}
                         
                         {% if image %}
                             {% if image.mime == 'application/pdf' %}

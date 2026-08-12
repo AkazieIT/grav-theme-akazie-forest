@@ -3,34 +3,34 @@ form:
 
     hero_title:
       type: spacer
-      title: THEME_AKAZIEForest.ADMIN.SECTION.HERO
+      title: THEME_AKAZIEFOREST.ADMIN.SECTION.HERO
 
     header.hero_classes:
       type: text
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HERO.LABEL
       markdown: true
-      description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO.DESCRIPTION
+      description: THEME_AKAZIEFOREST.ADMIN.FIELDS.HERO.DESCRIPTION
 
     header.hero_image:
       type: filepicker
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HERO_IMG.LABEL
       preview_images: true
-      description: THEME_AKAZIEForest.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
+      description: THEME_AKAZIEFOREST.ADMIN.FIELDS.HERO_IMG.DESCRIPTION
 
     header.objectfit:
       type: text
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.OBJECTFIT.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.OBJECTFIT.LABEL
       default: 'center center'
 
     toggles_title:
       type: spacer
-      title: THEME_AKAZIEForest.ADMIN.SECTION.CONFIG
+      title: THEME_AKAZIEFOREST.ADMIN.SECTION.CONFIG
 
     header.blog_url:
       type: text
       toggleable: true
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG_ROUTE.LABEL
-      help: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG_ROUTE.HELP
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BLOG_ROUTE.LABEL
+      help: THEME_AKAZIEFOREST.ADMIN.FIELDS.BLOG_ROUTE.HELP
       default: '/blog'
       placeholder: '/blog'
       size: medium
@@ -38,7 +38,7 @@ form:
     header.show_sidebar:
       type: toggle
       toggleable: true
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.SIDEBAR.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SIDEBAR.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED
@@ -49,7 +49,7 @@ form:
     header.show_breadcrumbs:
       type: toggle
       toggleable: true
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.BREADCRUMBS.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BREADCRUMBS.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED
@@ -60,7 +60,7 @@ form:
     header.show_pagination:
       type: toggle
       toggleable: true
-      label: THEME_AKAZIEForest.ADMIN.FIELDS.PAGINATION.LABEL
+      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.PAGINATION.LABEL
       highlight: 1
       options:
         1: PLUGIN_ADMIN.ENABLED

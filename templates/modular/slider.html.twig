@@ -31,14 +31,12 @@
     </div>
     {% endif %}
 
-    {% if page.header.section.image %}
+    {# The slideshow renders every image in the page folder, so gate it on the page media
+       rather than on section.image. Grav 2.0's 'pagemedia' field uploads into the page
+       folder without storing a value, so a slider created in Admin 2.0 has media but no
+       section.image and would otherwise render no slides at all. #}
+    {% if page.media.images | length %}
     <div class="img_wrap cmn-content">
-    {# 
-        {% set img = (page.header.section.image | first).name %}
-        <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
-    #}
-
-
 
 <!-- Swiper -->
     <div class="swiper {{cleanSlug}}">

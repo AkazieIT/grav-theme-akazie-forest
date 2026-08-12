@@ -7,17 +7,17 @@ form:
       fields:
         content:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.CONTENT
 
           fields:
             header.subtitle:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBTITLE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SUBTITLE.LABEL
 
         portfolio:
 
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.PORTFOLIO
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.PORTFOLIO
 
           fields:
 
@@ -117,7 +117,7 @@ form:
             #  toggleable: true
             #  label: Summary delimiter
             #  classes: large
-              placeholder: ===
+            #  placeholder: ===
 
 
           import@:

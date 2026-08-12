@@ -11,50 +11,50 @@ form:
       fields:
         content:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.CONTENT
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.CONTENT
 
           fields:
             header.title:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TITLE.LABEL
               validate:
                 required: true
             header.section.slides:
               name: slides
               type: list
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.LABEL
               collapsed: true
               fields:
                 .icon:
                   type: file
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.UPLOAD.LABEL
                   size: large
                   destination: '@self'
                   multiple: false
                   markdown: true
-                  description: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
+                  description: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.ICON.DESCRIPTION
                   accept:
                     - image/*
                 .text:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.QUOTE.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.QUOTE.LABEL
                 .author:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEAM_NAME.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.TEAM_NAME.LABEL
                 .position:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.POS.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.POS.LABEL
 
         settings:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.SETTINGS
           fields:
             header.section.settings.bgcolor:
               type: colorpicker
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
             header.section.settings.module.enabled:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:

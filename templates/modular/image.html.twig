@@ -24,20 +24,21 @@
     </div>
     {% endif %}
 
-    {% if page.header.section.image %}
-    <div class="img_wrap cmn-content">
-    {# 
-        {% set img = (page.header.section.image | first).name %}
-        <img  src="{{ url('theme://custom/images/' ~ img)  }}" alt="{{page.header.section.alt_tag}}" class="img-fluid"> 
-    #}
-
+    {# Resolve the image: prefer the explicit section.image entry, which exists on content
+       migrated from Grav 1.x. Modules created in Admin 2.0 do not have it, because the
+       'pagemedia' field uploads into the page folder without storing a value, so fall
+       back to the page's own media there. #}
+    {% set image = null %}
     {% if page.header.section.image | first is iterable %}
-      {% set imgtemp = page.header.section.image | first %}
-      {% set image = page.media[imgtemp.name] %}
-    {% else %}
-      {% set image = page.media | first %}
+      {% set image = page.media[(page.header.section.image | first).name] %}
     {% endif %}
-    
+    {% if image is null %}
+      {% set image = page.media.images | first %}
+    {% endif %}
+
+    {% if image %}
+    <div class="img_wrap cmn-content">
+
     {% set is_svg = image.url|lower ends with '.svg' %}
     
     {% if page.header.scale == 1 %}

@@ -40,16 +40,29 @@
 
     {% if show_gallery %}
         <div id="lightgallery" class="gallery_wrap cmn-content gallery_portfolio">
-            {# Convert the string into an array #}
-            {% set order = page.header.media_order|split(',') %}
+            {# media_order only lists files that were explicitly ordered, and Grav 2.0 does
+               not extend it when new files are uploaded. Building the gallery from it
+               alone therefore drops every newly uploaded image, and shows nothing at all
+               on pages that never had a media_order. Use it for the ordering where it
+               exists, then append the remaining page images. #}
+            {% set order = page.header.media_order ? page.header.media_order|split(',') : [] %}
 
-            {# Initialize an empty array for sorted media #}
             {% set sorted_media = [] %}
+            {% set ordered_names = [] %}
 
-            {# Populate sorted_media in the order specified by the order array, but only include images #}
+            {# First the explicitly ordered images, in their configured order #}
             {% for filename in order %}
+                {% set filename = filename|trim %}
                 {% if page.media[filename] and page.media[filename].type == 'image' %}
                     {% set sorted_media = sorted_media|merge([page.media[filename]]) %}
+                    {% set ordered_names = ordered_names|merge([filename]) %}
+                {% endif %}
+            {% endfor %}
+
+            {# Then any image in the page folder that media_order does not mention #}
+            {% for filename, medium in page.media.images %}
+                {% if filename not in ordered_names %}
+                    {% set sorted_media = sorted_media|merge([medium]) %}
                 {% endif %}
             {% endfor %}
 

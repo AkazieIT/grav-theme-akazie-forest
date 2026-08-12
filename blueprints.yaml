@@ -1,7 +1,7 @@
 name: Akazie Forest
 slug: akazie-forest
 type: theme
-version: 0.1.44
+version: 0.1.45
 description: A Forest Theme
 icon: rebel
 author:
@@ -17,98 +17,103 @@ license: MIT
 dependencies:
   - { name: grav, version: '>=1.7.0' }
 
+compatibility:
+  grav:
+    - '1.7'
+    - '2.0'
+
 form:
   validation: loose
   fields:
     layout_section:
       type: section
-      title: THEME_AKAZIEForest.ADMIN.SECTION.LAYOUT
+      title: THEME_AKAZIEFOREST.ADMIN.SECTION.LAYOUT
       underline: true
       fields:
         theme_info:
           type: display
-          label: THEME_AKAZIEForest.ADMIN.FIELDS.DISPLAY.LABEL
+          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.DISPLAY.LABEL
 
 
         site:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.SITE.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.SITE.TITLE
           collapsed: true
           collapsible: true
           fields:
             site.favicon:
               type: file
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FAV.LABEL
               size: large
               destination: 'theme://custom/images/favicon'
               multiple: false
               markdown: true
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.FAV.DESCRIPTION
+              description: THEME_AKAZIEFOREST.ADMIN.FIELDS.FAV.DESCRIPTION
               accept:
                 - image/*
             site.maxwidth:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MAXW.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MAXW.LABEL
               default: 1280
             site.sectionwrappadding:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAP.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SECTIONWRAP.LABEL
               default: '20px 20px'
             site.sectionwrappaddingmobile:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SECTIONWRAPMOBILE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SECTIONWRAPMOBILE.LABEL
               default: '20px 20px'
         header:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.HEADER.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.HEADER.TITLE
           collapsed: true
           collapsible: true
           fields:
             header.displaylogo:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.DLOGO.LABEL
               highlight: 1
               default: 1
               options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.OPTIONS.1
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.DLOGO.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.DLOGO.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.DLOGO.OPTIONS.0
             header.logo.desktop:
               type: file
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LOGO.LABEL
               size: large
               destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
+              description: THEME_AKAZIEFOREST.ADMIN.FIELDS.LOGO.DESCRIPTION
               accept:
                 - image/*
             header.logo.mobile:
               type: file
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MLOGO.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MLOGO.LABEL
               size: large
               destination: 'theme://custom/images/logo'
               multiple: false
               markdown: true
-              description: THEME_AKAZIEForest.ADMIN.FIELDS.LOGO.DESCRIPTION
+              description: THEME_AKAZIEFOREST.ADMIN.FIELDS.LOGO.DESCRIPTION
               accept:
                 - image/*
             header.javascript:
               type: textarea
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.JS.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.JS.LABEL
               rows: 2
               size: large
             header.langswitcher.position:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.3
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.1
+                2: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.2
+                3: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.OPTIONS.3
             header.langswitcher.mob:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.LANGSWITCHER.MOB.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LANGSWITCHER.MOB.LABEL
               highlight: 0
               default: 0
               options:
@@ -117,14 +122,14 @@ form:
 
         nav:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.NAV.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAV.TITLE
           collapsed: true
           collapsible: true
           fields:
             dropdown.enabled:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SUBNAV.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.SUBNAV.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SUBNAV.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.SUBNAV.HELP
               highlight: 1
               default: 1
               options:
@@ -134,8 +139,8 @@ form:
                 type: bool
             header.fixed.option:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.FIXHEAD.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.FIXHEAD.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FIXHEAD.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.FIXHEAD.HELP
               highlight: 1
               default: 1
               options:
@@ -145,29 +150,29 @@ form:
                 type: bool
             header.closemenucaption:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CLOSEMENU.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CLOSEMENU.LABEL
               default: 'schliessen'
             nav.desktop:
               type: fieldset
-              title:  THEME_AKAZIEForest.ADMIN.FIELDS.DNAV.TITLE
+              title:  THEME_AKAZIEFOREST.ADMIN.FIELDS.DNAV.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.fittocontent:
                   type: select
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.FITNAV.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FITNAV.LABEL
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
+                    0: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWTITLE.OPTIONS.0
+                    1: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWTITLE.OPTIONS.1
                 nav.navheight:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HNAV.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HNAV.LABEL
                   default: 85
                 nav.hamburger:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.LABEL
-                  help: THEME_AKAZIEForest.ADMIN.FIELDS.HAMBURGER.HELP
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HAMBURGER.LABEL
+                  help: THEME_AKAZIEFOREST.ADMIN.FIELDS.HAMBURGER.HELP
                   highlight: 1
                   default: 1
                   options:
@@ -177,8 +182,8 @@ form:
                     type: bool
                 nav.linksbeforehamburger:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.LABEL
-                  help: THEME_AKAZIEForest.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.HELP
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.LABEL
+                  help: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAVLINKSBEFOREHAMBURGER.HELP
                   default: 0
                   validate:
                       type: number
@@ -186,13 +191,13 @@ form:
                       max: 10
             nav.mobile:
               type: fieldset
-              title:  THEME_AKAZIEForest.ADMIN.FIELDS.MNAV.TITLE
+              title:  THEME_AKAZIEFOREST.ADMIN.FIELDS.MNAV.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.mobileheightenabled:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CHNAV.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CHNAV.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -200,7 +205,7 @@ form:
                     1: PLUGIN_ADMIN.ENABLED
                 nav.mobilelogoenabled:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILELOGO.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MOBILELOGO.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -208,30 +213,30 @@ form:
                     1: PLUGIN_ADMIN.ENABLED
                 nav.customcode:
                   type: textarea
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOMCODE.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CUSTOMCODE.LABEL
                 nav.mobilenavheight:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CHMNAV.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CHMNAV.LABEL
                   default: 85
                 nav.hamburgercolor:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HAMCOL.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HAMCOL.LABEL
                   default: '#7b9b50'
                 nav.xcolor:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.XCOL.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.XCOL.LABEL
                   default: '#7b9b50'
 
 
             nav.button:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.NAV_BUTTON.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAV_BUTTON.TITLE
               collapsed: false
               collapsible: true
               fields:
                 nav.button.enabled:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.NAV_BUTTON.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAV_BUTTON.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -241,29 +246,29 @@ form:
                     type: bool
                 nav.button.text:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTON.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BUTTON.LABEL
                   default: ''
                 nav.button.link:
                     type: pages
                     size: medium
-                    label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK.LABEL
+                    label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK.LABEL
                     show_all: false
                     show_modular: false
                     show_root: true
                 nav.button.url:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BUTTONURL.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BUTTONURL.LABEL
                   default: ''
 
         footer:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER.TITLE
           collapsed: true
           collapsible: true
           fields:
             footer.compact:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_MAIN.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_MAIN.TITLE
               collapsed: false
               collapsible: true
               fields:
@@ -275,60 +280,60 @@ form:
                       fields:
                         footer.top.bgcolor:
                           type: colorpicker
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
                           default: ''
                         footer.mail:
                           type: text
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIL.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MAIL.LABEL
                           size: large
                     column2:
                       type: column
                       fields:
                         footer.top.color:
                           type: colorpicker
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TXT_COLOR.LABEL
                           default: '#555555'
                         footer.phone:
                           type: text
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.PHONE.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.PHONE.LABEL
                           size: large
                 top.footer.socialtext:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.SOCIALTEXT.LABEL         
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.SOCIALTEXT.LABEL         
                   default: 'Folge uns'
                 top.footer.socials:
                   name: socials
                   type: list
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.LABEL
                   collapsed: true
                   fields:
                     .icon:
                       type: text
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.ICON.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.ICON.LABEL
                     .link:
                       type: text
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.LINK.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.LINK.LABEL
                     .fontsize:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.FONTSIZE.LABEL
                       highlight: 0
                       default: 0
                       options:
-                        0: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.BIG
-                        1: THEME_AKAZIEForest.ADMIN.FIELDS.SM.FONTSIZE.SMALL
+                        0: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.FONTSIZE.BIG
+                        1: THEME_AKAZIEFOREST.ADMIN.FIELDS.SM.FONTSIZE.SMALL
                 top.footer.columns:
                   name: columns
                   type: list
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_CLMNS.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_CLMNS.LABEL
                   collapsed: true
                   fields:
                     .heading:
                       type: textarea
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_HEAD.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_HEAD.LABEL
                       rows: 2
                     .image:
                       type: file
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_LOGO.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_LOGO.LABEL
                       size: large
                       destination: 'theme://custom/images/logo'
                       multiple: false
@@ -337,12 +342,12 @@ form:
                         - image/*
                     .text:
                       type: textarea
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.TEXT.LABEL
                       rows: 5
                       size: large
                     .navigation.enabled:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_NAV.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_NAV.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -352,7 +357,7 @@ form:
                         type: bool
                     .renderhtml.enabled:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.RENDERHTML.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.RENDERHTML.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -362,7 +367,7 @@ form:
                         type: bool
                     .social.enabled:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_ICON.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_ICON.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -372,7 +377,7 @@ form:
                         type: bool
                     .contact.enabled:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_CONTACT.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_CONTACT.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -382,7 +387,7 @@ form:
                         type: bool
                     .mobilenav.enabled:
                       type: toggle
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.MOBILENAV.LABEL
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MOBILENAV.LABEL
                       highlight: 0
                       default: 0
                       options:
@@ -392,13 +397,13 @@ form:
                         type: bool                        
             footer.bottom:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_BTM.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_BTM.TITLE
               collapsed: false
               collapsible: true
               fields:
                 footer.bottom.enabled:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_FBOTTOM.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_FBOTTOM.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -408,7 +413,7 @@ form:
                     type: bool
                 footer.copyright.enabled:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_CPY.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_CPY.LABEL
                   highlight: 0
                   default: 0
                   options:
@@ -418,15 +423,15 @@ form:
                     type: bool
                 footer.copyright.text:
                   type: text
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.ENTRY.TEXT.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.TEXT.LABEL
                   size: large
                 footer.bottom.bgcolor:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
                   default: '#5a784d'
                 footer.bottom.color:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TXT_COLOR.LABEL
                   default: '#ffffff'
 
                 columns:
@@ -437,7 +442,7 @@ form:
                       fields:
                         footer.impressum.enabled:
                           type: toggle
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_IMP.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_IMP.LABEL
                           highlight: 0
                           default: 0
                           options:
@@ -447,7 +452,7 @@ form:
                             type: bool
                         footer.datenschutz.enabled:
                           type: toggle
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_DP.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_DP.LABEL
                           highlight: 0
                           default: 0
                           options:
@@ -457,7 +462,7 @@ form:
                             type: bool
                         footer.agb.enabled:
                           type: toggle
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_AGB.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_AGB.LABEL
                           highlight: 0
                           default: 0
                           options:
@@ -467,7 +472,7 @@ form:
                             type: bool
                         footer.sitemap.enabled:
                           type: toggle
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOW_SITE.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOW_SITE.LABEL
                           highlight: 0
                           default: 0
                           options:
@@ -477,7 +482,7 @@ form:
                             type: bool
                         footer.showinnav.enabled:
                           type: toggle
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWINNAV.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWINNAV.LABEL
                           highlight: 0
                           default: 0
                           options:
@@ -491,118 +496,118 @@ form:
                         footer.impressum.link:
                           type: pages
                           size: medium
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_IMP.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_IMP.LABEL
                           show_all: false
                           show_modular: false
                           show_root: false
                         footer.datenschutz.link:
                           type: pages
                           size: medium
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DP.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_DP.LABEL
                           show_all: false
                           show_modular: false
                           show_root: false
                         footer.datenschutz.text:
                           type: text
                           size: medium
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.LABEL
-                          help: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_DPTXT.HELP
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_DPTXT.LABEL
+                          help: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_DPTXT.HELP
                         footer.agb.link:
                           type: pages
                           size: medium
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_AGB.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_AGB.LABEL
                           show_all: false
                           show_modular: false
                           show_root: false
                         .footer.agb.text:
                           type: text
-                          label:  THEME_AKAZIEForest.ADMIN.FIELDS.TEXT_AGB.LABEL
+                          label:  THEME_AKAZIEFOREST.ADMIN.FIELDS.TEXT_AGB.LABEL
                         footer.sitemap.link:
                           type: pages
                           size: medium
-                          label: THEME_AKAZIEForest.ADMIN.FIELDS.LINK_SITE.LABEL
+                          label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LINK_SITE.LABEL
                           show_all: false
                           show_modular: false
                           show_root: false
             footer.javascript:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.FOOTER_JS.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.FOOTER_JS.TITLE
               collapsed: false
               collapsible: true
               fields:
                 footer.javascript.code:
                   type: textarea
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.JS_CONTENT.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.JS_CONTENT.LABEL
                   rows: 2
                   size: large
 
     style_section:
       type: section
-      title: THEME_AKAZIEForest.ADMIN.SECTION.CUSTOM
+      title: THEME_AKAZIEFOREST.ADMIN.SECTION.CUSTOM
       underline: true
       fields:
         style.color:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.COLOR.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.COLOR.TITLE
           collapsed: true
           collapsible: true
           fields:
             style.color.background:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
               collapsed: false
               collapsible: true
               fields:
                 style.color.background.main:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
                   default: '#ffffff'
                   validate:
                     required: true
                 style.color.background.primary:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.PRIMARY.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.PRIMARY.LABEL
                   default: '#7b9b50'
                   validate:
                     required: true
                 style.color.background.secondary:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.SECONDARY.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SECONDARY.LABEL
                   default: '#B6D191'
                   validate:
                     required: true
                 style.color.background.third:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.THIRD.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.THIRD.LABEL
                   default: '#5A784D'
                 style.color.background.tertiary:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.HEAD_COL.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HEAD_COL.LABEL
                   default: '#5A784D'
                   validate:
                     required: true
 
             style.color.text:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.TXT_COLOR.LABEL
               collapsed: false
               collapsible: true
               fields:
                 style.color.text.main:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TXT_COLOR.LABEL
                   default: '#707070'
                   validate:
                     required: true
                 style.color.text.primary:
                   type: colorpicker
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_CLR.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TITLE_CLR.LABEL
                   default: '#1D1D1D'
                   validate:
                     required: true
                 style.color.text.colorlinks:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.CLRLINKS.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CLRLINKS.LABEL
                   highlight: 1
                   default: 1
                   options:
@@ -612,17 +617,17 @@ form:
 
         style.font:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.FONT.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.FONT.TITLE
           collapsed: true
           collapsible: true
           fields:
             style.fonts.import:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMPORT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.IMPORT.LABEL
               default: 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap'
             style.fonts.google:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.LOAD.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.LOAD.LABEL
               highlight: 0
               default: 0
               options:
@@ -630,29 +635,29 @@ form:
                 1: PLUGIN_ADMIN.ENABLED
             style.fonts.upload:
               type: fieldset
-              title: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.TITLE
+              title: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD.TITLE
               collapsed: false
               collapsible: true
               fields:
                 style.fonts.uploadselect:
                   type: toggle
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.LABEL
-                  help: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.HELP
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD.LABEL
+                  help: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD.HELP
                   highlight: 1
                   default: 0
                   options:
-                    0: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.0
-                    1: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD.OPTIONS.1
+                    0: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD.OPTIONS.0
+                    1: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD.OPTIONS.1
                 style.fonts.uploadfiles:
                   name: uploadfiles
                   type: list
-                  label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.LABEL
+                  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.LABEL
                   collapsed: true
                   fields:
                     .file:
                       type: file
-                      label: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.FILE
-                      description: THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
+                      label: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.FILE
+                      description: THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.DESCRIPTION
                       size: large
                       destination: 'theme://custom/fonts'
                       multiple: true
@@ -675,68 +680,68 @@ form:
                         - application/octet-stream
                     .name:
                       type: text
-                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.NAME
+                      label:  THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.NAME
                     .weight:
                       type: text
-                      label:  THEME_AKAZIEForest.ADMIN.FIELDS.UPLOAD_FILE.WEIGHT
+                      label:  THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.WEIGHT
                       default: '400'
                       validate:
                         type: number
             style.fonts.main:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.MAIN_FONT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.MAIN_FONT.LABEL
               default: "'Open Sans', sans-serif"
             style.fonts.h:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE_FONT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TITLE_FONT.LABEL
               default: "'Raleway', sans-serif"
             style.fonts.nav:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.NAV_FONT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.NAV_FONT.LABEL
               default: "'Montserrat', sans-serif"
             style.fonts.footer:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.FTR_FONT.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.FTR_FONT.LABEL
               default: "'Raleway', sans-serif"
             style.fonts.customhtml:
               type: textarea
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.HTML.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.HTML.LABEL
               rows: 2
               size: large
         blog:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.BLOG.TITLE
           collapsed: true
           collapsible: true
           fields:
             blog-page:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG_ROUTE.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.BLOG_ROUTE.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BLOG_ROUTE.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.BLOG_ROUTE.HELP
               size: medium
               default: '/blog'
         portfolio:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.PORTFOLIO.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.PORTFOLIO.TITLE
           collapsed: true
           collapsible: true
           fields:
             portfolio-page:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.PRTFL_ROUTE.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.PRTFL_ROUTE.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.PRTFL_ROUTE.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.PRTFL_ROUTE.HELP
               size: medium
               default: '/portfolio'
         other:
           type: fieldset
-          title: THEME_AKAZIEForest.ADMIN.FIELDS.OTHER.TITLE
+          title: THEME_AKAZIEFOREST.ADMIN.FIELDS.OTHER.TITLE
           collapsed: true
           collapsible: true
           fields:
             style.css:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOM_CSS.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOM_CSS.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CUSTOM_CSS.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.CUSTOM_CSS.HELP
               highlight: 0
               default: 0
               options:
@@ -746,8 +751,8 @@ form:
                 type: bool
             style.js:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOM_JS.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.CUSTOM_JS.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.CUSTOM_JS.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.CUSTOM_JS.HELP
               highlight: 0
               default: 0
               options:
@@ -757,8 +762,8 @@ form:
                 type: bool
             style.compress:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.IMGSIZING.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.IMGSIZING.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.IMGSIZING.HELP
               highlight: 0
               default: 0
               options:
@@ -768,8 +773,8 @@ form:
                 type: bool
             style.noresize:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.NOCROP.LABEL
-              help: THEME_AKAZIEForest.ADMIN.FIELDS.NOCROP.HELP
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.NOCROP.LABEL
+              help: THEME_AKAZIEFOREST.ADMIN.FIELDS.NOCROP.HELP
               highlight: 0
               default: 0
               options:

@@ -26,7 +26,7 @@ form:
 
         settings:
           type: tab
-          title: THEME_AKAZIEForest.ADMIN.TAB.SETTINGS
+          title: THEME_AKAZIEFOREST.ADMIN.TAB.SETTINGS
           fields:
             # header.section.settings.title.show:
             #   type: select
@@ -37,24 +37,24 @@ form:
             #     1: Yes
             header.title:
               type: text
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TITLE.INT
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TITLE.INT
             header.section.settings.column:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.LABEL
               default: 3
               options:
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
-                2: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
-                3: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
-                4: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
-                6: THEME_AKAZIEForest.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.1
+                2: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.2
+                3: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.3
+                4: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.4
+                6: THEME_AKAZIEFOREST.ADMIN.FIELDS.POSTWIDTH.OPTIONS.6
             header.section.settings.img.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWIMG.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWIMG.LABEL
               default: 1
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWIMG.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.SHOWIMG.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWIMG.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.SHOWIMG.OPTIONS.1
             # header.section.settings.title.fontsize:
             #   type: text
             #   label: "Font size for Title"
@@ -65,21 +65,21 @@ form:
             #   description: "(unit: px)"
             #header.section.settings.text.alignment:
             #  type: select
-            #  label: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.LABEL
+            #  label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TEXTALIGN.LABEL
             #  default: 1
             #  options:
-            #    1: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
-            #    2: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
-            #    3: THEME_AKAZIEForest.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
+            #    1: THEME_AKAZIEFOREST.ADMIN.FIELDS.TEXTALIGN.OPTIONS.1
+            #    2: THEME_AKAZIEFOREST.ADMIN.FIELDS.TEXTALIGN.OPTIONS.2
+            #    3: THEME_AKAZIEFOREST.ADMIN.FIELDS.TEXTALIGN.OPTIONS.3
             header.section.settings.txtcolor:
               type: colorpicker
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TXT_COLOR.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TXT_COLOR.LABEL
             header.section.settings.bgcolor:
               type: colorpicker
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.BG_COLOR.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.BG_COLOR.LABEL
             header.section.settings.module.enabled:
               type: toggle
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.ENABLED.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENABLED.LABEL
               highlight: 1
               default: 1
               options:
@@ -89,25 +89,25 @@ form:
                 type: bool
             header.section.card.date.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.DATE.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.DATE.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.OPTIONS.0
             header.section.card.taxonomy.show:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.LABEL
               default: 0
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.0
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.TAX.OPTIONS.1
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.OPTIONS.0
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.TAX.OPTIONS.1
             header.section.card.open.type:
               type: select
-              label: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.LABEL
+              label: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOWTWO.LABEL
               default: 1
               options:
-                0: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
-                1: THEME_AKAZIEForest.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
+                0: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOWTWO.OPTIONS.1
+                1: THEME_AKAZIEFOREST.ADMIN.FIELDS.WINDOWTWO.OPTIONS.0
         advanced:
           type: tab
           title: PLUGIN_ADMIN.ADVANCED
