@@ -1,10 +1,6 @@
 {% extends 'partials/base.html.twig' %}
 {% set portfolio_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
 {% set collection = page.collection() %}
-{% set portfolio = page.find(header_var('portfolio_url')|defined(theme_var('portfolio-page'))) %}
-{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
-{% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
-{% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
 
 
 
@@ -21,10 +17,6 @@
 
 {% block content %}
     <section id="body-wrapper" class="section ">
-
-        {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %} #}
 
         {% embed 'partials/layout.html.twig' with {portfolio: page} %}
             {% block item %}
@@ -70,17 +62,7 @@
                     {% endfor %}
                 </div>
 
-                {# {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
-                    <div id="listing-footer">
-                        {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: collection.params.pagination} %}
-                    </div>
-                {% endif %} #}
-
             {% endblock %}
-
-            {# {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
-            {% endblock %} #}
         {% endembed %}
 
 

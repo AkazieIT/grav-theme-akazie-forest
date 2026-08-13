@@ -1,8 +1,6 @@
 {% extends 'partials/base.html.twig' %}
+{# `blog` is the blog listing page; partials/blog/taxonomy.html.twig reads blog.url #}
 {% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
-{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
-{% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
-{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
 {% set hero_image_name = page.header.hero_image %}
 
 
@@ -23,17 +21,10 @@
 <section id="body-wrapper" class="section blog-listing">
     <section class="container {{ grid_size }}">
 
-        {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %} #}
-
         {% embed 'partials/layout.html.twig' %}
             {% block item %}
                 {% include 'partials/blog-item.html.twig' %}
             {% endblock %}
-            {# {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
-            {% endblock %} #}
         {% endembed %}
 
     </section>

@@ -1,8 +1,9 @@
-{% set item_col = show_sidebar ? 'col-12 col-md-12' : 'col-12' %}
-{% set sidebar_col = show_sidebar ? 'col-12 col-md-12' : 'col-12' %}
-
+{# `col-md-12` is not redundant here: css/main.scss keys
+   `.container-inner:has(.col-md-12) { padding: 0 }` off this class, and #item is
+   the only .col-md-12 on blog/portfolio pages. Removing it re-introduces the
+   container padding on every listing and item page. #}
 <div class="columns">
-    <div id="item" class="column {{ item_col }} extra-spacing">
+    <div id="item" class="column col-12 col-md-12 extra-spacing">
         {% block item %}{% endblock %}
     </div>
 </div>

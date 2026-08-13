@@ -1,8 +1,7 @@
 {% extends 'partials/base.html.twig' %}
+{# `portfolio` is the portfolio listing page: it is the inheritance source for
+   show_gallery, and partials/portfolio/taxonomy.html.twig reads portfolio.url #}
 {% set portfolio = page.find(header_var('portfolio_url')|defined(theme_var('portfolio-page'))) %}
-{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, portfolio])|defined(true) %}
-{% set show_sidebar = header_var('show_sidebar', [page, portfolio])|defined(true)  %}
-{% set show_pagination = header_var('show_pagination', [page, portfolio])|defined(true) %}
 {% set show_gallery = header_var('show_gallery', [page, portfolio])|defined(false) %}
 {% set hero_image_name = page.header.hero_image %}
 
@@ -24,17 +23,10 @@
 {% block content %}
 <section id="body-wrapper" class="section portfolio-listing">
     <section class="container {{ grid_size }}">
-        {# {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %} #}
-
         {% embed 'partials/layout.html.twig' %}
             {% block item %}
                 {% include 'partials/portfolio-item.html.twig' %}
             {% endblock %}
-            {# {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
-            {% endblock %} #}
         {% endembed %}
 
 

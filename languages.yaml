@@ -511,10 +511,6 @@ en:
         HERO_IMG:
           LABEL: "Image hero section"
           DESCRIPTION: "If not specified, this defaults to the first image found in the page''s folder"
-        SIDEBAR:
-          LABEL: "Show sidebar"
-        BREADCRUMBS:
-          LABEL: "Show breadcrumbs"
         PAGINATION:
           LABEL: "Show pagination"
         GALLERY:
@@ -1051,10 +1047,6 @@ de:
         HERO_IMG:
           LABEL: "Bild Hero Abschnitt"
           DESCRIPTION: "Wenn das Bild hier nicht spezifiziert ist, dann wird das erste gefundene Bild im Seitenordner gewählt."
-        SIDEBAR:
-          LABEL: "Sidebar anzeigen"
-        BREADCRUMBS:
-          LABEL: "Breadcrumbs anzeigen"
         PAGINATION:
           LABEL: "Nummerierung anzeigen"
         GALLERY:
