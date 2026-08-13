@@ -53,10 +53,10 @@ form:
                 .mail:
                   type: text
                   label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.EMAIL.LABEL
-                .linkedin.linkedin_user:
+                .linkedin_user:
                   type: text
                   label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.URL_TXT.LABEL
-                .linkedin.linkedinProfile:
+                .linkedinProfile:
                   type: text
                   label: THEME_AKAZIEFOREST.ADMIN.FIELDS.ENTRY.URL.LABEL
                 .phone:

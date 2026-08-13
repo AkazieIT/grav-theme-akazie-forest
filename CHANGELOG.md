@@ -1,5 +1,6 @@
 # v0.1.5
 1. [](#bugfix)
+    * Team: Linktext / Link-URL (the LinkedIn line) stayed invisible on the frontend for entries edited in Admin 2.0. The two fields were declared as `.linkedin.linkedin_user` / `.linkedin.linkedinProfile`, but Admin 2.0's list field stores every sub-value under the *last* segment of the field name, so they were saved as flat `linkedin_user` / `linkedinProfile` on the member while the template looked for them nested under `linkedin`. The blueprint now declares the flat names and the template still reads the two older layouts, so existing pages keep rendering
     * Blog Eintrag and Portfolio Eintrag: the Blog / Portfolio tab in Admin was empty. The tab carried an empty `fields:` key, which overwrote the fields injected by `import@` when the blueprint was merged — the tab rendered with its title but no content (affected Grav 1.7 and 2.0 alike)
 2. [](#improved)
     * Removed the "Show sidebar", "Show breadcrumbs" and "Show pagination" toggles from the blog and portfolio blueprints. All three were Quark leftovers whose features have been commented out in the templates since the fork, so none of them had any effect

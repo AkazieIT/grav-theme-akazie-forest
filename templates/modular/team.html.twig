@@ -13,13 +13,14 @@
             {% for member in page.header.section.content.members %}
             {% set img = (member.img | first).name %}
 
-            {# The LinkedIn sub-fields are declared in the blueprint as dotted paths
-               (.linkedin.linkedin_user / .linkedin.linkedinProfile). Depending on how the
-               list item was saved they arrive either nested under a 'linkedin' key or flat
-               under the literal key 'linkedin.linkedinProfile'. Accept both, otherwise the
-               value is present in the file but invisible to the template. #}
-            {% set linkedin_profile = member.linkedin.linkedinProfile ?: attribute(member, 'linkedin.linkedinProfile') %}
-            {% set linkedin_user = member.linkedin.linkedin_user ?: attribute(member, 'linkedin.linkedin_user') %}
+            {# Linktext / Link-URL. The blueprint declares these as plain sub-fields, because
+               Admin 2.0's list field keys every value by the LAST segment of the field name:
+               the old '.linkedin.linkedinProfile' declaration was therefore saved as a flat
+               'linkedinProfile' on the member, and the nested lookup never found it. The two
+               fallbacks keep pages that were saved by earlier Admin versions rendering, where
+               the values sit nested under 'linkedin' or under a literal dotted key. #}
+            {% set linkedin_profile = member.linkedinProfile ?: member.linkedin.linkedinProfile ?: attribute(member, 'linkedin.linkedinProfile') %}
+            {% set linkedin_user = member.linkedin_user ?: member.linkedin.linkedin_user ?: attribute(member, 'linkedin.linkedin_user') %}
 
             <div class="{% if page.header.section.settings.column == 1 %}col-lg-12
                         {% elseif page.header.section.settings.column == 2 %}col-lg-6
