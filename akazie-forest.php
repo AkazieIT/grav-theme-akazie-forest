@@ -15,7 +15,30 @@ class AkazieForest extends Theme
       return [
         'onBlueprintCreated' => ['onBlueprintCreated', 0],
         'onTwigExtensions' => ['onTwigExtensions', 0],
+        'onAdminAfterAddMedia' => ['onAdminAfterMediaChange', 0],
+        'onAdminAfterDelMedia' => ['onAdminAfterMediaChange', 0],
       ];
+    }
+
+    /**
+     * Grav 2 workaround: Admin 2.0 applies page-media uploads/deletes
+     * immediately without a page save, but the rendered module content stays
+     * cached under a key derived from the .md modification time, so the
+     * frontend keeps serving the old image list. Touching the page file
+     * invalidates exactly that page's content cache, like a save would.
+     * In Grav 1 the site theme is not loaded in the admin, so this never runs
+     * there and existing installations keep their current behavior.
+     */
+    public function onAdminAfterMediaChange(Event $event)
+    {
+        $page = $event['page'] ?? $event['object'] ?? null;
+        if (!$page || !method_exists($page, 'filePath')) {
+            return;
+        }
+        $file = $page->filePath();
+        if ($file && is_file($file)) {
+            @touch($file);
+        }
     }
     
     public function onTwigExtensions()
