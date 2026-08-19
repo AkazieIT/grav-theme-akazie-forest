@@ -23,23 +23,37 @@
 
 # v0.1.44
 1. [](#bugfix)
-    * minor bugfixes
+    * Icon List: the button under an entry was rendered even when neither a link nor a button text was set, leaving an empty arrow button in the card. It is now only output when both fields are filled
+    * Text module: the text colour setting only applied to the module title and to paragraphs, so headings inside the text kept the theme colour. The setting now covers `h1`–`h6` as well
+2. [](#improved)
+    * README: removed the line about implementing a custom footer with a "Footer module" — there is no such module; the footer is configured in the theme options
 
 # v0.1.43
 1. [](#new)
-    * Possibility to add LangSwitcher to mobile menu
+    * Possibility to add LangSwitcher to mobile menu: the new option "Add another switcher in Mobile Menu?" (theme options, Header) renders a second language switcher inside the mobile menu. The fixed positioning of the top switcher no longer applies to that copy, so it scrolls with the menu instead of floating over the page
+    * New "Module Padding" field for the CTA, Icon List and Team modules — the vertical spacing of these sections can now be set per module instead of being fixed by the stylesheet
+2. [](#bugfix)
+    * Blog and Portfolio modules: both only listed entries that were flagged as "featured", so a module stayed empty on sites that never used that flag. They now list all pages of the `blog` / `portfolio` category, newest first
+    * Portfolio module: replaced the leftover masonry markup (`ul.js-masonry-list` plus percentage width rules and a commented-out Bricklayer script) with the same Bootstrap column grid the Blog module uses, so both modules lay out identically and follow the "Columns" setting
+    * Blog module: removed the empty `is-post-area` element that was emitted after every third post
+    * Navigation dropdowns used a hard-coded grey (`#C6C6C6`) background and arrow; both now use the theme colour variable
+3. [](#improved)
+    * Removed the fixed section padding of the CTA, Team and Icon List areas from the stylesheet — including the mobile overrides — since the new padding field now controls it, and deleted a handful of empty CSS rules
+    * README: added a section on how to set up blog and portfolio posts, including the requirement to set the `blog` / `portfolio` category so entries actually show up
 
 # v0.1.42
 1. [](#improved)
-    * updated readme
-
+    * README: added an attributions section naming the bundled open source libraries (scopeQuerySelectorShim.js, simple-masonry.js, lightgallery, swiper, bootstrap)
+    * Raised the declared minimum Grav version from 1.6 to 1.7, which is what the theme is actually built and tested against
 
 # v0.1.41
 ##  05/15/2025
 
 1. [](#new)
-    * Initial publication
-
+    * Initial publication: first release of Akazie Forest in the Grav Package Manager
+2. [](#improved)
+    * Colours consolidated into CSS variables (`--tertiaryDark`, `--white`, `--teamMemberOverlay`, …); the hard-coded hex values scattered through buttons, backgrounds and overlays now reference them, so a colour change no longer has to be made in several places
+    * Hero: added a bottom margin that grows on wide screens (from 1400px up), and gave the hero wrapper its own module id class so hero-specific styles no longer leak into other modules
 
 # v0.1.0
 ##  08/17/2023
