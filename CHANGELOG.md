@@ -1,4 +1,4 @@
-# v0.1.5
+# v0.2.0
 1. [](#bugfix)
     * All modules with images: after deleting and re-uploading an image in Admin 2.0, the frontend kept showing the old (deleted) image. Admin 2.0's `pagemedia` field applies uploads/deletes instantly via the API without a page save (in Grav 1 it wrote the file into the header and lit up the Save button — that contract changed upstream), but the rendered module content stays cached under the page file's modification time, which a media-only change never updates. The theme now listens to `onAdminAfterAddMedia`/`onAdminAfterDelMedia` and touches the page's `.md`, so exactly that page's cache refreshes as if it had been saved. No-op on Grav 1, where the site theme is not loaded in the admin. Note for editors: in Admin 2.0 the Save button staying inactive after an image change is correct — media changes are applied immediately, there is nothing left to save
     * Team: Linktext / Link-URL (the LinkedIn line) stayed invisible on the frontend for entries edited in Admin 2.0. The two fields were declared as `.linkedin.linkedin_user` / `.linkedin.linkedinProfile`, but Admin 2.0's list field stores every sub-value under the *last* segment of the field name, so they were saved as flat `linkedin_user` / `linkedinProfile` on the member while the template looked for them nested under `linkedin`. The blueprint now declares the flat names and the template still reads the two older layouts, so existing pages keep rendering
@@ -8,6 +8,7 @@
     * Removed the unused `partials/sidebar.html.twig`, which was still pure Quark and referenced translation keys this theme does not define
     * Removed the commented-out Quark boilerplate from the blogpost, portfolio-item and portfolio blueprints
     * Note: pages that had "Show sidebar" explicitly disabled now render like the default. The toggle's only remaining effect was switching a CSS helper class on the content column
+    * Version jumped from 0.1.45 to 0.2.0: `version_compare` sorts 0.1.5 *below* 0.1.42, so GPM would never have offered the release as an update. The Grav 2 line now also stays above any future 0.1.4x Grav 1 hotfix
 
 # v0.1.45
 1. [](#new)
