@@ -662,22 +662,21 @@ form:
                       destination: 'theme://custom/fonts'
                       multiple: true
                       markdown: true
+                      # Match on extensions, not MIME types: Windows has no
+                      # registry entry for the font types, so a MIME-based
+                      # accept list left the file picker empty and made
+                      # Dropzone reject every drop (issue #9). Uppercase
+                      # variants are listed because Grav's server-side accept
+                      # check is case-sensitive; browsers fold them together.
                       accept:
-                        - application/vnd.ms-fontobject
-                        - application/x-font-opentype
-                        - application/x-font-truetype
-                        - application/x-font-ttf
-                        - application/font-sfnt
-                        - application/x-font-woff
-                        - application/x-font-woff2
-                        - font/opentype
-                        - font/otf
-                        - font/ttf
-                        - font/woff
-                        - font/woff2
-                        - image/svg+xml
-                        - image/svg
-                        - application/octet-stream
+                        - .ttf
+                        - .otf
+                        - .woff
+                        - .woff2
+                        - .TTF
+                        - .OTF
+                        - .WOFF
+                        - .WOFF2
                     .name:
                       type: text
                       label:  THEME_AKAZIEFOREST.ADMIN.FIELDS.UPLOAD_FILE.NAME
